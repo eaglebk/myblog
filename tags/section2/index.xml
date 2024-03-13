@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Section2 on Eagle blog</title>
+    <link>http://localhost:1313/tags/section2/</link>
+    <description>Recent content in Section2 on Eagle blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru</language>
+    
+    <lastBuildDate>Wed, 13 Mar 2024 19:23:29 +0300</lastBuildDate><atom:link href="http://localhost:1313/tags/section2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Мой первый пост после перезапуска :rocket:</title>
+      <link>http://localhost:1313/posts/my-first-post/</link>
+      <pubDate>Wed, 13 Mar 2024 19:23:29 +0300</pubDate>
+      
+      <guid>http://localhost:1313/posts/my-first-post/</guid>
+      <description>Привет и добро пожаловать на мой блог!</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/my-first-post/featured.svg" />
+    </item>
+    
+  </channel>
+</rss>
