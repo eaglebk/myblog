@@ -1,1 +1,83 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>About-Rust on Eagle blog</title><link>https://eagle2000.space/series/about-rust/</link><description>Recent content in About-Rust on Eagle blog</description><generator>Hugo -- gohugo.io</generator><language>ru</language><lastBuildDate>Wed, 05 Mar 2025 13:07:18 +0300</lastBuildDate><atom:link href="https://eagle2000.space/series/about-rust/index.xml" rel="self" type="application/rss+xml"/><item><title>Hash Map в Rust</title><link>https://eagle2000.space/rust/rust-hashmap/</link><pubDate>Wed, 05 Mar 2025 13:07:18 +0300</pubDate><guid>https://eagle2000.space/rust/rust-hashmap/</guid><description/><media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://eagle2000.space/rust/rust-hashmap/featured.jpeg"/></item><item><title>Паттерн "Строитель" в Rust</title><link>https://eagle2000.space/rust/rust-builder/</link><pubDate>Sun, 09 Feb 2025 12:55:08 +0300</pubDate><guid>https://eagle2000.space/rust/rust-builder/</guid><description/><media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://eagle2000.space/rust/rust-builder/featured.png"/></item><item><title>Создание и использование структур в Rust: Практическое руководство</title><link>https://eagle2000.space/rust/rust-struct/</link><pubDate>Tue, 04 Feb 2025 17:47:06 +0300</pubDate><guid>https://eagle2000.space/rust/rust-struct/</guid><description/><media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://eagle2000.space/rust/rust-struct/featured.jpg"/></item><item><title>Rust императивный и функциональный, а также о методе collect</title><link>https://eagle2000.space/rust/rust-collect/</link><pubDate>Tue, 16 Jul 2024 15:34:06 +0300</pubDate><guid>https://eagle2000.space/rust/rust-collect/</guid><description/><media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://eagle2000.space/rust/rust-collect/featured.png"/></item><item><title>Ссылки на полезные ресурсы по языку rust</title><link>https://eagle2000.space/rust/links/</link><pubDate>Thu, 28 Mar 2024 00:00:00 +0000</pubDate><guid>https://eagle2000.space/rust/links/</guid><description/><media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://eagle2000.space/rust/links/featured.jpg"/></item><item><title>Basic rust</title><link>https://eagle2000.space/rust/start-rust/</link><pubDate>Sat, 16 Mar 2024 00:00:00 +0000</pubDate><guid>https://eagle2000.space/rust/start-rust/</guid><description/><media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://eagle2000.space/rust/start-rust/featured.png"/></item><item><title>Pattern matсhing</title><link>https://eagle2000.space/rust/match/</link><pubDate>Sat, 16 Mar 2024 00:00:00 +0000</pubDate><guid>https://eagle2000.space/rust/match/</guid><description/><media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://eagle2000.space/rust/match/featured.png"/></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>About-Rust on Eagle blog</title>
+    <link>https://eagle2000.space/series/about-rust/</link>
+    <description>Recent content in About-Rust on Eagle blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru</language>
+    
+    <lastBuildDate>Wed, 05 Mar 2025 13:07:18 +0300</lastBuildDate><atom:link href="https://eagle2000.space/series/about-rust/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Hash Map в Rust</title>
+      <link>https://eagle2000.space/rust/rust-hashmap/</link>
+      <pubDate>Wed, 05 Mar 2025 13:07:18 +0300</pubDate>
+      
+      <guid>https://eagle2000.space/rust/rust-hashmap/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://eagle2000.space/rust/rust-hashmap/featured.jpeg" />
+    </item>
+    
+    <item>
+      <title>Паттерн &#34;Строитель&#34; в Rust</title>
+      <link>https://eagle2000.space/rust/rust-builder/</link>
+      <pubDate>Sun, 09 Feb 2025 12:55:08 +0300</pubDate>
+      
+      <guid>https://eagle2000.space/rust/rust-builder/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://eagle2000.space/rust/rust-builder/featured.png" />
+    </item>
+    
+    <item>
+      <title>Создание и использование структур в Rust: Практическое руководство</title>
+      <link>https://eagle2000.space/rust/rust-struct/</link>
+      <pubDate>Tue, 04 Feb 2025 17:47:06 +0300</pubDate>
+      
+      <guid>https://eagle2000.space/rust/rust-struct/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://eagle2000.space/rust/rust-struct/featured.jpg" />
+    </item>
+    
+    <item>
+      <title>Rust императивный и функциональный, а также о методе collect</title>
+      <link>https://eagle2000.space/rust/rust-collect/</link>
+      <pubDate>Tue, 16 Jul 2024 15:34:06 +0300</pubDate>
+      
+      <guid>https://eagle2000.space/rust/rust-collect/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://eagle2000.space/rust/rust-collect/featured.png" />
+    </item>
+    
+    <item>
+      <title>Ссылки на полезные ресурсы по языку rust</title>
+      <link>https://eagle2000.space/rust/links/</link>
+      <pubDate>Thu, 28 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://eagle2000.space/rust/links/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://eagle2000.space/rust/links/featured.jpg" />
+    </item>
+    
+    <item>
+      <title>Basic rust</title>
+      <link>https://eagle2000.space/rust/start-rust/</link>
+      <pubDate>Sat, 16 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://eagle2000.space/rust/start-rust/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://eagle2000.space/rust/start-rust/featured.png" />
+    </item>
+    
+    <item>
+      <title>Pattern matсhing</title>
+      <link>https://eagle2000.space/rust/match/</link>
+      <pubDate>Sat, 16 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://eagle2000.space/rust/match/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://eagle2000.space/rust/match/featured.png" />
+    </item>
+    
+  </channel>
+</rss>
