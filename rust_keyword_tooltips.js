@@ -138,6 +138,9 @@ if (typeof window.RustPlayground === "undefined") {
 
       const keywordSet = new Set(tooltipData);
 
+   
+
+
       document
         .querySelectorAll("code.language-rust:not(.processed)")
         .forEach((codeBlock) => {
@@ -151,8 +154,13 @@ if (typeof window.RustPlayground === "undefined") {
               .forEach((token) => {
                 const text = token.textContent.trim();
 
-                for (const keywordObj of keywordSet) {
-                  if (keywordObj.keyword === text) {
+              
+
+                for (const keywordObj of keywordSet) {                  
+                  if (
+                    keywordObj.keyword === text ||
+                    keywordObj.keyword.replace(/\\/g, "") === text.replace(/\\/g, "")
+                  ) {
                     // Создаем новый элемент с подсказкой
                     const tooltipSpan = document.createElement("span");
                     tooltipSpan.className = "rust-keyword";
@@ -164,7 +172,7 @@ if (typeof window.RustPlayground === "undefined") {
                       `
 <div class="rust-tooltip ${this.isDarkTheme() ? "dark" : "light"}">
     <header>
-        <span class="keyword">${keywordObj.keyword}</span>
+        <span class="keyword">${keywordObj.keyword.replace(/\\/g, "")}</span>
         <span class="summary">${keywordObj.summary}</span>
     </header>
     <div class="syntax"><strong>Синтаксис:</strong> ${
@@ -222,7 +230,7 @@ if (typeof window.RustPlayground === "undefined") {
           maxWidth: 500,
           arrow: true,
           animation: "fade",
-          duration: 200,
+          duration: 200
         });
       }
     }
