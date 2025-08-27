@@ -79,7 +79,7 @@ fn main() -> io::Result<()> {
         println!(">> {}", line);
     }
 
-    println!("\nВ логе {} строк, из них {} с ошибками.", line_count, error_count);
+    println!("\nВ логе {} строки. Из них {} с ошибками.", line_count, error_count);
 
     Ok(())
 }
