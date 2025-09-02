@@ -1,4 +1,4 @@
-
+// ?hidden:start
 use std::fs::{File, OpenOptions};
 use std::io::{self, BufReader, Read, Write};
 use std::path::Path;
@@ -10,12 +10,11 @@ fn ensure_file() -> io::Result<()> {
     }
     Ok(())
 }
-
+// ?hidden:end
 fn main() -> io::Result<()> {
-
     // Проверяем, что файл существует (создаём при необходимости)
     ensure_file()?;
-
+    
     // Открываем файл
     let file = File::open("hello.txt")?;
     
@@ -50,6 +49,7 @@ use std::fs::{File, OpenOptions};
 use std::io::{self, BufReader, BufRead, Write};
 use std::path::Path;
 
+
 fn ensure_file() -> io::Result<()> {
     if !Path::new("app.log").exists() {
         let mut f = OpenOptions::new().create(true).write(true).open("app.log")?;
@@ -60,6 +60,7 @@ fn ensure_file() -> io::Result<()> {
     }
     Ok(())
 }
+
 
 fn main() -> io::Result<()> {
     ensure_file()?;

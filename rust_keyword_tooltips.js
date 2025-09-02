@@ -73,9 +73,14 @@ if (typeof window.RustPlayground === "undefined") {
       const runButton = container.querySelector(".run-button");
       const originalText = runButton.innerHTML;
 
+
+
       if (!codeBlock || !outputContainer || !outputContent) return;
 
-      const lines = codeBlock.textContent.split("\n");
+      const lines = Array.from(
+      currentSlide.querySelectorAll(".line:not(.gap-line) > .cl")
+        ).map(cl => cl.textContent);
+
       const cleanedLines = lines.map((line) => {
         // 1. Номера строк в начале (с пробелами или без)
         return line.replace(/^\s*\d+\s*/, ""); // Удалить номер в начале

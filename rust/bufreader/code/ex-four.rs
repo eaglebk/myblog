@@ -1,9 +1,9 @@
-
-
+// ?hidden:start
 use std::fs::{self, OpenOptions};
 use std::io::{self, Write, Read};
 use std::path::Path;
 use std::fs::File;
+
 
 /// Создаём файл big.txt, если его ещё нет.
 /// 100_0 строк с текстом и номерами.
@@ -19,6 +19,7 @@ fn ensure_file() -> io::Result<()> {
     println!("Файл создан!");
     Ok(())
 }
+// ?hidden:end
 fn main() -> io::Result<()> {
     ensure_file()?; // создаём файл
 
@@ -49,7 +50,7 @@ fn main() -> io::Result<()> {
 // ! Удобно для понимания, но не для реальной работы.
 
 // ---
-
+// ?hidden:start
 use std::fs::{self, OpenOptions};
 use std::io::{self, Write, BufRead, BufReader};
 use std::path::Path;
@@ -69,7 +70,7 @@ fn ensure_file() -> io::Result<()> {
     println!("Файл создан!");
     Ok(())
 }
-
+// ?hidden:end
 fn main() -> io::Result<()> {
     ensure_file()?; // создаём файл
     let start = std::time::Instant::now();
@@ -96,12 +97,13 @@ fn main() -> io::Result<()> {
 
 
 // ---
-
-
+// ?hidden:start
 use std::fs::{self, OpenOptions};
 use std::io::{self, Write, BufRead, BufReader};
 use std::path::Path;
 use std::fs::File;
+
+
 
 /// Создаём файл big.txt, если его ещё нет.
 /// 100_0 строк с текстом и номерами.
@@ -117,9 +119,7 @@ fn ensure_file() -> io::Result<()> {
     println!("Файл создан!");
     Ok(())
 }
-
-
-
+// ?hidden:end
 fn main() -> io::Result<()> {
     ensure_file()?; // создаём файл
 
@@ -147,7 +147,7 @@ fn main() -> io::Result<()> {
 // ! Нет лишних аллокаций памяти, работает эффективнее.
 
 // ---
-
+// ?hidden:start
 use std::fs::{self, OpenOptions};
 use std::io::{self, Write, Read};
 use std::path::Path;
@@ -167,7 +167,7 @@ fn ensure_file() -> io::Result<()> {
     println!("Файл создан!");
     Ok(())
 }
-
+// ?hidden:end
 fn main() -> io::Result<()> {
 
     ensure_file()?; // создаём файл
