@@ -1,0 +1,231 @@
+{
+  "id": "rust-tokio-async-01",
+  "topic": "Tokio, async/await и кооперативность",
+  "timeLimitSec": 420,
+  "questions": [
+    {
+      "id": "q1",
+      "title": "Что выведет следующий код?",
+      "code": "use tokio::task;\n\n#[tokio::main]\nasync fn main() {\n    let handle = task::spawn(async {\n        \"Привет, экипаж\"\n    });\n    println!(\"Начало\");\n    let result = handle.await.unwrap();\n    println!(\"{}\", result);\n}",
+      "options": [
+        "Привет, экипаж",
+        "Начало потом Привет, экипаж",
+        "Привет, экипаж потом Начало",
+        "Начало только"
+      ],
+      "correctIndex": 1,
+      "explanation": "println!(\"Начало\") выполняется сразу; результат задачи печатается после await."
+    },
+    {
+      "id": "q2",
+      "title": "Что делает tokio::task::spawn?",
+      "options": [
+        "Всегда создаёт новый поток ОС",
+        "Запускает async-задачу под Tokio, возвращает JoinHandle",
+        "Останавливает текущий поток до завершения",
+        "Блокирует рантайм"
+      ],
+      "correctIndex": 1,
+      "explanation": "spawn планирует future на исполнение внутри рантайма и отдаёт JoinHandle."
+    },
+    {
+      "id": "q3",
+      "title": "Какой результат/порядок завершения вероятен?",
+      "code": "use tokio::time::{sleep, Duration};\n\nasync fn job(id: u32) {\n    sleep(Duration::from_millis(100 * id as u64)).await;\n    println!(\"Задача {id} завершена\");\n}\n\n#[tokio::main]\nasync fn main() {\n    tokio::join!(job(2), job(1), job(3));\n}",
+      "options": [
+        "Задача 1, потом 2, потом 3",
+        "Порядок зависит от задержек; job(1) вероятно завершится первой",
+        "Все три одновременно",
+        "Ошибка компиляции"
+      ],
+      "correctIndex": 1,
+      "explanation": "Время ожидания разное; join! запускает параллельно в рамках рантайма."
+    },
+    {
+      "id": "q4",
+      "title": "Чем отличается futures::future::join_all от tokio::join! ?",
+      "options": [
+        "join_all работает только с двумя задачами",
+        "join_all принимает коллекцию Future и ждёт их все",
+        "join! всегда быстрее",
+        "Разницы никакой"
+      ],
+      "correctIndex": 1,
+      "explanation": "join_all удобен для Vec<Future>; join! — для фиксированного списка."
+    },
+    {
+      "id": "q5",
+      "title": "Что напечатает код со spawn и ожиданием всех JoinHandle?",
+      "code": "use tokio::time::{sleep, Duration};\n\nasync fn slow(id: u32) {\n    sleep(Duration::from_secs(1)).await;\n    println!(\"Готово {id}\");\n}\n\n#[tokio::main]\nasync fn main() {\n    let handles = (1..=3)\n        .map(|i| tokio::spawn(slow(i)))\n        .collect::<Vec<_>>();\n\n    for h in handles {\n        let _ = h.await;\n    }\n    println!(\"Все задачи завершены\");\n}",
+      "options": [
+        "Готово 1, Готово 2, Готово 3, затем Все задачи завершены (порядок готово не гарантирован)",
+        "Все задачи завершены напечатается раньше",
+        "Только Готово 3",
+        "Ошибка"
+      ],
+      "correctIndex": 0,
+      "explanation": "Ждём каждый JoinHandle; финальная строка — после всех."
+    },
+    {
+      "id": "q6",
+      "title": "Что такое JoinSet в Tokio?",
+      "options": [
+        "Массив синхронных функций",
+        "Коллекция async-задач со spawn и извлечением результатов через join_next/join_all",
+        "Функция блокирующего сна",
+        "Особый тип потока ОС"
+      ],
+      "correctIndex": 1,
+      "explanation": "JoinSet позволяет добавлять задачи и получать результаты по мере завершения."
+    },
+    {
+      "id": "q7",
+      "title": "Почему thread::sleep опасен внутри async?",
+      "options": [
+        "Ничем не опасен",
+        "Блокирует воркер рантайма; другие задачи не выполняются в этом потоке",
+        "Даёт небольшую задержку, но без влияния",
+        "Вызывает ошибку компиляции"
+      ],
+      "correctIndex": 1,
+      "explanation": "thread::sleep блокирует весь поток ОС. В рантайме там могли работать десятки задач."
+    },
+    {
+      "id": "q8",
+      "title": "Что выведет код со spawn двух печатателей и join! по JoinHandle?",
+      "code": "use tokio::task;\n\nasync fn print_after(msg: &str) {\n    println!(\"{msg}\");\n}\n\n#[tokio::main]\nasync fn main() {\n    let a = task::spawn(print_after(\"A\"));\n    let b = task::spawn(print_after(\"B\"));\n    let _ = tokio::join!(a, b);\n    println!(\"Завершили\");\n}",
+      "options": [
+        "A, B (в произвольном порядке), затем Завершили",
+        "Завершили до A и B",
+        "Только A",
+        "Ошибка"
+      ],
+      "correctIndex": 0,
+      "explanation": "Обе задачи выполняются; порядок A/B не гарантирован; затем печатается финальная строка."
+    },
+    {
+      "id": "q9",
+      "title": "Что означает требование 'static для spawn?",
+      "options": [
+        "Задача живёт вечно",
+        "Future не должен ссылаться на не-статические данные: используйте move или владение",
+        "Задача запускается только один раз",
+        "Код становится синхронным"
+      ],
+      "correctIndex": 1,
+      "explanation": "spawn требует 'static, чтобы рантайм не держал висячих ссылок."
+    },
+    {
+      "id": "q10",
+      "title": "Что выведет код с futures::join_all?",
+      "code": "use futures::future::join_all;\nuse tokio::time::{sleep, Duration};\n\nasync fn work(i: u32) -> u32 {\n    sleep(Duration::from_millis(50 * i as u64)).await;\n    i * 2\n}\n\n#[tokio::main]\nasync fn main() {\n    let results = join_all(vec![work(1), work(2), work(3)]).await;\n    println!(\"{:?}\", results);\n}",
+      "options": [
+        "[2,4,6]",
+        "[6,4,2]",
+        "[1,2,3]",
+        "Ошибка"
+      ],
+      "correctIndex": 0,
+      "explanation": "join_all возвращает Vec результатов в порядке входа."
+    },
+    {
+      "id": "q11",
+      "title": "Что напечатает этот код без await на JoinHandle?",
+      "code": "use tokio::task;\nuse tokio::time::{sleep, Duration};\n\n#[tokio::main]\nasync fn main() {\n    task::spawn(async {\n        println!(\"Фоновая задача\");\n        sleep(Duration::from_secs(1)).await;\n    });\n    println!(\"Сразу после spawn\");\n}",
+      "options": [
+        "Фоновая задача → через секунду; потом Сразу после spawn",
+        "Сразу после spawn напечатается сразу, фоновая задача — позже или может не успеть",
+        "Только Фоновая задача",
+        "Ошибка"
+      ],
+      "correctIndex": 1,
+      "explanation": "Без await рантайм может завершить main раньше, чем фон успеет всё вывести."
+    },
+    {
+      "id": "q12",
+      "title": "Какой порядок вывода вероятен при worker_threads=1?",
+      "code": "use tokio::time::{sleep, Duration};\n\nasync fn fast() { sleep(Duration::from_millis(30)).await; println!(\"Fast\"); }\nasync fn slow() { sleep(Duration::from_millis(100)).await; println!(\"Slow\"); }\n\n#[tokio::main(flavor=\"multi_thread\", worker_threads=1)]\nasync fn main() {\n    tokio::join!(fast(), slow());\n}",
+      "options": [
+        "Fast затем Slow",
+        "Slow затем Fast",
+        "Одновременно",
+        "Нет гарантии"
+      ],
+      "correctIndex": 0,
+      "explanation": "Обе задачи в одном воркере; меньшая задержка завершится раньше."
+    },
+    {
+      "id": "q13",
+      "title": "Что делает join_all (futures)?",
+      "options": [
+        "Ждёт завершения коллекции Future и возвращает Vec результатов",
+        "Запускает задачи по очереди",
+        "Делает код синхронным",
+        "Работает только с async-std"
+      ],
+      "correctIndex": 0,
+      "explanation": "Классический комбинирующий future."
+    },
+    {
+      "id": "q14",
+      "title": "Верное объяснение async vs parallel?",
+      "options": [
+        "async — это потоки ОС; parallel — ожидание",
+        "async — кооперативная многозадачность; parallel — одновременное выполнение в нескольких потоках",
+        "async всегда быстрее parallel",
+        "Разницы нет"
+      ],
+      "correctIndex": 1,
+      "explanation": "Асинхронность — про ожидания без простоя; параллельность — про одновременность."
+    },
+    {
+      "id": "q15",
+      "title": "Что напечатает цикл с yield_now?",
+      "code": "use tokio::task;\n\nasync fn looper(name: &str) {\n    for i in 0..3 {\n        println!(\"{name}-{i}\");\n        task::yield_now().await;\n    }\n}\n\n#[tokio::main]\nasync fn main() {\n    tokio::join!(looper(\"A\"), looper(\"B\"));\n}",
+      "options": [
+        "A-0, A-1, A-2, затем B-0, B-1, B-2",
+        "Чередование A-0, B-0, A-1, B-1, ...",
+        "Только A",
+        "Только B"
+      ],
+      "correctIndex": 1,
+      "explanation": "yield_now даёт шанс другой задаче — получаем чередование."
+    },
+    {
+      "id": "q16",
+      "title": "Что значит кооперативная многозадачность в Rust async?",
+      "options": [
+        "Планировщик вытесняет задачу в любой момент",
+        "Задача уступает в .await или yield_now().await",
+        "Всегда один поток",
+        "Только для I/O"
+      ],
+      "correctIndex": 1,
+      "explanation": "Без явного ожидания переключения не будет."
+    },
+    {
+      "id": "q17",
+      "title": "Как ведёт себя JoinSet::join_next()?",
+      "options": [
+        "Возвращает в порядке launch",
+        "Возвращает по мере завершения задач (любой порядок)",
+        "Ждёт только первую задачу",
+        "Работает только с spawn_blocking"
+      ],
+      "correctIndex": 1,
+      "explanation": "join_next извлекает следующий готовый результат."
+    },
+    {
+      "id": "q18",
+      "title": "Какое ключевое слово делает функцию асинхронной?",
+      "options": [
+        "await",
+        "async",
+        "spawn",
+        "yield"
+      ],
+      "correctIndex": 1,
+      "explanation": "async fn возвращает Future; внутри можно использовать .await."
+    }
+  ]
+}
