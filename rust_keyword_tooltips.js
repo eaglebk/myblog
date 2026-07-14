@@ -154,18 +154,46 @@ if (typeof window.RustPlayground === "undefined") {
 
           // Ищем все элементы с текстом внутри .line > .cl
           codeBlock.querySelectorAll(".line > .cl").forEach((codeLine) => {
-            // Дочерние span элементы, которые содержат текст кода
-            codeLine
+             codeLine
               .querySelectorAll("span:not(.ln):not(.rust-keyword)")
               .forEach((token) => {
                 const text = token.textContent.trim();
 
-              
+                // Reconstruct the full path if part of a namespace (e.g., tokio::spawn)
+                let path = text;
+                let current = token.previousSibling;
+                while (current) {
+                  if (current.nodeType === Node.TEXT_NODE && current.textContent.trim() === "") {
+                    current = current.previousSibling;
+                    continue;
+                  }
+                  if (current.textContent.trim() === "::") {
+                    let identSibling = current.previousSibling;
+                    while (identSibling && identSibling.nodeType === Node.TEXT_NODE && identSibling.textContent.trim() === "") {
+                      identSibling = identSibling.previousSibling;
+                    }
+                    if (identSibling) {
+                      let identText = identSibling.textContent.trim();
+                      if (/^[a-zA-Z_][a-zA-Z0-9_]*$/.test(identText)) {
+                        path = identText + "::" + path;
+                        current = identSibling.previousSibling;
+                        continue;
+                      }
+                    }
+                  }
+                  break;
+                }
 
-                for (const keywordObj of keywordSet) {                  
+                for (const keywordObj of keywordSet) {
+                  const kw = keywordObj.keyword.replace(/\\/g, "");
+                  const cleanPath = path.replace(/\\/g, "");
+                  const cleanText = text.replace(/\\/g, "");
+
                   if (
-                    keywordObj.keyword === text ||
-                    keywordObj.keyword.replace(/\\/g, "") === text.replace(/\\/g, "")
+                    kw === cleanPath ||
+                    (kw.includes("::") && cleanPath.endsWith(kw)) ||
+                    (kw.includes("::") && kw.endsWith(cleanPath) && cleanPath.includes("::")) ||
+                    (kw === cleanText && !cleanPath.includes("::"))
                   ) {
                     // Создаем новый элемент с подсказкой
                     const tooltipSpan = document.createElement("span");
