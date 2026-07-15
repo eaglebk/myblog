@@ -1,3 +1,4 @@
+// ?ignore
 // ?hidden:start
 fn query_sensor() -> u32 { 42 }
 fn process(d: u32) -> u32 { d }

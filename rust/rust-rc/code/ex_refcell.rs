@@ -16,6 +16,7 @@ fn main() {
 // ! - Мы моделируем общее состояние `users`, доступное из разных частей приложения. RefCell позволяет менять данные при множественных владельцах.
 
 // ---
+// ?should_panic
 #[allow(unused_variables)]
 use std::rc::Rc;
 use std::cell::RefCell;

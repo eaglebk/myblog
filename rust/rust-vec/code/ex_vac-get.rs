@@ -1,3 +1,4 @@
+// ?should_panic
 fn main() {
     let crew = vec![
         "Капитан Нова",

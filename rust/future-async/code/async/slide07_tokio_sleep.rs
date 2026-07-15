@@ -1,3 +1,6 @@
+// ?hidden:start
+fn main() {}
+// ?hidden:end
 use tokio::time::{sleep, Duration};
 
 async fn good_sleep() {
@@ -7,6 +10,13 @@ async fn good_sleep() {
 }
 
 // ---
+// ?hidden:start
+use tokio::time::{sleep, Duration};
+async fn good_sleep() {
+    sleep(Duration::from_millis(200)).await;
+}
+// ?hidden:end
+
 #[tokio::main]
 async fn main() {
     let t1 = good_sleep();

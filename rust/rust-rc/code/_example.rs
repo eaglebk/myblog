@@ -149,6 +149,7 @@ fn main() {
 // ! - Автоматический вывод типов
 
 // ---
+// ?compile_fail
 {
     let light_sensor = 20
     println!("Value of light sensor is {light_sensor}");

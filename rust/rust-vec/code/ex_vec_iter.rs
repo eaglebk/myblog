@@ -1,3 +1,4 @@
+// ?compile_fail
 fn main() {
     let mut names = vec![
         String::from("Капитан Нова"),

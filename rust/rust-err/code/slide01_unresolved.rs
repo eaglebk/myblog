@@ -1,3 +1,4 @@
+// ?compile_fail
 fn main() {
     let message = "Привет, Rust!";
     // Опечатка в имени переменной: messg вместо message

@@ -1,3 +1,4 @@
+// ?compile_fail
 use std::rc::Rc;
 use std::thread;
 

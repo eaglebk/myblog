@@ -1,3 +1,4 @@
+// ?compile_fail
 #[derive(Debug)]
 struct City {
     name: String,
