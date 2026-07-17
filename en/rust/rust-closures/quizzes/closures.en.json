@@ -1,0 +1,42 @@
+[
+  {
+    "question": "What is the main low-level difference between a function pointer `fn` and a closure?",
+    "options": [
+      "The `fn` pointer runs slower than closures",
+      "The `fn` pointer is a thin pointer and cannot contain external state (context), whereas a closure can capture variables from the environment",
+      "Closures are always allocated on the heap, while `fn` pointers are on the stack"
+    ],
+    "answer": 1,
+    "explanation": "The `fn` type stores only the address of the machine code. Closures, on the other hand, compile into an anonymous structure storing values or references to the captured variables."
+  },
+  {
+    "question": "What is the inheritance (subtype) hierarchy between closure traits?",
+    "options": [
+      "FnOnce is a subtype of FnMut, which is a subtype of Fn",
+      "Fn is a subtype of FnMut, which is a subtype of FnOnce",
+      "These traits are independent and not related to each other"
+    ],
+    "answer": 1,
+    "explanation": "Any closure of type `Fn` can be used where `FnMut` or `FnOnce` is expected, as it imposes the least restrictive constraints on state (only immutable reading)."
+  },
+  {
+    "question": "What happens if you apply the `move` keyword to a closure?",
+    "options": [
+      "The closure will be moved to another execution thread",
+      "All external variables mentioned in the closure will be forced to be captured by value (ownership will move inside the closure)",
+      "The compiler will forbid calling the closure more than once"
+    ],
+    "answer": 1,
+    "explanation": "`move` disables default capture by reference and forces the closure to take ownership of the captured variables. This is critical if the closure needs to outlive the scope of its creator."
+  },
+  {
+    "question": "Why are Higher-Rank Trait Bounds (HRTBs, `for<'a>` syntax) used in closure signatures?",
+    "options": [
+      "To execute the closure concurrently in multiple threads",
+      "To remove restrictions on recursive closure calls",
+      "To bind lifetimes so that the closure can accept references with absolutely any lifetime determined at runtime at the moment of invocation"
+    ],
+    "answer": 2,
+    "explanation": "HRTBs allow placing a universal quantifier over the lifetimes of closure parameters, guaranteeing to the compiler that it will work for any references passed by the calling function."
+  }
+]
