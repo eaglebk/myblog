@@ -264,7 +264,9 @@ if (typeof window.RustPlayground === "undefined") {
           maxWidth: 500,
           arrow: true,
           animation: "fade",
-          duration: 200
+          duration: 200,
+          appendTo: () => document.body,
+          boundary: 'viewport'
         });
       }
     }
