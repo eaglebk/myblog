@@ -1,0 +1,9 @@
+[
+  { "id": "rust", "name": "🦀 Rust", "path": "/rust/" },
+  { "id": "dart", "name": "🎯 Dart", "path": "/dart/" },
+  { "id": "photography", "name": "📸 Фотография", "path": "/photography/" },
+  { "id": "til", "name": "💡 TIL", "path": "/til/" },
+  { "id": "my-gallery", "name": "🖼️ Галерея", "path": "/my-gallery/" },
+  { "id": "languages", "name": "🌐 Языки", "path": "/languages/" },
+  { "id": "about-all", "name": "📢 Обо всём (Все категории)", "path": "/" }
+]

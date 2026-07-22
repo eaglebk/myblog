@@ -17,42 +17,118 @@ if (typeof window.RustPlayground === "undefined") {
     }
 
     initializeAfterDOM() {
+      if (!document.getElementById("tooltips-disabled-style")) {
+        const style = document.createElement("style");
+        style.id = "tooltips-disabled-style";
+        style.textContent = `
+          body.tooltips-disabled .rust-keyword,
+          html[data-tooltips-disabled="true"] .rust-keyword {
+            pointer-events: none !important;
+            cursor: text !important;
+            border-bottom: none !important;
+            text-decoration: none !important;
+            background: transparent !important;
+          }
+          body.tooltips-disabled .tippy-box,
+          html[data-tooltips-disabled="true"] .tippy-box {
+            display: none !important;
+            visibility: hidden !important;
+            opacity: 0 !important;
+            pointer-events: none !important;
+          }
+        `;
+        document.head.appendChild(style);
+      }
+
+      const isDisabled = localStorage.getItem("pref_rust_tooltips") === "false";
+      document.body.classList.toggle("tooltips-disabled", isDisabled);
+      document.documentElement.setAttribute("data-tooltips-disabled", String(isDisabled));
+
+      if (isDisabled) {
+        document.querySelectorAll(".rust-keyword").forEach(el => {
+          el.removeAttribute("title");
+          if (el._tippy) el._tippy.disable();
+        });
+        return;
+      }
+
       this.setupCodeHover();
       this.setupThemeObserver();
       this.setupEventListeners();
     }
 
+
     setupEventListeners() {
       // Можно добавить глобальные события по необходимости
     }
 
+
+    switchSlide(current, target, container) {
+      if (!current || !target) return;
+      const isAnimEnabled = localStorage.getItem("pref_code_anim") !== "false";
+
+      if (isAnimEnabled) {
+        current.style.transition = "opacity 0.18s cubic-bezier(0.4, 0, 0.2, 1), transform 0.18s cubic-bezier(0.4, 0, 0.2, 1)";
+        current.style.opacity = "0";
+        current.style.transform = "translateY(-3px)";
+
+        setTimeout(() => {
+          current.hidden = true;
+          current.style.opacity = "1";
+          current.style.transform = "none";
+
+          target.hidden = false;
+          target.style.opacity = "0";
+          target.style.transform = "translateY(5px)";
+          target.style.transition = "opacity 0.26s cubic-bezier(0.4, 0, 0.2, 1), transform 0.26s cubic-bezier(0.4, 0, 0.2, 1)";
+
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              target.style.opacity = "1";
+              target.style.transform = "translateY(0)";
+            });
+          });
+          this.updateSlideCounter(container);
+        }, 180);
+      } else {
+        current.style.transition = "none";
+        current.style.opacity = "1";
+        current.style.transform = "none";
+        current.hidden = true;
+
+        target.hidden = false;
+        target.style.transition = "none";
+        target.style.opacity = "1";
+        target.style.transform = "none";
+        this.updateSlideCounter(container);
+      }
+    }
+
+
     goToNextSlide(container) {
       const slides = container.querySelectorAll(".slide");
       const current = container.querySelector(".slide:not([hidden])");
-      let next = current.nextElementSibling;
+      let next = current ? current.nextElementSibling : null;
 
       if (!next || !next.classList.contains("slide")) {
         next = slides[0];
       }
 
-      current.hidden = true;
-      next.hidden = false;
-      this.updateSlideCounter(container);
+      this.switchSlide(current, next, container);
     }
 
     goToPrevSlide(container) {
       const slides = container.querySelectorAll(".slide");
       const current = container.querySelector(".slide:not([hidden])");
-      let prev = current.previousElementSibling;
+      let prev = current ? current.previousElementSibling : null;
 
       if (!prev || !prev.classList.contains("slide")) {
         prev = slides[slides.length - 1];
       }
 
-      current.hidden = true;
-      prev.hidden = false;
-      this.updateSlideCounter(container);
+      this.switchSlide(current, prev, container);
     }
+
 
     updateSlideCounter(container) {
       const slides = container.querySelectorAll(".slide");
@@ -138,11 +214,13 @@ if (typeof window.RustPlayground === "undefined") {
     }
 
     setupCodeHover() {
-      const tooltipData = window.RUST_KEYWORD_TOOLTIPS;
+      if (localStorage.getItem("pref_rust_tooltips") === "false") return;
 
+      const tooltipData = window.RUST_KEYWORD_TOOLTIPS;
       if (!tooltipData) return;
 
       const keywordSet = new Set(tooltipData);
+
 
    
 
@@ -254,9 +332,15 @@ if (typeof window.RustPlayground === "undefined") {
           document.documentElement.getAttribute("data-theme") === "dark";
 
         tippy(".rust-keyword", {
+          onShow(instance) {
+            if (localStorage.getItem("pref_rust_tooltips") === "false" || document.body.classList.contains("tooltips-disabled")) {
+              return false;
+            }
+          },
           content(reference) {
             return reference.getAttribute("data-tippy-content");
           },
+
           placement: "bottom",
           theme: isDark ? "dark" : "light",
           allowHTML: true,
@@ -309,8 +393,9 @@ if (typeof window.RustPlayground === "undefined") {
 
           const span = document.createElement("span");
           span.className = "rust-keyword";
-          span.setAttribute("title", tooltipData[keyword]);
+          // Note: Do NOT set native 'title' attribute to prevent unwanted browser tooltips
           span.textContent = keyword;
+
           fragments.push(span);
 
           lastIndex = index + keyword.length;
