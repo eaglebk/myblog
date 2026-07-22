@@ -26,9 +26,11 @@ fn main() {
 
     // В Rust if-else является выражением и может возвращать значение
     let y = if x > 100 {
-        2024
+        let val = 2024;
+        val
     } else {
-        2025
+        let val = 2025;
+        val
     };
 
     println!("y = {}", y);

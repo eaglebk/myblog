@@ -6,15 +6,15 @@ use tokio::time::{sleep, Duration};
 async fn scan_sector(sector_id: u32) -> (u32, &'static str) {
     // Разное время сканирования секторов для имитации асинхронности
     let delay = match sector_id {
-        1 => 150,
-        2 => 50,
-        3 => 250,
+        s if s == 1 => 150,
+        s if s == 2 => 50,
+        s if s == 3 => 250,
         _ => 100,
     };
     sleep(Duration::from_millis(delay)).await;
     
     match sector_id {
-        2 => (sector_id, "Обнаружен спасательный челнок доктора!"),
+        s if s == 2 => (sector_id, "Обнаружен спасательный челнок доктора!"),
         _ => (sector_id, "Сектор пуст"),
     }
 }

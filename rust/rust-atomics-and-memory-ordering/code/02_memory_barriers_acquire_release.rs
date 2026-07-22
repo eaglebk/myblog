@@ -46,10 +46,13 @@ use std::sync::atomic::{AtomicUsize, Ordering};
 fn main() {
     let current_val = AtomicUsize::new(10);
 
+    let expected = 10; // Ожидаемое значение
+    let new_val = 20;  // Новое значение
+
     // Сравниваем: если текущее значение равно 10, заменяем его на 20:
     let result = current_val.compare_exchange(
-        10,                // Ожидаемое значение
-        20,                // Новое значение
+        expected,
+        new_val,
         Ordering::SeqCst,  // Порядок при успехе
         Ordering::Relaxed  // Порядок при ошибке
     );
