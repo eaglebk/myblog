@@ -78,7 +78,7 @@ graph TD
 </span></span></span><span class=line><span class=cl><span class=p>{</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=kd>let</span><span class=w> </span><span class=n>local</span><span class=w> </span><span class=o>=</span><span class=w> </span><span class=nb>String</span>::<span class=n>from</span><span class=p>(</span><span class=s>&#34;data&#34;</span><span class=p>);</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>    </span><span class=n>f</span><span class=p>(</span><span class=o>&amp;</span><span class=n>local</span><span class=p>);</span><span class=w> </span><span class=c1>// The lifetime of the reference is limited only to this function!
-</span></span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div></div><p>The construction <code>for&lt;'a> Fn(&'a str)</code> tells the compiler: &ldquo;This closure knows how to accept a string reference with absolutely any lifetime <code>'a</code> that we give it at the moment of call.&rdquo;</p><p>Let&rsquo;s see how closures of different types work in the interactive examples below:</p><div class="text-red-500 font-mono text-sm my-4">❌ Файл 'code/closures.rs' не найден</div><hr><h2 class="relative group">Check Your Knowledge!<div id=check-your-knowledge class=anchor></div><span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"><a class="text-primary-300 dark:text-neutral-700 !no-underline" href=#check-your-knowledge aria-label=Anchor>#</a></span></h2><p>Take a short interactive test to reinforce your understanding of closures in Rust.</p><script defer src=https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js></script><script defer src=https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js></script><script defer src=https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js></script><div id=quiz-1785572697563934000 class=quiz-mount data-lang=en data-name="Closures in Rust" data-firebase='{
+</span></span></span><span class=line><span class=cl><span class=p>}</span></span></span></code></pre></div></div><p>The construction <code>for&lt;'a> Fn(&'a str)</code> tells the compiler: &ldquo;This closure knows how to accept a string reference with absolutely any lifetime <code>'a</code> that we give it at the moment of call.&rdquo;</p><p>Let&rsquo;s see how closures of different types work in the interactive examples below:</p><div class="text-red-500 font-mono text-sm my-4">❌ Файл 'code/closures.rs' не найден</div><hr><h2 class="relative group">Check Your Knowledge!<div id=check-your-knowledge class=anchor></div><span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none"><a class="text-primary-300 dark:text-neutral-700 !no-underline" href=#check-your-knowledge aria-label=Anchor>#</a></span></h2><p>Take a short interactive test to reinforce your understanding of closures in Rust.</p><script defer src=https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js></script><script defer src=https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js></script><script defer src=https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js></script><div id=quiz-1785656338445374000 class=quiz-mount data-lang=en data-name="Closures in Rust" data-firebase='{
   "apiKey": "AIzaSyDpJ8bNxx9MvSeu9PsXzk3H37AeYQjBv4M",
   "authDomain": "eagleblog-b0286.firebaseapp.com",
   "projectId": "eagleblog-b0286",
@@ -86,12 +86,12 @@ graph TD
   "messagingSenderId": "942835714160",
   "appId": "1:942835714160:web:7ba3682059f8179a9d0cb5",
   "measurementId": "G-1K8G7FW77W"
-}'></div><script type=application/json id=quiz-1785572697563934000-srcs>"[\"/en/rust/rust-closures/quizzes/closures.en.json\"]"</script><script type=module>
+}'></div><script type=application/json id=quiz-1785656338445374000-srcs>"[\"/en/rust/rust-closures/quizzes/closures.en.json\"]"</script><script type=module>
   import { mountQuizWidget } from "\/js\/quiz-widget.min.js";
 
   if (typeof window.firebase !== "undefined") {
     if (!window.firebase.apps.length) {
-      const cfg = JSON.parse(document.getElementById("quiz-1785572697563934000").dataset.firebase || "{}");
+      const cfg = JSON.parse(document.getElementById("quiz-1785656338445374000").dataset.firebase || "{}");
       if (cfg.apiKey) {
         window.firebase.initializeApp(cfg);
         window.db = window.firebase.firestore();
@@ -100,8 +100,8 @@ graph TD
       window.db = window.firebase.firestore();
     }
   }
-  const mount = document.getElementById("quiz-1785572697563934000");
-  const json  = document.getElementById("quiz-1785572697563934000-srcs").textContent;
+  const mount = document.getElementById("quiz-1785656338445374000");
+  const json  = document.getElementById("quiz-1785656338445374000-srcs").textContent;
   const srcs  = JSON.parse(json);
   const cfg   = JSON.parse(mount.dataset.firebase || "{}");
   const hljsThemeDark = "\u0022github-dark-dimmed\u0022";
