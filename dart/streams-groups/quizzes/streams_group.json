@@ -1,0 +1,24 @@
+[
+  {
+    "question": "Какой класс из пакета async позволяет объединять несколько Stream в единый поток?",
+    "options": [
+      "StreamController",
+      "StreamGroup",
+      "FutureGroup",
+      "StreamZip"
+    ],
+    "answer": 1,
+    "explanation": "StreamGroup позволяет добавлять несколько потоков (StreamGroup.add) и читать их как один общий поток."
+  },
+  {
+    "question": "Чем отличаются одиночные потоки (Single-subscription) от Broadcast Stream в Dart?",
+    "options": [
+      "Single-subscription допускает только одного слушателя, а Broadcast — нескольких",
+      "Single-subscription работает только асинхронно",
+      "Broadcast Stream нельзя отменить",
+      "Ничем не отличаются"
+    ],
+    "answer": 0,
+    "explanation": "Single-subscription Stream допускает только одного слушателя, повторная подписка вызовет StateError."
+  }
+]

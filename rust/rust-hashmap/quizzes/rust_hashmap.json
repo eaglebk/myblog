@@ -1,0 +1,24 @@
+[
+  {
+    "question": "Каким трейтам обязаны удовлетворять ключи K для использования в std::collections::HashMap?",
+    "options": [
+      "Eq и Hash",
+      "Display и Debug",
+      "Copy и Clone",
+      "Default и Ord"
+    ],
+    "answer": 0,
+    "explanation": "Ключи в HashMap должны подходить для вычисления хэша (Hash) и сравнения на строгое равенство (Eq)."
+  },
+  {
+    "question": "Какой метод в HashMap позволяет безопасно вставить значение, только если ключ еще отсутствует?",
+    "options": [
+      "map.insert_if_absent()",
+      "map.entry(key).or_insert(value)",
+      "map.push(key, value)",
+      "map.get_mut(key)"
+    ],
+    "answer": 1,
+    "explanation": "Entry API (`map.entry(key).or_insert(...)`) является идиоматичным способом проверки и вставки в Rust."
+  }
+]
