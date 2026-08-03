@@ -1,3 +1,19 @@
 User-agent: *
 Allow: /
+
+# Block crawling of taxonomy list pages and pagination (thin content)
+Disallow: /tags/
+Disallow: /categories/
+Disallow: /authors/
+Disallow: /series/
+Disallow: /page/
+Disallow: /ru/tags/
+Disallow: /ru/categories/
+Disallow: /ru/authors/
+Disallow: /ru/series/
+Disallow: /en/tags/
+Disallow: /en/categories/
+Disallow: /en/authors/
+Disallow: /en/series/
+
 Sitemap: https://eagle2000.space/sitemap.xml
