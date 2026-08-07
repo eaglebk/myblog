@@ -138,18 +138,52 @@ if (typeof window.RustPlayground === "undefined") {
       if (counter) counter.textContent = currentIndex;
     }
 
+    getLang() {
+      if (window.RUST_PAGE_LANG) return window.RUST_PAGE_LANG;
+      const htmlLang = document.documentElement.lang;
+      if (htmlLang && htmlLang.startsWith("en")) return "en";
+      if (window.location.pathname.startsWith("/en/")) return "en";
+      return "ru";
+    }
+
+    getI18n() {
+      const lang = this.getLang();
+      const dict = {
+        ru: {
+          syntaxLabel: "Синтаксис:",
+          exampleLabel: "Пример:",
+          officialDoc: "📚 Документация 🦀",
+          currentArticle: "📌 Эта статья",
+          blogArticle: "✍️ Статья в блоге: ",
+          compiling: "Компилируется...",
+          running: "⏳ Запуск...",
+          connError: "Ошибка подключения: "
+        },
+        en: {
+          syntaxLabel: "Syntax:",
+          exampleLabel: "Example:",
+          officialDoc: "📚 Documentation 🦀",
+          currentArticle: "📌 Current Article",
+          blogArticle: "✍️ Blog Post: ",
+          compiling: "Compiling...",
+          running: "⏳ Running...",
+          connError: "Connection error: "
+        }
+      };
+      return dict[lang] || dict.ru;
+    }
+
     async runCurrentSlide(container) {
       if (this.isCodeRunning) return;
       this.isCodeRunning = true;
 
+      const i18n = this.getI18n();
       const currentSlide = container.querySelector(".slide:not([hidden])");
       const codeBlock = currentSlide.querySelector("pre code");
       const outputContainer = currentSlide.querySelector(".output-container");
       const outputContent = currentSlide.querySelector(".output-content");
       const runButton = container.querySelector(".run-button");
       const originalText = runButton.innerHTML;
-
-
 
       if (!codeBlock || !outputContainer || !outputContent) return;
 
@@ -168,11 +202,11 @@ if (typeof window.RustPlayground === "undefined") {
         .trim();
 
       runButton.disabled = true;
-      runButton.innerHTML = "⏳ Запуск...";
+      runButton.innerHTML = i18n.running;
       runButton.classList.add("bg-blue-600", "cursor-wait");
       runButton.classList.remove("bg-blue-500", "hover:bg-blue-600");
 
-      outputContent.textContent = "Компилируется...";
+      outputContent.textContent = i18n.compiling;
       outputContainer.classList.remove("hidden");
 
       try {
@@ -202,7 +236,7 @@ if (typeof window.RustPlayground === "undefined") {
           outputContent.classList.remove("text-red-400");
         }
       } catch (error) {
-        outputContent.textContent = `Ошибка подключения: ${error.message}`;
+        outputContent.textContent = `${i18n.connError}${error.message}`;
         outputContent.classList.add("text-red-400");
       } finally {
         this.isCodeRunning = false;
@@ -220,10 +254,9 @@ if (typeof window.RustPlayground === "undefined") {
       if (!tooltipData) return;
 
       const keywordSet = new Set(tooltipData);
-
-
-   
-
+      const lang = this.getLang();
+      const i18n = this.getI18n();
+      const isEn = lang === "en";
 
       document
         .querySelectorAll("code.language-rust:not(.processed)")
@@ -262,21 +295,51 @@ if (typeof window.RustPlayground === "undefined") {
                   break;
                 }
 
+                const cleanText = text.replace(/\\/g, "");
+                let targetKeyword = cleanText;
+
+                if (cleanText === "for") {
+                  let textBefore = "";
+                  let p = token.previousSibling;
+                  while (p) {
+                    textBefore = (p.textContent || "") + textBefore;
+                    p = p.previousSibling;
+                  }
+                  if (/\bimpl\b/.test(textBefore)) {
+                    targetKeyword = "impl ... for";
+                  } else {
+                    let textAfter = "";
+                    let n = token.nextSibling;
+                    while (n && textAfter.length < 20) {
+                      textAfter += (n.textContent || "");
+                      n = n.nextSibling;
+                    }
+                    if (/^\s*<['a-zA-Z_]/.test(textAfter)) {
+                      targetKeyword = "for<'a>";
+                    }
+                  }
+                }
+
                 for (const keywordObj of keywordSet) {
                   const kw = keywordObj.keyword.replace(/\\/g, "");
                   const cleanPath = path.replace(/\\/g, "");
-                  const cleanText = text.replace(/\\/g, "");
 
                   if (
+                    kw === targetKeyword ||
                     kw === cleanPath ||
                     (kw.includes("::") && cleanPath.endsWith(kw)) ||
                     (kw.includes("::") && kw.endsWith(cleanPath) && cleanPath.includes("::")) ||
-                    (kw === cleanText && !cleanPath.includes("::"))
+                    (kw === cleanText && targetKeyword === cleanText && !cleanPath.includes("::"))
                   ) {
                     // Создаем новый элемент с подсказкой
                     const tooltipSpan = document.createElement("span");
                     tooltipSpan.className = "rust-keyword";
                     tooltipSpan.textContent = text;
+
+                    const summaryText = (isEn && keywordObj.summary_en) ? keywordObj.summary_en : keywordObj.summary;
+                    const syntaxText = (isEn && keywordObj.syntax_en) ? keywordObj.syntax_en : keywordObj.syntax;
+                    const exampleText = (isEn && keywordObj.example_en) ? keywordObj.example_en : keywordObj.example;
+                    const docText = (isEn && keywordObj.doc_en) ? keywordObj.doc_en : keywordObj.doc;
 
                     // Обновленное тело попапа
                     tooltipSpan.setAttribute(
@@ -285,29 +348,34 @@ if (typeof window.RustPlayground === "undefined") {
 <div class="rust-tooltip ${this.isDarkTheme() ? "dark" : "light"}">
     <header>
         <span class="keyword">${keywordObj.keyword.replace(/\\/g, "")}</span>
-        <span class="summary">${keywordObj.summary}</span>
+        <span class="summary">${summaryText}</span>
     </header>
-    <div class="syntax"><strong>Синтаксис:</strong> ${
-      keywordObj.syntax
-    }</code></div>
-    <div class="example"><strong>Пример: </strong><code>${
-      keywordObj.example
-    }</code></div>
-    <div class="doc">${keywordObj.doc}</div>
+    <div class="syntax"><strong>${i18n.syntaxLabel}</strong> ${syntaxText}</code></div>
+    <div class="example"><strong>${i18n.exampleLabel} </strong><code>${exampleText}</code></div>
+    <div class="doc">${docText}</div>
     
     <div class="doc-links">
         <a href="${keywordObj.docs.official}" target="_blank" 
-           class="official-link">📚 Документация 🦀</a>
+           class="official-link">${i18n.officialDoc}</a>
         
         ${
           keywordObj.docs.blog.length > 0
             ? keywordObj.docs.blog
-                .map(
-                  (blog) => `
-                <a href="${blog.url}" target="_blank" 
-                   class="blog-link">✍️ ${blog.title}</a>
-            `
-                )
+                .map((blog) => {
+                  const currentPath = window.location.pathname.replace(/\/$/, "");
+                  const currentSlug = currentPath.split("/").pop();
+                  const blogUrl = blog.url || "";
+                  const cleanBlogPath = blogUrl.replace(/#.*$/, "").replace(/\/$/, "");
+                  const blogSlug = cleanBlogPath.split("/").pop();
+                  const isCurrentArticle = Boolean(blogSlug && currentSlug && blogSlug === currentSlug);
+                  const blogTitle = (isEn && blog.title_en) ? blog.title_en : blog.title;
+
+                  if (isCurrentArticle) {
+                    return `<a href="${blog.url}" class="blog-link current-article">${i18n.currentArticle}</a>`;
+                  } else {
+                    return `<a href="${blog.url}" target="_blank" class="blog-link">${i18n.blogArticle}${blogTitle}</a>`;
+                  }
+                })
                 .join("")
             : ``
         }
