@@ -1,1 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Borrow-Checker on Eagle blog</title><link>https://eagle2000.space/tags/borrow-checker/</link><description>Recent content in Borrow-Checker on Eagle blog</description><generator>Hugo -- gohugo.io</generator><language>ru</language><lastBuildDate>Tue, 21 Jul 2026 14:16:00 +0300</lastBuildDate><atom:link href="https://eagle2000.space/tags/borrow-checker/index.xml" rel="self" type="application/rss+xml"/><item><title>Глубокое погружение в Lifetimes (времена жизни) в Rust: работа со ссылками без ошибок и паники</title><link>https://eagle2000.space/rust/rust-lifetimes-deep-dive/</link><pubDate>Tue, 21 Jul 2026 14:16:00 +0300</pubDate><guid>https://eagle2000.space/rust/rust-lifetimes-deep-dive/</guid><description/><media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://eagle2000.space/rust/rust-lifetimes-deep-dive/featured.png"/></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Borrow-Checker on Eagle blog</title>
+    <link>http://localhost:50072/tags/borrow-checker/</link>
+    <description>Recent content in Borrow-Checker on Eagle blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru</language>
+    
+    <lastBuildDate>Mon, 10 Aug 2026 10:00:00 +0300</lastBuildDate><atom:link href="http://localhost:50072/tags/borrow-checker/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Глубокое погружение в Lifetimes (времена жизни) в Rust: работа со ссылками без ошибок и паники</title>
+      <link>http://localhost:50072/rust/rust-lifetimes-deep-dive/</link>
+      <pubDate>Mon, 10 Aug 2026 10:00:00 +0300</pubDate>
+      
+      <guid>http://localhost:50072/rust/rust-lifetimes-deep-dive/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:50072/rust/rust-lifetimes-deep-dive/featured.png" />
+    </item>
+    
+  </channel>
+</rss>

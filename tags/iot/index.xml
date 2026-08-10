@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Iot on Eagle blog</title>
+    <link>http://localhost:50072/tags/iot/</link>
+    <description>Recent content in Iot on Eagle blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru</language>
+    
+    <lastBuildDate>Mon, 10 Aug 2026 12:00:00 +0300</lastBuildDate><atom:link href="http://localhost:50072/tags/iot/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>ESP32 &#43; Rust: собираем всё вместе. Веб-термометр на микроконтроллере</title>
+      <link>http://localhost:50072/rust/esp32-rust-thermometer/</link>
+      <pubDate>Mon, 10 Aug 2026 12:00:00 +0300</pubDate>
+      
+      <guid>http://localhost:50072/rust/esp32-rust-thermometer/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:50072/rust/esp32-rust-thermometer/featured.png" />
+    </item>
+    
+  </channel>
+</rss>

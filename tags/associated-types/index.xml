@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Associated-Types on Eagle blog</title>
-    <link>http://localhost:1313/tags/associated-types/</link>
+    <link>http://localhost:50072/tags/associated-types/</link>
     <description>Recent content in Associated-Types on Eagle blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru</language>
     
-    <lastBuildDate>Wed, 05 Aug 2026 10:43:28 +0300</lastBuildDate><atom:link href="http://localhost:1313/tags/associated-types/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 09 Aug 2026 10:43:28 +0300</lastBuildDate><atom:link href="http://localhost:50072/tags/associated-types/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Продвинутые типажи в Rust: ассоциированные типы, супертрейты и blanket-реализации</title>
-      <link>http://localhost:1313/rust/rust-advanced-traits/</link>
-      <pubDate>Wed, 05 Aug 2026 10:43:28 +0300</pubDate>
+      <link>http://localhost:50072/rust/rust-advanced-traits/</link>
+      <pubDate>Sun, 09 Aug 2026 10:43:28 +0300</pubDate>
       
-      <guid>http://localhost:1313/rust/rust-advanced-traits/</guid>
+      <guid>http://localhost:50072/rust/rust-advanced-traits/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/rust/rust-advanced-traits/featured.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:50072/rust/rust-advanced-traits/featured.png" />
     </item>
     
   </channel>
