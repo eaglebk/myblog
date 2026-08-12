@@ -37,7 +37,7 @@ fn print_debug<T: ?Sized + std::fmt::Debug>(val: &T) {
 }
 
 fn main() {
-    let s: &str = "Привет, мир!"; // str — это DST (Dynamically Sized Type)
+    let s: &str = "Привет, мир!"; // str - это DST (Dynamically Sized Type)
     print_debug(s);
 }
 

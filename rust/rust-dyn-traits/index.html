@@ -4,7 +4,7 @@
   dir="ltr"
   class="scroll-smooth"
   data-default-appearance="dark"
-  data-auto-appearance="true"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=50072&amp;path=livereload" data-no-instant defer></script>
+  data-auto-appearance="true"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8">
   
     <meta http-equiv="content-language" content="ru">
@@ -34,46 +34,45 @@
     <meta name="description" content="Разбираемся, как устроен динамический полиморфизм и трейт-объекты (dyn Trait) в Rust. Изучаем толстые указатели (Fat Pointers), внутреннее строение vtable и детальные правила Object Safety.">
   
   
-    <meta name="keywords" content="rust,dev,traits,dyn,vtable,pro,">
+    <meta name="keywords" content="rust,dev,traits,dyn,vtable,middle,">
   
   
   
-  <link rel="canonical" href="http://localhost:50072/rust/rust-dyn-traits/">
-  
-  
-
-  
+  <link rel="canonical" href="http://localhost:1313/rust/rust-dyn-traits/">
   
   
 
   
-  <meta property="og:url" content="http://localhost:50072/rust/rust-dyn-traits/">
+  
+  
+
+  
+  <meta property="og:url" content="http://localhost:1313/rust/rust-dyn-traits/">
 	<meta property="og:site_name" content="Eagle blog">
 	<meta property="og:title" content="Трейт-объекты: заглядываем под капот динамического полиморфизма в Rust">
 	<meta property="og:description" content="Разбираемся, как устроен динамический полиморфизм и трейт-объекты (dyn Trait) в Rust. Изучаем толстые указатели (Fat Pointers), внутреннее строение vtable и детальные правила Object Safety.">
 	<meta property="og:locale" content="ru">
 	<meta property="og:type" content="article">
 		<meta property="article:section" content="rust">
-		<meta property="article:published_time" content="2026-08-08T10:43:28+03:00">
-		<meta property="article:modified_time" content="2026-08-08T10:43:28+03:00">
+		<meta property="article:published_time" content="2026-08-12T12:28:27+03:00">
+		<meta property="article:modified_time" content="2026-08-12T12:28:27+03:00">
 		<meta property="article:tag" content="Rust">
 		<meta property="article:tag" content="Dev">
 		<meta property="article:tag" content="Traits">
 		<meta property="article:tag" content="Dyn">
 		<meta property="article:tag" content="Vtable">
-		<meta property="article:tag" content="Pro">
-		<meta property="og:image" content="http://localhost:50072/rust/rust-dyn-traits/featured.png">
-			<meta property="og:see_also" content="http://localhost:50072/rust/esp32-rust-thermometer/">
-			<meta property="og:see_also" content="http://localhost:50072/rust/rust-attributes-and-cfg/">
-			<meta property="og:see_also" content="http://localhost:50072/rust/rust-interior-mutability/">
-			<meta property="og:see_also" content="http://localhost:50072/rust/rust-lifetimes-deep-dive/">
-			<meta property="og:see_also" content="http://localhost:50072/rust/rust-pattern-matching-deep-dive/">
-			<meta property="og:see_also" content="http://localhost:50072/rust/rust-advanced-traits/">
-			<meta property="og:see_also" content="http://localhost:50072/rust/rust-pet-care-architecture/">
+		<meta property="article:tag" content="Middle">
+		<meta property="og:image" content="http://localhost:1313/rust/rust-dyn-traits/featured.png">
+			<meta property="og:see_also" content="http://localhost:1313/rust/rust-raii-box-deref/">
+			<meta property="og:see_also" content="http://localhost:1313/rust/rust-closures/">
+			<meta property="og:see_also" content="http://localhost:1313/rust/esp32-rust-thermometer/">
+			<meta property="og:see_also" content="http://localhost:1313/rust/rust-attributes-and-cfg/">
+			<meta property="og:see_also" content="http://localhost:1313/rust/rust-interior-mutability/">
+			<meta property="og:see_also" content="http://localhost:1313/rust/rust-lifetimes-deep-dive/">
 
   
 	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:image" content="http://localhost:50072/rust/rust-dyn-traits/featured.png">
+	<meta name="twitter:image" content="http://localhost:1313/rust/rust-dyn-traits/featured.png">
 	<meta name="twitter:title" content="Трейт-объекты: заглядываем под капот динамического полиморфизма в Rust">
 	<meta name="twitter:description" content="Разбираемся, как устроен динамический полиморфизм и трейт-объекты (dyn Trait) в Rust. Изучаем толстые указатели (Fat Pointers), внутреннее строение vtable и детальные правила Object Safety.">
 
@@ -272,21 +271,21 @@
     "headline": "Трейт-объекты: заглядываем под капот динамического полиморфизма в Rust",
     "description": "Разбираемся, как устроен динамический полиморфизм и трейт-объекты (dyn Trait) в Rust. Изучаем толстые указатели (Fat Pointers), внутреннее строение vtable и детальные правила Object Safety.",
     "inLanguage": "ru",
-    "url" : "http://localhost:50072/rust/rust-dyn-traits/",
+    "url" : "http://localhost:1313/rust/rust-dyn-traits/",
     "author" : {
       "@type": "Person",
       "name": ""
     },
     "copyrightYear": "2026",
-    "dateCreated": "2026-08-08T10:43:28\u002b03:00",
-    "datePublished": "2026-08-08T10:43:28\u002b03:00",
+    "dateCreated": "2026-08-12T12:28:27\u002b03:00",
+    "datePublished": "2026-08-12T12:28:27\u002b03:00",
     
-    "dateModified": "2026-08-08T10:43:28\u002b03:00",
+    "dateModified": "2026-08-12T12:28:27\u002b03:00",
     
-    "keywords": ["rust","dev","traits","dyn","vtable","pro"],
+    "keywords": ["rust","dev","traits","dyn","vtable","middle"],
     
-    "mainEntityOfPage": "http://localhost:50072/rust/rust-dyn-traits/",
-    "wordCount": "1889"
+    "mainEntityOfPage": "http://localhost:1313/rust/rust-dyn-traits/",
+    "wordCount": "2112"
   }]
   </script>
 
@@ -1162,7 +1161,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <span>1889 слов</span><span class="px-2 text-primary-500">&middot;</span><span title="Время чтения">9 минут</span><span class="px-2 text-primary-500">&middot;</span><span>
+      <span>2112 слов</span><span class="px-2 text-primary-500">&middot;</span><span title="Время чтения">10 минут</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -1232,7 +1231,7 @@
 </svg></span></span>
   </span>
 </span>
-<span class="px-2 text-primary-500">&middot;</span><span class="inline-flex items-center rounded-md px-2 py-0.5 text-xs font-semibold border bg-rose-500/10 dark:bg-rose-500/20 text-rose-600 dark:text-rose-400 border-rose-500/20 dark:border-rose-500/30">Rust-pro</span>
+<span class="px-2 text-primary-500">&middot;</span><span class="inline-flex items-center rounded-md px-2 py-0.5 text-xs font-semibold border bg-blue-500/10 dark:bg-blue-500/20 text-blue-600 dark:text-blue-400 border-blue-500/20 dark:border-blue-500/30">Rust-middle</span>
     
 
     
@@ -1390,7 +1389,7 @@
             
             
               
-                <a class="relative mt-[0.5rem] me-2" href="/tags/pro/">
+                <a class="relative mt-[0.5rem] me-2" href="/tags/middle/">
                   <span class="flex cursor-pointer">
   
   
@@ -1399,7 +1398,7 @@
     <span
       class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
   
-    Pro
+    Middle
   </span>
 </span>
 
@@ -1466,6 +1465,8 @@
       <ul>
         <li><a href="#как-трейт-объект-представлен-в-компиляторе">Как трейт-объект представлен в компиляторе?</a></li>
         <li><a href="#устройство-виртуальной-таблицы-vtable">Устройство виртуальной таблицы (<code>vtable</code>)</a></li>
+        <li><a href="#производительность-branch-predictor-и-tail-call-optimization-tco">Производительность, Branch Predictor и Tail Call Optimization (TCO)</a></li>
+        <li><a href="#извлечение-метаданных-vtable-в-современном-rust">Извлечение метаданных Vtable в современном Rust</a></li>
       </ul>
     </li>
     <li><a href="#4-отмена-ограничения-sized-через-sized">4. Отмена ограничения Sized через <code>?Sized</code></a></li>
@@ -1510,6 +1511,8 @@
       <ul>
         <li><a href="#как-трейт-объект-представлен-в-компиляторе">Как трейт-объект представлен в компиляторе?</a></li>
         <li><a href="#устройство-виртуальной-таблицы-vtable">Устройство виртуальной таблицы (<code>vtable</code>)</a></li>
+        <li><a href="#производительность-branch-predictor-и-tail-call-optimization-tco">Производительность, Branch Predictor и Tail Call Optimization (TCO)</a></li>
+        <li><a href="#извлечение-метаданных-vtable-в-современном-rust">Извлечение метаданных Vtable в современном Rust</a></li>
       </ul>
     </li>
     <li><a href="#4-отмена-ограничения-sized-через-sized">4. Отмена ограничения Sized через <code>?Sized</code></a></li>
@@ -1564,7 +1567,7 @@
       <div class="series-progress-card">
         <div style="display: flex; flex-direction: column;">
           <span class="text-xs">Статей прочитано</span>
-          <span id="series-progress-text">0/46</span>
+          <span id="series-progress-text">0/47</span>
         </div>
         <div class="series-circle-container">
           <svg class="series-circle-svg">
@@ -1583,6 +1586,10 @@
         
         
 
+        
+          
+            
+          
         
           
             
@@ -2253,7 +2260,7 @@
               
             
               
-            
+                
               
             
               
@@ -2282,7 +2289,13 @@
             
               
             
-            <details class="series-level-group" >
+              
+            
+              
+            
+              
+            
+            <details class="series-level-group" open>
               <summary class="series-level-header">
                 <div class="series-level-header-left">
                   <span class="series-level-icon">🔵</span>
@@ -2417,11 +2430,46 @@
                   <div class="series-item" data-post-path="/rust/rust-raii-box-deref/">
                     <div class="series-item-left">
                       <span class="series-item-num">
+                        27
+                      </span>
+                      <span class="series-item-title">
+                        
+                          <a href="/rust/rust-raii-box-deref/">Управление памятью в Rust: идиома RAII, указатель Box и механизмы Deref Coercion</a>
+                        
+                      </span>
+                    </div>
+                    <span class="series-status-badge" data-status="unread">
+                      Не прочитана
+                    </span>
+                  </div>
+                
+                  
+                  <div class="series-item current" data-post-path="/rust/rust-dyn-traits/">
+                    <div class="series-item-left">
+                      <span class="series-item-num">
+                        28
+                      </span>
+                      <span class="series-item-title">
+                        
+                          Трейт-объекты: заглядываем под капот динамического полиморфизма в Rust
+                          <span class="series-item-current-label">(текущая)</span>
+                        
+                      </span>
+                    </div>
+                    <span class="series-status-badge" data-status="unread">
+                      Не прочитана
+                    </span>
+                  </div>
+                
+                  
+                  <div class="series-item" data-post-path="/rust/rust-closures/">
+                    <div class="series-item-left">
+                      <span class="series-item-num">
                         29
                       </span>
                       <span class="series-item-title">
                         
-                          <a href="/rust/rust-raii-box-deref/">Управление памятью в Rust: идиома RAII, указатель Box и магия Deref Coercion</a>
+                          <a href="/rust/rust-closures/">Замыкания в Rust: функции с собственной памятью</a>
                         
                       </span>
                     </div>
@@ -2690,45 +2738,6 @@
           
         
           
-            
-            
-              
-                
-              
-            
-            <details class="series-level-group" open>
-              <summary class="series-level-header">
-                <div class="series-level-header-left">
-                  <span class="series-level-icon">🔴</span>
-                  <span class="series-level-name">Продвинутый уровень (Rust-pro)</span>
-                </div>
-                <svg class="series-level-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="6 9 12 15 18 9"></polyline>
-                </svg>
-              </summary>
-              <div class="series-level-items">
-                
-                  
-                  <div class="series-item current" data-post-path="/rust/rust-dyn-traits/">
-                    <div class="series-item-left">
-                      <span class="series-item-num">
-                        27
-                      </span>
-                      <span class="series-item-title">
-                        
-                          Трейт-объекты: заглядываем под капот динамического полиморфизма в Rust
-                          <span class="series-item-current-label">(текущая)</span>
-                        
-                      </span>
-                    </div>
-                    <span class="series-status-badge" data-status="unread">
-                      Не прочитана
-                    </span>
-                  </div>
-                
-              </div>
-            </details>
-          
         
       </div>
     </div>
@@ -2749,8 +2758,8 @@
     </span>
     
 </h2>
-<p>В предыдущей статье мы обсуждали статический полиморфизм: компилятор Rust берет обобщенный код и на этапе сборки копирует его для каждого используемого типа (мономорфизация). Это быстро и эффективно, но что делать, если на этапе компиляции мы <strong>физически не знаем</strong>, какие типы придут в программу?</p>
-<p>Представьте, что вы пишите игровой движок или систему обработки задач. У вас есть список объектов, которые нужно отрисовать или запустить. Один объект — это сетевое соединение, другой — база данных, третий — таймер. Они абсолютно разные, но вы хотите сложить их в один массив и вызвать метод <code>execute()</code>.</p>
+<p>В прошлых статьях мы разгрузили базовые трейты и работу с кучей через указатели <code>Box&lt;T&gt;</code>. При статическом полиморфизме компилятор Rust берет обобщенный код и на этапе сборки копирует его под каждый используемый тип (мономорфизация). Это быстро и эффективно, но что делать, если на этапе компиляции мы <strong>физически не знаем</strong>, какие типы придут в программу?</p>
+<p>В качестве примера рассмотрим архитектуру игрового движка или планировщика задач. Допустим, у нас есть список объектов, которые нужно запустить: сетевое соединение, запрос к базе данных и таймер. Это принципиально разные типы данных, но мы хотим хранить их в едином контейнере и вызывать общий метод <code>execute()</code>.</p>
 <p>Здесь на сцену выходит <strong>динамический полиморфизм</strong> и <strong>трейт-объекты</strong> (<code>dyn Trait</code>). В этой статье мы заглянем под капот рантайма Rust, изучим устройство виртуальных таблиц (<code>vtable</code>), выясним, почему указатели вдруг становятся «толстыми», и разберем правила динамической совместимости (Object Safety).</p>
 <hr>
 
@@ -2774,7 +2783,7 @@
 	</thead>
 	<tbody>
 			<tr>
-					<td><strong>Время разрешения</strong></td>
+					<td><strong>Связывание метода (Dispatch)</strong></td>
 					<td>При компиляции (Compile-time)</td>
 					<td>Во время работы (Runtime)</td>
 			</tr>
@@ -2841,7 +2850,7 @@
 </h2>
 <p>В Rust все типы делятся по принципу известности размера:</p>
 <ol>
-<li><strong>Sized-типы:</strong> Их размер в байтах точно известен компилятору заранее. Например, <code>i64</code> занимает 8 байт, а <code>Point { x: i32, y: i32 }</code> — 8 байт. Их можно создавать на стеке и передавать по значению.</li>
+<li><strong>Sized-типы:</strong> Их размер в байтах точно известен компилятору заранее. Например, <code>i64</code> занимает 8 байт, а <code>Point { x: i32, y: i32 }</code> - 8 байт. Их можно создавать на стеке и передавать по значению.</li>
 <li><strong>DST (Dynamically Sized Types) / Unsized-типы:</strong> Их размер вычисляется только в процессе работы. Это слайсы <code>[T]</code>, строки <code>str</code> и трейт-объекты вроде <code>dyn Debug</code>.</li>
 </ol>
 <div class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm" data-type="caution">
@@ -2906,7 +2915,52 @@
 <p>Компилятор превращает это в следующий рантайм-вызов:</p>
 <div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="c1">// Достаем адрес метода из vtable и передаем адрес данных первым аргументом:
 </span></span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">obj</span><span class="p">.</span><span class="n">vtable</span><span class="p">.</span><span class="n">execute</span><span class="p">)(</span><span class="n">obj</span><span class="p">.</span><span class="n">data</span><span class="p">);</span></span></span></code></pre></div></div>
-<p>Из-за этого вызов <code>dyn</code> методов сопровождается <strong>двойной индирекцией</strong> (сначала читаем vtable, потом переходим по адресу функции) и мешает процессору делать предсказание переходов.</p>
+<div class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm" data-type="note">
+      <div class="flex items-center gap-2 font-semibold text-inherit">
+        <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM256 128c17.67 0 32 14.33 32 32c0 17.67-14.33 32-32 32S224 177.7 224 160C224 142.3 238.3 128 256 128zM296 384h-80C202.8 384 192 373.3 192 360s10.75-24 24-24h16v-64H224c-13.25 0-24-10.75-24-24S210.8 224 224 224h32c13.25 0 24 10.75 24 24v88h16c13.25 0 24 10.75 24 24S309.3 384 296 384z"/></svg>
+</span></div>
+        <div class="grow">
+          Примечание
+        </div>
+      </div><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p><strong>Как <code>Box&lt;dyn Trait&gt;</code> освобождает память?</strong>
+Когда <code>Box&lt;dyn Trait&gt;</code> выходит из области видимости, компилятор не знает размер типа на этапе сборки. Очистка происходит динамически: рантайм вызывает <code>destructor</code> по нулевому смещению vtable для освобождения внутренних ресурсов, а затем считывает поля <code>size</code> и <code>align</code> из vtable и передает их деаллокатору <code>__rust_dealloc(ptr, size, align)</code>.</p></div></div><div class="admonition relative overflow-hidden rounded-lg border-l-4 my-3 px-4 py-3 shadow-sm" data-type="tip">
+      <div class="flex items-center gap-2 font-semibold text-inherit">
+        <div class="flex shrink-0 h-5 w-5 items-center justify-center text-lg"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="currentColor" d="M112.1 454.3c0 6.297 1.816 12.44 5.284 17.69l17.14 25.69c5.25 7.875 17.17 14.28 26.64 14.28h61.67c9.438 0 21.36-6.401 26.61-14.28l17.08-25.68c2.938-4.438 5.348-12.37 5.348-17.7L272 415.1h-160L112.1 454.3zM191.4 .0132C89.44 .3257 16 82.97 16 175.1c0 44.38 16.44 84.84 43.56 115.8c16.53 18.84 42.34 58.23 52.22 91.45c.0313 .25 .0938 .5166 .125 .7823h160.2c.0313-.2656 .0938-.5166 .125-.7823c9.875-33.22 35.69-72.61 52.22-91.45C351.6 260.8 368 220.4 368 175.1C368 78.61 288.9-.2837 191.4 .0132zM192 96.01c-44.13 0-80 35.89-80 79.1C112 184.8 104.8 192 96 192S80 184.8 80 176c0-61.76 50.25-111.1 112-111.1c8.844 0 16 7.159 16 16S200.8 96.01 192 96.01z"/></svg>
+</span></div>
+        <div class="grow">
+          Совет
+        </div>
+      </div><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p><strong>Где хранится vtable в памяти программы?</strong>
+Сами таблицы vtable генерируются в единственном экземпляре для каждого типа и помещаются компилятором в защищенную от записи секцию бинарного файла (<code>.rodata</code> в Linux/ELF или <code>__const</code> в macOS). Это гарантирует, что программа не сможет случайно или злонамеренно перезаписать указатели на функции во время выполнения.</p></div></div>
+<h3 class="relative group">Производительность, Branch Predictor и Tail Call Optimization (TCO)
+    <div id="производительность-branch-predictor-и-tail-call-optimization-tco" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%d0%bf%d1%80%d0%be%d0%b8%d0%b7%d0%b2%d0%be%d0%b4%d0%b8%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d0%be%d1%81%d1%82%d1%8c-branch-predictor-%d0%b8-tail-call-optimization-tco" aria-label="Якорь">#</a>
+    </span>
+    
+</h3>
+<p>Вызов <code>dyn</code> методов сопровождается <strong>двойной индирекцией</strong> (сначала читаем vtable, затем делаем переход по адресу функции), что создает некую нагрузку на предсказатель переходов процессора (Branch Predictor).</p>
+<p>Однако компилятор <code>rustc</code> умеет эффективно оптимизировать такие вызовы: если вызов метода <code>dyn Trait</code> является последней операцией в теле функции, компилятор заменяет тяжелую инструкцию <code>call</code> на прямой переход <code>jmp qword ptr [rsi + offset]</code> (<strong>Tail Call Optimization / TCO</strong>). Это позволяет избежать создания лишнего кадра стека.</p>
+
+<h3 class="relative group">Извлечение метаданных Vtable в современном Rust
+    <div id="извлечение-метаданных-vtable-в-современном-rust" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#%d0%b8%d0%b7%d0%b2%d0%bb%d0%b5%d1%87%d0%b5%d0%bd%d0%b8%d0%b5-%d0%bc%d0%b5%d1%82%d0%b0%d0%b4%d0%b0%d0%bd%d0%bd%d1%8b%d1%85-vtable-%d0%b2-%d1%81%d0%be%d0%b2%d1%80%d0%b5%d0%bc%d0%b5%d0%bd%d0%bd%d0%be%d0%bc-rust" aria-label="Якорь">#</a>
+    </span>
+    
+</h3>
+<p>Начиная с версии Rust 1.52, получить указатель на vtable из трейт-объекта можно безопасно и официально с помощью функции <code>std::ptr::metadata</code>:</p>
+<div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">use</span><span class="w"> </span><span class="n">std</span>::<span class="n">ptr</span>::<span class="p">{</span><span class="n">metadata</span><span class="p">,</span><span class="w"> </span><span class="n">DynMetadata</span><span class="p">};</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">let</span><span class="w"> </span><span class="n">task</span>: <span class="nb">Box</span><span class="o">&lt;</span><span class="k">dyn</span><span class="w"> </span><span class="n">Task</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Box</span>::<span class="n">new</span><span class="p">(</span><span class="n">NetworkTask</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">let</span><span class="w"> </span><span class="n">raw_ptr</span>: <span class="o">*</span><span class="k">const</span><span class="w"> </span><span class="k">dyn</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;*</span><span class="n">task</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">// Получаем официальный указатель на vtable без опасного transmute
+</span></span></span><span class="line"><span class="cl"><span class="kd">let</span><span class="w"> </span><span class="n">vtable_meta</span>: <span class="nc">DynMetadata</span><span class="o">&lt;</span><span class="k">dyn</span><span class="w"> </span><span class="n">Task</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">metadata</span><span class="p">(</span><span class="n">raw_ptr</span><span class="p">);</span></span></span></code></pre></div></div>
 <hr>
 
 <h2 class="relative group">4. Отмена ограничения Sized через <code>?Sized</code>
@@ -2953,7 +3007,7 @@
     </span>
     
 </h3>
-<p>Мы можем легко преобразовать <code>&amp;String</code> в <code>&amp;dyn ToString</code> — указатель становится толстым. Но ссылка <code>&amp;str</code> <strong>уже является толстым указателем</strong> (хранит адрес и длину). Преобразовать <code>&amp;str</code> в <code>dyn ToString</code> напрямую невозможно, так как для этого потребовался бы «трехмерный» указатель (адрес + длина + vtable), что не поддерживается архитектурой процессоров и языка.</p>
+<p>Мы можем легко преобразовать <code>&amp;String</code> в <code>&amp;dyn ToString</code> - указатель становится толстым. Но ссылка <code>&amp;str</code> <strong>уже является толстым указателем</strong> (хранит адрес и длину). Преобразовать <code>&amp;str</code> в <code>dyn ToString</code> напрямую невозможно, так как для этого потребовался бы «трехмерный» указатель (адрес + длина + vtable), что не поддерживается архитектурой процессоров и языка.</p>
 <hr>
 
 <h2 class="relative group">6. Двойные трейт-объекты (Double Trait Objects)
@@ -3001,7 +3055,7 @@
     </span>
     
 </h2>
-<p>Чтобы компилятор мог построить трейт-объект <code>dyn Trait</code>, сам трейт должен соответствовать правилам <strong>динамической совместимости</strong> (исторически — <strong>Object Safety</strong>).</p>
+<p>Чтобы компилятор мог построить трейт-объект <code>dyn Trait</code>, сам трейт должен соответствовать правилам <strong>динамической совместимости</strong> (исторически - <strong>Object Safety</strong>).</p>
 <p>Дело в том, что для <code>dyn Trait</code> компилятор должен сгенерировать неявную имплементацию самого трейта, переводящую вызовы в vtable:</p>
 <div class="highlight-wrapper"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">impl</span><span class="w"> </span><span class="n">Trait</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="k">dyn</span><span class="w"> </span><span class="n">Trait</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">fn</span> <span class="nf">method</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -3054,7 +3108,7 @@
 <p>Давайте посмотрим, как работают эти механизмы в интерактивных слайдах:</p>
 
 
-<div id="abf9bc49e961b7f664c28dd93f1d46c0" class="rust-slides bg-gray-900 rounded-lg overflow-hidden my-8">
+<div id="357f19d0a00e89ad659015b06eb2bced" class="rust-slides bg-gray-900 rounded-lg overflow-hidden my-8">
     
     <div class="flex justify-between items-center bg-gray-800 px-4 py-2">
       <span class="font-mono text-sm text-white">Трейт-объекты и динамический полиморфизм</span>
@@ -3137,7 +3191,7 @@
 </span></span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">s</span>: <span class="kp">&amp;</span><span class="kt">str</span> <span class="o">=</span><span class="w"> </span><span class="s">&#34;Привет, мир!&#34;</span><span class="p">;</span><span class="w"> </span><span class="c1">// str — это DST (Dynamically Sized Type)
+</span></span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">s</span>: <span class="kp">&amp;</span><span class="kt">str</span> <span class="o">=</span><span class="w"> </span><span class="s">&#34;Привет, мир!&#34;</span><span class="p">;</span><span class="w"> </span><span class="c1">// str - это DST (Dynamically Sized Type)
 </span></span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="w">    </span><span class="n">print_debug</span><span class="p">(</span><span class="n">s</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="w">
@@ -3469,7 +3523,7 @@
 <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
 <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
 
-<div id="quiz-1786385700599564000" class="quiz-mount" data-lang="ru" data-name="Трейт-объекты и динамический полиморфизм" data-firebase='{
+<div id="quiz-1786532289917759000" class="quiz-mount" data-lang="ru" data-name="Трейт-объекты и динамический полиморфизм" data-firebase='{
   "apiKey": "AIzaSyDpJ8bNxx9MvSeu9PsXzk3H37AeYQjBv4M",
   "authDomain": "eagleblog-b0286.firebaseapp.com",
   "projectId": "eagleblog-b0286",
@@ -3478,14 +3532,14 @@
   "appId": "1:942835714160:web:7ba3682059f8179a9d0cb5",
   "measurementId": "G-1K8G7FW77W"
 }'></div>
-<script type="application/json" id="quiz-1786385700599564000-srcs">"[\"/rust/rust-dyn-traits/quizzes/dyn_traits.json\"]"</script>
+<script type="application/json" id="quiz-1786532289917759000-srcs">"[\"/rust/rust-dyn-traits/quizzes/dyn_traits.json\"]"</script>
 
 <script type="module">
   import { mountQuizWidget } from "\/js\/quiz-widget.min.js";
 
   if (typeof window.firebase !== "undefined") {
     if (!window.firebase.apps.length) {
-      const cfg = JSON.parse(document.getElementById("quiz-1786385700599564000").dataset.firebase || "{}");
+      const cfg = JSON.parse(document.getElementById("quiz-1786532289917759000").dataset.firebase || "{}");
       if (cfg.apiKey) {
         window.firebase.initializeApp(cfg);
         window.db = window.firebase.firestore();
@@ -3494,8 +3548,8 @@
       window.db = window.firebase.firestore();
     }
   }
-  const mount = document.getElementById("quiz-1786385700599564000");
-  const json  = document.getElementById("quiz-1786385700599564000-srcs").textContent;
+  const mount = document.getElementById("quiz-1786532289917759000");
+  const json  = document.getElementById("quiz-1786532289917759000-srcs").textContent;
   const srcs  = JSON.parse(json);
   const cfg   = JSON.parse(mount.dataset.firebase || "{}");
   const hljsThemeDark = "\u0022github-dark-dimmed\u0022";
@@ -3589,7 +3643,7 @@
 <div class="share-bar print:hidden"
      aria-label="Поделиться статьёй"
      data-share-title="Трейт-объекты: заглядываем под капот динамического полиморфизма в Rust"
-     data-share-url="http://localhost:50072/rust/rust-dyn-traits/"
+     data-share-url="http://localhost:1313/rust/rust-dyn-traits/"
      data-share-email-body="Прочитал статью «{title}»:
 {url}">
 
@@ -3739,7 +3793,7 @@
       <div class="series-progress-card">
         <div style="display: flex; flex-direction: column;">
           <span class="text-xs">Статей прочитано</span>
-          <span id="series-progress-text">0/46</span>
+          <span id="series-progress-text">0/47</span>
         </div>
         <div class="series-circle-container">
           <svg class="series-circle-svg">
@@ -3758,6 +3812,10 @@
         
         
 
+        
+          
+            
+          
         
           
             
@@ -4428,7 +4486,7 @@
               
             
               
-            
+                
               
             
               
@@ -4457,7 +4515,13 @@
             
               
             
-            <details class="series-level-group" >
+              
+            
+              
+            
+              
+            
+            <details class="series-level-group" open>
               <summary class="series-level-header">
                 <div class="series-level-header-left">
                   <span class="series-level-icon">🔵</span>
@@ -4592,11 +4656,46 @@
                   <div class="series-item" data-post-path="/rust/rust-raii-box-deref/">
                     <div class="series-item-left">
                       <span class="series-item-num">
+                        27
+                      </span>
+                      <span class="series-item-title">
+                        
+                          <a href="/rust/rust-raii-box-deref/">Управление памятью в Rust: идиома RAII, указатель Box и механизмы Deref Coercion</a>
+                        
+                      </span>
+                    </div>
+                    <span class="series-status-badge" data-status="unread">
+                      Не прочитана
+                    </span>
+                  </div>
+                
+                  
+                  <div class="series-item current" data-post-path="/rust/rust-dyn-traits/">
+                    <div class="series-item-left">
+                      <span class="series-item-num">
+                        28
+                      </span>
+                      <span class="series-item-title">
+                        
+                          Трейт-объекты: заглядываем под капот динамического полиморфизма в Rust
+                          <span class="series-item-current-label">(текущая)</span>
+                        
+                      </span>
+                    </div>
+                    <span class="series-status-badge" data-status="unread">
+                      Не прочитана
+                    </span>
+                  </div>
+                
+                  
+                  <div class="series-item" data-post-path="/rust/rust-closures/">
+                    <div class="series-item-left">
+                      <span class="series-item-num">
                         29
                       </span>
                       <span class="series-item-title">
                         
-                          <a href="/rust/rust-raii-box-deref/">Управление памятью в Rust: идиома RAII, указатель Box и магия Deref Coercion</a>
+                          <a href="/rust/rust-closures/">Замыкания в Rust: функции с собственной памятью</a>
                         
                       </span>
                     </div>
@@ -4865,45 +4964,6 @@
           
         
           
-            
-            
-              
-                
-              
-            
-            <details class="series-level-group" open>
-              <summary class="series-level-header">
-                <div class="series-level-header-left">
-                  <span class="series-level-icon">🔴</span>
-                  <span class="series-level-name">Продвинутый уровень (Rust-pro)</span>
-                </div>
-                <svg class="series-level-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="6 9 12 15 18 9"></polyline>
-                </svg>
-              </summary>
-              <div class="series-level-items">
-                
-                  
-                  <div class="series-item current" data-post-path="/rust/rust-dyn-traits/">
-                    <div class="series-item-left">
-                      <span class="series-item-num">
-                        27
-                      </span>
-                      <span class="series-item-title">
-                        
-                          Трейт-объекты: заглядываем под капот динамического полиморфизма в Rust
-                          <span class="series-item-current-label">(текущая)</span>
-                        
-                      </span>
-                    </div>
-                    <span class="series-status-badge" data-status="unread">
-                      Не прочитана
-                    </span>
-                  </div>
-                
-              </div>
-            </details>
-          
         
       </div>
     </div>
@@ -4965,7 +5025,7 @@
   
     <div class="flex-none relative overflow-hidden thumbnail_card_related" style="--thumbnail-aspect-ratio: 1.5">
       <img
-        src="/rust/rust-traits/featured_hu_b654d9de6d7156fd.png"
+        src="/rust/rust-traits/featured_hu_389e189891499bba.png"
         role="presentation"
         loading="lazy"
         decoding="async"
@@ -5292,7 +5352,7 @@
   
     <div class="flex-none relative overflow-hidden thumbnail_card_related" style="--thumbnail-aspect-ratio: 1.5">
       <img
-        src="/rust/rust-iterators-deep-dive/featured_hu_d427fdf603b7d3e0.png"
+        src="/rust/rust-advanced-traits/featured_hu_b30cef42830c0999.png"
         role="presentation"
         loading="lazy"
         decoding="async"
@@ -5320,11 +5380,11 @@
     <header>
       <a
         
-          href="/rust/rust-iterators-deep-dive/"
+          href="/rust/rust-advanced-traits/"
         
         class="not-prose before:absolute before:inset-0 decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 hover:underline hover:underline-offset-2">
         <h2>
-          Глубокое погружение в итераторы в Rust: написание своего типажа Iterator, .iter() vs .into_iter() и нулевая стоимость абстракций
+          Продвинутые типажи в Rust: ассоциированные типы, супертрейты и blanket-реализации
           
         </h2>
       </a>
@@ -5391,7 +5451,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <span>1080 слов</span><span class="px-2 text-primary-500">&middot;</span><span title="Время чтения">6 минут</span><span class="px-2 text-primary-500">&middot;</span><span>
+      <span>894 слова</span><span class="px-2 text-primary-500">&middot;</span><span title="Время чтения">5 минут</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -5405,7 +5465,7 @@
     
   
   <span
-    id="views_rust/rust-iterators-deep-dive/index.md"
+    id="views_rust/rust-advanced-traits/index.md"
     class="animate-pulse inline-block text-transparent max-h-3 rounded-full -mt-[2px] align-middle bg-neutral-300 dark:bg-neutral-400"
     title="views"
     >loading</span
@@ -5427,7 +5487,7 @@
     
   
   <span
-    id="likes_rust/rust-iterators-deep-dive/index.md"
+    id="likes_rust/rust-advanced-traits/index.md"
     class="animate-pulse inline-block text-transparent max-h-3 rounded-full -mt-[2px] align-middle bg-neutral-300 dark:bg-neutral-400"
     title="likes"
     >loading</span
@@ -5514,7 +5574,7 @@
             
             
               
-                <a class="relative mt-[0.5rem] me-2" href="/tags/iterators/">
+                <a class="relative mt-[0.5rem] me-2" href="/tags/traits/">
                   <span class="flex cursor-pointer">
   
   
@@ -5523,7 +5583,7 @@
     <span
       class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
   
-    Iterators
+    Traits
   </span>
 </span>
 
@@ -5536,7 +5596,7 @@
             
             
               
-                <a class="relative mt-[0.5rem] me-2" href="/tags/zero-cost-abstractions/">
+                <a class="relative mt-[0.5rem] me-2" href="/tags/associated-types/">
                   <span class="flex cursor-pointer">
   
   
@@ -5545,7 +5605,7 @@
     <span
       class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
   
-    Zero-Cost-Abstractions
+    Associated-Types
   </span>
 </span>
 
@@ -5558,7 +5618,7 @@
             
             
               
-                <a class="relative mt-[0.5rem] me-2" href="/tags/functional/">
+                <a class="relative mt-[0.5rem] me-2" href="/tags/supertraits/">
                   <span class="flex cursor-pointer">
   
   
@@ -5567,7 +5627,51 @@
     <span
       class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
   
-    Functional
+    Supertraits
+  </span>
+</span>
+
+                </a>
+              
+            
+          
+            
+              
+            
+            
+              
+                <a class="relative mt-[0.5rem] me-2" href="/tags/blanket-impls/">
+                  <span class="flex cursor-pointer">
+  
+  
+  
+  
+    <span
+      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  
+    Blanket-Impls
+  </span>
+</span>
+
+                </a>
+              
+            
+          
+            
+              
+            
+            
+              
+                <a class="relative mt-[0.5rem] me-2" href="/tags/fully-qualified-syntax/">
+                  <span class="flex cursor-pointer">
+  
+  
+  
+  
+    <span
+      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  
+    Fully-Qualified-Syntax
   </span>
 </span>
 
@@ -5634,7 +5738,7 @@
   
     <div class="flex-none relative overflow-hidden thumbnail_card_related" style="--thumbnail-aspect-ratio: 1.5">
       <img
-        src="/rust/rust-declarative-macros/featured_hu_17084d0867293e6a.png"
+        src="/rust/rust-pet-care-architecture/featured_hu_75caea86b1d4344d.png"
         role="presentation"
         loading="lazy"
         decoding="async"
@@ -5662,11 +5766,11 @@
     <header>
       <a
         
-          href="/rust/rust-declarative-macros/"
+          href="/rust/rust-pet-care-architecture/"
         
         class="not-prose before:absolute before:inset-0 decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 hover:underline hover:underline-offset-2">
         <h2>
-          Декларативные макросы macro_rules! в Rust: от шаблонов vec! до собственных DSL
+          Архитектурный проект на Rust: Проектирование автоматизированной системы заботы о питомцах (PetCare Hub)
           
         </h2>
       </a>
@@ -5733,7 +5837,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <span>1171 слово</span><span class="px-2 text-primary-500">&middot;</span><span title="Время чтения">6 минут</span><span class="px-2 text-primary-500">&middot;</span><span>
+      <span>1043 слова</span><span class="px-2 text-primary-500">&middot;</span><span title="Время чтения">5 минут</span><span class="px-2 text-primary-500">&middot;</span><span>
   
   
     
@@ -5747,7 +5851,7 @@
     
   
   <span
-    id="views_rust/rust-declarative-macros/index.md"
+    id="views_rust/rust-pet-care-architecture/index.md"
     class="animate-pulse inline-block text-transparent max-h-3 rounded-full -mt-[2px] align-middle bg-neutral-300 dark:bg-neutral-400"
     title="views"
     >loading</span
@@ -5769,7 +5873,7 @@
     
   
   <span
-    id="likes_rust/rust-declarative-macros/index.md"
+    id="likes_rust/rust-pet-care-architecture/index.md"
     class="animate-pulse inline-block text-transparent max-h-3 rounded-full -mt-[2px] align-middle bg-neutral-300 dark:bg-neutral-400"
     title="likes"
     >loading</span
@@ -5856,7 +5960,7 @@
             
             
               
-                <a class="relative mt-[0.5rem] me-2" href="/tags/macros/">
+                <a class="relative mt-[0.5rem] me-2" href="/tags/architecture/">
                   <span class="flex cursor-pointer">
   
   
@@ -5865,7 +5969,7 @@
     <span
       class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
   
-    Macros
+    Architecture
   </span>
 </span>
 
@@ -5878,7 +5982,7 @@
             
             
               
-                <a class="relative mt-[0.5rem] me-2" href="/tags/macro_rules/">
+                <a class="relative mt-[0.5rem] me-2" href="/tags/smart-feeder/">
                   <span class="flex cursor-pointer">
   
   
@@ -5887,7 +5991,7 @@
     <span
       class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
   
-    Macro_rules
+    Smart-Feeder
   </span>
 </span>
 
@@ -5900,7 +6004,7 @@
             
             
               
-                <a class="relative mt-[0.5rem] me-2" href="/tags/metaprogramming/">
+                <a class="relative mt-[0.5rem] me-2" href="/tags/traits/">
                   <span class="flex cursor-pointer">
   
   
@@ -5909,7 +6013,7 @@
     <span
       class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
   
-    Metaprogramming
+    Traits
   </span>
 </span>
 
@@ -5922,7 +6026,7 @@
             
             
               
-                <a class="relative mt-[0.5rem] me-2" href="/tags/dsl/">
+                <a class="relative mt-[0.5rem] me-2" href="/tags/concurrency/">
                   <span class="flex cursor-pointer">
   
   
@@ -5931,7 +6035,29 @@
     <span
       class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
   
-    Dsl
+    Concurrency
+  </span>
+</span>
+
+                </a>
+              
+            
+          
+            
+              
+            
+            
+              
+                <a class="relative mt-[0.5rem] me-2" href="/tags/collections/">
+                  <span class="flex cursor-pointer">
+  
+  
+  
+  
+    <span
+      class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  
+    Collections
   </span>
 </span>
 
@@ -5974,23 +6100,14 @@
       <div class="flex justify-between pt-3">
         <span class="flex flex-col">
           
-            <a
-              class="flex text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
-              href="/rust/crate-of-the-day-rayon/">
-              <span class="leading-6">
-                <span class="inline-block rtl:rotate-180">&larr;</span>&ensp;Крейт дня: Rayon — параллельные вычисления в 1 строчку без мучений
-              </span>
-            </a>
-            
-          
         </span>
         <span class="flex flex-col items-end">
           
             <a
               class="flex text-right text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
-              href="/rust/rust-iterators-deep-dive/">
+              href="/rust/crate-of-the-day-rayon/">
               <span class="leading-6">
-                Глубокое погружение в итераторы в Rust: написание своего типажа Iterator, .iter() vs .into_iter() и нулевая стоимость абстракций&ensp;<span class="inline-block rtl:rotate-180">&rarr;</span>
+                Крейт дня: Rayon - параллельные вычисления в одну строку&ensp;<span class="inline-block rtl:rotate-180">&rarr;</span>
               </span>
             </a>
             
