@@ -2,21 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ffi on Eagle blog</title>
-    <link>http://localhost:50072/tags/ffi/</link>
+    <link>https://eagle2000.space/tags/ffi/</link>
     <description>Recent content in Ffi on Eagle blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru</language>
     
-    <lastBuildDate>Mon, 10 Aug 2026 10:00:00 +0300</lastBuildDate><atom:link href="http://localhost:50072/tags/ffi/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 11 Aug 2026 10:00:00 +0300</lastBuildDate><atom:link href="https://eagle2000.space/tags/ffi/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Unsafe Rust и FFI: работа с сырыми указателями, Undefined Behavior и интеграция с C</title>
+      <link>https://eagle2000.space/rust/rust-unsafe-and-ffi/</link>
+      <pubDate>Tue, 11 Aug 2026 10:00:00 +0300</pubDate>
+      
+      <guid>https://eagle2000.space/rust/rust-unsafe-and-ffi/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://eagle2000.space/rust/rust-unsafe-and-ffi/featured.png" />
+    </item>
     
     <item>
       <title>Атрибуты и условная компиляция в Rust: #[cfg], #[inline], #[allow] и repr(C)</title>
-      <link>http://localhost:50072/rust/rust-attributes-and-cfg/</link>
+      <link>https://eagle2000.space/rust/rust-attributes-and-cfg/</link>
       <pubDate>Mon, 10 Aug 2026 10:00:00 +0300</pubDate>
       
-      <guid>http://localhost:50072/rust/rust-attributes-and-cfg/</guid>
+      <guid>https://eagle2000.space/rust/rust-attributes-and-cfg/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:50072/rust/rust-attributes-and-cfg/featured.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://eagle2000.space/rust/rust-attributes-and-cfg/featured.png" />
     </item>
     
   </channel>
