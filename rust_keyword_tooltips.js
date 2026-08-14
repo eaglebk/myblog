@@ -139,12 +139,14 @@ if (typeof window.RustPlayground === "undefined") {
     }
 
     getLang() {
-      if (window.RUST_PAGE_LANG) return window.RUST_PAGE_LANG;
-      const htmlLang = document.documentElement.lang;
-      if (htmlLang && htmlLang.startsWith("en")) return "en";
-      if (window.location.pathname.startsWith("/en/")) return "en";
-      return "ru";
+      const path = window.location.pathname || "";
+      if (path.startsWith("/en/") || path.includes("/en/")) return "en";
+      if (window.RUST_PAGE_LANG === "en") return "en";
+      const htmlLang = document.documentElement.lang || "";
+      if (htmlLang.toLowerCase().startsWith("en")) return "en";
+      return (window.RUST_PAGE_LANG || "ru");
     }
+
 
     getI18n() {
       const lang = this.getLang();
@@ -339,7 +341,8 @@ if (typeof window.RustPlayground === "undefined") {
                     const summaryText = (isEn && keywordObj.summary_en) ? keywordObj.summary_en : keywordObj.summary;
                     const syntaxText = (isEn && keywordObj.syntax_en) ? keywordObj.syntax_en : keywordObj.syntax;
                     const exampleText = (isEn && keywordObj.example_en) ? keywordObj.example_en : keywordObj.example;
-                    const docText = (isEn && keywordObj.doc_en) ? keywordObj.doc_en : keywordObj.doc;
+                    const docText = (isEn && keywordObj.doc_en) ? keywordObj.doc_en : (isEn && keywordObj.summary ? keywordObj.summary : keywordObj.doc);
+
 
                     // Обновленное тело попапа
                     tooltipSpan.setAttribute(
@@ -368,7 +371,8 @@ if (typeof window.RustPlayground === "undefined") {
                   const cleanBlogPath = blogUrl.replace(/#.*$/, "").replace(/\/$/, "");
                   const blogSlug = cleanBlogPath.split("/").pop();
                   const isCurrentArticle = Boolean(blogSlug && currentSlug && blogSlug === currentSlug);
-                  const blogTitle = (isEn && blog.title_en) ? blog.title_en : blog.title;
+                  const blogTitle = (isEn && blog.title_en) ? blog.title_en : (isEn ? "Rust Blog Post" : blog.title);
+
 
                   if (isCurrentArticle) {
                     return `<a href="${blog.url}" class="blog-link current-article">${i18n.currentArticle}</a>`;
