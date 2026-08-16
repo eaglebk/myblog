@@ -1,0 +1,46 @@
+[
+  {
+    "question": "Which strum macro adds the .iter() method for an enum?",
+    "options": [
+      "strum::Display",
+      "strum::EnumIter",
+      "strum::EnumString",
+      "strum::EnumCount"
+    ],
+    "answer": 1,
+    "explanation": "The strum::EnumIter macro generates an implementation of IntoEnumIterator, which provides the .iter() method to obtain an iterator over enum variants."
+  },
+  {
+    "question": "How does #[strum(serialize_all = \"kebab-case\")] convert the Esp32c3 variant into a string?",
+    "options": [
+      "Converts it to ESP32C3",
+      "Converts it to esp32c3",
+      "Converts it to esp_32_c3",
+      "Leaves it unchanged"
+    ],
+    "answer": 1,
+    "explanation": "The kebab-case rule converts the variant name to lowercase using hyphens (Esp32c3 becomes esp32c3)."
+  },
+  {
+    "question": "What is the primary role of the derive macro strum::EnumString?",
+    "options": [
+      "Prints the enum to console via std::fmt::Display",
+      "Counts the number of elements in the enum",
+      "Implements std::str::FromStr to parse strings into enum variants",
+      "Creates a string array of all enum variant names"
+    ],
+    "answer": 2,
+    "explanation": "EnumString generates a FromStr parser, allowing strings like \"esp32c3\" to be converted back into an enum variant via .parse::<Chip>()."
+  },
+  {
+    "question": "What is the main advantage of strum::EnumIter over a manual array like variants: &[Chip]?",
+    "options": [
+      "It only works at runtime",
+      "Adding a new variant to the enum automatically includes it in all iteration loops",
+      "It speeds up program compilation 2x",
+      "It stores variants in memory as a linked list"
+    ],
+    "answer": 1,
+    "explanation": "Because strum generates the iterator at compile time, adding a new enum variant updates iteration logic automatically without the risk of forgetting an element."
+  }
+]
