@@ -1,0 +1,52 @@
+[
+  {
+    "question": "What is the core idea of the RAII (Resource Acquisition Is Initialization) idiom in Rust?",
+    "options": [
+      "Resource allocation happens only at compile time, and cleanup occurs on system restart",
+      "Resource acquisition occurs during object initialization, and deallocation is guaranteed by the Drop destructor upon leaving scope",
+      "All objects are forcibly copied to the heap to prevent stack overflow"
+    ],
+    "answer": 1,
+    "explanation": "RAII binds resource lifetime to object lifetime. When an object leaves scope, an automatic `drop()` call cleans up memory or closes resources."
+  },
+  {
+    "question": "What is the `Box::leak` method used for?",
+    "options": [
+      "To urgently move data from heap to stack",
+      "To intentionally bypass deallocation and obtain a reference with `'static` lifetime",
+      "To automatically optimize object memory size"
+    ],
+    "answer": 1,
+    "explanation": "`Box::leak` prevents the automatic `Drop` call for `Box<T>` and returns a static reference `&'static mut T`. This is useful for creating global configurations at runtime."
+  },
+  {
+    "question": "What is the primary purpose of the `Deref` trait?",
+    "options": [
+      "Allowing cloning of any type without an explicit `.clone()` call",
+      "Overloading the dereference operator `*` and supporting implicit Deref Coercion",
+      "Automatic data wrapping on the stack"
+    ],
+    "answer": 1,
+    "explanation": "`Deref` allows accessing internal smart pointer data via `*` operator and implicitly coerces references like `&SmartPointer<T>` to `&T`."
+  },
+  {
+    "question": "Which implicit type coercion (Deref Coercion) is supported by the Rust compiler?",
+    "options": [
+      "From an immutable reference `&T` to a mutable `&mut U`",
+      "From a mutable reference `&mut T` to a mutable `&mut U` (if `T: DerefMut<Target = U>`)",
+      "From string slice `&str` to `&mut String`"
+    ],
+    "answer": 1,
+    "explanation": "Rust allows Deref Coercion from `&T` to `&U`, `&mut T` to `&mut U`, and `&mut T` to `&U`. Coercing an immutable reference into a mutable one is forbidden for memory safety."
+  },
+  {
+    "question": "Why does the compiler forbid calling the `res.drop()` method directly?",
+    "options": [
+      "The drop method does not exist at runtime",
+      "A direct call would lead to a double free error, as the destructor would still be called automatically at the end of the block",
+      "The drop method can only be called inside compiler-generated code"
+    ],
+    "answer": 1,
+    "explanation": "If explicit `res.drop()` were allowed, the object would be destroyed again at the end of the scope. For explicit early deallocation, `std::mem::drop(res)` is used."
+  }
+]

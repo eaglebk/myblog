@@ -1,0 +1,53 @@
+[
+  {
+    "question": "Why are traits needed in Rust?",
+    "options": [
+      "For dynamic memory allocation on the heap",
+      "To define behavioral contracts for types and implement static polymorphism without code duplication",
+      "For automatic resource release without the Drop trait",
+      "To hide private fields of a struct"
+    ],
+    "answer": 1,
+    "explanation": "Traits declare a set of methods (a behavior contract) that different data types can implement, enabling flexible and type-safe polymorphism."
+  },
+  {
+    "question": "What is the key difference between an associated function and a trait method?",
+    "options": [
+      "An associated function does not take a self parameter and is called via Type::func(), whereas a method takes self and is called on an object instance via dot syntax",
+      "Methods cannot be overridden, but associated functions can",
+      "Associated functions can only return numeric types"
+    ],
+    "answer": 0,
+    "explanation": "Associated functions do not receive a self argument (acting like static methods) and are called using double colons (Dog::species()), whereas methods take self and are invoked on instances (dog.say())."
+  },
+  {
+    "question": "What is the key difference between Copy and Clone traits?",
+    "options": [
+      "Clone executes automatically on assignment, while Copy requires a method call",
+      "Copy performs implicit bitwise copying (memcpy) at the compiler level changing move semantics, while Clone creates a copy via an explicit `.clone()` method call",
+      "Copy only works on the heap, while Clone works on the stack"
+    ],
+    "answer": 1,
+    "explanation": "Copy is a marker trait for automatic bitwise copying of data on assignment. Clone is a standard trait for explicit `.clone()` invocation with custom copy logic."
+  },
+  {
+    "question": "How does `impl Trait` syntax in function arguments relate to Trait Bounds `<T: Trait>`?",
+    "options": [
+      "impl Trait switches the function to dynamic polymorphism via a vtable",
+      "impl Trait is syntactic sugar for Trait Bounds: the compiler converts it into a generic function and performs monomorphization",
+      "impl Trait forbids passing structs derived via `#[derive]`"
+    ],
+    "answer": 1,
+    "explanation": "In function arguments, `fn foo(x: impl Trait)` is a convenient shorthand for `fn foo<T: Trait>(x: T)`. Both variants use static polymorphism and monomorphization."
+  },
+  {
+    "question": "What is generic monomorphization?",
+    "options": [
+      "Casting types to dynamic trait objects at runtime",
+      "Invoking virtual functions through a vtable",
+      "The compiler generating separate physical copies of code for each concrete type used with the generic code at build time"
+    ],
+    "answer": 2,
+    "explanation": "Monomorphization is the process of code duplication by the compiler, substituting real types in place of generics. This provides zero-cost abstractions."
+  }
+]

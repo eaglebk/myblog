@@ -156,7 +156,7 @@ bf-scrollbar"><label for=mobile-menu-toggle class="fixed end-8 top-5 flex items-
               ${n}
             </a>
           </div>
-          <button onclick="removeBookmarkItem('${e?.path||""}')" class="text-xs text-red-400 hover:text-red-300 p-2.5 rounded-xl hover:bg-red-500/10 transition-colors cursor-pointer flex-shrink-0" title="Удалить">
+          <button onclick="removeBookmarkItem('${e?.path||""}')" class="text-xs text-red-400 hover:text-red-300 p-2.5 rounded-xl hover:bg-red-500/10 transition-colors cursor-pointer flex-shrink-0" title="${s?"Remove":"Удалить"}">
             🗑️
           </button>
         </div>

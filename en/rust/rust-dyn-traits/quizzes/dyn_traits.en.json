@@ -1,0 +1,53 @@
+[
+  {
+    "question": "What is the key difference between DSTs (Dynamically Sized Types) and regular Sized types?",
+    "options": [
+      "DST types can only be located on the stack, while Sized types are on the heap",
+      "DSTs have a size unknown at compile time. They cannot be stored directly on the stack or passed by value; they must be accessed behind pointers",
+      "The compiler generates separate copies of functions for DST types during monomorphization"
+    ],
+    "answer": 1,
+    "explanation": "The size of DST types (such as `str`, `[T]`, or `dyn Trait`) is determined only at runtime, so the compiler cannot allocate a fixed stack frame for them. They are always used behind pointers."
+  },
+  {
+    "question": "What does a Fat Pointer to a trait object consist of in Rust?",
+    "options": [
+      "A pointer to the object's data in memory and a pointer to the virtual method table (vtable)",
+      "A pointer to the data and the length of the object (number of elements)",
+      "A pointer to the vtable and the number of methods in the trait"
+    ],
+    "answer": 0,
+    "explanation": "A fat pointer to a trait object takes 16 bytes (two machine words on 64-bit architecture) and contains the address of the object itself on the heap or stack plus the address of the static vtable."
+  },
+  {
+    "question": "Which information is NOT stored in the vtable for a trait object?",
+    "options": [
+      "A pointer to the destructor (Drop) for cleaning up memory",
+      "The size and alignment requirements of the concrete type in memory",
+      "String names of methods for dynamic lookup by name at runtime",
+      "Addresses of compiled methods implementing the trait"
+    ],
+    "answer": 2,
+    "explanation": "Vtables do not contain method names. Function calls are resolved via fixed numeric offsets (indices in the vtable) calculated at compile time, providing high performance."
+  },
+  {
+    "question": "Which trait property violates Object Safety and prevents creating a `dyn Trait`?",
+    "options": [
+      "Having methods that accept a mutable reference `&mut self`",
+      "Having associated types",
+      "Having static methods (without a `self` argument) that lack a `where Self: Sized` bound"
+    ],
+    "answer": 2,
+    "explanation": "Functions without `self` cannot be invoked on a trait object at runtime because the compiler cannot retrieve a vtable without an object instance. If such a method is not isolated via `where Self: Sized`, the trait becomes object-unsafe."
+  },
+  {
+    "question": "How does the compiler know how many bytes of memory to free in the allocator when dropping `Box<dyn Trait>`?",
+    "options": [
+      "The size is calculated by scanning the heap memory bytes",
+      "The allocator tracks all allocation sizes without Rust's involvement",
+      "The compiler reads the size and alignment of the concrete type from the object's vtable"
+    ],
+    "answer": 2,
+    "explanation": "The vtable of a trait object stores metadata of the concrete type (size and align). When destroying `Box<dyn Trait>`, the runtime retrieves these values from the vtable and passes them to `__rust_dealloc(ptr, size, align)`."
+  }
+]
