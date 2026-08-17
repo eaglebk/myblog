@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pattern-Matching on Eagle blog</title>
-    <link>https://eagle2000.space/tags/pattern-matching/</link>
+    <link>http://localhost:1313/tags/pattern-matching/</link>
     <description>Recent content in Pattern-Matching on Eagle blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru</language>
     
-    <lastBuildDate>Mon, 10 Aug 2026 10:00:00 +0300</lastBuildDate><atom:link href="https://eagle2000.space/tags/pattern-matching/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 10 Aug 2026 10:00:00 +0300</lastBuildDate><atom:link href="http://localhost:1313/tags/pattern-matching/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Продвинутый Pattern Matching в Rust: деструктуризация, @-связывание и match guards</title>
-      <link>https://eagle2000.space/rust/rust-pattern-matching-deep-dive/</link>
+      <link>http://localhost:1313/rust/rust-pattern-matching-deep-dive/</link>
       <pubDate>Mon, 10 Aug 2026 10:00:00 +0300</pubDate>
       
-      <guid>https://eagle2000.space/rust/rust-pattern-matching-deep-dive/</guid>
+      <guid>http://localhost:1313/rust/rust-pattern-matching-deep-dive/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://eagle2000.space/rust/rust-pattern-matching-deep-dive/featured.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/rust/rust-pattern-matching-deep-dive/featured.png" />
     </item>
     
   </channel>

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Exit-Codes on Eagle blog</title>
-    <link>https://eagle2000.space/tags/exit-codes/</link>
+    <link>http://localhost:1313/tags/exit-codes/</link>
     <description>Recent content in Exit-Codes on Eagle blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru</language>
     
-    <lastBuildDate>Wed, 12 Aug 2026 10:00:00 +0300</lastBuildDate><atom:link href="https://eagle2000.space/tags/exit-codes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 12 Aug 2026 10:00:00 +0300</lastBuildDate><atom:link href="http://localhost:1313/tags/exit-codes/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Потоки ввода-вывода I/O в Rust: BufRead, блокировка stdin, подход Magic Function и безопасная обработка ошибок</title>
-      <link>https://eagle2000.space/rust/rust-io-bufread-and-errors/</link>
+      <link>http://localhost:1313/rust/rust-io-bufread-and-errors/</link>
       <pubDate>Wed, 12 Aug 2026 10:00:00 +0300</pubDate>
       
-      <guid>https://eagle2000.space/rust/rust-io-bufread-and-errors/</guid>
+      <guid>http://localhost:1313/rust/rust-io-bufread-and-errors/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://eagle2000.space/rust/rust-io-bufread-and-errors/featured.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/rust/rust-io-bufread-and-errors/featured.png" />
     </item>
     
   </channel>

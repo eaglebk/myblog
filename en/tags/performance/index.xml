@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Performance on Eagle blog</title>
+    <link>http://localhost:1313/en/tags/performance/</link>
+    <description>Recent content in Performance on Eagle blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+    <lastBuildDate>Sat, 15 Aug 2026 10:00:00 +0300</lastBuildDate><atom:link href="http://localhost:1313/en/tags/performance/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Crate of the Day: Rayon - Data Parallelism in a Single Line of Code</title>
+      <link>http://localhost:1313/en/rust/crate-of-the-day-rayon/</link>
+      <pubDate>Sat, 15 Aug 2026 10:00:00 +0300</pubDate>
+      
+      <guid>http://localhost:1313/en/rust/crate-of-the-day-rayon/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/rust/crate-of-the-day-rayon/featured.png" />
+    </item>
+    
+  </channel>
+</rss>

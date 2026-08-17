@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Data-Oriented-Api on Eagle blog</title>
-    <link>https://eagle2000.space/tags/data-oriented-api/</link>
+    <link>http://localhost:1313/tags/data-oriented-api/</link>
     <description>Recent content in Data-Oriented-Api on Eagle blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru</language>
     
-    <lastBuildDate>Wed, 12 Aug 2026 10:00:00 +0300</lastBuildDate><atom:link href="https://eagle2000.space/tags/data-oriented-api/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 12 Aug 2026 10:00:00 +0300</lastBuildDate><atom:link href="http://localhost:1313/tags/data-oriented-api/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Проектирование библиотек в Rust: Data-Oriented API, разделение lib/main и бебаггинг (Bebugging)</title>
-      <link>https://eagle2000.space/rust/rust-crate-design-and-testing/</link>
+      <link>http://localhost:1313/rust/rust-crate-design-and-testing/</link>
       <pubDate>Wed, 12 Aug 2026 10:00:00 +0300</pubDate>
       
-      <guid>https://eagle2000.space/rust/rust-crate-design-and-testing/</guid>
+      <guid>http://localhost:1313/rust/rust-crate-design-and-testing/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://eagle2000.space/rust/rust-crate-design-and-testing/featured.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/rust/rust-crate-design-and-testing/featured.png" />
     </item>
     
   </channel>
