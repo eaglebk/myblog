@@ -4,7 +4,7 @@
   dir="ltr"
   class="scroll-smooth"
   data-default-appearance="dark"
-  data-auto-appearance="true"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  data-auto-appearance="true"><head>
   <meta charset="utf-8">
   
     <meta http-equiv="content-language" content="ru">
@@ -38,7 +38,7 @@
   
   
   
-  <link rel="canonical" href="http://localhost:1313/rust/rust-atomics-and-memory-ordering/">
+  <link rel="canonical" href="https://eagle2000.space/rust/rust-atomics-and-memory-ordering/">
   
   
 
@@ -47,7 +47,7 @@
   
 
   
-  <meta property="og:url" content="http://localhost:1313/rust/rust-atomics-and-memory-ordering/">
+  <meta property="og:url" content="https://eagle2000.space/rust/rust-atomics-and-memory-ordering/">
 	<meta property="og:site_name" content="Eagle blog">
 	<meta property="og:title" content="Атомарные операции и Memory Ordering в Rust: от Ordering::Relaxed до Acquire/Release барьеров">
 	<meta property="og:description" content="Глубокое погружение в атомарные типы std::sync::atomic (AtomicBool, AtomicUsize, AtomicPtr), операции fetch_add, compare_exchange и барьеры памяти Memory Ordering (Relaxed, Acquire, Release, SeqCst).">
@@ -62,18 +62,18 @@
 		<meta property="article:tag" content="Memory-Ordering">
 		<meta property="article:tag" content="Relaxed">
 		<meta property="article:tag" content="Acquire-Release">
-		<meta property="og:image" content="http://localhost:1313/rust/rust-atomics-and-memory-ordering/featured.png">
-			<meta property="og:see_also" content="http://localhost:1313/rust/rust-dyn-traits/">
-			<meta property="og:see_also" content="http://localhost:1313/rust/tokio-sync-primitives/">
-			<meta property="og:see_also" content="http://localhost:1313/rust/tokio-kak-otpravit-i-prinyat-mnozhestvo-sobytij/">
-			<meta property="og:see_also" content="http://localhost:1313/rust/rust-tokio-channels/">
-			<meta property="og:see_also" content="http://localhost:1313/rust/rust-clap-and-integration-testing/">
-			<meta property="og:see_also" content="http://localhost:1313/rust/rust-files-tempfile-and-docs/">
-			<meta property="og:see_also" content="http://localhost:1313/rust/rust-raii-box-deref/">
+		<meta property="og:image" content="https://eagle2000.space/rust/rust-atomics-and-memory-ordering/featured.png">
+			<meta property="og:see_also" content="https://eagle2000.space/rust/rust-interior-mutability/">
+			<meta property="og:see_also" content="https://eagle2000.space/rust/rust-advanced-traits/">
+			<meta property="og:see_also" content="https://eagle2000.space/rust/rust-dyn-traits/">
+			<meta property="og:see_also" content="https://eagle2000.space/rust/tokio-sync-primitives/">
+			<meta property="og:see_also" content="https://eagle2000.space/rust/tokio-kak-otpravit-i-prinyat-mnozhestvo-sobytij/">
+			<meta property="og:see_also" content="https://eagle2000.space/rust/rust-tokio-channels/">
+			<meta property="og:see_also" content="https://eagle2000.space/rust/rust-clap-and-integration-testing/">
 
   
 	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:image" content="http://localhost:1313/rust/rust-atomics-and-memory-ordering/featured.png">
+	<meta name="twitter:image" content="https://eagle2000.space/rust/rust-atomics-and-memory-ordering/featured.png">
 	<meta name="twitter:title" content="Атомарные операции и Memory Ordering в Rust: от Ordering::Relaxed до Acquire/Release барьеров">
 	<meta name="twitter:description" content="Глубокое погружение в атомарные типы std::sync::atomic (AtomicBool, AtomicUsize, AtomicPtr), операции fetch_add, compare_exchange и барьеры памяти Memory Ordering (Relaxed, Acquire, Release, SeqCst).">
 
@@ -305,7 +305,7 @@
     "headline": "Атомарные операции и Memory Ordering в Rust: от Ordering::Relaxed до Acquire\/Release барьеров",
     "description": "Глубокое погружение в атомарные типы std::sync::atomic (AtomicBool, AtomicUsize, AtomicPtr), операции fetch_add, compare_exchange и барьеры памяти Memory Ordering (Relaxed, Acquire, Release, SeqCst).",
     "inLanguage": "ru",
-    "url" : "http://localhost:1313/rust/rust-atomics-and-memory-ordering/",
+    "url" : "https://eagle2000.space/rust/rust-atomics-and-memory-ordering/",
     "author" : {
       "@type": "Person",
       "name": ""
@@ -318,7 +318,7 @@
     
     "keywords": ["rust","dev","atomics","memory-ordering","relaxed","acquire-release","concurrency","lock-free"],
     
-    "mainEntityOfPage": "http://localhost:1313/rust/rust-atomics-and-memory-ordering/",
+    "mainEntityOfPage": "https://eagle2000.space/rust/rust-atomics-and-memory-ordering/",
     "wordCount": "1001"
   }]
   </script>
@@ -326,6 +326,24 @@
 
 
   
+  
+    
+
+  <script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=G-1K8G7FW77W"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1K8G7FW77W');
+</script>
+
+
+
+
+
   
 
   
@@ -1589,7 +1607,7 @@
       <div class="series-progress-card">
         <div style="display: flex; flex-direction: column;">
           <span class="text-xs">Статей прочитано</span>
-          <span id="series-progress-text">0/56</span>
+          <span id="series-progress-text">0/58</span>
         </div>
         <div class="series-circle-container">
           <svg class="series-circle-svg">
@@ -1608,6 +1626,14 @@
         
         
 
+        
+          
+            
+          
+        
+          
+            
+          
         
           
             
@@ -2338,7 +2364,11 @@
               
             
               
+            
+              
                 
+              
+            
               
             
               
@@ -2571,6 +2601,23 @@
                   </div>
                 
                   
+                  <div class="series-item" data-post-path="/rust/rust-interior-mutability/">
+                    <div class="series-item-left">
+                      <span class="series-item-num">
+                        31
+                      </span>
+                      <span class="series-item-title">
+                        
+                          <a href="/rust/rust-interior-mutability/">Внутренняя мутабельность в Rust: философия паттерна, Cell, RefCell и сравнение с Mutex</a>
+                        
+                      </span>
+                    </div>
+                    <span class="series-status-badge" data-status="unread">
+                      Не прочитана
+                    </span>
+                  </div>
+                
+                  
                   <div class="series-item" data-post-path="/rust/rust-iterators-deep-dive/">
                     <div class="series-item-left">
                       <span class="series-item-num">
@@ -2733,6 +2780,23 @@
                       <span class="series-item-title">
                         
                           <a href="/rust/rust-attributes-and-cfg/">Атрибуты и условная компиляция в Rust: #[cfg], #[inline], #[allow] и repr(C)</a>
+                        
+                      </span>
+                    </div>
+                    <span class="series-status-badge" data-status="unread">
+                      Не прочитана
+                    </span>
+                  </div>
+                
+                  
+                  <div class="series-item" data-post-path="/rust/rust-advanced-traits/">
+                    <div class="series-item-left">
+                      <span class="series-item-num">
+                        43
+                      </span>
+                      <span class="series-item-title">
+                        
+                          <a href="/rust/rust-advanced-traits/">Продвинутые типажи в Rust: ассоциированные типы, супертрейты и blanket-реализации</a>
                         
                       </span>
                     </div>
@@ -3013,7 +3077,7 @@
 <p>Ниже представлен пошаговый пример работы атомарного счетчика и флага останова:</p>
 
 
-  <div id="6b7a1221b8496f9f45a26011379b6802" class="rust-slides bg-gray-900 rounded-lg overflow-hidden my-8">
+  <div id="1617b9f033b1f47620851e3599b887db" class="rust-slides bg-gray-900 rounded-lg overflow-hidden my-8">
     
     <div class="flex justify-between items-center bg-gray-800 px-4 py-2">
       <span class="font-mono text-sm text-white">Атомарные типы и счетчик без мьютекса</span>
@@ -3379,7 +3443,7 @@
       </div><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>В 90% практических случаев применения lock-free флагов используется пара <strong><code>Ordering::Release</code></strong> при установке флага и <strong><code>Ordering::Acquire</code></strong> при его проверке.</p></div></div><p>Запустите примеры барьеров памяти <code>Acquire</code>/<code>Release</code> и операции <code>compare_exchange</code>:</p>
 
 
-  <div id="9234206252654c20b5cd1b50b037af41" class="rust-slides bg-gray-900 rounded-lg overflow-hidden my-8">
+  <div id="717ccc46c231907701f63bb9b2c0425e" class="rust-slides bg-gray-900 rounded-lg overflow-hidden my-8">
     
     <div class="flex justify-between items-center bg-gray-800 px-4 py-2">
       <span class="font-mono text-sm text-white">Барьеры памяти Acquire/Release и CAS</span>
@@ -3704,7 +3768,7 @@
 <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
 <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
 
-<div id="quiz-1786951506129262000" class="quiz-mount" data-lang="ru" data-name="Атомики и Memory Ordering" data-firebase='{
+<div id="quiz-1787237316521180000" class="quiz-mount" data-lang="ru" data-name="Атомики и Memory Ordering" data-firebase='{
   "apiKey": "AIzaSyDpJ8bNxx9MvSeu9PsXzk3H37AeYQjBv4M",
   "authDomain": "eagleblog-b0286.firebaseapp.com",
   "projectId": "eagleblog-b0286",
@@ -3713,14 +3777,14 @@
   "appId": "1:942835714160:web:7ba3682059f8179a9d0cb5",
   "measurementId": "G-1K8G7FW77W"
 }'></div>
-<script type="application/json" id="quiz-1786951506129262000-srcs">"[\"/rust/rust-atomics-and-memory-ordering/quizzes/atomics_ordering.json\"]"</script>
+<script type="application/json" id="quiz-1787237316521180000-srcs">"[\"/rust/rust-atomics-and-memory-ordering/quizzes/atomics_ordering.json\"]"</script>
 
 <script type="module">
   import { mountQuizWidget } from "\/js\/quiz-widget.min.js";
 
   if (typeof window.firebase !== "undefined") {
     if (!window.firebase.apps.length) {
-      const cfg = JSON.parse(document.getElementById("quiz-1786951506129262000").dataset.firebase || "{}");
+      const cfg = JSON.parse(document.getElementById("quiz-1787237316521180000").dataset.firebase || "{}");
       if (cfg.apiKey) {
         window.firebase.initializeApp(cfg);
         window.db = window.firebase.firestore();
@@ -3729,8 +3793,8 @@
       window.db = window.firebase.firestore();
     }
   }
-  const mount = document.getElementById("quiz-1786951506129262000");
-  const json  = document.getElementById("quiz-1786951506129262000-srcs").textContent;
+  const mount = document.getElementById("quiz-1787237316521180000");
+  const json  = document.getElementById("quiz-1787237316521180000-srcs").textContent;
   const srcs  = JSON.parse(json);
   const cfg   = JSON.parse(mount.dataset.firebase || "{}");
   const hljsThemeDark = "\u0022github-dark-dimmed\u0022";
@@ -3824,7 +3888,7 @@
 <div class="share-bar print:hidden"
      aria-label="Поделиться статьёй"
      data-share-title="Атомарные операции и Memory Ordering в Rust: от Ordering::Relaxed до Acquire/Release барьеров"
-     data-share-url="http://localhost:1313/rust/rust-atomics-and-memory-ordering/"
+     data-share-url="https://eagle2000.space/rust/rust-atomics-and-memory-ordering/"
      data-share-email-body="Прочитал статью «{title}»:
 {url}">
 
@@ -3974,7 +4038,7 @@
       <div class="series-progress-card">
         <div style="display: flex; flex-direction: column;">
           <span class="text-xs">Статей прочитано</span>
-          <span id="series-progress-text">0/56</span>
+          <span id="series-progress-text">0/58</span>
         </div>
         <div class="series-circle-container">
           <svg class="series-circle-svg">
@@ -3993,6 +4057,14 @@
         
         
 
+        
+          
+            
+          
+        
+          
+            
+          
         
           
             
@@ -4723,7 +4795,11 @@
               
             
               
+            
+              
                 
+              
+            
               
             
               
@@ -4956,6 +5032,23 @@
                   </div>
                 
                   
+                  <div class="series-item" data-post-path="/rust/rust-interior-mutability/">
+                    <div class="series-item-left">
+                      <span class="series-item-num">
+                        31
+                      </span>
+                      <span class="series-item-title">
+                        
+                          <a href="/rust/rust-interior-mutability/">Внутренняя мутабельность в Rust: философия паттерна, Cell, RefCell и сравнение с Mutex</a>
+                        
+                      </span>
+                    </div>
+                    <span class="series-status-badge" data-status="unread">
+                      Не прочитана
+                    </span>
+                  </div>
+                
+                  
                   <div class="series-item" data-post-path="/rust/rust-iterators-deep-dive/">
                     <div class="series-item-left">
                       <span class="series-item-num">
@@ -5118,6 +5211,23 @@
                       <span class="series-item-title">
                         
                           <a href="/rust/rust-attributes-and-cfg/">Атрибуты и условная компиляция в Rust: #[cfg], #[inline], #[allow] и repr(C)</a>
+                        
+                      </span>
+                    </div>
+                    <span class="series-status-badge" data-status="unread">
+                      Не прочитана
+                    </span>
+                  </div>
+                
+                  
+                  <div class="series-item" data-post-path="/rust/rust-advanced-traits/">
+                    <div class="series-item-left">
+                      <span class="series-item-num">
+                        43
+                      </span>
+                      <span class="series-item-title">
+                        
+                          <a href="/rust/rust-advanced-traits/">Продвинутые типажи в Rust: ассоциированные типы, супертрейты и blanket-реализации</a>
                         
                       </span>
                     </div>

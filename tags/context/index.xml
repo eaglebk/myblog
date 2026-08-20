@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Context on Eagle blog</title>
-    <link>http://localhost:1313/tags/context/</link>
+    <link>https://eagle2000.space/tags/context/</link>
     <description>Recent content in Context on Eagle blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru</language>
     
-    <lastBuildDate>Wed, 12 Aug 2026 10:00:00 +0300</lastBuildDate><atom:link href="http://localhost:1313/tags/context/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 12 Aug 2026 10:00:00 +0300</lastBuildDate><atom:link href="https://eagle2000.space/tags/context/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Управление контекстом ошибок (anyhow), CLI-аргументы и владение в Rust</title>
-      <link>http://localhost:1313/rust/rust-cli-args-and-anyhow/</link>
+      <link>https://eagle2000.space/rust/rust-cli-args-and-anyhow/</link>
       <pubDate>Wed, 12 Aug 2026 10:00:00 +0300</pubDate>
       
-      <guid>http://localhost:1313/rust/rust-cli-args-and-anyhow/</guid>
+      <guid>https://eagle2000.space/rust/rust-cli-args-and-anyhow/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/rust/rust-cli-args-and-anyhow/featured.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://eagle2000.space/rust/rust-cli-args-and-anyhow/featured.png" />
     </item>
     
   </channel>

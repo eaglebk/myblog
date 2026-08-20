@@ -1,0 +1,83 @@
+[
+  {
+    "question": "What does the supertrait syntax `trait Loggable: Display` mean?",
+    "options": [
+      "Any type implementing `Loggable` must also implement the `Display` trait",
+      "`Loggable` inherits fields and layout from a struct named `Display`",
+      "`Display` is automatically implemented for all types implementing `Loggable`"
+    ],
+    "answer": 0,
+    "explanation": "The syntax `trait Loggable: Display` specifies a supertrait bound: a type can implement `Loggable` only if it already implements `Display`."
+  },
+  {
+    "question": "What is the Orphan Rule in Rust?",
+    "options": [
+      "A trait cannot be implemented for a struct if it has no fields",
+      "You can implement a trait for a type only if either the trait or the target type is declared locally in your crate",
+      "Local traits cannot be implemented for primitive types like i32",
+      "Generic type parameters are prohibited in trait method declarations"
+    ],
+    "answer": 1,
+    "explanation": "The Orphan Rule guarantees program coherence by preventing foreign traits from being implemented for foreign types."
+  },
+  {
+    "question": "How can you bypass the Orphan Rule when implementing a foreign trait (e.g. `Display`) for a foreign type (e.g. `Vec<String>`)?",
+    "options": [
+      "Use the Newtype pattern by wrapping `Vec<String>` in a local tuple struct `struct Wrapper(Vec<String>)`",
+      "Add the attribute `#[allow(orphan_rules)]` above the implementation",
+      "Use a `macro_rules!` macro to force code generation"
+    ],
+    "answer": 0,
+    "explanation": "The Newtype pattern wraps a foreign type in a single-element local tuple struct `struct Wrapper(T)`, making it a local type of your crate."
+  },
+  {
+    "question": "What is the key advantage of Associated Types (`type Item;`) over Generic Traits (`trait Trait<T>`)?",
+    "options": [
+      "They fix a single associated type per implementation, removing generic parameter clutter from function signatures",
+      "They disable compiler type checking",
+      "They force memory allocation to happen strictly on the stack"
+    ],
+    "answer": 0,
+    "explanation": "An associated type `type Item;` is specified once inside the `impl` block, eliminating repeated generic type parameters across methods."
+  },
+  {
+    "question": "What is Fully Qualified Syntax (`<Type as Trait>::method()`) used for?",
+    "options": [
+      "Disambiguating method calls when multiple implemented traits share identical method names",
+      "Converting a dynamic struct into a static singleton",
+      "Executing trait methods concurrently across multiple threads"
+    ],
+    "answer": 0,
+    "explanation": "The `<T as Trait>::method(&obj)` syntax resolves ambiguity by explicitly instructing the compiler which trait implementation to invoke."
+  },
+  {
+    "question": "When is Turbofish syntax (`::<>`) required?",
+    "options": [
+      "For invoking vtable methods dynamically at runtime",
+      "For explicitly specifying generic type parameters when the compiler cannot infer them from call context",
+      "For dereferencing raw pointers safely"
+    ],
+    "answer": 1,
+    "explanation": "Turbofish is used to provide explicit generic type parameters to functions or methods (e.g. `Vec::<i32>::new()` or `std::mem::size_of::<i32>()`) when context is insufficient for type inference."
+  },
+  {
+    "question": "What is a Blanket Implementation in Rust?",
+    "options": [
+      "Implementing a trait for ALL types `T` that satisfy a specific trait bound (`impl<T: Display> Summary for T`)",
+      "Implementing a method exclusively for the unit tuple `()`",
+      "Automatically deallocating heap objects without calling `drop`"
+    ],
+    "answer": 0,
+    "explanation": "A blanket implementation automatically equips an infinite set of types matching a trait bound with that trait's methods."
+  },
+  {
+    "question": "How do you access an associated constant `CAPACITY_LIMIT` defined inside the `Container` trait for struct `IntStack`?",
+    "options": [
+      "Via `IntStack::CAPACITY_LIMIT` or `<IntStack as Container>::CAPACITY_LIMIT`",
+      "Exclusively by calling a runtime helper `IntStack.get_capacity()`",
+      "By invoking global function `std::capacity(IntStack)`"
+    ],
+    "answer": 0,
+    "explanation": "Associated constants reside in the type and trait namespace and are accessed using path syntax `Type::CONST` or `<Type as Trait>::CONST`."
+  }
+]

@@ -4,7 +4,7 @@
   dir="ltr"
   class="scroll-smooth"
   data-default-appearance="dark"
-  data-auto-appearance="true"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  data-auto-appearance="true"><head>
   <meta charset="utf-8">
   
     <meta http-equiv="content-language" content="ru">
@@ -38,7 +38,7 @@
   
   
   
-  <link rel="canonical" href="http://localhost:1313/rust/rust-lifetimes-deep-dive/">
+  <link rel="canonical" href="https://eagle2000.space/rust/rust-lifetimes-deep-dive/">
   
   
 
@@ -47,7 +47,7 @@
   
 
   
-  <meta property="og:url" content="http://localhost:1313/rust/rust-lifetimes-deep-dive/">
+  <meta property="og:url" content="https://eagle2000.space/rust/rust-lifetimes-deep-dive/">
 	<meta property="og:site_name" content="Eagle blog">
 	<meta property="og:title" content="Глубокое погружение в Lifetimes (времена жизни) в Rust: работа со ссылками без ошибок и паники">
 	<meta property="og:description" content="Подробный разбор Lifetimes (времени жизни) в Rust: 3 правила опускания (Elision Rules), ссылки в структурах, память &#39;static, HRTB (for&lt;&#39;a&gt;) и Дисперсия.">
@@ -62,18 +62,18 @@
 		<meta property="article:tag" content="Borrow-Checker">
 		<meta property="article:tag" content="Elision">
 		<meta property="article:tag" content="Hrtb">
-		<meta property="og:image" content="http://localhost:1313/rust/rust-lifetimes-deep-dive/featured.png">
-			<meta property="og:see_also" content="http://localhost:1313/rust/rust-dyn-traits/">
-			<meta property="og:see_also" content="http://localhost:1313/rust/tokio-sync-primitives/">
-			<meta property="og:see_also" content="http://localhost:1313/rust/tokio-kak-otpravit-i-prinyat-mnozhestvo-sobytij/">
-			<meta property="og:see_also" content="http://localhost:1313/rust/rust-tokio-channels/">
-			<meta property="og:see_also" content="http://localhost:1313/rust/rust-clap-and-integration-testing/">
-			<meta property="og:see_also" content="http://localhost:1313/rust/rust-files-tempfile-and-docs/">
-			<meta property="og:see_also" content="http://localhost:1313/rust/rust-raii-box-deref/">
+		<meta property="og:image" content="https://eagle2000.space/rust/rust-lifetimes-deep-dive/featured.png">
+			<meta property="og:see_also" content="https://eagle2000.space/rust/rust-interior-mutability/">
+			<meta property="og:see_also" content="https://eagle2000.space/rust/rust-advanced-traits/">
+			<meta property="og:see_also" content="https://eagle2000.space/rust/rust-dyn-traits/">
+			<meta property="og:see_also" content="https://eagle2000.space/rust/tokio-sync-primitives/">
+			<meta property="og:see_also" content="https://eagle2000.space/rust/tokio-kak-otpravit-i-prinyat-mnozhestvo-sobytij/">
+			<meta property="og:see_also" content="https://eagle2000.space/rust/rust-tokio-channels/">
+			<meta property="og:see_also" content="https://eagle2000.space/rust/rust-clap-and-integration-testing/">
 
   
 	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:image" content="http://localhost:1313/rust/rust-lifetimes-deep-dive/featured.png">
+	<meta name="twitter:image" content="https://eagle2000.space/rust/rust-lifetimes-deep-dive/featured.png">
 	<meta name="twitter:title" content="Глубокое погружение в Lifetimes (времена жизни) в Rust: работа со ссылками без ошибок и паники">
 	<meta name="twitter:description" content="Подробный разбор Lifetimes (времени жизни) в Rust: 3 правила опускания (Elision Rules), ссылки в структурах, память &#39;static, HRTB (for&lt;&#39;a&gt;) и Дисперсия.">
 
@@ -305,7 +305,7 @@
     "headline": "Глубокое погружение в Lifetimes (времена жизни) в Rust: работа со ссылками без ошибок и паники",
     "description": "Подробный разбор Lifetimes (времени жизни) в Rust: 3 правила опускания (Elision Rules), ссылки в структурах, память \u0027static, HRTB (for\u003c\u0027a\u003e) и Дисперсия.",
     "inLanguage": "ru",
-    "url" : "http://localhost:1313/rust/rust-lifetimes-deep-dive/",
+    "url" : "https://eagle2000.space/rust/rust-lifetimes-deep-dive/",
     "author" : {
       "@type": "Person",
       "name": ""
@@ -318,7 +318,7 @@
     
     "keywords": ["rust","dev","lifetimes","borrow-checker","elision","hrtb","variance"],
     
-    "mainEntityOfPage": "http://localhost:1313/rust/rust-lifetimes-deep-dive/",
+    "mainEntityOfPage": "https://eagle2000.space/rust/rust-lifetimes-deep-dive/",
     "wordCount": "1020"
   }]
   </script>
@@ -326,6 +326,24 @@
 
 
   
+  
+    
+
+  <script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=G-1K8G7FW77W"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1K8G7FW77W');
+</script>
+
+
+
+
+
   
 
   
@@ -1579,7 +1597,7 @@
       <div class="series-progress-card">
         <div style="display: flex; flex-direction: column;">
           <span class="text-xs">Статей прочитано</span>
-          <span id="series-progress-text">0/56</span>
+          <span id="series-progress-text">0/58</span>
         </div>
         <div class="series-circle-container">
           <svg class="series-circle-svg">
@@ -1598,6 +1616,14 @@
         
         
 
+        
+          
+            
+          
+        
+          
+            
+          
         
           
             
@@ -2322,7 +2348,11 @@
               
             
               
+            
+              
                 
+              
+            
               
             
               
@@ -2561,6 +2591,23 @@
                   </div>
                 
                   
+                  <div class="series-item" data-post-path="/rust/rust-interior-mutability/">
+                    <div class="series-item-left">
+                      <span class="series-item-num">
+                        31
+                      </span>
+                      <span class="series-item-title">
+                        
+                          <a href="/rust/rust-interior-mutability/">Внутренняя мутабельность в Rust: философия паттерна, Cell, RefCell и сравнение с Mutex</a>
+                        
+                      </span>
+                    </div>
+                    <span class="series-status-badge" data-status="unread">
+                      Не прочитана
+                    </span>
+                  </div>
+                
+                  
                   <div class="series-item" data-post-path="/rust/rust-iterators-deep-dive/">
                     <div class="series-item-left">
                       <span class="series-item-num">
@@ -2723,6 +2770,23 @@
                       <span class="series-item-title">
                         
                           <a href="/rust/rust-attributes-and-cfg/">Атрибуты и условная компиляция в Rust: #[cfg], #[inline], #[allow] и repr(C)</a>
+                        
+                      </span>
+                    </div>
+                    <span class="series-status-badge" data-status="unread">
+                      Не прочитана
+                    </span>
+                  </div>
+                
+                  
+                  <div class="series-item" data-post-path="/rust/rust-advanced-traits/">
+                    <div class="series-item-left">
+                      <span class="series-item-num">
+                        43
+                      </span>
+                      <span class="series-item-title">
+                        
+                          <a href="/rust/rust-advanced-traits/">Продвинутые типажи в Rust: ассоциированные типы, супертрейты и blanket-реализации</a>
                         
                       </span>
                     </div>
@@ -3018,7 +3082,7 @@
 <p>Попробуйте запустить примеры опускания и структур в интерактивных слайдах:</p>
 
 
-  <div id="d54f1ca43cfb79c9912c4dfb5fa4e55a" class="rust-slides bg-gray-900 rounded-lg overflow-hidden my-8">
+  <div id="420a888414df83a4ea6eb00e74d90ed1" class="rust-slides bg-gray-900 rounded-lg overflow-hidden my-8">
     
     <div class="flex justify-between items-center bg-gray-800 px-4 py-2">
       <span class="font-mono text-sm text-white">Правила Elision и Ссылки в структурах</span>
@@ -3371,7 +3435,7 @@
 <p>Запустите примеры <code>'static</code>, <code>for&lt;'a&gt;</code> и подстановки ссылок:</p>
 
 
-  <div id="81533645a02c486baef53695f68da60d" class="rust-slides bg-gray-900 rounded-lg overflow-hidden my-8">
+  <div id="01787fd8646eee1f92de68d0261bf3da" class="rust-slides bg-gray-900 rounded-lg overflow-hidden my-8">
     
     <div class="flex justify-between items-center bg-gray-800 px-4 py-2">
       <span class="font-mono text-sm text-white">Статическая память &#39;static и HRTB</span>
@@ -3670,7 +3734,7 @@
 <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
 <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
 
-<div id="quiz-1786951506181890000" class="quiz-mount" data-lang="ru" data-name="Lifetimes и заимствования в Rust" data-firebase='{
+<div id="quiz-1787237316558783000" class="quiz-mount" data-lang="ru" data-name="Lifetimes и заимствования в Rust" data-firebase='{
   "apiKey": "AIzaSyDpJ8bNxx9MvSeu9PsXzk3H37AeYQjBv4M",
   "authDomain": "eagleblog-b0286.firebaseapp.com",
   "projectId": "eagleblog-b0286",
@@ -3679,14 +3743,14 @@
   "appId": "1:942835714160:web:7ba3682059f8179a9d0cb5",
   "measurementId": "G-1K8G7FW77W"
 }'></div>
-<script type="application/json" id="quiz-1786951506181890000-srcs">"[\"/rust/rust-lifetimes-deep-dive/quizzes/lifetimes.json\"]"</script>
+<script type="application/json" id="quiz-1787237316558783000-srcs">"[\"/rust/rust-lifetimes-deep-dive/quizzes/lifetimes.json\"]"</script>
 
 <script type="module">
   import { mountQuizWidget } from "\/js\/quiz-widget.min.js";
 
   if (typeof window.firebase !== "undefined") {
     if (!window.firebase.apps.length) {
-      const cfg = JSON.parse(document.getElementById("quiz-1786951506181890000").dataset.firebase || "{}");
+      const cfg = JSON.parse(document.getElementById("quiz-1787237316558783000").dataset.firebase || "{}");
       if (cfg.apiKey) {
         window.firebase.initializeApp(cfg);
         window.db = window.firebase.firestore();
@@ -3695,8 +3759,8 @@
       window.db = window.firebase.firestore();
     }
   }
-  const mount = document.getElementById("quiz-1786951506181890000");
-  const json  = document.getElementById("quiz-1786951506181890000-srcs").textContent;
+  const mount = document.getElementById("quiz-1787237316558783000");
+  const json  = document.getElementById("quiz-1787237316558783000-srcs").textContent;
   const srcs  = JSON.parse(json);
   const cfg   = JSON.parse(mount.dataset.firebase || "{}");
   const hljsThemeDark = "\u0022github-dark-dimmed\u0022";
@@ -3790,7 +3854,7 @@
 <div class="share-bar print:hidden"
      aria-label="Поделиться статьёй"
      data-share-title="Глубокое погружение в Lifetimes (времена жизни) в Rust: работа со ссылками без ошибок и паники"
-     data-share-url="http://localhost:1313/rust/rust-lifetimes-deep-dive/"
+     data-share-url="https://eagle2000.space/rust/rust-lifetimes-deep-dive/"
      data-share-email-body="Прочитал статью «{title}»:
 {url}">
 
@@ -3940,7 +4004,7 @@
       <div class="series-progress-card">
         <div style="display: flex; flex-direction: column;">
           <span class="text-xs">Статей прочитано</span>
-          <span id="series-progress-text">0/56</span>
+          <span id="series-progress-text">0/58</span>
         </div>
         <div class="series-circle-container">
           <svg class="series-circle-svg">
@@ -3959,6 +4023,14 @@
         
         
 
+        
+          
+            
+          
+        
+          
+            
+          
         
           
             
@@ -4683,7 +4755,11 @@
               
             
               
+            
+              
                 
+              
+            
               
             
               
@@ -4922,6 +4998,23 @@
                   </div>
                 
                   
+                  <div class="series-item" data-post-path="/rust/rust-interior-mutability/">
+                    <div class="series-item-left">
+                      <span class="series-item-num">
+                        31
+                      </span>
+                      <span class="series-item-title">
+                        
+                          <a href="/rust/rust-interior-mutability/">Внутренняя мутабельность в Rust: философия паттерна, Cell, RefCell и сравнение с Mutex</a>
+                        
+                      </span>
+                    </div>
+                    <span class="series-status-badge" data-status="unread">
+                      Не прочитана
+                    </span>
+                  </div>
+                
+                  
                   <div class="series-item" data-post-path="/rust/rust-iterators-deep-dive/">
                     <div class="series-item-left">
                       <span class="series-item-num">
@@ -5084,6 +5177,23 @@
                       <span class="series-item-title">
                         
                           <a href="/rust/rust-attributes-and-cfg/">Атрибуты и условная компиляция в Rust: #[cfg], #[inline], #[allow] и repr(C)</a>
+                        
+                      </span>
+                    </div>
+                    <span class="series-status-badge" data-status="unread">
+                      Не прочитана
+                    </span>
+                  </div>
+                
+                  
+                  <div class="series-item" data-post-path="/rust/rust-advanced-traits/">
+                    <div class="series-item-left">
+                      <span class="series-item-num">
+                        43
+                      </span>
+                      <span class="series-item-title">
+                        
+                          <a href="/rust/rust-advanced-traits/">Продвинутые типажи в Rust: ассоциированные типы, супертрейты и blanket-реализации</a>
                         
                       </span>
                     </div>

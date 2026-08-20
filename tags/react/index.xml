@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>React on Eagle blog</title>
+    <link>https://eagle2000.space/tags/react/</link>
+    <description>Recent content in React on Eagle blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru</language>
+    
+    <lastBuildDate>Tue, 18 Aug 2026 16:00:00 +0300</lastBuildDate><atom:link href="https://eagle2000.space/tags/react/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Tauri v2 Mobile против Flutter: Сравниваем фреймворки на примере реальной игры</title>
+      <link>https://eagle2000.space/til/mobile/tauri-v2-vs-flutter-benchmark/</link>
+      <pubDate>Tue, 18 Aug 2026 16:00:00 +0300</pubDate>
+      
+      <guid>https://eagle2000.space/til/mobile/tauri-v2-vs-flutter-benchmark/</guid>
+      <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Memory-Optimization on Eagle blog</title>
-    <link>http://localhost:1313/tags/memory-optimization/</link>
+    <link>https://eagle2000.space/tags/memory-optimization/</link>
     <description>Recent content in Memory-Optimization on Eagle blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru</language>
     
-    <lastBuildDate>Thu, 13 Aug 2026 10:00:00 +0300</lastBuildDate><atom:link href="http://localhost:1313/tags/memory-optimization/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 13 Aug 2026 10:00:00 +0300</lastBuildDate><atom:link href="https://eagle2000.space/tags/memory-optimization/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Оптимизация памяти, интеграционные тесты и декларативный CLI (clap)</title>
-      <link>http://localhost:1313/rust/rust-clap-and-integration-testing/</link>
+      <link>https://eagle2000.space/rust/rust-clap-and-integration-testing/</link>
       <pubDate>Thu, 13 Aug 2026 10:00:00 +0300</pubDate>
       
-      <guid>http://localhost:1313/rust/rust-clap-and-integration-testing/</guid>
+      <guid>https://eagle2000.space/rust/rust-clap-and-integration-testing/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/rust/rust-clap-and-integration-testing/featured.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://eagle2000.space/rust/rust-clap-and-integration-testing/featured.png" />
     </item>
     
   </channel>

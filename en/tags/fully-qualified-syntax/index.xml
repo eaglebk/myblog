@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fully-Qualified-Syntax on Eagle blog</title>
+    <link>https://eagle2000.space/en/tags/fully-qualified-syntax/</link>
+    <description>Recent content in Fully-Qualified-Syntax on Eagle blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    
+    <lastBuildDate>Tue, 18 Aug 2026 10:00:00 +0300</lastBuildDate><atom:link href="https://eagle2000.space/en/tags/fully-qualified-syntax/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Advanced traits in Rust: associated types, supertraits, and blanket implementations</title>
+      <link>https://eagle2000.space/en/rust/rust-advanced-traits/</link>
+      <pubDate>Tue, 18 Aug 2026 10:00:00 +0300</pubDate>
+      
+      <guid>https://eagle2000.space/en/rust/rust-advanced-traits/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://eagle2000.space/rust/rust-advanced-traits/featured.png" />
+    </item>
+    
+  </channel>
+</rss>

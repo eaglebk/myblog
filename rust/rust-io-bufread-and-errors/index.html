@@ -4,7 +4,7 @@
   dir="ltr"
   class="scroll-smooth"
   data-default-appearance="dark"
-  data-auto-appearance="true"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  data-auto-appearance="true"><head>
   <meta charset="utf-8">
   
     <meta http-equiv="content-language" content="ru">
@@ -38,7 +38,7 @@
   
   
   
-  <link rel="canonical" href="http://localhost:1313/rust/rust-io-bufread-and-errors/">
+  <link rel="canonical" href="https://eagle2000.space/rust/rust-io-bufread-and-errors/">
   
   
 
@@ -47,7 +47,7 @@
   
 
   
-  <meta property="og:url" content="http://localhost:1313/rust/rust-io-bufread-and-errors/">
+  <meta property="og:url" content="https://eagle2000.space/rust/rust-io-bufread-and-errors/">
 	<meta property="og:site_name" content="Eagle blog">
 	<meta property="og:title" content="Потоки ввода-вывода I/O в Rust: BufRead, блокировка stdin, подход Magic Function и безопасная обработка ошибок">
 	<meta property="og:description" content="Подробное практическое руководство по I/O в Rust: архитектура системных вызовов, BufRead, блокировка stdin().lock(), изолированное тестирование с std::io::Cursor, траектории ошибок .lines() и стандарты UNIX CLI.">
@@ -62,18 +62,18 @@
 		<meta property="article:tag" content="Bufread">
 		<meta property="article:tag" content="Stdin-Lock">
 		<meta property="article:tag" content="Cursor">
-		<meta property="og:image" content="http://localhost:1313/rust/rust-io-bufread-and-errors/featured.png">
-			<meta property="og:see_also" content="http://localhost:1313/rust/rust-dyn-traits/">
-			<meta property="og:see_also" content="http://localhost:1313/rust/tokio-sync-primitives/">
-			<meta property="og:see_also" content="http://localhost:1313/rust/tokio-kak-otpravit-i-prinyat-mnozhestvo-sobytij/">
-			<meta property="og:see_also" content="http://localhost:1313/rust/rust-tokio-channels/">
-			<meta property="og:see_also" content="http://localhost:1313/rust/rust-clap-and-integration-testing/">
-			<meta property="og:see_also" content="http://localhost:1313/rust/rust-files-tempfile-and-docs/">
-			<meta property="og:see_also" content="http://localhost:1313/rust/rust-raii-box-deref/">
+		<meta property="og:image" content="https://eagle2000.space/rust/rust-io-bufread-and-errors/featured.png">
+			<meta property="og:see_also" content="https://eagle2000.space/rust/rust-interior-mutability/">
+			<meta property="og:see_also" content="https://eagle2000.space/rust/rust-advanced-traits/">
+			<meta property="og:see_also" content="https://eagle2000.space/rust/rust-dyn-traits/">
+			<meta property="og:see_also" content="https://eagle2000.space/rust/tokio-sync-primitives/">
+			<meta property="og:see_also" content="https://eagle2000.space/rust/tokio-kak-otpravit-i-prinyat-mnozhestvo-sobytij/">
+			<meta property="og:see_also" content="https://eagle2000.space/rust/rust-tokio-channels/">
+			<meta property="og:see_also" content="https://eagle2000.space/rust/rust-clap-and-integration-testing/">
 
   
 	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:image" content="http://localhost:1313/rust/rust-io-bufread-and-errors/featured.png">
+	<meta name="twitter:image" content="https://eagle2000.space/rust/rust-io-bufread-and-errors/featured.png">
 	<meta name="twitter:title" content="Потоки ввода-вывода I/O в Rust: BufRead, блокировка stdin, подход Magic Function и безопасная обработка ошибок">
 	<meta name="twitter:description" content="Подробное практическое руководство по I/O в Rust: архитектура системных вызовов, BufRead, блокировка stdin().lock(), изолированное тестирование с std::io::Cursor, траектории ошибок .lines() и стандарты UNIX CLI.">
 
@@ -315,7 +315,7 @@
     "headline": "Потоки ввода-вывода I\/O в Rust: BufRead, блокировка stdin, подход Magic Function и безопасная обработка ошибок",
     "description": "Подробное практическое руководство по I\/O в Rust: архитектура системных вызовов, BufRead, блокировка stdin().lock(), изолированное тестирование с std::io::Cursor, траектории ошибок .lines() и стандарты UNIX CLI.",
     "inLanguage": "ru",
-    "url" : "http://localhost:1313/rust/rust-io-bufread-and-errors/",
+    "url" : "https://eagle2000.space/rust/rust-io-bufread-and-errors/",
     "author" : {
       "@type": "Person",
       "name": ""
@@ -328,7 +328,7 @@
     
     "keywords": ["rust","dev","io","bufread","stdin-lock","cursor","error-handling","exit-codes"],
     
-    "mainEntityOfPage": "http://localhost:1313/rust/rust-io-bufread-and-errors/",
+    "mainEntityOfPage": "https://eagle2000.space/rust/rust-io-bufread-and-errors/",
     "wordCount": "1688"
   }]
   </script>
@@ -336,6 +336,24 @@
 
 
   
+  
+    
+
+  <script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=G-1K8G7FW77W"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1K8G7FW77W');
+</script>
+
+
+
+
+
   
 
   
@@ -1647,7 +1665,7 @@
       <div class="series-progress-card">
         <div style="display: flex; flex-direction: column;">
           <span class="text-xs">Статей прочитано</span>
-          <span id="series-progress-text">0/56</span>
+          <span id="series-progress-text">0/58</span>
         </div>
         <div class="series-circle-container">
           <svg class="series-circle-svg">
@@ -1666,6 +1684,14 @@
         
         
 
+        
+          
+            
+          
+        
+          
+            
+          
         
           
             
@@ -2404,6 +2430,10 @@
               
             
               
+            
+              
+            
+              
                 
               
             
@@ -2629,6 +2659,23 @@
                   </div>
                 
                   
+                  <div class="series-item" data-post-path="/rust/rust-interior-mutability/">
+                    <div class="series-item-left">
+                      <span class="series-item-num">
+                        31
+                      </span>
+                      <span class="series-item-title">
+                        
+                          <a href="/rust/rust-interior-mutability/">Внутренняя мутабельность в Rust: философия паттерна, Cell, RefCell и сравнение с Mutex</a>
+                        
+                      </span>
+                    </div>
+                    <span class="series-status-badge" data-status="unread">
+                      Не прочитана
+                    </span>
+                  </div>
+                
+                  
                   <div class="series-item" data-post-path="/rust/rust-iterators-deep-dive/">
                     <div class="series-item-left">
                       <span class="series-item-num">
@@ -2790,6 +2837,23 @@
                       <span class="series-item-title">
                         
                           <a href="/rust/rust-attributes-and-cfg/">Атрибуты и условная компиляция в Rust: #[cfg], #[inline], #[allow] и repr(C)</a>
+                        
+                      </span>
+                    </div>
+                    <span class="series-status-badge" data-status="unread">
+                      Не прочитана
+                    </span>
+                  </div>
+                
+                  
+                  <div class="series-item" data-post-path="/rust/rust-advanced-traits/">
+                    <div class="series-item-left">
+                      <span class="series-item-num">
+                        43
+                      </span>
+                      <span class="series-item-title">
+                        
+                          <a href="/rust/rust-advanced-traits/">Продвинутые типажи в Rust: ассоциированные типы, супертрейты и blanket-реализации</a>
                         
                       </span>
                     </div>
@@ -3165,7 +3229,7 @@ graph LR
 <p>Ниже представлен пошаговый пример использования <code>impl BufRead</code>, мокирования через <code>Cursor</code> и применения <code>stdin().lock()</code>:</p>
 
 
-  <div id="52f80937f3adfd9a364a4152337c8765" class="rust-slides bg-gray-900 rounded-lg overflow-hidden my-8">
+  <div id="28940b5f45f2aed4d8934c77d22bfcd6" class="rust-slides bg-gray-900 rounded-lg overflow-hidden my-8">
     
     <div class="flex justify-between items-center bg-gray-800 px-4 py-2">
       <span class="font-mono text-sm text-white">BufRead, Cursor в тестах и stdin().lock()</span>
@@ -3596,7 +3660,7 @@ graph LR
 <p>Изучите пошаговый пример безопасного разбора потоков, вывода ошибок и системного останова:</p>
 
 
-  <div id="50768a2ca9ce0e92df47b458d1a188f5" class="rust-slides bg-gray-900 rounded-lg overflow-hidden my-8">
+  <div id="637f2910db343f81e96504ab13acf348" class="rust-slides bg-gray-900 rounded-lg overflow-hidden my-8">
     
     <div class="flex justify-between items-center bg-gray-800 px-4 py-2">
       <span class="font-mono text-sm text-white">Траектории ошибок I/O, stderr и process::exit</span>
@@ -3949,7 +4013,7 @@ graph LR
 <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
 <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
 
-<div id="quiz-1786951506330153000" class="quiz-mount" data-lang="ru" data-name="Потоки ввода-вывода и обработка ошибок" data-firebase='{
+<div id="quiz-1787237316697084000" class="quiz-mount" data-lang="ru" data-name="Потоки ввода-вывода и обработка ошибок" data-firebase='{
   "apiKey": "AIzaSyDpJ8bNxx9MvSeu9PsXzk3H37AeYQjBv4M",
   "authDomain": "eagleblog-b0286.firebaseapp.com",
   "projectId": "eagleblog-b0286",
@@ -3958,14 +4022,14 @@ graph LR
   "appId": "1:942835714160:web:7ba3682059f8179a9d0cb5",
   "measurementId": "G-1K8G7FW77W"
 }'></div>
-<script type="application/json" id="quiz-1786951506330153000-srcs">"[\"/rust/rust-io-bufread-and-errors/quizzes/io_bufread.json\"]"</script>
+<script type="application/json" id="quiz-1787237316697084000-srcs">"[\"/rust/rust-io-bufread-and-errors/quizzes/io_bufread.json\"]"</script>
 
 <script type="module">
   import { mountQuizWidget } from "\/js\/quiz-widget.min.js";
 
   if (typeof window.firebase !== "undefined") {
     if (!window.firebase.apps.length) {
-      const cfg = JSON.parse(document.getElementById("quiz-1786951506330153000").dataset.firebase || "{}");
+      const cfg = JSON.parse(document.getElementById("quiz-1787237316697084000").dataset.firebase || "{}");
       if (cfg.apiKey) {
         window.firebase.initializeApp(cfg);
         window.db = window.firebase.firestore();
@@ -3974,8 +4038,8 @@ graph LR
       window.db = window.firebase.firestore();
     }
   }
-  const mount = document.getElementById("quiz-1786951506330153000");
-  const json  = document.getElementById("quiz-1786951506330153000-srcs").textContent;
+  const mount = document.getElementById("quiz-1787237316697084000");
+  const json  = document.getElementById("quiz-1787237316697084000-srcs").textContent;
   const srcs  = JSON.parse(json);
   const cfg   = JSON.parse(mount.dataset.firebase || "{}");
   const hljsThemeDark = "\u0022github-dark-dimmed\u0022";
@@ -4069,7 +4133,7 @@ graph LR
 <div class="share-bar print:hidden"
      aria-label="Поделиться статьёй"
      data-share-title="Потоки ввода-вывода I/O в Rust: BufRead, блокировка stdin, подход Magic Function и безопасная обработка ошибок"
-     data-share-url="http://localhost:1313/rust/rust-io-bufread-and-errors/"
+     data-share-url="https://eagle2000.space/rust/rust-io-bufread-and-errors/"
      data-share-email-body="Прочитал статью «{title}»:
 {url}">
 
@@ -4219,7 +4283,7 @@ graph LR
       <div class="series-progress-card">
         <div style="display: flex; flex-direction: column;">
           <span class="text-xs">Статей прочитано</span>
-          <span id="series-progress-text">0/56</span>
+          <span id="series-progress-text">0/58</span>
         </div>
         <div class="series-circle-container">
           <svg class="series-circle-svg">
@@ -4238,6 +4302,14 @@ graph LR
         
         
 
+        
+          
+            
+          
+        
+          
+            
+          
         
           
             
@@ -4976,6 +5048,10 @@ graph LR
               
             
               
+            
+              
+            
+              
                 
               
             
@@ -5201,6 +5277,23 @@ graph LR
                   </div>
                 
                   
+                  <div class="series-item" data-post-path="/rust/rust-interior-mutability/">
+                    <div class="series-item-left">
+                      <span class="series-item-num">
+                        31
+                      </span>
+                      <span class="series-item-title">
+                        
+                          <a href="/rust/rust-interior-mutability/">Внутренняя мутабельность в Rust: философия паттерна, Cell, RefCell и сравнение с Mutex</a>
+                        
+                      </span>
+                    </div>
+                    <span class="series-status-badge" data-status="unread">
+                      Не прочитана
+                    </span>
+                  </div>
+                
+                  
                   <div class="series-item" data-post-path="/rust/rust-iterators-deep-dive/">
                     <div class="series-item-left">
                       <span class="series-item-num">
@@ -5362,6 +5455,23 @@ graph LR
                       <span class="series-item-title">
                         
                           <a href="/rust/rust-attributes-and-cfg/">Атрибуты и условная компиляция в Rust: #[cfg], #[inline], #[allow] и repr(C)</a>
+                        
+                      </span>
+                    </div>
+                    <span class="series-status-badge" data-status="unread">
+                      Не прочитана
+                    </span>
+                  </div>
+                
+                  
+                  <div class="series-item" data-post-path="/rust/rust-advanced-traits/">
+                    <div class="series-item-left">
+                      <span class="series-item-num">
+                        43
+                      </span>
+                      <span class="series-item-title">
+                        
+                          <a href="/rust/rust-advanced-traits/">Продвинутые типажи в Rust: ассоциированные типы, супертрейты и blanket-реализации</a>
                         
                       </span>
                     </div>

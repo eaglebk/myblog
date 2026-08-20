@@ -33,7 +33,7 @@ fn main() {
 
 // ---
 
-// Шаг 2: Blanket-реализации (Ковровые реализации)
+// Шаг 2: Blanket-реализации (универсальная реализация трейта)
 use std::fmt::Display as StandardDisplay;
 
 trait Summary {

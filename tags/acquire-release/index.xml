@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Acquire-Release on Eagle blog</title>
-    <link>http://localhost:1313/tags/acquire-release/</link>
+    <link>https://eagle2000.space/tags/acquire-release/</link>
     <description>Recent content in Acquire-Release on Eagle blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru</language>
     
-    <lastBuildDate>Tue, 11 Aug 2026 10:00:00 +0300</lastBuildDate><atom:link href="http://localhost:1313/tags/acquire-release/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 11 Aug 2026 10:00:00 +0300</lastBuildDate><atom:link href="https://eagle2000.space/tags/acquire-release/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Атомарные операции и Memory Ordering в Rust: от Ordering::Relaxed до Acquire/Release барьеров</title>
-      <link>http://localhost:1313/rust/rust-atomics-and-memory-ordering/</link>
+      <link>https://eagle2000.space/rust/rust-atomics-and-memory-ordering/</link>
       <pubDate>Tue, 11 Aug 2026 10:00:00 +0300</pubDate>
       
-      <guid>http://localhost:1313/rust/rust-atomics-and-memory-ordering/</guid>
+      <guid>https://eagle2000.space/rust/rust-atomics-and-memory-ordering/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/rust/rust-atomics-and-memory-ordering/featured.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://eagle2000.space/rust/rust-atomics-and-memory-ordering/featured.png" />
     </item>
     
   </channel>
