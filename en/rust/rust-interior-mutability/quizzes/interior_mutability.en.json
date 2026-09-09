@@ -1,0 +1,189 @@
+[
+  {
+    "question": "What is the core purpose of the Interior Mutability pattern in Rust?",
+    "options": [
+      "Automatically copying all local variables onto the heap",
+      "Mutating inner data of a structure through an immutable &self reference",
+      "Bypassing compile-time type checking completely",
+      "Increasing stack allocation limits for large structs"
+    ],
+    "answer": 1,
+    "explanation": "The Interior Mutability pattern allows mutating an object's inner state through an immutable reference (`&self`) when required by system architecture."
+  },
+  {
+    "question": "Which `Cell<T>` method extracts the inner value while replacing it with `T::default()`?",
+    "options": [
+      "Cell::take()",
+      "Cell::get()",
+      "Cell::replace()",
+      "Cell::drop()"
+    ],
+    "answer": 0,
+    "explanation": "The `take()` method extracts the value from a `Cell`, leaving `Default::default()` in its place."
+  },
+  {
+    "question": "What is the primary distinction between `RefCell<T>` and `Cell<T>`?",
+    "options": [
+      "Cell compiles directly into unsafe unverified code",
+      "RefCell issues temporary smart references (Ref/RefMut) to complex inner objects, whereas Cell copies or moves values as a whole",
+      "RefCell cannot hold standard data structures",
+      "Cell can only be used with String vectors"
+    ],
+    "answer": 1,
+    "explanation": "`Cell<T>` never hands out references and operates via full value copies/moves, whereas `RefCell<T>` issues temporary smart references (`Ref<T>` and `RefMut<T>`)."
+  },
+  {
+    "question": "What happens at runtime if `.borrow_mut()` is called on a `RefCell` while a previous mutable borrow is still active?",
+    "options": [
+      "The compiler fails the build",
+      "The thread blocks until the reference is released",
+      "The program panics at runtime (Already borrowed panic)",
+      "Data is automatically cloned in memory"
+    ],
+    "answer": 2,
+    "explanation": "`RefCell` enforces borrow rules at runtime. Requesting a second mutable borrow while one is active causes an immediate runtime panic."
+  },
+  {
+    "question": "What constraint must type `T` satisfy to invoke the `.get()` method on `Cell<T>`?",
+    "options": [
+      "Type T must implement the Copy trait",
+      "Type T must be wrapped inside an Option",
+      "Type T must implement the Display trait",
+      "Type T must be stored exclusively on the heap"
+    ],
+    "answer": 0,
+    "explanation": "The `Cell::get()` method returns a copy of the inner value, so it is only available for types implementing the `Copy` trait."
+  },
+  {
+    "question": "When is `Cell<u32>` preferable over `RefCell<u32>`?",
+    "options": [
+      "When long-lived references to inner elements are needed",
+      "When a counter or flag is needed with zero runtime overhead and guaranteed panic-free execution",
+      "When data must be shared across threads",
+      "Never, RefCell is always superior"
+    ],
+    "answer": 1,
+    "explanation": "For scalar `Copy` types like `u32` or `bool`, `Cell` is preferred: it has zero runtime counters and cannot panic."
+  },
+  {
+    "question": "What type does the `.borrow_mut()` method on `RefCell<T>` return?",
+    "options": [
+      "A raw mutable reference &mut T",
+      "A RefMut<T> smart wrapper that decrements the borrow counter when dropped",
+      "A raw pointer *mut T",
+      "A new RefCell<T> instance"
+    ],
+    "answer": 1,
+    "explanation": "The `borrow_mut()` method returns a `RefMut<T>` RAII wrapper. Upon going out of scope, its `drop()` implementation automatically releases the borrow."
+  },
+  {
+    "question": "How can you attempt to borrow from a `RefCell<T>` safely without risking a runtime panic?",
+    "options": [
+      "Use try_borrow() and try_borrow_mut() methods which return a Result",
+      "Wrap the call inside an unsafe block",
+      "Invoke std::mem::forget on the handle",
+      "Use a panic_catch! macro"
+    ],
+    "answer": 0,
+    "explanation": "The `try_borrow()` and `try_borrow_mut()` methods return a `Result`, allowing applications to handle borrow conflicts gracefully."
+  },
+  {
+    "question": "Which `Cell<T>` method inserts a new value into the container and returns the previously stored value?",
+    "options": [
+      "Cell::set()",
+      "Cell::get()",
+      "Cell::replace()",
+      "Cell::take()"
+    ],
+    "answer": 2,
+    "explanation": "The `replace(new_val)` method stores `new_val` inside the container and returns the old value that was previously held."
+  },
+  {
+    "question": "What happens if `.borrow_mut()` is requested while an immutable reference from `.borrow()` is still active on `RefCell`?",
+    "options": [
+      "The compiler prevents the build",
+      "A runtime panic occurs because Rust borrow rules prohibit aliasing & and &mut",
+      "The request is silently ignored",
+      "The existing immutable reference is automatically invalidated"
+    ],
+    "answer": 1,
+    "explanation": "Rust borrow rules apply at runtime in `RefCell`: you cannot acquire `borrow_mut()` while any `borrow()` reference remains active."
+  },
+  {
+    "question": "What is the performance overhead of `Cell<T>` compared to a plain struct field?",
+    "options": [
+      "Significant overhead due to OS mutex locks",
+      "Zero-cost — in compiled code, Cell is represented as a plain value in memory",
+      "Continuous heap allocation overhead",
+      "50% performance degradation on every access"
+    ],
+    "answer": 1,
+    "explanation": "`Cell<T>` is a transparent zero-cost wrapper with no extra runtime fields or performance overhead."
+  },
+  {
+    "question": "What happens to a `RefCell` borrow counter when a `Ref` or `RefMut` object goes out of scope?",
+    "options": [
+      "The counter instantly resets to 0",
+      "Its Drop implementation automatically decrements the active borrow counter",
+      "The counter remains unchanged until process exit",
+      "The counter increments by 1"
+    ],
+    "answer": 1,
+    "explanation": "Following the RAII idiom, `Ref` and `RefMut` smart pointers decrement the borrow counter of `RefCell` in their `drop()` methods."
+  },
+  {
+    "question": "Can `Cell<String>` be used with non-`Copy` types like `String`?",
+    "options": [
+      "Yes, but .get() is unavailable; mutation works via set(), replace(), and take()",
+      "No, Cell only works with f32 and u32 types",
+      "Yes, but only within unsafe blocks",
+      "No, the compiler rejects Cell<String> definitions"
+    ],
+    "answer": 0,
+    "explanation": "`Cell<String>` can be created and mutated via `set()` / `take()`, though calling `.get()` fails to compile since `String` does not implement `Copy`."
+  },
+  {
+    "question": "Why does calling `let b1 = data.borrow_mut(); drop(b1); let b2 = data.borrow_mut();` NOT panic?",
+    "options": [
+      "The first borrow b1 ended and was released before b2 was requested",
+      "RefCell allows unlimited simultaneous mutable references",
+      "drop() disables borrow checking entirely",
+      "The compiler merges both borrows into one"
+    ],
+    "answer": 0,
+    "explanation": "Once the `RefMut` wrapper is dropped, the active borrow count returns to 0, allowing subsequent `borrow_mut()` calls to succeed."
+  },
+  {
+    "question": "Which scenario is `RefCell<Vec<String>>` best suited for?",
+    "options": [
+      "A multithreaded server handling 100 concurrent threads",
+      "Computing compile-time numerical constants",
+      "A single-threaded service struct passed by &self that needs to append log entries to a vector",
+      "Creating global immutable constants"
+    ],
+    "answer": 2,
+    "explanation": "`RefCell<Vec<String>>` is ideal for single-threaded services needing to accumulate log entries via `&self` methods."
+  },
+  {
+    "question": "What is the result of invoking `Cell::set(new_val)` on a `Cell<u32>`?",
+    "options": [
+      "The previous value is overwritten with new_val",
+      "The method returns a Result error",
+      "The value is appended to an internal queue",
+      "Subsequent calls to the struct are blocked"
+    ],
+    "answer": 0,
+    "explanation": "The `set(val)` method completely replaces the inner value of the `Cell` container with `val`."
+  },
+  {
+    "question": "Which fundamental Rust borrowing rule does `RefCell` defer to runtime?",
+    "options": [
+      "Either one mutable reference &mut T OR any number of immutable references &T",
+      "Variable names must be in uppercase",
+      "All custom structs must implement Copy",
+      "Stack variables are automatically moved to the heap"
+    ],
+    "answer": 0,
+    "explanation": "`RefCell` enforces Rust's core aliasing rule at runtime: either a single `&mut T` or multiple `&T` references may exist at any given moment."
+  }
+]
