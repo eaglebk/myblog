@@ -134,6 +134,41 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .channel-logo:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.6);
+  }
+
+  .main-headline a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .main-headline a:hover {
+    color: #38bdf8;
+  }
+
+  .official-site-link {
+    color: #38bdf8 !important;
+    background: rgba(56, 189, 248, 0.08) !important;
+    border: 1px solid rgba(56, 189, 248, 0.2) !important;
+  }
+  .official-site-link:hover {
+    background: rgba(56, 189, 248, 0.18) !important;
+    color: #ffffff !important;
+  }
+
+  .footer-hashtags a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .footer-hashtags a:hover {
+    color: #38bdf8;
   }
 
   .main-headline {
@@ -598,6 +633,7 @@
 <nav class="day-switcher" aria-label="Выбор дня конференции">
   <a href="day1.html" class="day-tab active">12 сентября</a>
   <a href="day2.html" class="day-tab">13 сентября</a>
+  <a href="https://ecode.ozon.tech/" target="_blank" rel="noopener noreferrer" class="day-tab official-site-link" title="Официальный сайт конференции E-CODE">ecode.ozon.tech ↗</a>
 </nav>
 
 <div class="canvas" id="poster">
@@ -612,11 +648,11 @@
   <!-- HEADER -->
   <header class="header-container">
     <div class="header-main-row">
-      <div class="channel-logo">
+      <a href="https://t.me/prog_lighthouse" target="_blank" rel="noopener noreferrer" class="channel-logo" title="Канал «Маяк программиста» в Telegram">
         <img src="channel_avatar.png" alt="Маяк программиста" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
-      </div>
+      </a>
       <h1 class="main-headline">
-        Ежегодная IT-конференция E-CODE 2026 | 12 Сентября (День 1)
+        <a href="https://ecode.ozon.tech/" target="_blank" rel="noopener noreferrer" title="Официальный сайт конференции E-CODE 2026">Ежегодная IT-конференция E-CODE 2026 | 12 Сентября (День 1)</a>
       </h1>
     </div>
 
@@ -1115,9 +1151,9 @@
   <footer class="footer-container">
     <div class="footer-hashtags">
       <span>#ITКонференция</span>
-      <span>#МаякПрограммиста</span>
+      <a href="https://t.me/prog_lighthouse" target="_blank" rel="noopener noreferrer">#МаякПрограммиста</a>
       <span>#Сезон2026</span>
-      <span>#ECODE2026</span>
+      <a href="https://ecode.ozon.tech/" target="_blank" rel="noopener noreferrer">#ECODE2026</a>
     </div>
   </footer>
 
