@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>E-CODE 2026 // 12 Сентября (День 1) — Расписание конференции</title>
+<style>
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  
+  :root {
+    --bg-dark: #050814;
+    --card-bg: #ffffff;
+    --card-text: #0f172a;
+    --card-speaker: #475569;
+    --accent-blue: #38bdf8;
+    --accent-glow: rgba(56, 189, 248, 0.3);
+  }
+
+  body {
+    background: var(--bg-dark);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px 16px;
+    color: #ffffff;
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  /* Minimalist Segmented Day Switcher */
+  .day-switcher {
+    display: inline-flex;
+    background: rgba(15, 23, 42, 0.65);
+    padding: 4px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    gap: 4px;
+    margin-bottom: 18px;
+    z-index: 20;
+    backdrop-filter: blur(12px);
+  }
+  .day-tab {
+    padding: 7px 18px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #94a3b8;
+    text-decoration: none;
+    transition: all 0.15s ease;
+    border: none;
+  }
+  .day-tab:hover {
+    color: #f1f5f9;
+    background: rgba(255, 255, 255, 0.05);
+  }
+  .day-tab.active {
+    background: rgba(255, 255, 255, 0.14);
+    color: #ffffff;
+    font-weight: 700;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  /* Fluid Responsive Poster Canvas */
+  .canvas {
+    width: 100%;
+    max-width: 1780px;
+    min-height: auto;
+    position: relative;
+    background: radial-gradient(circle at 85% 15%, rgba(13, 110, 189, 0.45) 0%, rgba(10, 25, 60, 0) 60%),
+                radial-gradient(circle at 15% 85%, rgba(109, 40, 217, 0.35) 0%, rgba(10, 20, 50, 0) 50%),
+                linear-gradient(135deg, #0b132b 0%, #0d1b3e 40%, #082952 100%);
+    border-radius: 20px;
+    padding: 24px 32px;
+    color: #ffffff;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+    overflow: hidden;
+  }
+
+  /* Skyline / Tech bridge backdrop illustration */
+  .skyline-bg {
+    position: absolute;
+    top: 15px;
+    right: 30px;
+    width: 650px;
+    max-width: 40%;
+    height: 140px;
+    opacity: 0.18;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* Top Right 3 Crosses */
+  .top-crosses {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 15px;
+    letter-spacing: 6px;
+    font-weight: 300;
+    z-index: 2;
+  }
+
+  /* Header Section */
+  .header-container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+
+  .header-main-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .channel-logo {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    background: #0a1329;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .main-headline {
+    font-size: clamp(20px, 1.8vw, 30px);
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: #ffffff;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.4);
+    margin: 0;
+  }
+
+  /* Track Badges Row */
+  .track-chips {
+    display: flex;
+    gap: 8px;
+    margin-left: 62px;
+    flex-wrap: wrap;
+  }
+  .track-chip {
+    font-size: 10.5px;
+    font-weight: 800;
+    padding: 4px 12px;
+    border-radius: 12px;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+  }
+  .chip-science { background: #f59e0b; color: #1e1b4b; }
+  .chip-backend { background: #3b82f6; color: #ffffff; }
+  .chip-ml { background: #8b5cf6; color: #ffffff; }
+  .chip-mobile { background: #10b981; color: #ffffff; }
+  .chip-ib { background: #ef4444; color: #ffffff; }
+  .chip-robo { background: #06b6d4; color: #ffffff; }
+  .chip-infra { background: #6366f1; color: #ffffff; }
+  .chip-qa { background: #ec4899; color: #ffffff; }
+
+  /* Table Header Labels */
+  .table-labels {
+    display: grid;
+    grid-template-columns: 75px 75px repeat(6, 1fr);
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #cbd5e1;
+    margin-bottom: 8px;
+    padding: 0 2px;
+    z-index: 2;
+    position: relative;
+  }
+  .table-labels div:first-child { text-align: center; }
+  .table-labels div:nth-child(2) { text-align: center; }
+
+  /* Timetable Grid Container */
+  .grid-table {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+  }
+
+  /* Time slot row */
+  .slot-row {
+    display: grid;
+    grid-template-columns: 75px 75px repeat(6, 1fr);
+    gap: 8px;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  /* Time Cell */
+  .time-cell {
+    background: rgba(13, 23, 56, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(15px, 1.1vw, 18px);
+    font-weight: 800;
+    color: #ffffff;
+    text-align: center;
+    padding: 4px;
+  }
+
+  /* Tag Cell */
+  .tag-cell {
+    background: rgba(14, 34, 77, 0.85);
+    border: 1px solid rgba(56, 189, 248, 0.25);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 10.5px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    text-align: center;
+    padding: 4px;
+  }
+
+  /* Talk Card */
+  .talk-card {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 7px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    position: relative;
+    min-height: 72px;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    overflow: hidden;
+  }
+  .talk-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+  }
+  .talk-card.card-disabled {
+    cursor: default;
+    opacity: 0.45;
+  }
+  .talk-card.card-disabled:hover {
+    transform: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  }
+
+  /* Category Chip Header inside Card */
+  .card-top-chip {
+    align-self: flex-start;
+    font-size: 8px;
+    font-weight: 800;
+    padding: 2px 6px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    margin-bottom: 3px;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+  .top-science { background: #fef3c7; color: #b45309; }
+  .top-backend { background: #dbeafe; color: #1d4ed8; }
+  .top-ml { background: #ede9fe; color: #6d28d9; }
+  .top-mobile { background: #d1fae5; color: #047857; }
+  .top-ib { background: #fee2e2; color: #b91c1c; }
+  .top-robo { background: #cffafe; color: #0e7490; }
+  .top-infra { background: #e0e7ff; color: #3730a3; }
+  .top-qa { background: #fce7f3; color: #be185d; }
+
+  .card-main-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .card-text-block {
+    flex: 1;
+    overflow: hidden;
+  }
+
+  .card-talk-title {
+    font-size: clamp(10.5px, 0.72vw, 12px);
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.2;
+    margin-bottom: 2px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .card-speaker-name {
+    font-size: clamp(8.5px, 0.6vw, 10px);
+    font-weight: 600;
+    color: #475569;
+    line-height: 1.1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .card-speaker-avatar {
+    width: clamp(30px, 2.2vw, 36px);
+    height: clamp(30px, 2.2vw, 36px);
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1.5px solid #0284c7;
+    flex-shrink: 0;
+    background: #e2e8f0;
+  }
+
+  .avatar-fallback {
+    width: clamp(30px, 2.2vw, 36px);
+    height: clamp(30px, 2.2vw, 36px);
+    border-radius: 50%;
+    background: linear-gradient(135deg, #0284c7, #7c3aed);
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 800;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1.5px solid #0284c7;
+    flex-shrink: 0;
+  }
+
+  /* Lunch Row */
+  .lunch-bar {
+    grid-column: 3 / -1;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    font-size: 12.5px;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: 0.8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    min-height: 48px;
+  }
+
+  /* Footer Section */
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .footer-hashtags {
+    font-size: 14px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 0.4px;
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  /* Modal Popup for talk description */
+  .modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(5, 8, 20, 0.85);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+    padding: 16px;
+  }
+  .modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .modal-content {
+    background: #0d1b3e;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    border-radius: 16px;
+    padding: 28px 32px;
+    max-width: 620px;
+    width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    color: #ffffff;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+    position: relative;
+    transform: translateY(20px);
+    transition: transform 0.25s ease;
+  }
+  .modal-overlay.active .modal-content {
+    transform: translateY(0);
+  }
+  .modal-close {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: #94a3b8;
+    font-size: 28px;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.2s;
+  }
+  .modal-close:hover { color: #ffffff; }
+  .modal-chip {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 12px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .modal-time-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    color: #94a3b8;
+    margin-left: 8px;
+    margin-bottom: 12px;
+  }
+  .modal-title {
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 8px;
+    color: #f8fafc;
+    line-height: 1.35;
+  }
+  .modal-speaker {
+    font-size: 14px;
+    font-weight: 700;
+    color: #38bdf8;
+    margin-bottom: 4px;
+  }
+  .modal-company {
+    font-size: 12px;
+    font-weight: 500;
+    color: #94a3b8;
+    margin-bottom: 16px;
+  }
+  .modal-desc {
+    font-size: 14px;
+    line-height: 1.65;
+    color: #cbd5e1;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 14px;
+  }
+
+  /* Responsive Mobile / Tablet View (< 1150px) */
+  @media screen and (max-width: 1150px) {
+    body {
+      padding: 10px 8px;
+      align-items: stretch;
+      background: #050814;
+    }
+    .day-switcher {
+      justify-content: center;
+      margin-bottom: 12px;
+    }
+    .canvas {
+      width: 100% !important;
+      max-width: 100% !important;
+      min-height: auto !important;
+      height: auto !important;
+      border-radius: 12px;
+      padding: 16px 12px !important;
+      box-shadow: none;
+    }
+    .top-crosses, .skyline-bg {
+      display: none !important;
+    }
+    .table-labels {
+      display: none !important;
+    }
+    .header-main-row {
+      gap: 10px;
+    }
+    .main-headline {
+      font-size: 18px !important;
+      line-height: 1.3;
+    }
+    .track-chips {
+      margin-left: 0 !important;
+      gap: 5px;
+    }
+    .track-chip {
+      font-size: 9.5px;
+      padding: 3px 8px;
+    }
+
+    .slot-row {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 8px !important;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .slot-row > .time-cell {
+      width: 100% !important;
+      height: 34px !important;
+      font-size: 15px !important;
+      border-radius: 8px !important;
+    }
+    .slot-row > .tag-cell {
+      width: 100% !important;
+      height: 26px !important;
+      font-size: 11px !important;
+      border-radius: 6px !important;
+    }
+
+    .talk-card {
+      width: 100% !important;
+      min-height: auto !important;
+      padding: 10px 12px !important;
+      border-radius: 8px;
+    }
+    .card-talk-title {
+      font-size: 13.5px !important;
+      line-height: 1.3 !important;
+      display: block !important;
+    }
+    .card-speaker-name {
+      font-size: 11px !important;
+      margin-top: 2px;
+    }
+    .card-speaker-avatar, .avatar-fallback {
+      width: 40px !important;
+      height: 40px !important;
+      font-size: 13px !important;
+    }
+
+    .lunch-bar {
+      width: 100% !important;
+      min-height: 42px !important;
+      font-size: 11px !important;
+      justify-content: center;
+      text-align: center;
+      padding: 8px 12px !important;
+    }
+
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      text-align: center;
+    }
+    .footer-hashtags {
+      font-size: 12px !important;
+      justify-content: center;
+    }
+
+    .modal-content {
+      padding: 20px !important;
+    }
+    .modal-title {
+      font-size: 18px !important;
+    }
+  }
+
+</style>
+</head>
+<body>
+
+<!-- Day Navigation Switcher -->
+<nav class="day-switcher" aria-label="Выбор дня конференции">
+  <a href="day1.html" class="day-tab active">12 сентября</a>
+  <a href="day2.html" class="day-tab">13 сентября</a>
+</nav>
+
+<div class="canvas" id="poster">
+  <div class="top-crosses">✕  ✕  ✕</div>
+
+  <svg class="skyline-bg" viewBox="0 0 850 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M 0 160 L 50 130 L 70 130 L 90 90 L 100 90 L 110 160 L 220 160 L 240 100 L 260 70 L 270 70 L 290 160 L 380 160 L 400 60 L 410 40 L 420 60 L 440 160 L 550 160 L 570 80 L 590 80 L 610 160 L 700 160 L 730 40 L 740 20 L 750 40 L 780 160 Z" fill="#38bdf8"/>
+    <path d="M 150 160 Q 300 80 450 160" stroke="#38bdf8" stroke-width="4" fill="none"/>
+    <path d="M 400 160 Q 550 60 700 160" stroke="#38bdf8" stroke-width="3" fill="none"/>
+  </svg>
+
+  <!-- HEADER -->
+  <header class="header-container">
+    <div class="header-main-row">
+      <div class="channel-logo">
+        <img src="channel_avatar.png" alt="Маяк программиста" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+      </div>
+      <h1 class="main-headline">
+        Ежегодная IT-конференция E-CODE 2026 | 12 Сентября (День 1)
+      </h1>
+    </div>
+
+    <div class="track-chips">
+      <div class="track-chip chip-science">Жизнь и наука</div>
+      <div class="track-chip chip-backend">Бэкэнд</div>
+      <div class="track-chip chip-ml">ML / DS</div>
+      <div class="track-chip chip-mobile">Mobile</div>
+      <div class="track-chip chip-ib">ИБ</div>
+      <div class="track-chip chip-robo">Робозон</div>
+    </div>
+  </header>
+
+  <!-- TABLE HEADERS -->
+  <div class="table-labels">
+    <div>Таймслот</div>
+    <div>Зал / Трек</div>
+    <div style="grid-column: span 6;">Название доклада &amp; Спикер</div>
+  </div>
+
+  <!-- GRID OF CARDS -->
+  <main class="grid-table">
+    <!-- 12:00 OPENING -->
+    <div class="slot-row" style="grid-template-columns: 75px 75px 1.5fr 1.5fr 1fr 1fr 1fr 1fr;">
+      <div class="time-cell">12:00</div>
+      <div class="tag-cell">OPENING</div>
+      <div class="talk-card" data-track="Жизнь и наука" data-time="12:00 – 12:20" data-title="Открытие E-CODE 2026" data-speaker="Антон Степаненко" data-company="CTO, Ozon" data-description="Торжественный старт конференции, ключевые темы и технологические приоритеты сезона.">
+        <div class="card-top-chip top-science">Жизнь и наука</div>
+        <div class="card-main-content">
+          <div class="card-text-block">
+            <div class="card-talk-title">Открытие E-CODE 2026</div>
+            <div class="card-speaker-name">Антон Степаненко</div>
+          </div>
+          <img class="card-speaker-avatar" src="https://squidex.jugru.team/api/assets/srm/8b705e02-04b5-4b55-afac-4e44f4682589/anton-stepanenko.png?cache=3600&auto=true&width=126&height=134&mode=CropUpsize" alt="Антон Степаненко" loading="lazy">
+        </div>
+      </div>
+      <div class="talk-card" data-track="Робозон" data-time="12:30 – 12:45" data-title="Открытие трека пространства «Робозона»" data-speaker="Инженерная команда Ozon" data-company="Ozon Tech" data-description="Открытие практического трека и соревновательного пространства робототехники.">
+        <div class="card-top-chip top-robo">Робозон</div>
+        <div class="card-main-content">
+          <div class="card-text-block">
+            <div class="card-talk-title">Открытие пространства «Робозона»</div>
+            <div class="card-speaker-name">Инженерная команда Ozon</div>
+          </div>
+          
+        </div>
+      </div>
+      <div class="talk-card card-disabled" data-track="Бэкэнд" data-time="12:00 – 12:30" data-title="Подготовка залов к докладам" data-speaker="" data-company="" data-description="Техническая подготовка трансляций и залов.">
+        <div class="card-top-chip top-backend">Бэкэнд</div>
+        <div class="card-main-content">
+          <div class="card-text-block">
+            <div class="card-talk-title">Подготовка залов</div>
+            
+          </div>
+          
+        </div>
+      </div>
+      <div class="talk-card card-disabled" data-track="ML / DS" data-time="12:00 – 12:30" data-title="Сбор участников трека ML / DS" data-speaker="" data-company="" data-description="Сбор и приветствие участников.">
+        <div class="card-top-chip top-ml">ML / DS</div>
+        <div class="card-main-content">
+          <div class="card-text-block">
+            <div class="card-talk-title">Сбор участников</div>
+            
+          </div>
+          
+        </div>
+      </div>
+      <div class="talk-card card-disabled" data-track="Mobile" data-time="12:00 – 12:30" data-title="Welcome-кофе и нетворкинг" data-speaker="" data-company="" data-description="Утренний кофе и общение участников.">
+        <div class="card-top-chip top-mobile">Mobile</div>
+        <div class="card-main-content">
+          <div class="card-text-block">
+            <div class="card-talk-title">Welcome-кофе</div>
+            
+          </div>
+          
+        </div>
+      </div>
+      <div class="talk-card card-disabled" data-track="ИБ" data-time="12:00 – 12:30" data-title="Регистрация участников" data-speaker="" data-company="" data-description="Входная зона, выдача бейджей и мерча.">
+        <div class="card-top-chip top-ib">ИБ</div>
+        <div class="card-main-content">
+          <div class="card-text-block">
+            <div class="card-talk-title">Регистрация гостей</div>
+            
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+    <!-- 12:30 SLOT 1 -->
+    <div class="slot-row">
+      <div class="time-cell">12:30</div>
+      <div class="tag-cell">SLOT 1</div>
+      <div class="talk-card" data-track="Жизнь и наука" data-time="12:30 – 13:20" data-title="Ключевые вехи пилотируемой космонавтики" data-speaker="Д. Олиферович" data-company="Директор по развитию, Стратонавтика" data-description="Развитие космических полетов, барьеры и инженерные прорывы в пилотируемых миссиях.">
+        <div class="card-top-chip top-science">Жизнь и наука</div>
+        <div class="card-main-content">
+          <div class="card-text-block">
+            <div class="card-talk-title">Вехи космонавтики</div>
+            <div class="card-speaker-name">Д. Олиферович</div>
+          </div>
+          <img class="card-speaker-avatar" src="https://squidex.jugru.team/api/assets/srm/d284f4fe-8fa7-44ab-b450-53c9fa6ca696/dmitrii-oliferovich.png?cache=3600&auto=true&width=126&height=134&mode=CropUpsize" alt="Д. Олиферович" loading="lazy">
+        </div>
+      </div>
+      <div class="talk-card" data-track="Бэкэнд" data-time="12:30 – 13:20" data-title="Дизайн и эволюция сборки мусора" data-speaker="А. Ланцов" data-company="Ведущий разработчик, Мир Plat.Form" data-description="Архитектурные паттерны сборщиков мусора (Garbage Collection), их эволюция под высокие нагрузки и минимизация пауз (STW).">
+        <div class="card-top-chip top-backend">Бэкэнд</div>
+        <div class="card-main-content">
+          <div class="card-text-block">
+            <div class="card-talk-title">Эволюция GC</div>
+            <div class="card-speaker-name">А. Ланцов</div>
+          </div>
+          <img class="card-speaker-avatar" src="https://squidex.jugru.team/api/assets/srm/56db3c02-c1cd-4c42-8d12-66caedab09f1/aleksandr-lancov.png?cache=3600&auto=true&width=126&height=134&mode=CropUpsize" alt="А. Ланцов" loading="lazy">
+        </div>
+      </div>
+      <div class="talk-card" data-track="ML / DS" data-time="12:30 – 13:20" data-title="Генеративные поисковые подсказки: как их создавать, улучшать и контролировать" data-speaker="В. Жужель, И. Куралёнок" data-company="Ведущий математик-разработчик / Руководитель направления, Ozon" data-description="Опыт генерации саджестов в поисковой строке маркетплейса с помощью LLM, фильтрация галлюцинаций и метрики качества.">
+        <div class="card-top-chip top-ml">ML / DS</div>
+        <div class="card-main-content">
+          <div class="card-text-block">
+            <div class="card-talk-title">Генеративные подсказки</div>
+            <div class="card-speaker-name">В. Жужель, И. Куралёнок</div>
+          </div>
+          <img class="card-speaker-avatar" src="https://squidex.jugru.team/api/assets/srm/cbba5cd1-7ffd-4a79-9ac2-83c794120d92/vladislav-zhuzhels.png?cache=3600&auto=true&width=126&height=134&mode=CropUpsize" alt="В. Жужель, И. Куралёнок" loading="lazy">
+        </div>
+      </div>
+      <div class="talk-card" data-track="Mobile" data-time="12:30 – 13:20" data-title="Как реально тестировать UI-компоненты, а не просто рисовать coverage" data-speaker="С. Исупов" data-company="Руководитель группы, Ozon" data-description="Проблемы синтетического покрытия тестами, построение надежного пайплайна скриншотного и компонентного тестирования.">
+        <div class="card-top-chip top-mobile">Mobile</div>
+        <div class="card-main-content">
+          <div class="card-text-block">
+            <div class="card-talk-title">Тестирование UI</div>
+            <div class="card-speaker-name">С. Исупов</div>
+          </div>
+          <img class="card-speaker-avatar" src="https://squidex.jugru.team/api/assets/srm/0b40ce25-2d44-40f0-8bfb-acdc99b47dbb/sergei-isupov.png?cache=3600&auto=true&width=126&height=134&mode=CropUpsize" alt="С. Исупов" loading="lazy">
+        </div>
+      </div>
+      <div class="talk-card" data-track="ИБ" data-time="12:30 – 13:20" data-title="Какие метрики смотрит CISO" data-speaker="К. Мякишев" data-company="Директор по информационной безопасности, Ozon" data-description="Управление рисками безопасности на уровне топ-менеджмента: метрики эффективности защиты, приоритизация инцидентов и дашборды CISO.">
+        <div class="card-top-chip top-ib">ИБ</div>
+        <div class="card-main-content">
+          <div class="card-text-block">
+            <div class="card-talk-title">Метрики CISO</div>
+            <div class="card-speaker-name">К. Мякишев</div>
+          </div>
+          <img class="card-speaker-avatar" src="https://squidex.jugru.team/api/assets/srm/9a8250fd-4ba5-48b1-ac67-ac925140448c/kirill-myakishev.png?cache=3600&auto=true&width=72&height=76&mode=CropUpsize" alt="К. Мякишев" loading="lazy">
+        </div>
+      </div>
+      <div class="talk-card" data-track="Робозон" data-time="12:45 – 13:40" data-title="Питчинг проектов хакатона «Робозон» — задача 1" data-speaker="Хакатон роботов" data-company="Команды участников" data-description="Презентация и защита решений первой задачи робототехнического хакатона перед жюри.">
+        <div class="card-top-chip top-robo">Робозон</div>
+        <div class="card-main-content">
+          <div class="card-text-block">
+            <div class="card-talk-title">Питчинг: Задача 1</div>
+            <div class="card-speaker-name">Хакатон роботов</div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+    <!-- 13:30 SLOT 2 -->
+    <div class="slot-row">
+      <div class="time-cell">13:30</div>
+      <div class="tag-cell">SLOT 2</div>
+      <div class="talk-card" data-track="Бэкэнд" data-time="13:30 – 14:20" data-title="Async переезжает в Runtime" data-speaker="А. Гольдебаев" data-company="Backend Engineer, Золотое Яблоко" data-description="Перенос асинхронной модели в среду исполнения: низкоуровневая оптимизация очередей задач, шедулеры и устранение накладных расходов.">
+        <div class="card-top-chip top-backend">Бэкэнд</div>
+        <div class="card-main-content">
+          <div class="card-text-block">
+            <div class="card-talk-title">Async -&gt; Runtime</div>
+            <div class="card-speaker-name">А. Гольдебаев</div>
+          </div>
+          <img class="card-speaker-avatar" src="https://squidex.jugru.team/api/assets/srm/f61fbf0d-bf4a-418e-a9bc-be3622c7da87/aleksandr-golsdebaev.png?cache=3600&auto=true&width=126&height=134&mode=CropUpsize" alt="А. Гольдебаев" loading="lazy">
+        </div>
+      </div>
+      <div class="talk-card" data-track="ML / DS" data-time="13:30 – 14:20" data-title="Как мы сделали агентский Cotype" data-speaker="В. Малых" data-company="Руководитель Центра разработки LLM, MWS AI" data-description="Разработка мультиагентной архитектуры на базе больших языковых моделей, координация ролей агентов и кейсы продакшн-применения.">
+        <div class="card-top-chip top-ml">ML / DS</div>
+        <div class="card-main-content">
+          <div class="card-text-block">
+            <div class="card-talk-title">Агентский Cotype</div>
+            <div class="card-speaker-name">В. Малых</div>
+          </div>
+          <img class="card-speaker-avatar" src="https://squidex.jugru.team/api/assets/srm/ce013a67-f07c-41bc-a3cf-37e95255996a/valentin-malyh.png?cache=3600&auto=true&width=126&height=134&mode=CropUpsize" alt="В. Малых" loading="lazy">
+        </div>
+      </div>
+      <div class="talk-card" data-track="Mobile" data-time="13:30 – 14:20" data-title="Как мобильному разработчику выстоять в эпоху ИИ" data-speaker="А. Гирев" data-company="Team Lead, RWB" data-description="Трансформация стека навыков мобильного инженера под влиянием кодогенерации, новые инструменты продуктивности и риски автоматизации.">
+        <div class="card-top-chip top-mobile">Mobile</div>
+        <div class="card-main-content">
+          <div class="card-text-block">
+            <div class="card-talk-title">Разработчик и ИИ</div>
+            <div class="card-speaker-name">А. Гирев</div>
+          </div>
+          <img class="card-speaker-avatar" src="https://squidex.jugru.team/api/assets/srm/c4ad0928-dcf8-4aa4-a8a8-61c9c4dba93b/girev.png?cache=3600&auto=true&width=126&height=134&mode=CropUpsize" alt="А. Гирев" loading="lazy">
+        </div>
+      </div>
+      <div class="talk-card" data-track="ИБ" data-time="13:30 – 14:20" data-title="Делегируй, но проверяй: AI-агенты в DFIR и реверсе ВПО" data-speaker="Н. Полосухин" data-company="Senior Analyst, RED Security" data-description="Использование AI для ускорения форензики (Digital Forensics &amp; Incident Response) и обратной разработки вредоносного ПО.">
+        <div class="card-top-chip top-ib">ИБ</div>
+        <div class="card-main-content">
+          <div class="card-text-block">
+            <div class="card-talk-title">AI в DFIR</div>
+            <div class="card-speaker-name">Н. Полосухин</div>
+          </div>
+          <img class="card-speaker-avatar" src="https://squidex.jugru.team/api/assets/srm/af4c2db8-7ee0-45a3-9e08-9069e12dcfb7/nikita-polosuhin.png?cache=3600&auto=true&width=126&height=134&mode=CropUpsize" alt="Н. Полосухин" loading="lazy">
+        </div>
+      </div>
+      <div class="talk-card" data-track="Жизнь и наука" data-time="13:30 – 14:30" data-title="Как работает марсоход?" data-speaker="Н. Матасов" data-company="Инженер-исследователь" data-description="Инженерия планетоходов: бортовая электроника, автономность, навигация и выживание в жестких условиях марсианской среды.">
+        <div class="card-top-chip top-science">Жизнь и наука</div>
+        <div class="card-main-content">
+          <div class="card-text-block">
+            <div class="card-talk-title">Марсоход</div>
+            <div class="card-speaker-name">Н. Матасов</div>
+          </div>
+          <img class="card-speaker-avatar" src="https://squidex.jugru.team/api/assets/srm/f6a6b0f7-eed0-4be3-be1a-7b71fdc26ff2/nikita-matasov.png?cache=3600&auto=true&width=126&height=134&mode=CropUpsize" alt="Н. Матасов" loading="lazy">
+        </div>
+      </div>
+      <div class="talk-card" data-track="Робозон" data-time="13:50 – 14:45" data-title="Питчинг проектов хакатона «Робозон» — задача 2" data-speaker="Хакатон роботов" data-company="Команды участников" data-description="Защита проектов и демонстрация прототипов по второй задаче хакатона.">
+        <div class="card-top-chip top-robo">Робозон</div>
+        <div class="card-main-content">
+          <div class="card-text-block">
+            <div class="card-talk-title">Питчинг: Задача 2</div>
+            <div class="card-speaker-name">Хакатон роботов</div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+    <!-- 14:20 LUNCH -->
+    <div class="slot-row">
+      <div class="time-cell">14:20</div>
+      <div class="tag-cell">LUNCH 🍽️</div>
+      <div class="lunch-bar">
+        ОБЕД, НЕТВОРКИНГ И СВОБОДНОЕ ОБЩЕНИЕ (14:20 – 15:30)
+      </div>
+    </div>
+
+    <!-- 15:30 SLOT 3 -->
+    <div class="slot-row">
+      <div class="time-cell">15:30</div>
+      <div class="tag-cell">SLOT 3</div>
+      <div class="talk-card" data-track="Жизнь и наука" data-time="15:30 – 16:20" data-title="Инциденты в космосе и на Земле: как работать с нештатными ситуациями" data-speaker="А. Степаненко, С. Успенский" data-company="CTO, Ozon / Специалист по СКД КА, РКК «Энергия»" data-description="Сравнительный анализ решения критических сбоев в космических аппаратах и масштабных распределенных IT-системах (on-call, playbooks, ретроспективы).">
+        <div class="card-top-chip top-science">Жизнь и наука</div>
+        <div class="card-main-content">
+          <div class="card-text-block">
+            <div class="card-talk-title">Нештатные ситуации</div>
+            <div class="card-speaker-name">А. Степаненко, С. Успенский</div>
+          </div>
+          <img class="card-speaker-avatar" src="https://squidex.jugru.team/api/assets/srm/8b705e02-04b5-4b55-afac-4e44f4682589/anton-stepanenko.png?cache=3600&auto=true&width=126&height=134&mode=CropUpsize" alt="А. Степаненко, С. Успенский" loading="lazy">
+        </div>
+      </div>
+      <div class="talk-card" data-track="Бэкэнд" data-time="15:30 – 16:20" data-title="Query Prediction. Взгляд со стороны индексации" data-speaker="П. Буренёв" data-company="Руководитель группы разработки индекса, Ozon" data-description="Оптимизация поисковых индексов под предсказание запросов: алгоритмические трюки, структуры данных и снижение задержек поиска.">
+        <div class="card-top-chip top-backend">Бэкэнд</div>
+        <div class="card-main-content">
+          <div class="card-text-block">
+            <div class="card-talk-title">Query Prediction</div>
+            <div class="card-speaker-name">П. Буренёв</div>
+          </div>
+          <img class="card-speaker-avatar" src="https://squidex.jugru.team/api/assets/srm/41af8fb9-a0d2-40ce-8985-520b7947ac19/pavel-burenev.png?cache=3600&auto=true&width=126&height=134&mode=CropUpsize" alt="П. Буренёв" loading="lazy">
+        </div>
+      </div>
+      <div class="talk-card" data-track="ML / DS" data-time="15:30 – 16:20" data-title="Системное внедрение ИИ-агентов: опыт обслуживания в Т-Банке" data-speaker="В. Викулин" data-company="Руководитель группы, Т-Банк" data-description="Архитектура и эксплуатационные сложности реального внедрения ИИ-ассистентов в клиентскую поддержку и сервисную платформу банка.">
+        <div class="card-top-chip top-ml">ML / DS</div>
+        <div class="card-main-content">
+          <div class="card-text-block">
+            <div class="card-talk-title">ИИ-агенты в банке</div>
+            <div class="card-speaker-name">В. Викулин</div>
+          </div>
+          <img class="card-speaker-avatar" src="https://squidex.jugru.team/api/assets/srm/c2b6381a-84ba-4b6e-9fe6-8fb95688d5c6/vsevolod-vikulin-1.png?cache=3600&auto=true&width=126&height=134&mode=CropUpsize" alt="В. Викулин" loading="lazy">
+        </div>
+      </div>
+      <div class="talk-card" data-track="Mobile" data-time="15:30 – 16:20" data-title="Как мы сделали инициализацию библиотек в Ozon Job Android асинхронной" data-speaker="Д. Глаголев" data-company="Руководитель группы мобильной разработки, Ozon" data-description="Оптимизация холодного старта приложения: распараллеливание инициализации тяжелых SDK и замер производительности.">
+        <div class="card-top-chip top-mobile">Mobile</div>
+        <div class="card-main-content">
+          <div class="card-text-block">
+            <div class="card-talk-title">Async инициализация</div>
+            <div class="card-speaker-name">Д. Глаголев</div>
+          </div>
+          <img class="card-speaker-avatar" src="https://squidex.jugru.team/api/assets/srm/93d0930e-a100-4421-8498-adf1f843a9db/dmitrii-glagolev.png?cache=3600&auto=true&width=126&height=134&mode=CropUpsize" alt="Д. Глаголев" loading="lazy">
+        </div>
+      </div>
+      <div class="talk-card" data-track="ИБ" data-time="15:30 – 16:20" data-title="Findings нашли. А дальше что?" data-speaker="А. Пузанков" data-company="Руководитель отдела консалтинга безопасной разработки, Бастион" data-description="Выстраивание процесса AppSec и утилизации уязвимостей (Vulnerability Management): приоритизация, контроль патчинга и взаимодействие с разработкой.">
+        <div class="card-top-chip top-ib">ИБ</div>
+        <div class="card-main-content">
+          <div class="card-text-block">
+            <div class="card-talk-title">Findings нашли. И что?</div>
+            <div class="card-speaker-name">А. Пузанков</div>
+          </div>
+          <img class="card-speaker-avatar" src="https://squidex.jugru.team/api/assets/srm/4a743d9f-365f-4e78-b0a3-8f69bf915bfb/artem-puzankov.png?cache=3600&auto=true&width=126&height=134&mode=CropUpsize" alt="А. Пузанков" loading="lazy">
+        </div>
+      </div>
+      <div class="talk-card" data-track="Робозон" data-time="15:20 – 16:15" data-title="Питчинг проектов хакатона «Робозон» — задача 3" data-speaker="Хакатон роботов" data-company="Команды участников" data-description="Финал защит хакатона: презентация решений по третьей задаче робототехники.">
+        <div class="card-top-chip top-robo">Робозон</div>
+        <div class="card-main-content">
+          <div class="card-text-block">
+            <div class="card-talk-title">Питчинг: Задача 3</div>
+            <div class="card-speaker-name">Хакатон роботов</div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+    <!-- 16:30 SLOT 4 -->
+    <div class="slot-row">
+      <div class="time-cell">16:30</div>
+      <div class="tag-cell">SLOT 4</div>
+      <div class="talk-card" data-track="Жизнь и наука" data-time="16:30 – 17:20" data-title="Самые яркие и самые мощные объекты Вселенной: гамма-всплески и квазары" data-speaker="Б. Штерн" data-company="Ведущий научный сотрудник, ИЯИ РАН" data-description="Физика сверхмощных астрофизических явлений, природа квазаров и регистрация космических всплесков.">
+        <div class="card-top-chip top-science">Жизнь и наука</div>
+        <div class="card-main-content">
+          <div class="card-text-block">
+            <div class="card-talk-title">Всплески и квазары</div>
+            <div class="card-speaker-name">Б. Штерн</div>
+          </div>
+          <img class="card-speaker-avatar" src="https://squidex.jugru.team/api/assets/srm/6c0eeadd-657e-4700-b805-b73a8d92d2f0/boris-shtern.png?cache=3600&auto=true&width=126&height=134&mode=CropUpsize" alt="Б. Штерн" loading="lazy">
+        </div>
+      </div>
+      <div class="talk-card" data-track="Бэкэнд" data-time="16:30 – 17:20" data-title="GPU на пределе: опыт построения real-time видеоаналитики складов" data-speaker="В. Базилевич" data-company="Разработчик информационных систем, Ozon" data-description="Пайплайн обработки сотен потоков видео в реальном времени: инференс на GPU, оркестрация потоков и устранение узких мест.">
+        <div class="card-top-chip top-backend">Бэкэнд</div>
+        <div class="card-main-content">
+          <div class="card-text-block">
+            <div class="card-talk-title">GPU на пределе</div>
+            <div class="card-speaker-name">В. Базилевич</div>
+          </div>
+          <img class="card-speaker-avatar" src="https://squidex.jugru.team/api/assets/srm/406c49a9-1e9f-47e7-8677-b4d9147ef0bd/vladimir-bazilevich.png?cache=3600&auto=true&width=126&height=134&mode=CropUpsize" alt="В. Базилевич" loading="lazy">
+        </div>
+      </div>
+      <div class="talk-card" data-track="ML / DS" data-time="16:30 – 17:20" data-title="(Почти) End2End нейросетевые рекомендации Ozon" data-speaker="А. Гурьянов" data-company="Руководитель направления разработки «Рекомендации», Ozon" data-description="Переход к сквозным нейросетевым моделям ранжирования товарных рекомендаций и их влияние на бизнес-метрики.">
+        <div class="card-top-chip top-ml">ML / DS</div>
+        <div class="card-main-content">
+          <div class="card-text-block">
+            <div class="card-talk-title">End2End рекомендации</div>
+            <div class="card-speaker-name">А. Гурьянов</div>
+          </div>
+          <img class="card-speaker-avatar" src="https://squidex.jugru.team/api/assets/srm/3f57a594-45ea-43b2-a50b-14cb0750f89e/aleksei-gursyanov-1.png?cache=3600&auto=true&width=126&height=134&mode=CropUpsize" alt="А. Гурьянов" loading="lazy">
+        </div>
+      </div>
+      <div class="talk-card" data-track="Mobile" data-time="16:30 – 17:20" data-title="Вёрстка виджетов из Figma c помощью ИИ: проще, чем кажется" data-speaker="С. Фираго" data-company="Ведущий разработчик, Ozon" data-description="Инструменты трансляции макетов Figma в нативный UI-код через LLM: интеграция в дизайн-систему и сокращение рутины.">
+        <div class="card-top-chip top-mobile">Mobile</div>
+        <div class="card-main-content">
+          <div class="card-text-block">
+            <div class="card-talk-title">Вёрстка из Figma c AI</div>
+            <div class="card-speaker-name">С. Фираго</div>
+          </div>
+          <img class="card-speaker-avatar" src="https://squidex.jugru.team/api/assets/srm/33be083d-710f-4fb5-b021-79d23335d61e/sergei-firago.png?cache=3600&auto=true&width=126&height=134&mode=CropUpsize" alt="С. Фираго" loading="lazy">
+        </div>
+      </div>
+      <div class="talk-card" data-track="ИБ" data-time="16:30 – 17:20" data-title="Не ищем, а предсказываем — как найти уязвимости и утечки данных до их появления" data-speaker="А. Колчанов" data-company="Независимый исследователь" data-description="Проактивный поиск векторов атак, предиктивная аналитика безопасности и предотвращение компрометации данных.">
+        <div class="card-top-chip top-ib">ИБ</div>
+        <div class="card-main-content">
+          <div class="card-text-block">
+            <div class="card-talk-title">Предсказываем атаки</div>
+            <div class="card-speaker-name">А. Колчанов</div>
+          </div>
+          <img class="card-speaker-avatar" src="https://squidex.jugru.team/api/assets/srm/ee34c59d-6cc1-43f2-aaf8-8fc8563a5d2c/aleksandr-kolchanov.png?cache=3600&auto=true&width=126&height=134&mode=CropUpsize" alt="А. Колчанов" loading="lazy">
+        </div>
+      </div>
+      <div class="talk-card" data-track="Робозон" data-time="16:30 – 17:20" data-title="Итерации как основа эффективного прототипирования и роботизации" data-speaker="Даня Крастер" data-company="Инженер, DIY-блогер и телеведущий" data-description="Практика быстрого прототипирования «в железе»: итеративный подход, типичные ошибки сборки и доведение концепта до рабочего устройства.">
+        <div class="card-top-chip top-robo">Робозон</div>
+        <div class="card-main-content">
+          <div class="card-text-block">
+            <div class="card-talk-title">Прототипирование</div>
+            <div class="card-speaker-name">Даня Крастер</div>
+          </div>
+          <img class="card-speaker-avatar" src="https://squidex.jugru.team/api/assets/srm/a9b76991-90a6-40d0-b754-25e1dfaae0fe/danya-kraster.png?cache=3600&auto=true&width=126&height=134&mode=CropUpsize" alt="Даня Крастер" loading="lazy">
+        </div>
+      </div>
+    </div>
+
+    <!-- 17:30 SLOT 5 -->
+    <div class="slot-row">
+      <div class="time-cell">17:30</div>
+      <div class="tag-cell">SLOT 5</div>
+      <div class="talk-card" data-track="Жизнь и наука" data-time="17:30 – 18:20" data-title="Спроси у CTO" data-speaker="Антон Степаненко" data-company="CTO, Ozon" data-description="Открытая сессия вопросов и ответов о технологической стратегии Ozon, инфраструктурных вызовах и найме.">
+        <div class="card-top-chip top-science">Жизнь и наука</div>
+        <div class="card-main-content">
+          <div class="card-text-block">
+            <div class="card-talk-title">Спроси у CTO</div>
+            <div class="card-speaker-name">Антон Степаненко</div>
+          </div>
+          <img class="card-speaker-avatar" src="https://squidex.jugru.team/api/assets/srm/8b705e02-04b5-4b55-afac-4e44f4682589/anton-stepanenko.png?cache=3600&auto=true&width=126&height=134&mode=CropUpsize" alt="Антон Степаненко" loading="lazy">
+        </div>
+      </div>
+      <div class="talk-card" data-track="Бэкэнд" data-time="17:30 – 18:20" data-title="Один такт — много данных: зачем Go-разработчику SIMD" data-speaker="Роман Чалый" data-company="Ведущий разработчик, ex-VK" data-description="Векторизация вычислений в Go: как инструкции SIMD (Single Instruction, Multiple Data) ускоряют критичные узлы обработки массивов данных.">
+        <div class="card-top-chip top-backend">Бэкэнд</div>
+        <div class="card-main-content">
+          <div class="card-text-block">
+            <div class="card-talk-title">SIMD в Go</div>
+            <div class="card-speaker-name">Роман Чалый</div>
+          </div>
+          <img class="card-speaker-avatar" src="https://squidex.jugru.team/api/assets/srm/9f7a55c8-c93f-490b-9766-becad9f222e3/roman-chalyi-1-.png?cache=3600&auto=true&width=126&height=134&mode=CropUpsize" alt="Роман Чалый" loading="lazy">
+        </div>
+      </div>
+      <div class="talk-card" data-track="ML / DS" data-time="17:30 – 18:20" data-title="Единое ранжирование: как подружить релевантность, GMV и рекламный доход в поиске" data-speaker="Сергей Широков" data-company="ML Engineer, Uzum" data-description="Построение многокритериальной функции оптимизации в поисковом ранжировании e-commerce: баланс между пользой для покупателя и монетизацией.">
+        <div class="card-top-chip top-ml">ML / DS</div>
+        <div class="card-main-content">
+          <div class="card-text-block">
+            <div class="card-talk-title">Единое ранжирование</div>
+            <div class="card-speaker-name">Сергей Широков</div>
+          </div>
+          <img class="card-speaker-avatar" src="https://squidex.jugru.team/api/assets/srm/9767f63c-755d-4821-8815-21752aae9ba9/sergei-shirokov.png?cache=3600&auto=true&width=126&height=134&mode=CropUpsize" alt="Сергей Широков" loading="lazy">
+        </div>
+      </div>
+      <div class="talk-card" data-track="Mobile" data-time="17:30 – 18:20" data-title="Кросс-платформа 2026. Как выжить в мире KMP" data-speaker="Анна Жаркова" data-company="Руководитель мобильной практики, USETECH" data-description="Современное состояние Kotlin Multiplatform: архитектурные шаблоны, стабильность библиотек, плюсы и подводные камни переноса бизнес-логики.">
+        <div class="card-top-chip top-mobile">Mobile</div>
+        <div class="card-main-content">
+          <div class="card-text-block">
+            <div class="card-talk-title">Мир KMP 2026</div>
+            <div class="card-speaker-name">Анна Жаркова</div>
+          </div>
+          <img class="card-speaker-avatar" src="https://squidex.jugru.team/api/assets/srm/535e0eb8-d270-4210-8da8-46adc5f57252/zharkova.png?cache=3600&auto=true&width=126&height=134&mode=CropUpsize" alt="Анна Жаркова" loading="lazy">
+        </div>
+      </div>
+      <div class="talk-card" data-track="ИБ" data-time="17:30 – 18:20" data-title="Как выглядят современные кибератаки и от чего защищаться" data-speaker="Владимир Гришанов" data-company="Руководитель направления Compromise Assessment, BI.ZONE" data-description="Разбор актуальных сценариев атак (TTPs), продвижение злоумышленников внутри корпоративного периметра и методы детектирования.">
+        <div class="card-top-chip top-ib">ИБ</div>
+        <div class="card-main-content">
+          <div class="card-text-block">
+            <div class="card-talk-title">Кибератаки</div>
+            <div class="card-speaker-name">Владимир Гришанов</div>
+          </div>
+          <img class="card-speaker-avatar" src="https://squidex.jugru.team/api/assets/srm/c86ba1dc-bca6-48b0-be19-6ebfb9432a77/vladimir-grishanov.png?cache=3600&auto=true&width=126&height=134&mode=CropUpsize" alt="Владимир Гришанов" loading="lazy">
+        </div>
+      </div>
+      <div class="talk-card" data-track="Робозон" data-time="17:30 – 18:20" data-title="От идеи до запуска: как мы создавали 3D-сортировщик для складов Ozon" data-speaker="Д. Чунтонов, А. Тумилович" data-company="Руководитель группы проектирования, Ozon" data-description="Полный цикл создания собственного складского оборудования: проектирование механической части, софт управления и интеграция с WMS.">
+        <div class="card-top-chip top-robo">Робозон</div>
+        <div class="card-main-content">
+          <div class="card-text-block">
+            <div class="card-talk-title">3D-сортировщик Ozon</div>
+            <div class="card-speaker-name">Д. Чунтонов, А. Тумилович</div>
+          </div>
+          <img class="card-speaker-avatar" src="https://squidex.jugru.team/api/assets/srm/ac2c6aa0-f798-4d50-85e3-78a70c12158a/dmitrii-chuntonov.png?cache=3600&auto=true&width=126&height=134&mode=CropUpsize" alt="Д. Чунтонов, А. Тумилович" loading="lazy">
+        </div>
+      </div>
+    </div>
+
+    <!-- 18:30 ФИНАЛ -->
+    <div class="slot-row">
+      <div class="time-cell">18:30</div>
+      <div class="tag-cell" style="background: rgba(6, 182, 212, 0.4); border-color: #06b6d4;">ФИНАЛ</div>
+      <div class="talk-card" data-track="Жизнь и наука" data-time="18:30 – 19:20" data-title="Церемония награждения финалистов E-CUP" data-speaker="Антон Степаненко" data-company="CTO, Ozon" data-description="Подведение итогов и награждение победителей чемпионата по спортивному программированию и анализу данных E-CUP.">
+        <div class="card-top-chip top-science">Жизнь и наука</div>
+        <div class="card-main-content">
+          <div class="card-text-block">
+            <div class="card-talk-title">Награждение E-CUP</div>
+            <div class="card-speaker-name">Антон Степаненко</div>
+          </div>
+          <img class="card-speaker-avatar" src="https://squidex.jugru.team/api/assets/srm/8b705e02-04b5-4b55-afac-4e44f4682589/anton-stepanenko.png?cache=3600&auto=true&width=126&height=134&mode=CropUpsize" alt="Антон Степаненко" loading="lazy">
+        </div>
+      </div>
+      <div class="talk-card" data-track="Бэкэнд" data-time="18:30 – 19:20" data-title="Геолокация без спутников: как устроено позиционирование по Wi-Fi" data-speaker="А. Ведин" data-company="Ведущий разработчик информационных систем, Ozon" data-description="Алгоритмы триангуляции и сопоставления сигналов (fingerprinting) Wi-Fi-точек внутри складских помещений и зданий.">
+        <div class="card-top-chip top-backend">Бэкэнд</div>
+        <div class="card-main-content">
+          <div class="card-text-block">
+            <div class="card-talk-title">Геолокация по Wi-Fi</div>
+            <div class="card-speaker-name">А. Ведин</div>
+          </div>
+          <img class="card-speaker-avatar" src="https://squidex.jugru.team/api/assets/srm/7eb38302-826d-44d1-af01-1e6e45059240/andrei-vedin.png?cache=3600&auto=true&width=126&height=134&mode=CropUpsize" alt="А. Ведин" loading="lazy">
+        </div>
+      </div>
+      <div class="talk-card" data-track="ML / DS" data-time="18:30 – 19:20" data-title="ML для измерения габаритов товаров на сортировочной машине" data-speaker="Мария Гафурова" data-company="Руководитель отдела разработки систем техзрения, Ozon" data-description="Компьютерное зрение в динамике конвейерной ленты: точность вычисления объемного веса, борьба с бликами и сложными формами упаковок.">
+        <div class="card-top-chip top-ml">ML / DS</div>
+        <div class="card-main-content">
+          <div class="card-text-block">
+            <div class="card-talk-title">Габариты товаров ML</div>
+            <div class="card-speaker-name">Мария Гафурова</div>
+          </div>
+          <img class="card-speaker-avatar" src="https://squidex.jugru.team/api/assets/srm/845ef70d-545b-44c8-bd40-a3096a6bb056/mariya-gafurova.png?cache=3600&auto=true&width=126&height=134&mode=CropUpsize" alt="Мария Гафурова" loading="lazy">
+        </div>
+      </div>
+      <div class="talk-card" data-track="Mobile" data-time="18:30 – 19:20" data-title="Как мы реализовывали удалённое управление Android-устройствами" data-speaker="Евгений Мельцайкин" data-company="Ведущий инженер-программист, Контур" data-description="Реализация Remote Control на Android: захват экрана, виртуальный ввод, безопасность передачи данных и специфика вендорных прошивок.">
+        <div class="card-top-chip top-mobile">Mobile</div>
+        <div class="card-main-content">
+          <div class="card-text-block">
+            <div class="card-talk-title">Удалённое управление</div>
+            <div class="card-speaker-name">Евгений Мельцайкин</div>
+          </div>
+          <img class="card-speaker-avatar" src="https://squidex.jugru.team/api/assets/srm/48fd990e-805e-4d72-b6ff-29cd1cd2de68/evgenii-melscai-kin.png?cache=3600&auto=true&width=126&height=134&mode=CropUpsize" alt="Евгений Мельцайкин" loading="lazy">
+        </div>
+      </div>
+      <div class="talk-card" data-track="ИБ" data-time="18:30 – 19:20" data-title="Что общего между безопасностью коммерческого банка и данных со спутников" data-speaker="А. Токарев" data-company="Технический руководитель, Банк 131" data-description="Концепции Zero Trust, защита критической инфраструктуры, шифрование каналов и разграничение прав в финтехе и спутниковых системах.">
+        <div class="card-top-chip top-ib">ИБ</div>
+        <div class="card-main-content">
+          <div class="card-text-block">
+            <div class="card-talk-title">Спутники и банки</div>
+            <div class="card-speaker-name">А. Токарев</div>
+          </div>
+          <img class="card-speaker-avatar" src="https://squidex.jugru.team/api/assets/srm/bd36687d-c833-40b7-9933-9a83fcc0bcac/tokarev.png?cache=3600&auto=true&width=126&height=134&mode=CropUpsize" alt="А. Токарев" loading="lazy">
+        </div>
+      </div>
+      <div class="talk-card" data-track="Робозон" data-time="18:30 – 19:00" data-title="Как поддерживать сотни собственных программно-аппаратных комплексов без хаоса" data-speaker="Равиль Ахметжанов" data-company="Разработчик информационных систем, Ozon" data-description="Эксплуатация hardware-флота: OTA-обновления, мониторинг состояния датчиков и обеспечение отказоустойчивости.">
+        <div class="card-top-chip top-robo">Робозон</div>
+        <div class="card-main-content">
+          <div class="card-text-block">
+            <div class="card-talk-title">ПАК без хаоса</div>
+            <div class="card-speaker-name">Равиль Ахметжанов</div>
+          </div>
+          <img class="card-speaker-avatar" src="https://squidex.jugru.team/api/assets/srm/fe02b1be-fd54-4a17-aa34-47884b781ee5/ravils-ahmetzhanov.png?cache=3600&auto=true&width=126&height=134&mode=CropUpsize" alt="Равиль Ахметжанов" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer-container">
+    <div class="footer-hashtags">
+      <span>#ITКонференция</span>
+      <span>#МаякПрограммиста</span>
+      <span>#Сезон2026</span>
+      <span>#ECODE2026</span>
+    </div>
+  </footer>
+
+</div>
+
+<div class="modal-overlay" id="talkModal">
+  <div class="modal-content">
+    <button class="modal-close" id="modalClose" aria-label="Закрыть">&times;</button>
+    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+      <div id="modalChip" class="modal-chip">Трек</div>
+      <div id="modalTime" class="modal-time-badge">12:30 – 13:20</div>
+    </div>
+    <div id="modalTitle" class="modal-title">Название доклада</div>
+    <div id="modalSpeaker" class="modal-speaker">Спикер</div>
+    <div id="modalCompany" class="modal-company">Компания</div>
+    <div id="modalDesc" class="modal-desc">Описание доклада...</div>
+  </div>
+</div>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    // Speaker avatar error fallback to initials
+    document.querySelectorAll('.card-speaker-avatar').forEach(img => {
+      img.onerror = function() {
+        this.style.display = 'none';
+        const fallback = document.createElement('div');
+        fallback.className = 'avatar-fallback';
+        const nameEl = this.parentElement.querySelector('.card-speaker-name');
+        const text = nameEl ? nameEl.textContent.trim() : '?';
+        const initials = text.split(/[\s,]+/).filter(Boolean).map(n => n[0]).slice(0, 2).join('').toUpperCase();
+        fallback.textContent = initials || '★';
+        this.parentElement.appendChild(fallback);
+      };
+    });
+
+    // Talk details modal
+    const modal = document.getElementById('talkModal');
+    const closeBtn = document.getElementById('modalClose');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalSpeaker = document.getElementById('modalSpeaker');
+    const modalCompany = document.getElementById('modalCompany');
+    const modalDesc = document.getElementById('modalDesc');
+    const modalChip = document.getElementById('modalChip');
+    const modalTime = document.getElementById('modalTime');
+
+    document.querySelectorAll('.talk-card:not(.card-disabled)').forEach(card => {
+      card.addEventListener('click', () => {
+        const title = card.getAttribute('data-title') || card.querySelector('.card-talk-title')?.textContent || '';
+        const speaker = card.getAttribute('data-speaker') || card.querySelector('.card-speaker-name')?.textContent || '';
+        const company = card.getAttribute('data-company') || '';
+        const desc = card.getAttribute('data-description') || 'Подробное описание уточняется в программе конференции.';
+        const track = card.getAttribute('data-track') || card.querySelector('.card-top-chip')?.textContent || '';
+        const time = card.getAttribute('data-time') || '';
+        const chipEl = card.querySelector('.card-top-chip');
+
+        modalTitle.textContent = title;
+        if (speaker && speaker !== '—') {
+          modalSpeaker.textContent = speaker;
+          modalSpeaker.style.display = 'block';
+        } else {
+          modalSpeaker.style.display = 'none';
+        }
+
+        if (company && company !== '—') {
+          modalCompany.textContent = company;
+          modalCompany.style.display = 'block';
+        } else {
+          modalCompany.style.display = 'none';
+        }
+
+        if (chipEl) {
+          modalChip.textContent = track;
+          modalChip.className = 'modal-chip ' + chipEl.className.replace('card-top-chip', '').trim();
+        }
+        if (time) {
+          modalTime.textContent = time;
+          modalTime.style.display = 'inline-block';
+        } else {
+          modalTime.style.display = 'none';
+        }
+
+        modalDesc.textContent = desc;
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    function closeModal() {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    if (modal) {
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+      });
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        closeModal();
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
