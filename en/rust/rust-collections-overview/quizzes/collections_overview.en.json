@@ -1,0 +1,82 @@
+[
+  {
+    "question": "What is the primary advantage of `VecDeque<T>` over a standard `Vec<T>`?",
+    "options": [
+      "O(1) insertion and removal at both the front and back of the queue",
+      "Automatic element sorting upon insertion",
+      "Built-in thread-safe synchronization"
+    ],
+    "answer": 0,
+    "explanation": "`VecDeque<T>` is implemented as a contiguous ring buffer, enabling `push_front` and `pop_front` in O(1) time without shifting all trailing elements in memory."
+  },
+  {
+    "question": "How does `BTreeMap<K, V>` differ from `HashMap<K, V>`?",
+    "options": [
+      "BTreeMap keeps keys sorted and natively supports range queries via .range()",
+      "BTreeMap is always faster than HashMap on arbitrary random keys",
+      "BTreeMap allocates exclusively on the stack"
+    ],
+    "answer": 0,
+    "explanation": "`BTreeMap` is structured as a B-Tree. Keys remain sorted at all times, making range scans efficient and deterministic in O(log N) time."
+  },
+  {
+    "question": "How does `BinaryHeap<T>` organize and retrieve elements?",
+    "options": [
+      "It is a Max-Heap where .pop() always returns the item with the highest priority",
+      "It is a standard doubly linked list",
+      "It is a LIFO stack"
+    ],
+    "answer": 0,
+    "explanation": "`BinaryHeap` implements a priority queue as a binary Max-Heap. The greatest element according to the `Ord` trait is popped first."
+  },
+  {
+    "question": "What is the asymptotic time complexity of a key lookup in `BTreeMap`?",
+    "options": [
+      "O(log N)",
+      "O(1)",
+      "O(N^2)"
+    ],
+    "answer": 0,
+    "explanation": "Search, insertion, and deletion operations in a B-Tree are guaranteed to execute in logarithmic time O(log N)."
+  },
+  {
+    "question": "How do you turn `BinaryHeap<T>` into a Min-Heap (popping smallest items first)?",
+    "options": [
+      "Wrap elements in the standard `std::cmp::Reverse(x)` adapter",
+      "Use the `BinaryHeap::min_heap()` constructor",
+      "Invoke `.sort_asc()` before every `.pop()`"
+    ],
+    "answer": 0,
+    "explanation": "In Rust, `BinaryHeap` is always a Max-Heap. Wrapping values in `std::cmp::Reverse(T)` reverses the `Ord` comparison order to produce a Min-Heap."
+  },
+  {
+    "question": "Why is `LinkedList<T>` rarely recommended in production Rust code?",
+    "options": [
+      "Nodes are allocated individually on the heap, triggering frequent CPU cache misses",
+      "LinkedList is disallowed on Rust Nightly compiler builds",
+      "LinkedList has a hardcoded cap of 1024 elements"
+    ],
+    "answer": 0,
+    "explanation": "Scattered node allocations degrade data locality and CPU L1/L2 cache utilization. Consequently, `Vec` and `VecDeque` outperform `LinkedList` in almost all practical benchmarks."
+  },
+  {
+    "question": "Which traits are required for the key type `K` in `BTreeMap<K, V>`?",
+    "options": [
+      "Ord (total ordering)",
+      "Hash + Eq",
+      "Copy + Clone"
+    ],
+    "answer": 0,
+    "explanation": "Because `BTreeMap` organizes data in a sorted tree structure, keys must implement `Ord`. In contrast, `HashMap` requires `Hash + Eq`."
+  },
+  {
+    "question": "What are `HashSet<T>` and `BTreeSet<T>` under the hood?",
+    "options": [
+      "Thin wrappers around `HashMap<T, ()>` and `BTreeMap<T, ()>` respectively",
+      "Low-level bitmasks",
+      "Arrays of unique strings"
+    ],
+    "answer": 0,
+    "explanation": "Sets in `std::collections` are implemented directly on top of their map counterparts, storing the empty unit type `()` as the map value."
+  }
+]
