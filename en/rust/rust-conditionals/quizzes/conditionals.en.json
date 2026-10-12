@@ -1,0 +1,68 @@
+{
+  "id": "rust-conditionals-quiz",
+  "topic": "Conditionals and Control Flow in Rust",
+  "difficulty": "easy",
+  "timeLimitSec": 240,
+  "questions": [
+    {
+      "id": "q1",
+      "title": "What does the code block `{ let x = 5; x * 2; }` evaluate to?",
+      "options": [
+        "10",
+        "5",
+        "The unit type `()` (empty tuple)",
+        "A compiler error due to missing explicit return"
+      ],
+      "correctIndex": 2,
+      "explanation": "The code block ends with a statement terminated by a semicolon `;` (`x * 2;`), so it evaluates to the unit type `()`."
+    },
+    {
+      "id": "q2",
+      "title": "Which of the following conditions in an `if` expression will cause a compile error?",
+      "options": [
+        "if x != 0 { ... }",
+        "if x { ... } (where x is 1 of type i32)",
+        "if x > 5 && y < 10 { ... }",
+        "if true { ... }"
+      ],
+      "correctIndex": 1,
+      "explanation": "In Rust, the condition in an `if` statement must evaluate strictly to `bool`. Unlike C/C++, integers (such as 1) are not implicitly cast to booleans."
+    },
+    {
+      "id": "q3",
+      "title": "What is the critical requirement for `if-else` branches when used as an expression to assign a value?",
+      "options": [
+        "They must return an integer type",
+        "They must be enclosed in parentheses",
+        "Both branches (if and else) must evaluate to identical types",
+        "The else branch must be omitted"
+      ],
+      "correctIndex": 2,
+      "explanation": "Because `if-else` is an expression, both branches must produce values of the exact same type so the compiler can infer a single unambiguous type for the variable."
+    },
+    {
+      "id": "q4",
+      "title": "What does `let u = if x > 100 { foo() };` evaluate to if foo() returns i32 and x is 50?",
+      "options": [
+        "0",
+        "Option::None",
+        "A compilation error (type mismatch between i32 and ())",
+        "i32"
+      ],
+      "correctIndex": 2,
+      "explanation": "Without an `else` branch, the default value when the condition is false is `()`. Because the `if` branch returns `i32`, the compiler fails due to mismatched branch types (`i32` vs `()`)."
+    },
+    {
+      "id": "q5",
+      "title": "Which logical operator combines multiple `let` pattern bindings and conditions in an `if let` chain?",
+      "options": [
+        "|| (OR)",
+        "&& (AND)",
+        ", (comma)",
+        "and"
+      ],
+      "correctIndex": 1,
+      "explanation": "In `if let` chains (let-chains), pattern bindings and boolean predicates are sequenced using the conjunction operator `&&`."
+    }
+  ]
+}

@@ -40,7 +40,7 @@ fn main() {
 enum Signal {
     Quit,
     Move { x: i32, y: i32 },
-    Write(String),
+    Echo(String),
 }
 
 // Шаг 2: Охранные выражения (Match Guards) в перечислениях
@@ -56,7 +56,7 @@ fn main() {
         Signal::Move { x, y } => {
             println!("Обычное смещение в точку ({x}, {y})");
         }
-        Signal::Write(text) => println!("Текст сигнала: {text}"),
+        Signal::Echo(text) => println!("Текст сигнала: {text}"),
     }
 }
 

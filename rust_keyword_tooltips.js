@@ -320,19 +320,56 @@ if (typeof window.RustPlayground === "undefined") {
                       targetKeyword = "for<'a>";
                     }
                   }
+                } else if (cleanText === "if") {
+                  let textAfter = "";
+                  let n = token.nextSibling;
+                  while (n && textAfter.length < 20) {
+                    textAfter += (n.textContent || "");
+                    n = n.nextSibling;
+                  }
+                  if (/^\s*let\b/.test(textAfter)) {
+                    targetKeyword = "if let";
+                  }
+                } else if (cleanText === "while") {
+                  let textAfter = "";
+                  let n = token.nextSibling;
+                  while (n && textAfter.length < 20) {
+                    textAfter += (n.textContent || "");
+                    n = n.nextSibling;
+                  }
+                  if (/^\s*let\b/.test(textAfter)) {
+                    targetKeyword = "while let";
+                  }
+                } else if (cleanText === "let") {
+                  let textBefore = "";
+                  let p = token.previousSibling;
+                  while (p && textBefore.length < 20) {
+                    textBefore = (p.textContent || "") + textBefore;
+                    p = p.previousSibling;
+                  }
+                  if (/\bif\s*$/.test(textBefore)) {
+                    targetKeyword = "if let";
+                  } else if (/\bwhile\s*$/.test(textBefore)) {
+                    targetKeyword = "while let";
+                  }
                 }
 
                 for (const keywordObj of keywordSet) {
                   const kw = keywordObj.keyword.replace(/\\/g, "");
                   const cleanPath = path.replace(/\\/g, "");
 
-                  if (
-                    kw === targetKeyword ||
-                    kw === cleanPath ||
-                    (kw.includes("::") && cleanPath.endsWith(kw)) ||
-                    (kw.includes("::") && kw.endsWith(cleanPath) && cleanPath.includes("::")) ||
-                    (kw === cleanText && targetKeyword === cleanText && !cleanPath.includes("::"))
-                  ) {
+                  let isMatch = false;
+                  if (targetKeyword !== cleanText) {
+                    isMatch = (kw === targetKeyword);
+                  } else {
+                    isMatch =
+                      kw === cleanPath ||
+                      (kw.includes("::") && cleanPath.endsWith(kw)) ||
+                      (kw.includes("::") && kw.endsWith(cleanPath) && cleanPath.includes("::")) ||
+                      (kw === cleanText && !cleanPath.includes("::"));
+                  }
+
+                  if (isMatch) {
                     // Создаем новый элемент с подсказкой
                     const tooltipSpan = document.createElement("span");
                     tooltipSpan.className = "rust-keyword";
@@ -439,8 +476,9 @@ if (typeof window.RustPlayground === "undefined") {
       });
 
       let node;
+      const sortedKeys = Object.keys(tooltipData).sort((a, b) => b.length - a.length);
       const regex = new RegExp(
-        `\\b(${Object.keys(tooltipData).join("|")})\\b`,
+        `\\b(${sortedKeys.map((k) => k.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|")})\\b`,
         "g"
       );
 

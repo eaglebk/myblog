@@ -1,0 +1,82 @@
+[
+  {
+    "question": "What is the purpose of the `@` operator in pattern matching?",
+    "options": [
+      "Binds the matched value to a variable while simultaneously testing it against a range or subpattern",
+      "Forces immediate deallocation of the object from memory",
+      "Converts a string slice into a byte array"
+    ],
+    "answer": 0,
+    "explanation": "The `@` operator (e.g. `num @ 1..=10`) binds the extracted value to a variable if it matches the specified range or pattern."
+  },
+  {
+    "question": "What is a Match Guard in a `match` expression?",
+    "options": [
+      "A specialized destructor for memory cleanup",
+      "An additional `if` condition on a match arm that must evaluate to `true` for the arm to be selected",
+      "A compiler protection against overwriting configuration files"
+    ],
+    "answer": 1,
+    "explanation": "A Match Guard (`if CONDITION`) supplements a syntactic pattern with a dynamic boolean expression evaluated at runtime."
+  },
+  {
+    "question": "What is the primary benefit of `if let` chains (let_chains) with the `&&` operator?",
+    "options": [
+      "They disable compiler lifetime checks",
+      "They increase floating-point calculation precision",
+      "They allow extracting values from multiple patterns and checking conditions sequentially without deep nesting"
+    ],
+    "answer": 2,
+    "explanation": "Let chains simplify code by flattening deeply nested `if let` blocks when verifying multiple `Option` or `Result` types."
+  },
+  {
+    "question": "Which scenario is the `while let` construct best suited for?",
+    "options": [
+      "Looping repeatedly as long as an expression matches a pattern (such as successive `iter.next()` calls)",
+      "Defining declarative `macro_rules!` macros",
+      "Invoking C functions via FFI"
+    ],
+    "answer": 0,
+    "explanation": "The `while let` loop naturally iterates over `Some(item)` values, stopping as soon as `None` is encountered."
+  },
+  {
+    "question": "What happens during compilation if an enum variant is added but not handled in any `match` arm and there is no wildcard `_`?",
+    "options": [
+      "The code compiles successfully, but panics at runtime if that variant is hit",
+      "Compilation error: Rust strictly enforces exhaustiveness and will not compile code with uncovered variants",
+      "The compiler automatically inserts a no-op default handler"
+    ],
+    "answer": 1,
+    "explanation": "The primary requirement for any `match` is exhaustiveness (compiler error E0004). All possible enum variants must be explicitly covered."
+  },
+  {
+    "question": "How does Match Ergonomics (introduced in Rust 2018) work when matching on a reference (`match &point`)?",
+    "options": [
+      "It automatically clones the structure via `.clone()` on each arm",
+      "It casts the reference to a raw pointer (`*const T`)",
+      "The compiler automatically propagates reference binding mode, binding variables as references without requiring the `ref` keyword"
+    ],
+    "answer": 2,
+    "explanation": "Match Ergonomics automatically infers reference binding modes inside the pattern. Variables become references without having to write `ref` explicitly."
+  },
+  {
+    "question": "In which rare scenario is the `ref` keyword still necessary in modern Rust?",
+    "options": [
+      "During a partial move, when one field is moved by value while another field is borrowed by reference",
+      "Every time a reference field is declared inside a `struct`",
+      "When passing arguments to asynchronous Tokio tasks"
+    ],
+    "answer": 0,
+    "explanation": "When destructuring a struct by value, moving one field (`move`) while borrowing another (`ref`), Match Ergonomics cannot be applied to the whole struct because that would prevent moving the owned field."
+  },
+  {
+    "question": "What does the pattern `[first, rest @ ..]` do when matching a slice (Slice Patterns)?",
+    "options": [
+      "Copies the slice into a `VecDeque` ring buffer",
+      "Extracts the first element into `first` and binds the remaining tail slice to the `rest` variable",
+      "Compares the first and last elements of the array for equality"
+    ],
+    "answer": 1,
+    "explanation": "The `rest @ ..` syntax in slice pattern matching binds the variable-length tail of the slice to the `rest` variable."
+  }
+]

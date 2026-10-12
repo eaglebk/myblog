@@ -1,0 +1,32 @@
+# Eagle blog
+
+> Blog of a cheerful programmer
+
+## Sections
+- [Rust](https://eagle2000.space/en/rust/llm.md): My journey in learning Rust (11 articles)
+- [Photography](https://eagle2000.space/en/photography/llm.md): My thoughts, articles, and notes about photography, migrated from the old social media  group. (4 articles)
+- [Foreign Languages](https://eagle2000.space/en/languages/llm.md): Foreign Languages (0 articles)
+- [Posts about everything](https://eagle2000.space/en/about-all/llm.md): Posts and notes on various topics that interest me (0 articles)
+- [Today I Learned](https://eagle2000.space/en/til/llm.md): Today I Learned (1 articles)
+- [Bookshelf](https://eagle2000.space/en/books/llm.md): Recommended and read books on software engineering, architecture, photography, and personal growth with reviews and key insights. (0 articles)
+- [Dart](https://eagle2000.space/en/dart/llm.md): All about Dart (0 articles)
+
+
+## Key Articles
+- [Rust: Deep Dive into Pattern Matching - Destructuring, Bindings, and Guards](https://eagle2000.space/en/rust/rust-pattern-matching-deep-dive/llm.md): In-depth guide to pattern matching in Rust: exhaustiveness, destructuring, @-bindings in dupe-krill, slice patterns, match guards, and let chains.
+- [Using and Choosing std::collections in Rust: BTreeMap, HashSet, BinaryHeap, and VecDeque](https://eagle2000.space/en/rust/rust-collections-overview/llm.md): A practical guide to collections in Rust: when to use VecDeque, how BTreeMap compares to HashMap, and why you almost never need LinkedList.
+- [Interior Mutability in Rust: Pattern Philosophy, Cell, and RefCell](https://eagle2000.space/en/rust/rust-interior-mutability/llm.md): Exploring the Interior Mutability pattern in Rust: core mechanics, Cell and RefCell containers, inherited vs interior mutability, and practical code examples.
+- [Advanced traits in Rust: associated types, supertraits, and blanket implementations](https://eagle2000.space/en/rust/rust-advanced-traits/llm.md): In-depth guide to advanced Rust traits: associated types, associated constants, fully qualified syntax <Type as Trait>::method, supertraits, and blanket implementations.
+- [Mobile development digest: Flutter 3.47 & Dart 3.13, 5 years of Compose & tools](https://eagle2000.space/en/til/mobile/mobile-dev-digest-week-33/llm.md): In-depth mobile development digest: Flutter 3.47 and Dart 3.13 releases, 5 years of Jetpack Compose, Apple promo guidelines
+- [Crate of the Day: Strum - iterating and converting Rust Enum](https://eagle2000.space/en/rust/crate-of-the-day-strum/llm.md): Exploring the popular Strum crate: how to iterate over enum variants, convert enums to strings and back, using a real-world example from esp-generate.
+- [Trait Objects: How Dynamic Polymorphism Works in Rust](https://eagle2000.space/en/rust/rust-dyn-traits/llm.md): Learn how trait objects (dyn Trait) work in Rust in simple terms: fat pointers, vtables, memory alignment, and object safety rules in practice.
+- [Memory Management in Rust: RAII Pattern, Box Pointers, and Deref Coercion](https://eagle2000.space/en/rust/rust-raii-box-deref/llm.md): Understand memory management in Rust: RAII pattern, automatic cleanup via Drop, Box<T> heap pointers, 'static references with Box::leak, and Deref Coercion mechanisms.
+- [Traits in Rust: From Fundamentals to Monomorphic Zero-Cost Code](https://eagle2000.space/en/rust/rust-traits/llm.md): A comprehensive guide to traits in Rust: from basic syntax and impl blocks to default methods, generic constraints, impl Trait syntax, and zero-cost monomorphization.
+- [Enums in Rust: From Syntax to Pattern Matching](https://eagle2000.space/en/rust/rust-enums/llm.md): In-depth overview of Rust enums: data-carrying variants, uninhabited types, the Option pattern, and match pattern matching with hands-on examples.
+- [Conditionals and Control Flow in Rust](https://eagle2000.space/en/rust/rust-conditionals/llm.md): Master branching and control flow in Rust: code blocks, if-else expressions, single-pattern matching with if let, and let-chains.
+- [Closures in Rust: Functions with their own Memory](https://eagle2000.space/en/rust/rust-closures/llm.md): A simple analysis of function pointers and closures in Rust. Learn how closures capture environment, the difference between Fn, FnMut, and FnOnce, and how they are structured under the hood.
+- [How to Use a Monopod Correctly: Secrets to a Sharp Shot](https://eagle2000.space/en/photography/monopod-guide/llm.md): Understanding monopod techniques in photography and filmmaking: stances, crowd shooting, unique angles, and comparison with gimbals and tripods.
+- [Practice Over Pixels: Why You Should Read Your Camera Manual](https://eagle2000.space/en/photography/practice-and-gear/llm.md): Debunking the myth of expensive gear versus actual experience. Practical advice for beginners and an encouraging call to read instruction manuals.
+- [The Magic of Curves: How to Fix Color Casts and Tone Your Photos](https://eagle2000.space/en/photography/curves-color-toning/llm.md): Understanding color correction using Curves in image editors: how to fix an unwanted red tint and achieve a balanced, cinematic color tone.
+- [Composition Basics: Rule of Thirds](https://eagle2000.space/en/photography/composition-basics/llm.md): An overview of the fundamental rule of photography composition: how to balance your frame using a grid of thirds.
+

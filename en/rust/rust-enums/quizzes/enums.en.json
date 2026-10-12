@@ -1,0 +1,68 @@
+{
+  "id": "rust-enums-quiz",
+  "topic": "Enums in Rust",
+  "difficulty": "medium",
+  "timeLimitSec": 240,
+  "questions": [
+    {
+      "id": "q1",
+      "title": "What are Enums commonly referred to as in type theory?",
+      "options": [
+        "Product type",
+        "Sum type or tagged union",
+        "Dynamic interface",
+        "Abstract class"
+      ],
+      "correctIndex": 1,
+      "explanation": "Enums are sum types (or tagged unions) because an instance holds one (and only one) of its possible variants at any given time."
+    },
+    {
+      "id": "q2",
+      "title": "What is the default visibility of fields (associated data) within enum variants?",
+      "options": [
+        "They are automatically private",
+        "They are automatically public",
+        "Their visibility matches the module visibility",
+        "You must explicitly add `pub` before each variant field"
+      ],
+      "correctIndex": 1,
+      "explanation": "Unlike struct fields, fields and payload data within enum variants in Rust are automatically public."
+    },
+    {
+      "id": "q3",
+      "title": "Which variant in `enum Foo { A, B(u32), C { val: bool } }` is a struct-like variant?",
+      "options": [
+        "A",
+        "B(u32)",
+        "C { val: bool }",
+        "None of the above"
+      ],
+      "correctIndex": 2,
+      "explanation": "Variant `C` with named fields enclosed in curly braces `{}` is a struct variant, behaving similarly to a traditional struct."
+    },
+    {
+      "id": "q4",
+      "title": "What constitutes an uninhabited type when declared as an enum?",
+      "options": [
+        "An enum where all variants are marked as deprecated",
+        "An enum that contains zero variants",
+        "An enum containing only empty unit variants",
+        "The special `Option::None` variant"
+      ],
+      "correctIndex": 1,
+      "explanation": "An enum declared without any variants (e.g. `enum Empty {}`) is an uninhabited type because it is impossible to create an instance of it."
+    },
+    {
+      "id": "q5",
+      "title": "How do you safely extract associated data from an enum variant?",
+      "options": [
+        "Using the `as` typecast operator",
+        "Using pattern matching (e.g., via `match` or `if let`)",
+        "Using dot notation to access the variant index (e.g., `event.KeyPress.0`)",
+        "By binding the data to a global variable"
+      ],
+      "correctIndex": 1,
+      "explanation": "The only safe way to access data stored in enum variants in Rust is by testing which variant is currently active through pattern matching."
+    }
+  ]
+}

@@ -17,6 +17,86 @@
     
     
     <item>
+      <title>Rust: Deep Dive into Pattern Matching - Destructuring, Bindings, and Guards</title>
+      <link>https://eagle2000.space/en/rust/rust-pattern-matching-deep-dive/</link>
+      <pubDate>Mon, 05 Oct 2026 15:35:19 +0300</pubDate>
+      <guid>https://eagle2000.space/en/rust/rust-pattern-matching-deep-dive/</guid>
+      
+      <description>In-depth guide to pattern matching in Rust: exhaustiveness, destructuring, @-bindings in dupe-krill, slice patterns, match guards, and let chains.</description>
+      
+      <category>rust</category>
+      
+      <category>dev</category>
+      
+      <category>pattern-matching</category>
+      
+      <category>destructuring</category>
+      
+      <category>match-guards</category>
+      
+      <category>if-let</category>
+      
+      <category>while-let</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="https://eagle2000.space/rust/rust-pattern-matching-deep-dive/featured.png" medium="image"/>
+      
+    </item>
+    
+    
+    
+    
+    <item>
+      <title>Using and Choosing std::collections in Rust: BTreeMap, HashSet, BinaryHeap, and VecDeque</title>
+      <link>https://eagle2000.space/en/rust/rust-collections-overview/</link>
+      <pubDate>Fri, 18 Sep 2026 12:44:50 +0300</pubDate>
+      <guid>https://eagle2000.space/en/rust/rust-collections-overview/</guid>
+      
+      <description>A practical guide to collections in Rust: when to use VecDeque, how BTreeMap compares to HashMap, and why you almost never need LinkedList.</description>
+      
+      <category>rust</category>
+      
+      <category>dev</category>
+      
+      <category>collections</category>
+      
+      <category>btreemap</category>
+      
+      <category>vecdeque</category>
+      
+      <category>binaryheap</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="https://eagle2000.space/rust/rust-collections-overview/featured.png" medium="image"/>
+      
+    </item>
+    
+    
+    
+    
+    <item>
       <title>Interactive Rust Roadmap</title>
       <link>https://eagle2000.space/en/rust/roadmap/</link>
       <pubDate>Wed, 16 Sep 2026 12:00:00 +0300</pubDate>
@@ -212,6 +292,41 @@
     
     
     <item>
+      <title>Crate of the Day: Rayon - Data Parallelism in a Single Line of Code</title>
+      <link>https://eagle2000.space/en/rust/crate-of-the-day-rayon/</link>
+      <pubDate>Sat, 15 Aug 2026 10:00:00 +0300</pubDate>
+      <guid>https://eagle2000.space/en/rust/crate-of-the-day-rayon/</guid>
+      
+      <description>Exploring the legendary Rayon crate: how changing a single line from .iter() to .par_iter() parallelizes computation across all CPU cores using Work-Stealing.</description>
+      
+      <category>rust</category>
+      
+      <category>crate-of-the-day</category>
+      
+      <category>concurrency</category>
+      
+      <category>performance</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="https://eagle2000.space/rust/crate-of-the-day-rayon/featured.png" medium="image"/>
+      
+    </item>
+    
+    
+    
+    
+    <item>
       <title>Trait Objects: How Dynamic Polymorphism Works in Rust</title>
       <link>https://eagle2000.space/en/rust/rust-dyn-traits/</link>
       <pubDate>Fri, 14 Aug 2026 12:22:25 +0300</pubDate>
@@ -327,6 +442,68 @@
     
     
     <item>
+      <title>Enums in Rust: From Syntax to Pattern Matching</title>
+      <link>https://eagle2000.space/en/rust/rust-enums/</link>
+      <pubDate>Sat, 01 Aug 2026 10:58:17 +0300</pubDate>
+      <guid>https://eagle2000.space/en/rust/rust-enums/</guid>
+      
+      <description>In-depth overview of Rust enums: data-carrying variants, uninhabited types, the Option pattern, and match pattern matching with hands-on examples.</description>
+      
+      <category>rust</category>
+      
+      <category>dev</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="https://eagle2000.space/rust/rust-enums/featured.png" medium="image"/>
+      
+    </item>
+    
+    
+    
+    
+    <item>
+      <title>Conditionals and Control Flow in Rust</title>
+      <link>https://eagle2000.space/en/rust/rust-conditionals/</link>
+      <pubDate>Fri, 31 Jul 2026 00:00:00 +0300</pubDate>
+      <guid>https://eagle2000.space/en/rust/rust-conditionals/</guid>
+      
+      <description>Master branching and control flow in Rust: code blocks, if-else expressions, single-pattern matching with if let, and let-chains.</description>
+      
+      <category>rust</category>
+      
+      <category>dev</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="https://eagle2000.space/rust/rust-conditionals/featured.png" medium="image"/>
+      
+    </item>
+    
+    
+    
+    
+    <item>
       <title>Personal Profile</title>
       <link>https://eagle2000.space/en/profile/</link>
       <pubDate>Tue, 21 Jul 2026 00:00:00 +0300</pubDate>
@@ -379,13 +556,11 @@
         
       
         
-          
-        
       
         
-          
-        
       
+      
+      <media:content url="https://eagle2000.space/rust/rust-closures/featured.png" medium="image"/>
       
     </item>
     
@@ -451,13 +626,11 @@
         
       
         
-          
-        
       
         
-          
-        
       
+      
+      <media:content url="https://eagle2000.space/photography/practice-and-gear/featured.png" medium="image"/>
       
     </item>
     

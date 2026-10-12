@@ -17,6 +17,127 @@
     
     
     <item>
+      <title>Rust: тонкости Pattern Matching - деструктуризация, bindings и guards</title>
+      <link>https://eagle2000.space/rust/rust-pattern-matching-deep-dive/</link>
+      <pubDate>Mon, 05 Oct 2026 15:35:19 +0300</pubDate>
+      <guid>https://eagle2000.space/rust/rust-pattern-matching-deep-dive/</guid>
+      
+      <description>Изучаем как работает сопоставление с образцом Pattern Matching в Rust: exhaustiveness, деструктуризация, @-binding, slice patterns и guards на примерах реальных проектов</description>
+      
+      <category>rust</category>
+      
+      <category>dev</category>
+      
+      <category>pattern-matching</category>
+      
+      <category>destructuring</category>
+      
+      <category>match-guards</category>
+      
+      <category>if-let</category>
+      
+      <category>while-let</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="https://eagle2000.space/rust/rust-pattern-matching-deep-dive/featured.png" medium="image"/>
+      
+    </item>
+    
+    
+    
+    
+    <item>
+      <title>Глубокое погружение в Lifetimes (времена жизни) в Rust: работа со ссылками без ошибок и паники</title>
+      <link>https://eagle2000.space/rust/rust-lifetimes-deep-dive/</link>
+      <pubDate>Mon, 05 Oct 2026 15:35:19 +0300</pubDate>
+      <guid>https://eagle2000.space/rust/rust-lifetimes-deep-dive/</guid>
+      
+      <description>Подробный разбор Lifetimes (времени жизни) в Rust: 3 правила опускания (Elision Rules), ссылки в структурах, память &#39;static, HRTB (for&lt;&#39;a&gt;) и Дисперсия.</description>
+      
+      <category>rust</category>
+      
+      <category>dev</category>
+      
+      <category>lifetimes</category>
+      
+      <category>borrow-checker</category>
+      
+      <category>elision</category>
+      
+      <category>hrtb</category>
+      
+      <category>variance</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="https://eagle2000.space/rust/rust-lifetimes-deep-dive/featured.png" medium="image"/>
+      
+    </item>
+    
+    
+    
+    
+    <item>
+      <title>Использование и применение std::collections в Rust: BTreeMap, HashSet, BinaryHeap и VecDeque</title>
+      <link>https://eagle2000.space/rust/rust-collections-overview/</link>
+      <pubDate>Fri, 18 Sep 2026 12:44:50 +0300</pubDate>
+      <guid>https://eagle2000.space/rust/rust-collections-overview/</guid>
+      
+      <description>Разбираем коллекции в Rust: когда применять VecDeque, чем BTreeMap отличается от HashMap и почему LinkedList почти никогда не нужен.</description>
+      
+      <category>rust</category>
+      
+      <category>dev</category>
+      
+      <category>collections</category>
+      
+      <category>btreemap</category>
+      
+      <category>vecdeque</category>
+      
+      <category>binaryheap</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="https://eagle2000.space/rust/rust-collections-overview/featured.png" medium="image"/>
+      
+    </item>
+    
+    
+    
+    
+    <item>
       <title>Интерактивная дорожная карта Rust</title>
       <link>https://eagle2000.space/rust/roadmap/</link>
       <pubDate>Wed, 16 Sep 2026 12:00:00 +0300</pubDate>
@@ -154,6 +275,156 @@
       
       
       <media:content url="https://eagle2000.space/photography/monopod-guide/featured.png" medium="image"/>
+      
+    </item>
+    
+    
+    
+    
+    <item>
+      <title>От мобильной разработки к бэкенду на Rust: как ИИ изменил мой выбор языка</title>
+      <link>https://eagle2000.space/rust/go-to-rust-migration-story/</link>
+      <pubDate>Tue, 01 Sep 2026 13:45:00 +0300</pubDate>
+      <guid>https://eagle2000.space/rust/go-to-rust-migration-story/</guid>
+      
+      <description>История мобильного разработчика, создававшего бэкенды на Java и Go, и почему в эпоху ИИ компилятор Rust стал идеальным ревьюером.</description>
+      
+      <category>rust</category>
+      
+      <category>golang</category>
+      
+      <category>java</category>
+      
+      <category>mobile</category>
+      
+      <category>ai</category>
+      
+      <category>architecture</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="https://eagle2000.space/rust/go-to-rust-migration-story/featured.png" medium="image"/>
+      
+    </item>
+    
+    
+    
+    
+    <item>
+      <title>Миграция с Go на Rust: архитектура, ошибки и компилятор в связке с AI</title>
+      <link>https://eagle2000.space/rust/go-to-rust-migration-in-ai-era/</link>
+      <pubDate>Mon, 31 Aug 2026 13:10:00 +0300</pubDate>
+      <guid>https://eagle2000.space/rust/go-to-rust-migration-in-ai-era/</guid>
+      
+      <description>Сравнение Go и Rust для бэкенда: обработка ошибок, строгая типизация, Typestate и специфика генерации кода нейросетями.</description>
+      
+      <category>rust</category>
+      
+      <category>golang</category>
+      
+      <category>architecture</category>
+      
+      <category>ai</category>
+      
+      <category>error-handling</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="https://eagle2000.space/rust/go-to-rust-migration-in-ai-era/featured.png" medium="image"/>
+      
+    </item>
+    
+    
+    
+    
+    <item>
+      <title>Опыт важнее мегапикселей: Почему стоит изучить мануал к камере</title>
+      <link>https://eagle2000.space/photography/practice-and-gear/</link>
+      <pubDate>Thu, 20 Aug 2026 10:00:00 +0300</pubDate>
+      <guid>https://eagle2000.space/photography/practice-and-gear/</guid>
+      
+      <description>Почему знание мануала своей камеры ценнее дорогой оптики? Практические советы фотографа по настройкам, композиции и съемке для создания сочных кадров.</description>
+      
+      <category>опыт</category>
+      
+      <category>техника</category>
+      
+      <category>советы</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="https://eagle2000.space/photography/practice-and-gear/featured.png" medium="image"/>
+      
+    </item>
+    
+    
+    
+    
+    <item>
+      <title>Tauri v2 Mobile против Flutter: Сравниваем фреймворки на примере реальной игры</title>
+      <link>https://eagle2000.space/til/mobile/tauri-v2-vs-flutter-benchmark/</link>
+      <pubDate>Tue, 18 Aug 2026 16:00:00 +0300</pubDate>
+      <guid>https://eagle2000.space/til/mobile/tauri-v2-vs-flutter-benchmark/</guid>
+      
+      <description>Разработал одну и ту же мобильную аркадную игру на Tauri 2.0 (Rust backend + React UI) и Flutter (Cubit). Подробный разбор архитектуры, переноса логики в Rust, замеры веса APK, памяти и задержек.</description>
+      
+      <category>tauri</category>
+      
+      <category>flutter</category>
+      
+      <category>rust</category>
+      
+      <category>mobile</category>
+      
+      <category>react</category>
+      
+      <category>dart</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
       
     </item>
     
@@ -356,6 +627,191 @@
     
     
     <item>
+      <title>Tokio: искусство синхронизации. Как победить великана с помощью Semaphore, Barrier и Mutex</title>
+      <link>https://eagle2000.space/rust/tokio-sync-primitives/</link>
+      <pubDate>Fri, 14 Aug 2026 10:00:00 +0300</pubDate>
+      <guid>https://eagle2000.space/rust/tokio-sync-primitives/</guid>
+      
+      <description>История экспедиции экипажа Vectoria — наглядное объяснение примитивов синхронизации в Tokio: Semaphore для ограничения мест, Barrier для совместного теплового удара, и Mutex для безопасного изменения здоровья врага.</description>
+      
+      <category>rust</category>
+      
+      <category>dev</category>
+      
+      <category>tokio</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="https://eagle2000.space/rust/tokio-sync-primitives/featured.png" medium="image"/>
+      
+    </item>
+    
+    
+    
+    
+    <item>
+      <title>Tokio: как отправить и принять множество событий</title>
+      <link>https://eagle2000.space/rust/tokio-kak-otpravit-i-prinyat-mnozhestvo-sobytij/</link>
+      <pubDate>Fri, 14 Aug 2026 10:00:00 +0300</pubDate>
+      <guid>https://eagle2000.space/rust/tokio-kak-otpravit-i-prinyat-mnozhestvo-sobytij/</guid>
+      
+      <description>Продолжение приключений экипажа Vectoria — разбор способов отправки и обработки множества событий в Tokio: использование макроса tokio::select!, широковещательных каналов broadcast и динамического пула задач с помощью JoinSet.</description>
+      
+      <category>rust</category>
+      
+      <category>dev</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="https://eagle2000.space/rust/tokio-kak-otpravit-i-prinyat-mnozhestvo-sobytij/featured.png" medium="image"/>
+      
+    </item>
+    
+    
+    
+    
+    <item>
+      <title>Каналы в Rust при поддержке Tokio</title>
+      <link>https://eagle2000.space/rust/rust-tokio-channels/</link>
+      <pubDate>Fri, 14 Aug 2026 10:00:00 +0300</pubDate>
+      <guid>https://eagle2000.space/rust/rust-tokio-channels/</guid>
+      
+      <description>Глубокое погружение в асинхронные каналы Tokio: mpsc, oneshot, broadcast и watch. Исследуем паттерны передачи данных на примере спасательного зонда экипажа Vectoria.</description>
+      
+      <category>rust</category>
+      
+      <category>dev</category>
+      
+      <category>tokio</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="https://eagle2000.space/rust/rust-tokio-channels/featured.png" medium="image"/>
+      
+    </item>
+    
+    
+    
+    
+    <item>
+      <title>Оптимизация памяти, интеграционные тесты и декларативный CLI (clap)</title>
+      <link>https://eagle2000.space/rust/rust-clap-and-integration-testing/</link>
+      <pubDate>Thu, 13 Aug 2026 10:00:00 +0300</pubDate>
+      <guid>https://eagle2000.space/rust/rust-clap-and-integration-testing/</guid>
+      
+      <description>Подробное практическое руководство по оптимизации памяти и интеграционному тестированию в Rust: повторное использование буфера памяти с read_line(), трейт Default, внешние тесты в tests/ с assert_cmd и декларативный парсинг CLI с помощью clap.</description>
+      
+      <category>rust</category>
+      
+      <category>dev</category>
+      
+      <category>memory-optimization</category>
+      
+      <category>read-line</category>
+      
+      <category>default-trait</category>
+      
+      <category>integration-testing</category>
+      
+      <category>assert-cmd</category>
+      
+      <category>clap</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="https://eagle2000.space/rust/rust-clap-and-integration-testing/featured.png" medium="image"/>
+      
+    </item>
+    
+    
+    
+    
+    <item>
+      <title>Файловые режимы, паттерн Builder, Path/PathBuf и подготовка к публикации</title>
+      <link>https://eagle2000.space/rust/rust-files-tempfile-and-docs/</link>
+      <pubDate>Thu, 13 Aug 2026 10:00:00 +0300</pubDate>
+      <guid>https://eagle2000.space/rust/rust-files-tempfile-and-docs/</guid>
+      
+      <description>Подробное практическое руководство по работе с файловой системой и подготовке пакетов к публикации в Rust: трансляция флагов File::options(), разница Path vs PathBuf, абстракция impl AsRef, изолированное тестирование с tempfile и стандарты документации crates.io.</description>
+      
+      <category>rust</category>
+      
+      <category>dev</category>
+      
+      <category>files</category>
+      
+      <category>builder-pattern</category>
+      
+      <category>path</category>
+      
+      <category>pathbuf</category>
+      
+      <category>tempfile</category>
+      
+      <category>rustdoc</category>
+      
+      <category>crates-io</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="https://eagle2000.space/rust/rust-files-tempfile-and-docs/featured.png" medium="image"/>
+      
+    </item>
+    
+    
+    
+    
+    <item>
       <title>Управление памятью в Rust: идиома RAII, указатель Box и механизмы Deref Coercion</title>
       <link>https://eagle2000.space/rust/rust-raii-box-deref/</link>
       <pubDate>Wed, 12 Aug 2026 11:00:00 +0300</pubDate>
@@ -388,6 +844,295 @@
       
       
       <media:content url="https://eagle2000.space/rust/rust-raii-box-deref/featured.jpeg" medium="image"/>
+      
+    </item>
+    
+    
+    
+    
+    <item>
+      <title>Замыкания в Rust: функции с собственной памятью</title>
+      <link>https://eagle2000.space/rust/rust-closures/</link>
+      <pubDate>Wed, 12 Aug 2026 10:00:00 +0300</pubDate>
+      <guid>https://eagle2000.space/rust/rust-closures/</guid>
+      
+      <description>Простой разбор указателей на функции и замыканий в Rust. Узнаем, как замыкания захватывают окружение, в чем разница между Fn, FnMut и FnOnce и как они устроены под капотом.</description>
+      
+      <category>rust</category>
+      
+      <category>dev</category>
+      
+      <category>closures</category>
+      
+      <category>advanced</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="https://eagle2000.space/rust/rust-closures/featured.png" medium="image"/>
+      
+    </item>
+    
+    
+    
+    
+    <item>
+      <title>Потоки ввода-вывода I/O в Rust: BufRead, блокировка stdin, подход Magic Function и безопасная обработка ошибок</title>
+      <link>https://eagle2000.space/rust/rust-io-bufread-and-errors/</link>
+      <pubDate>Wed, 12 Aug 2026 10:00:00 +0300</pubDate>
+      <guid>https://eagle2000.space/rust/rust-io-bufread-and-errors/</guid>
+      
+      <description>Подробное практическое руководство по I/O в Rust: архитектура системных вызовов, BufRead, блокировка stdin().lock(), изолированное тестирование с std::io::Cursor, траектории ошибок .lines() и стандарты UNIX CLI.</description>
+      
+      <category>rust</category>
+      
+      <category>dev</category>
+      
+      <category>io</category>
+      
+      <category>bufread</category>
+      
+      <category>stdin-lock</category>
+      
+      <category>cursor</category>
+      
+      <category>error-handling</category>
+      
+      <category>exit-codes</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="https://eagle2000.space/rust/rust-io-bufread-and-errors/featured.png" medium="image"/>
+      
+    </item>
+    
+    
+    
+    
+    <item>
+      <title>Проектирование библиотек в Rust: Data-Oriented API, разделение lib/main и бебаггинг (Bebugging)</title>
+      <link>https://eagle2000.space/rust/rust-crate-design-and-testing/</link>
+      <pubDate>Wed, 12 Aug 2026 10:00:00 +0300</pubDate>
+      <guid>https://eagle2000.space/rust/rust-crate-design-and-testing/</guid>
+      
+      <description>Первая статья серии по разработке утилит и библиотек в Rust: архитектура Crate, Data-Oriented API, разделение lib.rs/main.rs, техника Bebugging и самодокументируемые тесты.</description>
+      
+      <category>rust</category>
+      
+      <category>dev</category>
+      
+      <category>crate-architecture</category>
+      
+      <category>data-oriented-api</category>
+      
+      <category>unit-testing</category>
+      
+      <category>bebugging</category>
+      
+      <category>testdox</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="https://eagle2000.space/rust/rust-crate-design-and-testing/featured.png" medium="image"/>
+      
+    </item>
+    
+    
+    
+    
+    <item>
+      <title>Управление контекстом ошибок (anyhow), CLI-аргументы и владение в Rust</title>
+      <link>https://eagle2000.space/rust/rust-cli-args-and-anyhow/</link>
+      <pubDate>Wed, 12 Aug 2026 10:00:00 +0300</pubDate>
+      <guid>https://eagle2000.space/rust/rust-cli-args-and-anyhow/</guid>
+      
+      <description>Подробное практическое руководство по парсингу аргументов CLI и управлению ошибками в Rust: std::env::args(), синтаксис let-else, возврат Result&lt;()&gt; из main(), обогащение ошибок через anyhow context/with_context и макросы bail!/ensure!.</description>
+      
+      <category>rust</category>
+      
+      <category>dev</category>
+      
+      <category>cli</category>
+      
+      <category>anyhow</category>
+      
+      <category>error-handling</category>
+      
+      <category>let-else</category>
+      
+      <category>args</category>
+      
+      <category>context</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="https://eagle2000.space/rust/rust-cli-args-and-anyhow/featured.png" medium="image"/>
+      
+    </item>
+    
+    
+    
+    
+    <item>
+      <title>Unsafe Rust и FFI: работа с сырыми указателями, Undefined Behavior и интеграция с C</title>
+      <link>https://eagle2000.space/rust/rust-unsafe-and-ffi/</link>
+      <pubDate>Tue, 11 Aug 2026 10:00:00 +0300</pubDate>
+      <guid>https://eagle2000.space/rust/rust-unsafe-and-ffi/</guid>
+      
+      <description>Изучаем Unsafe Rust и FFI: 5 суперспособностей unsafe, работа с сырыми указателями *const и *mut, Неопределенное поведение (UB), Miri и интеграция с C через extern C.</description>
+      
+      <category>rust</category>
+      
+      <category>dev</category>
+      
+      <category>unsafe</category>
+      
+      <category>ffi</category>
+      
+      <category>raw-pointers</category>
+      
+      <category>c-bindings</category>
+      
+      <category>miri</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="https://eagle2000.space/rust/rust-unsafe-and-ffi/featured.png" medium="image"/>
+      
+    </item>
+    
+    
+    
+    
+    <item>
+      <title>Атомарные операции и Memory Ordering в Rust: от Ordering::Relaxed до Acquire/Release барьеров</title>
+      <link>https://eagle2000.space/rust/rust-atomics-and-memory-ordering/</link>
+      <pubDate>Tue, 11 Aug 2026 10:00:00 +0300</pubDate>
+      <guid>https://eagle2000.space/rust/rust-atomics-and-memory-ordering/</guid>
+      
+      <description>Глубокое погружение в атомарные типы std::sync::atomic (AtomicBool, AtomicUsize, AtomicPtr), операции fetch_add, compare_exchange и барьеры памяти Memory Ordering (Relaxed, Acquire, Release, SeqCst).</description>
+      
+      <category>rust</category>
+      
+      <category>dev</category>
+      
+      <category>atomics</category>
+      
+      <category>memory-ordering</category>
+      
+      <category>relaxed</category>
+      
+      <category>acquire-release</category>
+      
+      <category>concurrency</category>
+      
+      <category>lock-free</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="https://eagle2000.space/rust/rust-atomics-and-memory-ordering/featured.png" medium="image"/>
+      
+    </item>
+    
+    
+    
+    
+    <item>
+      <title>Параллелизм на уровне типов: Всё о маркерных типажах Send и Sync в Rust</title>
+      <link>https://eagle2000.space/rust/rust-send-sync-traits/</link>
+      <pubDate>Tue, 11 Aug 2026 10:00:00 +0300</pubDate>
+      <guid>https://eagle2000.space/rust/rust-send-sync-traits/</guid>
+      
+      <description>Подробный разбор маркерных типажей Send и Sync в Rust: соотношение T: Sync &lt;=&gt; &amp;T: Send, почему Rc не поток-безопасен, разница между Send и Sync для RefCell, и требования thread::spawn.</description>
+      
+      <category>rust</category>
+      
+      <category>dev</category>
+      
+      <category>send</category>
+      
+      <category>sync</category>
+      
+      <category>multithreading</category>
+      
+      <category>concurrency</category>
+      
+      <category>rc</category>
+      
+      <category>refcell</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="https://eagle2000.space/rust/rust-send-sync-traits/featured.png" medium="image"/>
       
     </item>
     
@@ -429,6 +1174,242 @@
       
       
       <media:content url="https://eagle2000.space/rust/esp32-rust-blink/featured.png" medium="image"/>
+      
+    </item>
+    
+    
+    
+    
+    <item>
+      <title>ESP32 &#43; Rust: собираем всё вместе. Веб-термометр на микроконтроллере</title>
+      <link>https://eagle2000.space/rust/esp32-rust-thermometer/</link>
+      <pubDate>Mon, 10 Aug 2026 12:00:00 +0300</pubDate>
+      <guid>https://eagle2000.space/rust/esp32-rust-thermometer/</guid>
+      
+      <description>Практический гайд по сборке IoT-термометра на ESP32 с Rust и HTTP-сервером. Разбираем enum, Option, Result, traits, no_std и Type Layout на настоящем железе.</description>
+      
+      <category>rust</category>
+      
+      <category>esp32</category>
+      
+      <category>embedded</category>
+      
+      <category>iot</category>
+      
+      <category>web</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="https://eagle2000.space/rust/esp32-rust-thermometer/featured.png" medium="image"/>
+      
+    </item>
+    
+    
+    
+    
+    <item>
+      <title>Атрибуты и условная компиляция в Rust: #[cfg], #[inline], #[allow] и repr(C)</title>
+      <link>https://eagle2000.space/rust/rust-attributes-and-cfg/</link>
+      <pubDate>Mon, 10 Aug 2026 10:00:00 +0300</pubDate>
+      <guid>https://eagle2000.space/rust/rust-attributes-and-cfg/</guid>
+      
+      <description>Подробный разбор атрибутов и условной компиляции в Rust: внешние и внутренние атрибуты, #[cfg], макрос cfg!, оптимизации #[inline], линтер #[allow] и C-ABI разметка #[repr(C)].</description>
+      
+      <category>rust</category>
+      
+      <category>dev</category>
+      
+      <category>attributes</category>
+      
+      <category>cfg</category>
+      
+      <category>inline</category>
+      
+      <category>lints</category>
+      
+      <category>repr-c</category>
+      
+      <category>ffi</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="https://eagle2000.space/rust/rust-attributes-and-cfg/featured.png" medium="image"/>
+      
+    </item>
+    
+    
+    
+    
+    <item>
+      <title>Архитектурный проект на Rust: Проектирование автоматизированной системы заботы о питомцах (PetCare Hub)</title>
+      <link>https://eagle2000.space/rust/rust-pet-care-architecture/</link>
+      <pubDate>Sun, 09 Aug 2026 10:00:00 +0300</pubDate>
+      <guid>https://eagle2000.space/rust/rust-pet-care-architecture/</guid>
+      
+      <description>Итоговый архитектурный проект серии: проектируем многопоточную систему PetCare Hub. Объединяем RAII, Box, Arc/Mutex, Trait Objects, BinaryHeap, custom iterators и макросы.</description>
+      
+      <category>rust</category>
+      
+      <category>dev</category>
+      
+      <category>architecture</category>
+      
+      <category>smart-feeder</category>
+      
+      <category>traits</category>
+      
+      <category>concurrency</category>
+      
+      <category>collections</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="https://eagle2000.space/rust/rust-pet-care-architecture/featured.png" medium="image"/>
+      
+    </item>
+    
+    
+    
+    
+    <item>
+      <title>Процедурные макросы в Rust: derive, attribute-like и function-like</title>
+      <link>https://eagle2000.space/rust/rust-procedural-macros/</link>
+      <pubDate>Sun, 09 Aug 2026 10:00:00 +0300</pubDate>
+      <guid>https://eagle2000.space/rust/rust-procedural-macros/</guid>
+      
+      <description>Глубокое руководство по процедурным макросам в Rust: три вида макросов (derive, attribute-like, function-like), устройство TokenStream, работа с syn и quote.</description>
+      
+      <category>rust</category>
+      
+      <category>dev</category>
+      
+      <category>procedural-macros</category>
+      
+      <category>proc-macro</category>
+      
+      <category>syn</category>
+      
+      <category>quote</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="https://eagle2000.space/rust/rust-procedural-macros/featured.png" medium="image"/>
+      
+    </item>
+    
+    
+    
+    
+    <item>
+      <title>Глубокое погружение в итераторы в Rust: написание своего типажа Iterator, .iter() vs .into_iter() и нулевая стоимость абстракций</title>
+      <link>https://eagle2000.space/rust/rust-iterators-deep-dive/</link>
+      <pubDate>Sat, 08 Aug 2026 10:00:00 +0300</pubDate>
+      <guid>https://eagle2000.space/rust/rust-iterators-deep-dive/</guid>
+      
+      <description>Подробный разбор итераторов в Rust: ленивые вычисления, различие .iter(), .iter_mut() и .into_iter(), реализация собственного типажа Iterator и нулевая стоимость абстракций.</description>
+      
+      <category>rust</category>
+      
+      <category>dev</category>
+      
+      <category>iterators</category>
+      
+      <category>zero-cost-abstractions</category>
+      
+      <category>functional</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="https://eagle2000.space/rust/rust-iterators-deep-dive/featured.png" medium="image"/>
+      
+    </item>
+    
+    
+    
+    
+    <item>
+      <title>Декларативные макросы macro_rules! в Rust: от шаблонов vec! до собственных DSL</title>
+      <link>https://eagle2000.space/rust/rust-declarative-macros/</link>
+      <pubDate>Sat, 08 Aug 2026 10:00:00 +0300</pubDate>
+      <guid>https://eagle2000.space/rust/rust-declarative-macros/</guid>
+      
+      <description>Изучаем декларативные макросы macro_rules! в Rust: синтаксическое дерево (AST), гигиена макросов, спецификаторы типов, повторения и создание удобных DSL.</description>
+      
+      <category>rust</category>
+      
+      <category>dev</category>
+      
+      <category>macros</category>
+      
+      <category>macro_rules</category>
+      
+      <category>metaprogramming</category>
+      
+      <category>dsl</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="https://eagle2000.space/rust/rust-declarative-macros/featured.png" medium="image"/>
       
     </item>
     
