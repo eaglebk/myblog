@@ -12,7 +12,7 @@
 ### 🔹 [Rust](https://eagle2000.space/en/rust/llm.md)
 > My journey in learning Rust
 
-- **Статей:** 11
+- **Статей:** 12
 - **Каталог раздела для LLM:** `https://eagle2000.space/en/rust/llm.md`
 
 ### 🔹 [Photography](https://eagle2000.space/en/photography/llm.md)
@@ -55,6 +55,7 @@
 
 ## 🚀 Последние публикации:
 
+- [Lifetimes in Rust: Deep Dive into References, Elision, HRTB, and Variance](https://eagle2000.space/en/rust/rust-lifetimes-deep-dive/llm.md) (2026-10-21) — *rust*
 - [Rust: Deep Dive into Pattern Matching - Destructuring, Bindings, and Guards](https://eagle2000.space/en/rust/rust-pattern-matching-deep-dive/llm.md) (2026-10-05) — *rust*
 - [Using and Choosing std::collections in Rust: BTreeMap, HashSet, BinaryHeap, and VecDeque](https://eagle2000.space/en/rust/rust-collections-overview/llm.md) (2026-09-18) — *rust*
 - [Interior Mutability in Rust: Pattern Philosophy, Cell, and RefCell](https://eagle2000.space/en/rust/rust-interior-mutability/llm.md) (2026-09-09) — *rust*

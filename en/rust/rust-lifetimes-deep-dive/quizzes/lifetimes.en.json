@@ -1,0 +1,82 @@
+[
+  {
+    "question": "How does the second rule of lifetime elision work in Rust?",
+    "options": [
+      "If there is exactly one input lifetime parameter, that lifetime is assigned to all output lifetime parameters",
+      "All references inside the function are automatically bound to the 'static scope",
+      "If returning a Result or Option, the compiler always requires manual 'a annotations"
+    ],
+    "answer": 0,
+    "explanation": "Under Rule 2 of lifetime elision, if there is exactly one input reference parameter, rustc automatically assigns its lifetime to all output references: fn first_word<'a>(s: &'a str) -> &'a str."
+  },
+  {
+    "question": "Why does the signature `fn longest(x: &str, y: &str) -> &str` fail to compile without explicit `'a` annotations?",
+    "options": [
+      "Rust functions cannot accept more than one string slice simultaneously",
+      "The compiler assigns distinct lifetimes ('a and 'b) to each argument and cannot deduce which lifetime to assign to the returned reference",
+      "Returning string slices &str from functions is forbidden without allocating a String"
+    ],
+    "answer": 1,
+    "explanation": "Under Rule 1, each input parameter receives an independent lifetime ('a and 'b). Rule 2 does not apply because there are two references, and Rule 3 does not apply without &self. The compiler cannot deduce which input reference is returned, requiring explicit annotations."
+  },
+  {
+    "question": "What advantage does the third elision rule provide for struct methods (`&self` / `&mut self`)?",
+    "options": [
+      "It automatically deallocates struct memory immediately after the method completes",
+      "It allows the method to call unsafe C functions without an unsafe block",
+      "The lifetime of self is automatically assigned to all output lifetime parameters of the method"
+    ],
+    "answer": 2,
+    "explanation": "According to Rule 3, if there are multiple input lifetime parameters and one of them is &self or &mut self, the lifetime of self is assigned to all output references (useful for accessors like fn name(&self) -> &str)."
+  },
+  {
+    "question": "What does the lifetime annotation in `struct PostView<'a> { title: &'a str }` indicate?",
+    "options": [
+      "An instance of PostView cannot outlive the underlying data referenced by the title slice",
+      "The struct is stored in the program's data segment for the duration of the main function",
+      "The title field is automatically cloned onto the heap whenever the struct is constructed"
+    ],
+    "answer": 0,
+    "explanation": "The 'a annotation binds the struct to its borrowed data: a PostView<'a> instance cannot outlive the variable that owns the source string."
+  },
+  {
+    "question": "Why does the owned type `String` satisfy the `T: 'static` bound, for example in `tokio::spawn`?",
+    "options": [
+      "Because String is embedded in the binary's data segment",
+      "Because String owns its data on the heap and contains no short-lived borrowed references",
+      "Because the compiler automatically clones data into global memory"
+    ],
+    "answer": 1,
+    "explanation": "The T: 'static bound requires that the type can safely live for an arbitrary duration. Owned types (String, Vec<T>, u32) satisfy this bound because they carry no temporary borrowed references."
+  },
+  {
+    "question": "What is the core idea behind `for<'a>` (Higher-Rank Trait Bounds) when working with closures?",
+    "options": [
+      "The closure runs in a separate background Tokio thread",
+      "The syntax instructs the compiler to unroll the for loop during optimization",
+      "The closure promises to work with a reference of any lifetime determined dynamically at the call site"
+    ],
+    "answer": 2,
+    "explanation": "The for<'a> Fn(&'a str) syntax moves the lifetime selection to the call site: the closure can accept a reference to temporary data created on the stack inside the calling function."
+  },
+  {
+    "question": "Why is lifetime substitution strictly forbidden for mutable references `&'a mut T` (invariance)?",
+    "options": [
+      "Because values can be overwritten through &mut; substitution could store a dangling pointer to a dropped local stack frame",
+      "Because mutable references are unsupported on ARM64 processor architectures",
+      "Because the borrow checker is disabled for mutable references"
+    ],
+    "answer": 0,
+    "explanation": "If &mut T allowed lifetime shortening or substitution, external code could write a reference to a temporary local variable into a longer-lived variable, causing a critical dangling reference error."
+  },
+  {
+    "question": "What practical approach to lifetimes is recommended for standard application business logic in Rust?",
+    "options": [
+      "Wrap every struct field in references with distinct <'a, 'b> parameters for maximum performance",
+      "Use unsafe code across all data models to bypass the borrow checker",
+      "Use owned types (String, Vec) for standard domain models, reserving borrowed structs for performance-critical parsers and hot paths"
+    ],
+    "answer": 2,
+    "explanation": "In standard business logic, the negligible overhead of occasional cloning is outweighed by simpler code. Owned types prevent complex webs of lifetime parameters and make maintenance easier."
+  }
+]

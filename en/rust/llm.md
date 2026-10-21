@@ -5,7 +5,7 @@
 
 
 - **URL раздела:** https://eagle2000.space/en/rust/
-- **Количество статей:** 11
+- **Количество статей:** 12
 - **Язык:** en
 
 ---
@@ -88,7 +88,16 @@
 - **Markdown URL для агентов:** `https://eagle2000.space/en/rust/rust-collections-overview/llm.md`
 
 
-### 9. [Rust: Deep Dive into Pattern Matching - Destructuring, Bindings, and Guards](https://eagle2000.space/en/rust/rust-pattern-matching-deep-dive/llm.md)
+### 9. [Lifetimes in Rust: Deep Dive into References, Elision, HRTB, and Variance](https://eagle2000.space/en/rust/rust-lifetimes-deep-dive/llm.md)
+
+> Master Rust lifetimes: how lifetime elision works, storing references in structs, &'static vs T: 'static, higher-rank trait bounds (for<'a>), and variance.
+
+- **Дата:** 2026-10-21
+- **Теги:** rust, dev, lifetimes, borrow-checker, elision, hrtb, variance
+- **Markdown URL для агентов:** `https://eagle2000.space/en/rust/rust-lifetimes-deep-dive/llm.md`
+
+
+### 10. [Rust: Deep Dive into Pattern Matching - Destructuring, Bindings, and Guards](https://eagle2000.space/en/rust/rust-pattern-matching-deep-dive/llm.md)
 
 > In-depth guide to pattern matching in Rust: exhaustiveness, destructuring, @-bindings in dupe-krill, slice patterns, match guards, and let chains.
 
@@ -97,7 +106,7 @@
 - **Markdown URL для агентов:** `https://eagle2000.space/en/rust/rust-pattern-matching-deep-dive/llm.md`
 
 
-### 10. [Advanced traits in Rust: associated types, supertraits, and blanket implementations](https://eagle2000.space/en/rust/rust-advanced-traits/llm.md)
+### 11. [Advanced traits in Rust: associated types, supertraits, and blanket implementations](https://eagle2000.space/en/rust/rust-advanced-traits/llm.md)
 
 > In-depth guide to advanced Rust traits: associated types, associated constants, fully qualified syntax <Type as Trait>::method, supertraits, and blanket implementations.
 
@@ -106,7 +115,7 @@
 - **Markdown URL для агентов:** `https://eagle2000.space/en/rust/rust-advanced-traits/llm.md`
 
 
-### 11. [Crate of the Day: Strum - iterating and converting Rust Enum](https://eagle2000.space/en/rust/crate-of-the-day-strum/llm.md)
+### 12. [Crate of the Day: Strum - iterating and converting Rust Enum](https://eagle2000.space/en/rust/crate-of-the-day-strum/llm.md)
 
 > Exploring the popular Strum crate: how to iterate over enum variants, convert enums to strings and back, using a real-world example from esp-generate.
 

@@ -18,7 +18,7 @@
 ### 🔹 [О фотографии](https://eagle2000.space/photography/llm.md)
 > Мои мысли, статьи и заметки о фотографии, перенесённые из старой группы
 
-- **Статей:** 3
+- **Статей:** 4
 - **Каталог раздела для LLM:** `https://eagle2000.space/photography/llm.md`
 
 ### 🔹 [Dart](https://eagle2000.space/dart/llm.md)
@@ -56,6 +56,7 @@
 ## 🚀 Последние публикации:
 
 - [Погружение в Lifetimes (времена жизни) в Rust: работа с ссылками без ошибок и паники](https://eagle2000.space/rust/rust-lifetimes-deep-dive/llm.md) (2026-10-21) — *rust*
+- [Опыт важнее мегапикселей: Почему стоит изучить мануал к камере](https://eagle2000.space/photography/practice-and-gear/llm.md) (2026-10-21) — *photography*
 - [Rust: тонкости Pattern Matching - деструктуризация, bindings и guards](https://eagle2000.space/rust/rust-pattern-matching-deep-dive/llm.md) (2026-10-05) — *rust*
 - [Использование и применение std::collections в Rust: BTreeMap, HashSet, BinaryHeap и VecDeque](https://eagle2000.space/rust/rust-collections-overview/llm.md) (2026-09-18) — *rust*
 - [Внутренняя мутабельность в Rust: паттерн использования Cell, RefCell](https://eagle2000.space/rust/rust-interior-mutability/llm.md) (2026-09-09) — *rust*
@@ -79,5 +80,4 @@
 - [Основы композиции: Правило третей](https://eagle2000.space/photography/composition-basics/llm.md) (2026-07-31) — *photography*
 - [Магия кривых: Как убрать паразитные оттенки и сделать красивый тон](https://eagle2000.space/photography/curves-color-toning/llm.md) (2026-07-31) — *photography*
 - [Кортежи в Rust (Tuples): объявление, деструктуризация и unit-тип ()](https://eagle2000.space/rust/rust-tuples/llm.md) (2026-07-31) — *rust*
-- [Android 15 и 16 KB страница памяти: что изменится, как подготовить Android и Flutter-приложения](https://eagle2000.space/about-all/android-16k/llm.md) (2025-09-25) — *about-all*
 
