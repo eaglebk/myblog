@@ -58,12 +58,12 @@
     
     
     <item>
-      <title>Глубокое погружение в Lifetimes (времена жизни) в Rust: работа со ссылками без ошибок и паники</title>
+      <title>Погружение в Lifetimes (времена жизни) в Rust: работа с ссылками без ошибок и паники</title>
       <link>https://eagle2000.space/rust/rust-lifetimes-deep-dive/</link>
       <pubDate>Mon, 05 Oct 2026 15:35:19 +0300</pubDate>
       <guid>https://eagle2000.space/rust/rust-lifetimes-deep-dive/</guid>
       
-      <description>Подробный разбор Lifetimes (времени жизни) в Rust: 3 правила опускания (Elision Rules), ссылки в структурах, память &#39;static, HRTB (for&lt;&#39;a&gt;) и Дисперсия.</description>
+      <description>Разбираем времена жизни (Lifetimes) в Rust: как компилятор выводит их сам (Lifetime Elision), как хранить ссылки в структурах, где нужна память &#39;static, связывание for&lt;&#39;a&gt; и вариантность ссылок.</description>
       
       <category>rust</category>
       

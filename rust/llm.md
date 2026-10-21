@@ -5,7 +5,7 @@
 
 
 - **URL раздела:** https://eagle2000.space/rust/
-- **Количество статей:** 43
+- **Количество статей:** 44
 - **Язык:** ru
 
 ---
@@ -304,7 +304,16 @@
 - **Markdown URL для агентов:** `https://eagle2000.space/rust/rust-collections-overview/llm.md`
 
 
-### 33. [Rust: тонкости Pattern Matching - деструктуризация, bindings и guards](https://eagle2000.space/rust/rust-pattern-matching-deep-dive/llm.md)
+### 33. [Погружение в Lifetimes (времена жизни) в Rust: работа с ссылками без ошибок и паники](https://eagle2000.space/rust/rust-lifetimes-deep-dive/llm.md)
+
+> Разбираем времена жизни (Lifetimes) в Rust: как компилятор выводит их сам (Lifetime Elision), как хранить ссылки в структурах, где нужна память 'static, связывание for<'a> и вариантность ссылок.
+
+- **Дата:** 2026-10-21
+- **Теги:** rust, dev, lifetimes, borrow-checker, elision, hrtb, variance
+- **Markdown URL для агентов:** `https://eagle2000.space/rust/rust-lifetimes-deep-dive/llm.md`
+
+
+### 34. [Rust: тонкости Pattern Matching - деструктуризация, bindings и guards](https://eagle2000.space/rust/rust-pattern-matching-deep-dive/llm.md)
 
 > Изучаем как работает сопоставление с образцом Pattern Matching в Rust: exhaustiveness, деструктуризация, @-binding, slice patterns и guards на примерах реальных проектов
 
@@ -313,7 +322,7 @@
 - **Markdown URL для агентов:** `https://eagle2000.space/rust/rust-pattern-matching-deep-dive/llm.md`
 
 
-### 34. [Продвинутые типажи в Rust: ассоциированные типы, супертрейты и blanket-реализации](https://eagle2000.space/rust/rust-advanced-traits/llm.md)
+### 35. [Продвинутые типажи в Rust: ассоциированные типы, супертрейты и blanket-реализации](https://eagle2000.space/rust/rust-advanced-traits/llm.md)
 
 > Глубокое погружение в продвинутые возможности типажей Rust: ассоциированные типы type Item, ассоциированные константы, синтаксис <Type as Trait>::method, супертрейты и blanket-реализации.
 
@@ -322,7 +331,7 @@
 - **Markdown URL для агентов:** `https://eagle2000.space/rust/rust-advanced-traits/llm.md`
 
 
-### 35. [Arc в Rust: потокобезопасное разделённое владение](https://eagle2000.space/rust/rust-arc/llm.md)
+### 36. [Arc в Rust: потокобезопасное разделённое владение](https://eagle2000.space/rust/rust-arc/llm.md)
 
 > Узнайте, как использовать Arc в Rust для безопасного разделения данных между потоками. Примеры с Arc, Rc, Mutex и практические советы.
 
@@ -331,7 +340,7 @@
 - **Markdown URL для агентов:** `https://eagle2000.space/rust/rust-arc/llm.md`
 
 
-### 36. [Ввод данных от пользователя в Rust: как использовать stdin](https://eagle2000.space/rust/rust-stdio/llm.md)
+### 37. [Ввод данных от пользователя в Rust: как использовать stdin](https://eagle2000.space/rust/rust-stdio/llm.md)
 
 > Узнай, как считывать пользовательский ввод в Rust с помощью std::io::stdin().read_line. Простые примеры, обработка ошибок, удаление символа новой строки, тип Result<usize> и рекомендации по CLI
 
@@ -340,7 +349,7 @@
 - **Markdown URL для агентов:** `https://eagle2000.space/rust/rust-stdio/llm.md`
 
 
-### 37. [Поиск данных в файле - Cli хелпер для мастера с помощью Rust](https://eagle2000.space/rust/rust-cli-sh/llm.md)
+### 38. [Поиск данных в файле - Cli хелпер для мастера с помощью Rust](https://eagle2000.space/rust/rust-cli-sh/llm.md)
 
 > Создаём утилиту командной строки на Rust для поиска устройств в конфигурационном файле по описанию. Пошаговое руководство: чтение аргументов, обработка строк, парсинг блоков, поиск и вывод.
 
@@ -349,7 +358,7 @@
 - **Markdown URL для агентов:** `https://eagle2000.space/rust/rust-cli-sh/llm.md`
 
 
-### 38. [BufReader в Rust: ускоряем ввод-вывод](https://eagle2000.space/rust/bufreader/llm.md)
+### 39. [BufReader в Rust: ускоряем ввод-вывод](https://eagle2000.space/rust/bufreader/llm.md)
 
 > BufReader в Rust - подробный разбор. Как ускорить чтение файлов, работать с вводом-выводом, использовать BufRead и Read. Примеры построчного чтения и оптимизации IO.
 
@@ -358,7 +367,7 @@
 - **Markdown URL для агентов:** `https://eagle2000.space/rust/bufreader/llm.md`
 
 
-### 39. [Как работает Vec в Rust: устройство, методы, оптимизация](https://eagle2000.space/rust/rust-vec/llm.md)
+### 40. [Как работает Vec в Rust: устройство, методы, оптимизация](https://eagle2000.space/rust/rust-vec/llm.md)
 
 > Полное руководство по Vec в Rust: устройство, методы, частые ошибки и оптимизация. Всё это — в форме космического путешествия, где капитан учит робота RUST-Y обращаться с динамическими массивами без паники и перерасхода памяти.
 
@@ -367,7 +376,7 @@
 - **Markdown URL для агентов:** `https://eagle2000.space/rust/rust-vec/llm.md`
 
 
-### 40. [Rust async и Tokio: В ожидании будущего](https://eagle2000.space/rust/future-async/llm.md)
+### 41. [Rust async и Tokio: В ожидании будущего](https://eagle2000.space/rust/future-async/llm.md)
 
 > История экипажа Vectoria — наглядное объяснение синхронного и асинхронного кода, разницы с параллельностью, и практики Tokio: spawn, spawn_blocking, join!, join_all, JoinHandle, Handle, cooperative multitasking.
 
@@ -376,7 +385,7 @@
 - **Markdown URL для агентов:** `https://eagle2000.space/rust/future-async/llm.md`
 
 
-### 41. [ESP32 + Rust: Быстрый старт с нуля (помигаем светодиодом)](https://eagle2000.space/rust/esp32-rust-blink/llm.md)
+### 42. [ESP32 + Rust: Быстрый старт с нуля (помигаем светодиодом)](https://eagle2000.space/rust/esp32-rust-blink/llm.md)
 
 > Практическое руководство по первому запуску Rust на ESP32: настройка тулчейна (нативно и через Docker), генерация проекта и прошивка через espflash.
 
@@ -385,7 +394,7 @@
 - **Markdown URL для агентов:** `https://eagle2000.space/rust/esp32-rust-blink/llm.md`
 
 
-### 42. [Крейт дня: Strum - автоматический перебор и конвертация enum в Rust на примере esp-generate](https://eagle2000.space/rust/crate-of-the-day-strum/llm.md)
+### 43. [Крейт дня: Strum - автоматический перебор и конвертация enum в Rust на примере esp-generate](https://eagle2000.space/rust/crate-of-the-day-strum/llm.md)
 
 > Разбираем популярный крейт strum: как итерироваться по вариантам enum, конвертировать enum в строки и обратно на реальном примере из инструмента esp-generate.
 
@@ -394,7 +403,7 @@
 - **Markdown URL для агентов:** `https://eagle2000.space/rust/crate-of-the-day-strum/llm.md`
 
 
-### 43. [Крейт дня: Rayon - параллельные вычисления в одну строку](https://eagle2000.space/rust/crate-of-the-day-rayon/llm.md)
+### 44. [Крейт дня: Rayon - параллельные вычисления в одну строку](https://eagle2000.space/rust/crate-of-the-day-rayon/llm.md)
 
 > Разбираем легендарный крейт Rayon: как замена всего одной строчки .iter() на .par_iter() распараллеливает вычисления по всем ядрам процессора с балансировкой Work-Stealing.
 

@@ -3,7 +3,7 @@
 > Блог неунывающего программиста
 
 ## Sections
-- [Rust](https://eagle2000.space/rust/llm.md): Мой путь в изучении языка rust (43 articles)
+- [Rust](https://eagle2000.space/rust/llm.md): Мой путь в изучении языка rust (44 articles)
 - [О фотографии](https://eagle2000.space/photography/llm.md): Мои мысли, статьи и заметки о фотографии, перенесённые из старой группы (3 articles)
 - [Dart](https://eagle2000.space/dart/llm.md): Все о dart (1 articles)
 - [Иностранные языки](https://eagle2000.space/languages/llm.md): Иностранные языки (2 articles)
@@ -13,6 +13,7 @@
 
 
 ## Key Articles
+- [Погружение в Lifetimes (времена жизни) в Rust: работа с ссылками без ошибок и паники](https://eagle2000.space/rust/rust-lifetimes-deep-dive/llm.md): Разбираем времена жизни (Lifetimes) в Rust: как компилятор выводит их сам (Lifetime Elision), как хранить ссылки в структурах, где нужна память 'static, связывание for<'a> и вариантность ссылок.
 - [Rust: тонкости Pattern Matching - деструктуризация, bindings и guards](https://eagle2000.space/rust/rust-pattern-matching-deep-dive/llm.md): Изучаем как работает сопоставление с образцом Pattern Matching в Rust: exhaustiveness, деструктуризация, @-binding, slice patterns и guards на примерах реальных проектов
 - [Использование и применение std::collections в Rust: BTreeMap, HashSet, BinaryHeap и VecDeque](https://eagle2000.space/rust/rust-collections-overview/llm.md): Разбираем коллекции в Rust: когда применять VecDeque, чем BTreeMap отличается от HashMap и почему LinkedList почти никогда не нужен.
 - [Внутренняя мутабельность в Rust: паттерн использования Cell, RefCell](https://eagle2000.space/rust/rust-interior-mutability/llm.md): Разбираемся с паттерном внутренней мутабельности (Interior Mutability) в Rust: философия работы, контейнеры Cell и RefCell, отличие от унаследованной мутабельности.
@@ -42,5 +43,4 @@
 - [BufReader в Rust: ускоряем ввод-вывод](https://eagle2000.space/rust/bufreader/llm.md): BufReader в Rust - подробный разбор. Как ускорить чтение файлов, работать с вводом-выводом, использовать BufRead и Read. Примеры построчного чтения и оптимизации IO.
 - [Поиск данных в файле - Cli хелпер для мастера с помощью Rust](https://eagle2000.space/rust/rust-cli-sh/llm.md): Создаём утилиту командной строки на Rust для поиска устройств в конфигурационном файле по описанию. Пошаговое руководство: чтение аргументов, обработка строк, парсинг блоков, поиск и вывод.
 - [Ввод данных от пользователя в Rust: как использовать stdin](https://eagle2000.space/rust/rust-stdio/llm.md): Узнай, как считывать пользовательский ввод в Rust с помощью std::io::stdin().read_line. Простые примеры, обработка ошибок, удаление символа новой строки, тип Result<usize> и рекомендации по CLI
-- [Arc в Rust: потокобезопасное разделённое владение](https://eagle2000.space/rust/rust-arc/llm.md): Узнайте, как использовать Arc в Rust для безопасного разделения данных между потоками. Примеры с Arc, Rc, Mutex и практические советы.
 
