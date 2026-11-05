@@ -12,7 +12,7 @@
 ### 🔹 [Rust](https://eagle2000.space/rust/llm.md)
 > Мой путь в изучении языка rust
 
-- **Статей:** 44
+- **Статей:** 45
 - **Каталог раздела для LLM:** `https://eagle2000.space/rust/llm.md`
 
 ### 🔹 [О фотографии](https://eagle2000.space/photography/llm.md)
@@ -55,6 +55,7 @@
 
 ## 🚀 Последние публикации:
 
+- [Замыкания в Rust: функции с собственной памятью](https://eagle2000.space/rust/rust-closures/llm.md) (2026-10-22) — *rust*
 - [Погружение в Lifetimes (времена жизни) в Rust: работа с ссылками без ошибок и паники](https://eagle2000.space/rust/rust-lifetimes-deep-dive/llm.md) (2026-10-21) — *rust*
 - [Опыт важнее мегапикселей: Почему стоит изучить мануал к камере](https://eagle2000.space/photography/practice-and-gear/llm.md) (2026-10-21) — *photography*
 - [Rust: тонкости Pattern Matching - деструктуризация, bindings и guards](https://eagle2000.space/rust/rust-pattern-matching-deep-dive/llm.md) (2026-10-05) — *rust*
@@ -79,5 +80,4 @@
 - [Условные конструкции и ветвление в Rust](https://eagle2000.space/rust/rust-conditionals/llm.md) (2026-07-31) — *rust*
 - [Основы композиции: Правило третей](https://eagle2000.space/photography/composition-basics/llm.md) (2026-07-31) — *photography*
 - [Магия кривых: Как убрать паразитные оттенки и сделать красивый тон](https://eagle2000.space/photography/curves-color-toning/llm.md) (2026-07-31) — *photography*
-- [Кортежи в Rust (Tuples): объявление, деструктуризация и unit-тип ()](https://eagle2000.space/rust/rust-tuples/llm.md) (2026-07-31) — *rust*
 
