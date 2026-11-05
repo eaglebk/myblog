@@ -55,7 +55,7 @@
 
 ## 🚀 Последние публикации:
 
-- [Замыкания в Rust: функции с собственной памятью](https://eagle2000.space/rust/rust-closures/llm.md) (2026-10-22) — *rust*
+- [Замыкания в Rust: функции с собственной памятью](https://eagle2000.space/rust/rust-closures/llm.md) (2026-11-05) — *rust*
 - [Погружение в Lifetimes (времена жизни) в Rust: работа с ссылками без ошибок и паники](https://eagle2000.space/rust/rust-lifetimes-deep-dive/llm.md) (2026-10-21) — *rust*
 - [Опыт важнее мегапикселей: Почему стоит изучить мануал к камере](https://eagle2000.space/photography/practice-and-gear/llm.md) (2026-10-21) — *photography*
 - [Rust: тонкости Pattern Matching - деструктуризация, bindings и guards](https://eagle2000.space/rust/rust-pattern-matching-deep-dive/llm.md) (2026-10-05) — *rust*

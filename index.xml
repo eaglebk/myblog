@@ -9,7 +9,7 @@
     <description>Свежие статьи и публикации Eagle blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru</language>
-    <lastBuildDate>Thu, 22 Oct 2026 10:00:00 +0300</lastBuildDate>
+    <lastBuildDate>Thu, 05 Nov 2026 10:00:00 +0300</lastBuildDate>
     
     <atom:link href="https://eagle2000.space/index.xml" rel="self" type="application/rss+xml" />
     
@@ -19,7 +19,7 @@
     <item>
       <title>Замыкания в Rust: функции с собственной памятью</title>
       <link>https://eagle2000.space/rust/rust-closures/</link>
-      <pubDate>Thu, 22 Oct 2026 10:00:00 +0300</pubDate>
+      <pubDate>Thu, 05 Nov 2026 10:00:00 +0300</pubDate>
       <guid>https://eagle2000.space/rust/rust-closures/</guid>
       
       <description>Разбираем указатели на функции и замыкания в Rust: захват переменных из окружения, разница между Fn, FnMut и FnOnce, во что компилятор разворачивает лямбды и зачем нужен синтаксис for&lt;&#39;a&gt;.</description>

@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://eagle2000.space/</loc>
-    <lastmod>2026-10-22T10:00:00+03:00</lastmod>
+    <lastmod>2026-11-05T10:00:00+03:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>1</priority>
     <xhtml:link rel="alternate" hreflang="ru" href="https://eagle2000.space/" />
@@ -12,7 +12,7 @@
   </url>
   <url>
     <loc>https://eagle2000.space/rust/</loc>
-    <lastmod>2026-10-22T10:00:00+03:00</lastmod>
+    <lastmod>2026-11-05T10:00:00+03:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ru" href="https://eagle2000.space/rust/" />
@@ -21,7 +21,7 @@
   </url>
   <url>
     <loc>https://eagle2000.space/rust/rust-closures/</loc>
-    <lastmod>2026-10-22T10:00:00+03:00</lastmod>
+    <lastmod>2026-11-05T10:00:00+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="ru" href="https://eagle2000.space/rust/rust-closures/" />
