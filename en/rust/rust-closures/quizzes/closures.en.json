@@ -1,42 +1,102 @@
 [
   {
-    "question": "What is the main low-level difference between a function pointer `fn` and a closure?",
+    "question": "Why can the closure `|x| x * 2` be passed to a parameter of type `fn(i32) -> i32`, whereas `|x| x * factor` (where `factor` is an outer variable) fails to compile?",
     "options": [
-      "The `fn` pointer runs slower than closures",
-      "The `fn` pointer is a thin pointer and cannot contain external state (context), whereas a closure can capture variables from the environment",
-      "Closures are always allocated on the heap, while `fn` pointers are on the stack"
+      "An `fn` pointer only works with named functions declared via the `fn` keyword",
+      "An `fn` pointer is 8 bytes and only stores a code address, leaving nowhere to store the captured `factor` variable or a reference to it",
+      "Multiplication with local variables is forbidden inside `fn` pointers"
     ],
     "answer": 1,
-    "explanation": "The `fn` type stores only the address of the machine code. Closures, on the other hand, compile into an anonymous structure storing values or references to the captured variables."
+    "explanation": "A plain `fn` pointer holds only the address of the first machine instruction. A closure that captures nothing has no state (0 bytes) and automatically coerces to `fn`. Once it captures `factor`, it needs data memory alongside the code address and can no longer fit into an `fn` pointer."
   },
   {
-    "question": "What is the inheritance (subtype) hierarchy between closure traits?",
+    "question": "What does the compiler do by default (without `move`) if a closure calls `list.push(42)` on an outer vector?",
     "options": [
-      "FnOnce is a subtype of FnMut, which is a subtype of Fn",
-      "Fn is a subtype of FnMut, which is a subtype of FnOnce",
-      "These traits are independent and not related to each other"
-    ],
-    "answer": 1,
-    "explanation": "Any closure of type `Fn` can be used where `FnMut` or `FnOnce` is expected, as it imposes the least restrictive constraints on state (only immutable reading)."
-  },
-  {
-    "question": "What happens if you apply the `move` keyword to a closure?",
-    "options": [
-      "The closure will be moved to another execution thread",
-      "All external variables mentioned in the closure will be forced to be captured by value (ownership will move inside the closure)",
-      "The compiler will forbid calling the closure more than once"
-    ],
-    "answer": 1,
-    "explanation": "`move` disables default capture by reference and forces the closure to take ownership of the captured variables. This is critical if the closure needs to outlive the scope of its creator."
-  },
-  {
-    "question": "Why are Higher-Rank Trait Bounds (HRTBs, `for<'a>` syntax) used in closure signatures?",
-    "options": [
-      "To execute the closure concurrently in multiple threads",
-      "To remove restrictions on recursive closure calls",
-      "To bind lifetimes so that the closure can accept references with absolutely any lifetime determined at runtime at the moment of invocation"
+      "It clones the entire `list` vector into the closure",
+      "It moves ownership of `list` into the closure and drops it after the first call",
+      "It captures a mutable reference `&mut list`, preventing any other access to `list` while the closure is alive"
     ],
     "answer": 2,
-    "explanation": "HRTBs allow placing a universal quantifier over the lifetimes of closure parameters, guaranteeing to the compiler that it will work for any references passed by the calling function."
+    "explanation": "The compiler picks the least restrictive capture mode required by the closure body. Calling `push` requires mutable access, so the closure stores `&mut list`."
+  },
+  {
+    "question": "Why do you need the `move` keyword before a closure when the closure body only reads an outer variable (for example, when passing it to `std::thread::spawn`)?",
+    "options": [
+      "To force the closure to move ownership of the variable inside itself; otherwise it would borrow `&T` from a stack frame that may die before the thread finishes",
+      "To speed up reads by disabling bounds checking",
+      "Because `move` automatically wraps all captured variables in `Arc` and `Mutex`"
+    ],
+    "answer": 0,
+    "explanation": "When a variable is only read, the compiler defaults to borrowing `&T`. However, a background thread or a returned closure outlives the current stack frame, so the closure must take ownership of the data via `move`."
+  },
+  {
+    "question": "What happens to `let count: i32 = 10;` if it is used inside a `move` closure: `let f = move || println!(\"{}\", count);`?",
+    "options": [
+      "Using `count` in the outer scope after creating the closure becomes a compile error",
+      "A bitwise copy of the integer is stored inside the closure, and `count` remains valid and usable in the outer scope",
+      "The code fails to compile because `move` cannot be used with primitive types"
+    ],
+    "answer": 1,
+    "explanation": "`i32` implements the `Copy` trait. Moving a `Copy` type copies its bits into the closure, leaving the original `count` variable intact in the outer scope."
+  },
+  {
+    "question": "What does the Rust compiler turn a closure into at compile time, and what is its size on the stack?",
+    "options": [
+      "A heap-allocated dynamic object whose size is always 16 bytes",
+      "An anonymous struct whose fields hold the captured variables (or references to them), with a size equal to the sum of those fields",
+      "A global function whose variables are placed in the `.bss` static segment"
+    ],
+    "answer": 1,
+    "explanation": "Each closure compiles into a unique anonymous struct containing fields for the captured environment and a call method. If a closure captures nothing, its struct is zero-sized (0 bytes)."
+  },
+  {
+    "question": "How do the methods of `FnOnce`, `FnMut`, and `Fn` take the closure struct receiver (`self`)?",
+    "options": [
+      "`FnOnce` takes `self` by value, `FnMut` takes `&mut self`, and `Fn` takes `&self`",
+      "`FnOnce` takes `&self`, `FnMut` takes `&mut self`, and `Fn` takes `self` by value",
+      "All three traits take `&self` and check mutability at runtime"
+    ],
+    "answer": 0,
+    "explanation": "`FnOnce` consumes the closure struct by value (`self`), so it can only be called once. `FnMut` mutates its fields via `&mut self`, and `Fn` only reads them via `&self`."
+  },
+  {
+    "question": "If a function is declared as `fn run<F: FnOnce()>(action: F)`, which closures can a caller pass to it?",
+    "options": [
+      "Strictly closures that drop or move their captured variables when called",
+      "Only `FnOnce` and `FnMut` closures, but not `Fn`",
+      "Any closure at all (`FnOnce`, `FnMut`, `Fn`) as well as plain `fn` pointers"
+    ],
+    "answer": 2,
+    "explanation": "In the standard library hierarchy, `Fn` is a subtrait of `FnMut`, and `FnMut` is a subtrait of `FnOnce`. Any closure that can be called multiple times (`Fn` or `FnMut`) can also be called just once where `FnOnce` is expected."
+  },
+  {
+    "question": "Why does `fn make_op(flag: bool) -> impl Fn(i32) -> i32` fail to compile if the `if` branch returns `|x| x + 1` and the `else` branch returns `|x| x * 2`?",
+    "options": [
+      "The `impl` keyword cannot be used in a return type position",
+      "Every closure gets its own unique anonymous struct type, and `-> impl Trait` requires returning a single concrete type across all branches",
+      "Both closures must capture the `flag` variable to have the same type"
+    ],
+    "answer": 1,
+    "explanation": "Even when two closures share the exact same parameter and return types, the compiler generates two distinct anonymous structs. Returning different closures conditionally requires boxing them (`Box<dyn Fn(i32) -> i32>`) or coercing stateless closures to an `fn` pointer."
+  },
+  {
+    "question": "What is the main trade-off between storing a closure in a struct via a generic parameter `struct Runner<F: Fn()> { f: F }` versus `Box<dyn Fn()>`?",
+    "options": [
+      "A generic field stores the closure inline without heap allocation and allows call inlining, while `Box<dyn Fn()>` allocates on the heap but lets you store different closures in the same struct or collection",
+      "The generic version lets you swap out the closure for a different one at runtime, while `Box<dyn Fn()>` does not",
+      "A generic struct field can only store stateless `fn` pointers"
+    ],
+    "answer": 0,
+    "explanation": "With a generic parameter `F`, the closure's exact type and size are known at compile time, avoiding heap allocation and vtable dispatch. `Box<dyn Fn()>` trades a small heap and dynamic dispatch cost for runtime flexibility and type erasure."
+  },
+  {
+    "question": "Why is the `for<'a>` syntax (Higher-Rank Trait Bounds) used in `where F: for<'a> Fn(&'a str)`?",
+    "options": [
+      "It runs the closure in a loop for every substring",
+      "It requires the string slice passed to the closure to have a `'static` lifetime",
+      "It tells the compiler that the closure can accept a reference with any lifetime created right inside the calling function at the moment of invocation"
+    ],
+    "answer": 2,
+    "explanation": "When a function creates a local variable on its own stack and passes a reference to it into a callback, the outer caller cannot name that lifetime in advance. `for<'a>` guarantees the closure works for any short-lived borrow created at the call site."
   }
 ]

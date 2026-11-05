@@ -61,11 +61,11 @@
 - **Markdown URL для агентов:** `https://eagle2000.space/en/rust/rust-dyn-traits/llm.md`
 
 
-### 6. [Closures in Rust: Functions with their own Memory](https://eagle2000.space/en/rust/rust-closures/llm.md)
+### 6. [Closures in Rust: Functions with Their Own Memory](https://eagle2000.space/en/rust/rust-closures/llm.md)
 
-> A simple analysis of function pointers and closures in Rust. Learn how closures capture environment, the difference between Fn, FnMut, and FnOnce, and how they are structured under the hood.
+> A practical breakdown of function pointers and closures in Rust: environment capture, how Fn, FnMut, and FnOnce map to struct methods under the hood, and when you need for<'a>.
 
-- **Дата:** 2026-07-16
+- **Дата:** 2026-11-05
 - **Теги:** rust, dev, closures, advanced
 - **Markdown URL для агентов:** `https://eagle2000.space/en/rust/rust-closures/llm.md`
 

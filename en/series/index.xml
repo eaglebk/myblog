@@ -9,9 +9,44 @@
     <description>Свежие статьи и публикации Eagle blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 21 Oct 2026 13:05:10 +0300</lastBuildDate>
+    <lastBuildDate>Thu, 05 Nov 2026 10:00:00 +0300</lastBuildDate>
     
     <atom:link href="https://eagle2000.space/en/series/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+    
+    <item>
+      <title>Closures in Rust: Functions with Their Own Memory</title>
+      <link>https://eagle2000.space/en/rust/rust-closures/</link>
+      <pubDate>Thu, 05 Nov 2026 10:00:00 +0300</pubDate>
+      <guid>https://eagle2000.space/en/rust/rust-closures/</guid>
+      
+      <description>A practical breakdown of function pointers and closures in Rust: environment capture, how Fn, FnMut, and FnOnce map to struct methods under the hood, and when you need for&lt;&#39;a&gt;.</description>
+      
+      <category>rust</category>
+      
+      <category>dev</category>
+      
+      <category>closures</category>
+      
+      <category>advanced</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="https://eagle2000.space/rust/rust-closures/featured.png" medium="image"/>
+      
+    </item>
     
     
     
@@ -495,41 +530,6 @@
           
         
       
-      
-    </item>
-    
-    
-    
-    
-    <item>
-      <title>Closures in Rust: Functions with their own Memory</title>
-      <link>https://eagle2000.space/en/rust/rust-closures/</link>
-      <pubDate>Thu, 16 Jul 2026 12:00:00 +0300</pubDate>
-      <guid>https://eagle2000.space/en/rust/rust-closures/</guid>
-      
-      <description>A simple analysis of function pointers and closures in Rust. Learn how closures capture environment, the difference between Fn, FnMut, and FnOnce, and how they are structured under the hood.</description>
-      
-      <category>rust</category>
-      
-      <category>dev</category>
-      
-      <category>closures</category>
-      
-      <category>advanced</category>
-      
-      
-      
-      
-        
-          
-        
-      
-        
-      
-        
-      
-      
-      <media:content url="https://eagle2000.space/rust/rust-closures/featured.png" medium="image"/>
       
     </item>
     

@@ -40,19 +40,19 @@ fn main() {
     };
     call_fn_mut(closure_mut);
     
-    // FnOnce: поглощает (перемещает) владение greeting
+    // FnOnce: забирает владение greeting
     let closure_once = move || {
-        let consumed = greeting;
-        println!("FnOnce: {}", consumed);
+        let owned = greeting;
+        println!("FnOnce: {}", owned);
     };
     call_fn_once(closure_once);
-    // call_fn_once(closure_once); // Ошибка! Переменная closure_once уже израсходована.
+    // call_fn_once(closure_once); // Ошибка! Замыкание closure_once уже было вызвано и перемещено.
 }
 
 // ! **Трейты Fn, FnMut и FnOnce**
-// ! - `Fn`: захват по разделяемой ссылке `&self`. Допускает вызовы в нескольких потоках параллельно.
-// ! - `FnMut`: захват по эксклюзивной ссылке `&mut self`. Позволяет модифицировать состояние.
-// ! - `FnOnce`: поглощает состояние. Может быть вызвано ровно один раз.
+// ! - `Fn`: обращается к данным по обычной ссылке `&self`. Можно вызывать параллельно из разных потоков.
+// ! - `FnMut`: меняет данные по изменяемой ссылке `&mut self`.
+// ! - `FnOnce`: забирает захваченные данные по значению (`self`). Можно вызвать только один раз.
 
 // ---
 

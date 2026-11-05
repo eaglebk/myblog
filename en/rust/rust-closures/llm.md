@@ -1,102 +1,154 @@
-# Closures in Rust: Functions with their own Memory
+# Closures in Rust: Functions with Their Own Memory
 
-> A simple analysis of function pointers and closures in Rust. Learn how closures capture environment, the difference between Fn, FnMut, and FnOnce, and how they are structured under the hood.
+> A practical breakdown of function pointers and closures in Rust: environment capture, how Fn, FnMut, and FnOnce map to struct methods under the hood, and when you need for<'a>.
 
 - **URL:** https://eagle2000.space/en/rust/rust-closures/
-- **Date:** 2026-07-16
+- **Date:** 2026-11-05
 
 - **Tags:** rust, dev, closures, advanced
 
----## Introduction
+---
+In everyday Rust code, closures show up everywhere, from simple iterator chains like `.map(|x| x * 2)` and `.filter(|item| item.id == target_id)` to spawning background work in `tokio::spawn(async move { ... })`. At first glance, they look just like lambdas in a dozen other languages: write arguments between vertical bars `|...|`, reference whatever outer variables you need, and move on.
 
-Closures (or lambda expressions) are anonymous functions that we can create on the fly and pass to other functions. But their main superpower is the ability to **capture environment**, meaning they remember variables from the scope where they were declared.
+Things get interesting the moment you try to store a closure in a struct, return it from a function, or send it across threads.
 
-In programming languages with automatic garbage collection (GC), developers don't even think about how closures store these variables. But in Rust, where memory is managed by the compiler, the rules for closures are governed by strict ownership and borrowing semantics.
+In garbage-collected languages (Go, JavaScript, Python, C#), the runtime handles outer local variables automatically: if a closure touches a local variable, that variable is quietly promoted from the stack to the heap and stays alive as long as anything references it. Rust has no garbage collector. When a closure touches a stack variable, the compiler has to figure out at compile time whether the closure borrows `&T`, mutably borrows `&mut T`, or takes ownership (`T`), who drops the memory, and how long that closure can live.
 
-In this article, we will break down how closures work in Rust, how they differ from ordinary functions, how they are divided into `Fn`, `FnMut`, and `FnOnce` traits, and how the compiler generates them "under the hood."
+That is why Rust does not have a single universal "function type." Instead, it separates plain function pointers (`fn`) from three closure traits: `FnOnce`, `FnMut`, and `Fn`. Here is how that machinery works under the hood.
 
 ---
 
-## 1. Function Pointers (`fn`)
+## 1. Plain Function Pointers (`fn`)
 
-Before we talk about closures, let's recall ordinary functions.
+Start with the simplest case, where a function needs no external state at all.
 
-In Rust, a function's name can act as a pointer to it. The type of such a pointer is written in lowercase: for example, `fn(i32) -> i32`.
+Every compiled function in a binary has a fixed address in the `.text` code segment where its first machine instruction lives. In Rust, a function's name can act as a pointer to that address, and its type is written in lowercase, such as `fn(i32) -> i32`.
 
-* **How it is structured in memory:**
-  * The `fn` pointer is a **"thin" pointer**. It stores only one address — the address of the first instruction of the compiled code in memory.
-  * Such functions **have no state**. They cannot look at outer variables or read anything that wasn't passed to them in the arguments.
+An `fn` pointer is a thin pointer: just a single machine word (8 bytes on a 64-bit target) holding a code address. It has no state and cannot read local variables from the caller's scope; it only works with the arguments explicitly passed to it.
+
+Suppose I write a simple `map` function for slices that accepts a function pointer `fn(T) -> U`:
+
+```rust
+fn map<T, U>(slice: &[T], func: fn(T) -> U) -> Vec<U>
+where
+    T: Copy,
+{
+    let mut result = Vec::with_capacity(slice.len());
+    for value in slice {
+        // value is &T, so we dereference it (*value) before calling func
+        result.push(func(*value));
+    }
+    result
+}
+```
+
+As long as I pass a regular function or a stateless closure like `|x| x * 2`, this compiles cleanly. In fact, any closure that captures nothing from its surroundings automatically coerces to a plain `fn` pointer.
+
+The moment I declare `let factor = 10;` outside and try to pass `|x| x * factor` into `func: fn(i32) -> i32`, compilation fails. The reason is purely physical: an `fn` pointer only has 8 bytes for the instruction address. There is nowhere to store `factor` or a reference to it.
 
 ---
 
-## 2. Closures: Functions with a backpack
+## 2. How Closures Capture Variables and Why `move` Exists
 
-A closure is an anonymous function that has an invisible "backpack" (context) behind its back, where it can put external variables.
+For a function to remember outer variables, it needs its own block of data memory alongside the code address:
 
 ```rust
 let coefficient = 10;
-let multiply = |x| x * coefficient; // The closure has captured coefficient!
+let multiply = |x| x * coefficient;
 ```
 
-Closure arguments are written inside two vertical bars `|...|`, followed by the body. Curly braces are only needed for multi-line code.
+You rarely need to write parameter or return types inside `|...|`. The compiler inspects the first call to `multiply(5)` and infers `|x: i32| -> i32` on its own, though you can annotate types explicitly if you want.
 
-### Type Inference
+What matters more is how `multiply` captures `coefficient`. The Rust compiler inspects the closure body and picks the least restrictive capture mode it can get away with:
 
-The Rust compiler automatically infers what data types the closure accepts and returns, analyzing the place of its first invocation. However, if you want, you can specify the types manually:
+1. If the variable is only read inside the closure (printed, added, passed as `&T`), the closure stores a shared reference `&coefficient`.
+2. If the variable is modified inside (for instance, calling `list.push(x)` or incrementing a counter), the closure captures an exclusive mutable reference `&mut list`. While the closure exists, nothing else can access `list`.
+3. If the variable is consumed or moved out by value (such as calling `drop(data)` or `into_iter()`), references are no longer enough, so the closure takes full ownership of `data`.
+
+If the compiler already knows when to borrow and when to take ownership, why does Rust have a separate `move` keyword?
+
+You need `move` when the closure body only reads the data (so the compiler would normally borrow `&T`), but the closure itself must **outlive the scope** where it was created. That happens whenever you return a closure from a function or hand it to a background thread via `std::thread::spawn`:
 
 ```rust
-let multiply = |x: i32| -> i32 { x * coefficient };
+let data = vec![1, 2, 3];
+
+std::thread::spawn(move || {
+    // We only read data here, so without `move` the compiler would borrow &data.
+    // The thread might outlive the current function, so a stack reference is illegal.
+    println!("Data in thread: {:?}", data);
+});
 ```
 
-### Capturing Environment and the `move` keyword
+Placing `move` before the vertical bars disables automatic reference borrowing and forces the closure to move ownership of all referenced variables inside itself.
 
-* **By default (by reference):** The closure tries to be as efficient as possible. It doesn't copy variables; it borrows them. The compiler decides what kind of reference is needed: a shared reference for reading (`&T`) or a mutable reference for writing (`&mut T`).
-* **Forced move (`move`):** If the closure must outlive the surrounding code (for example, we return it from a function or pass it to another thread), we need to move ownership of the variables inside the closure. For this, write the keyword `move` before the vertical bars:
-  ```rust
-  let print_data = move || println!("Data: {}", data);
-  ```
+> [!NOTE]
+> One subtle detail with `move` often trips people up in interviews: if a captured variable implements `Copy` (like `i32` or `bool`), `move` copies the bits into the closure. The original variable in the outer scope remains valid and usable afterward.
 
 ---
 
-## 3. Three Closure Traits: Fn, FnMut, and FnOnce
+## 3. What the Compiler Generates Under the Hood
 
-Depending on what exactly the closure does with the variables in its "backpack," it automatically implements one of three traits:
+Before looking at `Fn`, `FnMut`, and `FnOnce`, it helps to see what `rustc` turns a closure into at compile time. There is no special runtime magic.
 
-<div style="background-color:white; padding: 20px">
-{{< mermaid >}}
-graph TD
-    FnOnce --> FnMut
-    FnMut --> Fn
-    
-    style FnOnce fill:#f9f,stroke:#333,stroke-width:2px,color:#000
-    style FnMut fill:#ccf,stroke:#333,stroke-width:1px,color:#000
-    style Fn fill:#cfc,stroke:#333,stroke-width:1px,color:#000
-{{< /mermaid >}}
-</div>
+When you write:
 
-1. **`FnOnce` (The Consumer)**
-   * **What it does:** Takes captured variables by value and consumes them (destroys or passes them on).
-   * **Limitation:** Since the data is consumed on the first call, you can call such a closure **only once**.
-2. **`FnMut` (The Mutator)**
-   * **What it does:** Modifies captured variables (uses an exclusive reference `&mut self`).
-   * **Limitation:** Can be called any number of times, but only sequentially (cannot run concurrently from different threads without synchronization).
-3. **`Fn` (The Reader)**
-   * **What it does:** Only reads data (uses a shared reference `&self`).
-   * **Limitation:** No limitations! Can be called repeatedly and concurrently from different threads.
+```rust
+let factor = 10;
+let multiply = |x: i32| x * factor;
+```
 
-### Trait Hierarchy
+the compiler generates an anonymous struct whose fields hold the captured variables, and turns the closure body into a method on that struct:
 
-They form a nested structure:
-* Any closure of type `Fn` automatically knows how to work as `FnMut` and `FnOnce`.
-* Regular function pointers (`fn`) have no state, so they always implement the top trait `Fn`.
+```rust
+// Pseudocode of what rustc generates:
+struct ClosureEnvironment<'a> {
+    factor: &'a i32, // or plain i32 if `move` was used
+}
+
+impl<'a> ClosureEnvironment<'a> {
+    fn call(&self, x: i32) -> i32 {
+        x * (*self.factor)
+    }
+}
+```
+
+Almost every closure rule in Rust follows directly from this desugaring:
+
+- Every closure expression in your source code gets its own unique, anonymous struct type. Even if you write two identical closures `|x| x + 1` on adjacent lines, the compiler treats them as two distinct struct types.
+- A closure's size on the stack is the sum of the sizes of the variables (or references) it captured. If a closure captures nothing, its generated struct is a zero-sized type (0 bytes).
 
 ---
 
-## 4. How Closures Work in Code
+## 4. The Three Traits: FnOnce, FnMut, and Fn
 
-### Passing to Functions
+Look back at the `call(&self, ...)` method on the generated struct above. Like any Rust method, it can take `self` in one of three ways: by value (`self`), by mutable reference (`&mut self`), or by shared reference (`&self`).
 
-Since the exact type of a closure is anonymous, we use generics or `impl Trait`:
+That receiver type is the exact difference between the three standard closure traits:
+
+### `FnOnce` (takes `self`)
+The base trait. Calling it consumes the closure struct by value. If your closure moves a captured `String` or `Vec` somewhere else (or drops it), you cannot run it a second time because the field inside the closure struct has already been moved out. `FnOnce` closures can only be called once.
+
+### `FnMut` (takes `&mut self`)
+Implemented by closures that mutate their captured fields without destroying them. You can call an `FnMut` closure as many times as you like (for example, a stateful counter or accumulator), but calling it requires mutable access to the closure variable itself, and you cannot invoke it concurrently across threads without synchronization.
+
+### `Fn` (takes `&self`)
+Implemented by closures that only need a shared reference to their state, or have no state at all. They can be called repeatedly and shared across threads simultaneously.
+
+### Choosing the Right Bound in `where` Clauses
+
+In the standard library, these traits form a subtrait hierarchy: `Fn` is a subtrait of `FnMut`, and `FnMut` is a subtrait of `FnOnce`.
+
+When writing generic functions, it is easiest to think about this from the caller's perspective:
+
+- Asking for **`FnOnce`** (like `Option::unwrap_or_else` does) is the most permissive bound for callers. Callers can pass **any closure at all** (`Fn`, `FnMut`, or `FnOnce`). After all, if a closure can be called many times (`Fn`), it can certainly be called once.
+- Asking for **`FnMut`** (like `Iterator::map` or `Vec::retain`) accepts both `FnMut` and `Fn` closures, rejecting only one-shot `FnOnce` closures.
+- Asking for **`Fn`** is the strictest requirement: only pure readers and stateless `fn` pointers qualify.
+
+---
+
+## 5. Passing, Returning, and Storing Closures in Structs
+
+Because every closure has an unnamed struct type, you cannot spell its type directly in a function signature. Instead, you accept closures via generics or `impl Trait`:
 
 ```rust
 fn execute(mut action: impl FnMut()) {
@@ -104,9 +156,7 @@ fn execute(mut action: impl FnMut()) {
 }
 ```
 
-### Returning from Functions
-
-You cannot return a closure directly — the compiler doesn't know its exact size. Therefore, we return it via `impl Trait` with the mandatory `move` keyword (to take the captured variables with us):
+Returning a closure from a function also uses `impl Trait`, almost always paired with `move` so the closure owns its captured data instead of holding a dangling reference to the function's stack frame:
 
 ```rust
 fn create_adder(x: i32) -> impl Fn(i32) -> i32 {
@@ -114,48 +164,59 @@ fn create_adder(x: i32) -> impl Fn(i32) -> i32 {
 }
 ```
 
-### Storing in Structs
+> [!WARNING]
+> **Return-position `impl Trait` limitation:** `-> impl Fn(...)` uses static dispatch, meaning the function must return a single concrete closure struct type. Returning different closures from `if / else` branches will not compile:
+> 
+> ```rust
+> fn returns_closure(cond: bool) -> impl Fn(i32) -> i32 {
+>     if cond {
+>         |x| x
+>     } else {
+>         |x| x * 3 // ERROR: the two branches produce different anonymous types!
+>     }
+> }
+> ```
+> 
+> When the returned closure depends on a runtime condition, box it into a trait object `Box<dyn Fn(...)>` (or coerce it to `fn(i32) -> i32` if neither branch captures variables):
+> 
+> ```rust
+> fn returns_closure(cond: bool) -> Box<dyn Fn(i32) -> i32> {
+>     if cond {
+>         Box::new(|x| x)
+>     } else {
+>         Box::new(|x| x * 3)
+>     }
+> }
+> ```
 
-If a struct needs to store a closure, we have two ways:
-1. **Generics (fast):** The struct is statically bound to the closure type at compile time. No overhead.
-   ```rust
-   struct Runner<F: Fn()> { action: F }
-   ```
-2. **Box (flexible):** The closure is hidden in the heap under a dynamic pointer. Allows storing different closures in the same struct type.
-   ```rust
-   struct Runner { action: Box<dyn Fn()> }
-   ```
+You face the same trade-off when storing a callback inside a struct:
+
+1. **Generic field (`struct Runner<F: Fn()> { action: F }`):** The closure struct is stored inline inside `Runner` with zero heap allocation, and the compiler can inline the call. The trade-off is that each `Runner<F>` instance is tied to one specific closure type.
+2. **Boxed trait object (`struct Runner { action: Box<dyn Fn()> }`):** The closure is allocated on the heap behind a fat pointer (data address + vtable). This adds a small indirection cost, but lets you store different callbacks in a single `Vec<Box<dyn Fn()>>`.
 
 ---
 
-## 5. What happens under the hood?
+## 6. Lifetimes on the Fly (`for<'a>` / HRTB)
 
-Closures in Rust are just syntactic sugar. Under the hood, the compiler turns each closure into a regular structure:
+One last case comes up when closures accept references created inside the function that calls them.
 
-1. An **anonymous struct** is created, whose fields are the captured variables.
-2. The implementation of the call (methods of traits `call`, `call_mut`, or `call_once`) is generated for this structure.
-3. At the site of the closure call, the compiler simply substitutes a regular method call of this structure.
+Imagine a function that allocates a temporary `String` on its own stack, passes a `&str` slice into a callback, and then drops the `String` before returning. If you try to put a lifetime parameter `'a` on the outer function (`fn run_with_ref<'a, F>(f: F)`), the compiler rejects it: `'a` is chosen by the caller, and no caller lifetime can describe a variable that only exists inside `run_with_ref`.
 
----
-
-## 6. Lifetimes on the fly (HRTBs)
-
-Sometimes a complex situation arises: a closure accepts a reference to an object, but the lifetime of this reference is born and dies right inside the calling function. In such cases, the closure must be able to work with references of **any** lifetime.
-
-For this, Higher-Rank Trait Bounds (or HRTBs) syntax is used via the `for<'a>` keyword:
+To express *"this closure can accept a reference with any lifetime `'a` chosen at the call site"*, Rust uses Higher-Rank Trait Bounds (HRTBs) with the `for<'a>` syntax:
 
 ```rust
 fn run_with_ref<F>(f: F)
-where F: for<'a> Fn(&'a str) 
+where
+    F: for<'a> Fn(&'a str),
 {
-    let local = String::from("data");
-    f(&local); // The lifetime of the reference is limited only to this function!
+    let local = String::from("local buffer");
+    f(&local); // the borrow lives only inside this function
 }
 ```
 
-The construction `for<'a> Fn(&'a str)` tells the compiler: "This closure knows how to accept a string reference with absolutely any lifetime `'a` that we give it at the moment of call."
+For simple bounds like `F: Fn(&str)`, the compiler quietly expands the signature to `F: for<'a> Fn(&'a str)` for you. You only need to write `for<'a>` explicitly in more complex cases, such as when a closure takes a reference and returns another reference tied to that same local lifetime (`for<'a> Fn(&'a str) -> &'a str`).
 
-Let's see how closures of different types work in the interactive examples below:
+Try running and modifying these examples in the interactive slides below:
 
 
 ### 💻 Closures in Rust
@@ -270,35 +331,71 @@ fn main() {
 
 ---
 
-## Check Your Knowledge!
+## Check Your Knowledge
 
-Take a short interactive test to reinforce your understanding of closures in Rust.
+Take a short quiz to test how well you know `fn` pointers, `move` captures, and the `Fn` trait family:
 
 
 ### 📝 Closures in Rust
 
 
-**1. What is the main low-level difference between a function pointer `fn` and a closure?**
+**1. Why can the closure `|x| x * 2` be passed to a parameter of type `fn(i32) -> i32`, whereas `|x| x * factor` (where `factor` is an outer variable) fails to compile?**
 
-- [ ] The `fn` pointer runs slower than closures
-- [ ] The `fn` pointer is a thin pointer and cannot contain external state (context), whereas a closure can capture variables from the environment
-- [ ] Closures are always allocated on the heap, while `fn` pointers are on the stack
+- [ ] An `fn` pointer only works with named functions declared via the `fn` keyword
+- [ ] An `fn` pointer is 8 bytes and only stores a code address, leaving nowhere to store the captured `factor` variable or a reference to it
+- [ ] Multiplication with local variables is forbidden inside `fn` pointers
 
-**2. What is the inheritance (subtype) hierarchy between closure traits?**
+**2. What does the compiler do by default (without `move`) if a closure calls `list.push(42)` on an outer vector?**
 
-- [ ] FnOnce is a subtype of FnMut, which is a subtype of Fn
-- [ ] Fn is a subtype of FnMut, which is a subtype of FnOnce
-- [ ] These traits are independent and not related to each other
+- [ ] It clones the entire `list` vector into the closure
+- [ ] It moves ownership of `list` into the closure and drops it after the first call
+- [ ] It captures a mutable reference `&mut list`, preventing any other access to `list` while the closure is alive
 
-**3. What happens if you apply the `move` keyword to a closure?**
+**3. Why do you need the `move` keyword before a closure when the closure body only reads an outer variable (for example, when passing it to `std::thread::spawn`)?**
 
-- [ ] The closure will be moved to another execution thread
-- [ ] All external variables mentioned in the closure will be forced to be captured by value (ownership will move inside the closure)
-- [ ] The compiler will forbid calling the closure more than once
+- [ ] To force the closure to move ownership of the variable inside itself; otherwise it would borrow `&T` from a stack frame that may die before the thread finishes
+- [ ] To speed up reads by disabling bounds checking
+- [ ] Because `move` automatically wraps all captured variables in `Arc` and `Mutex`
 
-**4. Why are Higher-Rank Trait Bounds (HRTBs, `for<'a>` syntax) used in closure signatures?**
+**4. What happens to `let count: i32 = 10;` if it is used inside a `move` closure: `let f = move || println!("{}", count);`?**
 
-- [ ] To execute the closure concurrently in multiple threads
-- [ ] To remove restrictions on recursive closure calls
-- [ ] To bind lifetimes so that the closure can accept references with absolutely any lifetime determined at runtime at the moment of invocation
+- [ ] Using `count` in the outer scope after creating the closure becomes a compile error
+- [ ] A bitwise copy of the integer is stored inside the closure, and `count` remains valid and usable in the outer scope
+- [ ] The code fails to compile because `move` cannot be used with primitive types
+
+**5. What does the Rust compiler turn a closure into at compile time, and what is its size on the stack?**
+
+- [ ] A heap-allocated dynamic object whose size is always 16 bytes
+- [ ] An anonymous struct whose fields hold the captured variables (or references to them), with a size equal to the sum of those fields
+- [ ] A global function whose variables are placed in the `.bss` static segment
+
+**6. How do the methods of `FnOnce`, `FnMut`, and `Fn` take the closure struct receiver (`self`)?**
+
+- [ ] `FnOnce` takes `self` by value, `FnMut` takes `&mut self`, and `Fn` takes `&self`
+- [ ] `FnOnce` takes `&self`, `FnMut` takes `&mut self`, and `Fn` takes `self` by value
+- [ ] All three traits take `&self` and check mutability at runtime
+
+**7. If a function is declared as `fn run<F: FnOnce()>(action: F)`, which closures can a caller pass to it?**
+
+- [ ] Strictly closures that drop or move their captured variables when called
+- [ ] Only `FnOnce` and `FnMut` closures, but not `Fn`
+- [ ] Any closure at all (`FnOnce`, `FnMut`, `Fn`) as well as plain `fn` pointers
+
+**8. Why does `fn make_op(flag: bool) -> impl Fn(i32) -> i32` fail to compile if the `if` branch returns `|x| x + 1` and the `else` branch returns `|x| x * 2`?**
+
+- [ ] The `impl` keyword cannot be used in a return type position
+- [ ] Every closure gets its own unique anonymous struct type, and `-> impl Trait` requires returning a single concrete type across all branches
+- [ ] Both closures must capture the `flag` variable to have the same type
+
+**9. What is the main trade-off between storing a closure in a struct via a generic parameter `struct Runner<F: Fn()> { f: F }` versus `Box<dyn Fn()>`?**
+
+- [ ] A generic field stores the closure inline without heap allocation and allows call inlining, while `Box<dyn Fn()>` allocates on the heap but lets you store different closures in the same struct or collection
+- [ ] The generic version lets you swap out the closure for a different one at runtime, while `Box<dyn Fn()>` does not
+- [ ] A generic struct field can only store stateless `fn` pointers
+
+**10. Why is the `for<'a>` syntax (Higher-Rank Trait Bounds) used in `where F: for<'a> Fn(&'a str)`?**
+
+- [ ] It runs the closure in a loop for every substring
+- [ ] It requires the string slice passed to the closure to have a `'static` lifetime
+- [ ] It tells the compiler that the closure can accept a reference with any lifetime created right inside the calling function at the moment of invocation
 

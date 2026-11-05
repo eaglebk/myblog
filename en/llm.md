@@ -55,6 +55,7 @@
 
 ## 🚀 Последние публикации:
 
+- [Closures in Rust: Functions with Their Own Memory](https://eagle2000.space/en/rust/rust-closures/llm.md) (2026-11-05) — *rust*
 - [Lifetimes in Rust: Deep Dive into References, Elision, HRTB, and Variance](https://eagle2000.space/en/rust/rust-lifetimes-deep-dive/llm.md) (2026-10-21) — *rust*
 - [Rust: Deep Dive into Pattern Matching - Destructuring, Bindings, and Guards](https://eagle2000.space/en/rust/rust-pattern-matching-deep-dive/llm.md) (2026-10-05) — *rust*
 - [Using and Choosing std::collections in Rust: BTreeMap, HashSet, BinaryHeap, and VecDeque](https://eagle2000.space/en/rust/rust-collections-overview/llm.md) (2026-09-18) — *rust*
@@ -67,7 +68,6 @@
 - [Traits in Rust: From Fundamentals to Monomorphic Zero-Cost Code](https://eagle2000.space/en/rust/rust-traits/llm.md) (2026-08-07) — *rust*
 - [Enums in Rust: From Syntax to Pattern Matching](https://eagle2000.space/en/rust/rust-enums/llm.md) (2026-08-01) — *rust*
 - [Conditionals and Control Flow in Rust](https://eagle2000.space/en/rust/rust-conditionals/llm.md) (2026-07-31) — *rust*
-- [Closures in Rust: Functions with their own Memory](https://eagle2000.space/en/rust/rust-closures/llm.md) (2026-07-16) — *rust*
 - [How to Use a Monopod Correctly: Secrets to a Sharp Shot](https://eagle2000.space/en/photography/monopod-guide/llm.md) (2026-04-28) — *photography*
 - [Practice Over Pixels: Why You Should Read Your Camera Manual](https://eagle2000.space/en/photography/practice-and-gear/llm.md) (2026-04-27) — *photography*
 - [The Magic of Curves: How to Fix Color Casts and Tone Your Photos](https://eagle2000.space/en/photography/curves-color-toning/llm.md) (2026-04-26) — *photography*
