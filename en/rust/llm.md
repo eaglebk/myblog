@@ -5,7 +5,7 @@
 
 
 - **URL раздела:** https://eagle2000.space/en/rust/
-- **Количество статей:** 12
+- **Количество статей:** 13
 - **Язык:** en
 
 ---
@@ -115,7 +115,16 @@
 - **Markdown URL для агентов:** `https://eagle2000.space/en/rust/rust-advanced-traits/llm.md`
 
 
-### 12. [Crate of the Day: Strum - iterating and converting Rust Enum](https://eagle2000.space/en/rust/crate-of-the-day-strum/llm.md)
+### 12. [BufReader in Rust: Accelerating I/O](https://eagle2000.space/en/rust/bufreader/llm.md)
+
+> In-depth guide to BufReader in Rust. Learn how to accelerate file reading, master BufRead vs Read, minimize OS system calls, and benchmark line-by-line streaming.
+
+- **Дата:** 2025-08-26
+- **Теги:** rust, dev
+- **Markdown URL для агентов:** `https://eagle2000.space/en/rust/bufreader/llm.md`
+
+
+### 13. [Crate of the Day: Strum - iterating and converting Rust Enum](https://eagle2000.space/en/rust/crate-of-the-day-strum/llm.md)
 
 > Exploring the popular Strum crate: how to iterate over enum variants, convert enums to strings and back, using a real-world example from esp-generate.
 

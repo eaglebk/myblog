@@ -3,7 +3,7 @@
 > Blog of a cheerful programmer
 
 ## Sections
-- [Rust](https://eagle2000.space/en/rust/llm.md): My personal journey learning Rust: from first experiments and basic syntax to Tokio async runtime and ESP32 embedded projects. (12 articles)
+- [Rust](https://eagle2000.space/en/rust/llm.md): My personal journey learning Rust: from first experiments and basic syntax to Tokio async runtime and ESP32 embedded projects. (13 articles)
 - [Photography](https://eagle2000.space/en/photography/llm.md): Practical guides, articles, and interactive visual simulators on photography: visual composition, the rule of thirds, tone curves, and gear reviews. (4 articles)
 - [Foreign Languages](https://eagle2000.space/en/languages/llm.md): Foreign Languages (0 articles)
 - [Posts about everything](https://eagle2000.space/en/about-all/llm.md): Posts and notes on various topics that interest me (0 articles)
@@ -30,4 +30,5 @@
 - [Practice Over Pixels: Why You Should Read Your Camera Manual](https://eagle2000.space/en/photography/practice-and-gear/llm.md): Debunking the myth of expensive gear versus actual experience. Practical advice for beginners and an encouraging call to read instruction manuals.
 - [The Magic of Curves: How to Fix Color Casts and Tone Your Photos](https://eagle2000.space/en/photography/curves-color-toning/llm.md): Understanding color correction using Curves in image editors: how to fix an unwanted red tint and achieve a balanced, cinematic color tone.
 - [Composition Basics: Rule of Thirds](https://eagle2000.space/en/photography/composition-basics/llm.md): An overview of the fundamental rule of photography composition: how to balance your frame using a grid of thirds.
+- [BufReader in Rust: Accelerating I/O](https://eagle2000.space/en/rust/bufreader/llm.md): In-depth guide to BufReader in Rust. Learn how to accelerate file reading, master BufRead vs Read, minimize OS system calls, and benchmark line-by-line streaming.
 

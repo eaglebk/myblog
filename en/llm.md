@@ -12,7 +12,7 @@
 ### 🔹 [Rust](https://eagle2000.space/en/rust/llm.md)
 > My personal journey learning Rust: from first experiments and basic syntax to Tokio async runtime and ESP32 embedded projects.
 
-- **Статей:** 12
+- **Статей:** 13
 - **Каталог раздела для LLM:** `https://eagle2000.space/en/rust/llm.md`
 
 ### 🔹 [Photography](https://eagle2000.space/en/photography/llm.md)
@@ -72,4 +72,5 @@
 - [Practice Over Pixels: Why You Should Read Your Camera Manual](https://eagle2000.space/en/photography/practice-and-gear/llm.md) (2026-04-27) — *photography*
 - [The Magic of Curves: How to Fix Color Casts and Tone Your Photos](https://eagle2000.space/en/photography/curves-color-toning/llm.md) (2026-04-26) — *photography*
 - [Composition Basics: Rule of Thirds](https://eagle2000.space/en/photography/composition-basics/llm.md) (2026-04-25) — *photography*
+- [BufReader in Rust: Accelerating I/O](https://eagle2000.space/en/rust/bufreader/llm.md) (2025-08-26) — *rust*
 

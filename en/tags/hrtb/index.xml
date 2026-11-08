@@ -702,6 +702,37 @@
     
     
     <item>
+      <title>BufReader in Rust: Accelerating I/O</title>
+      <link>https://eagle2000.space/en/rust/bufreader/</link>
+      <pubDate>Tue, 26 Aug 2025 18:42:24 +0300</pubDate>
+      <guid>https://eagle2000.space/en/rust/bufreader/</guid>
+      
+      <description>In-depth guide to BufReader in Rust. Learn how to accelerate file reading, master BufRead vs Read, minimize OS system calls, and benchmark line-by-line streaming.</description>
+      
+      <category>rust</category>
+      
+      <category>dev</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="https://eagle2000.space/rust/bufreader/featured.png" medium="image"/>
+      
+    </item>
+    
+    
+    
+    
+    <item>
       <title>All Blog Posts &amp; Articles</title>
       <link>https://eagle2000.space/en/posts/</link>
       <pubDate>Tue, 20 Feb 2024 14:28:39 +0300</pubDate>
