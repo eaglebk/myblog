@@ -1,7 +1,7 @@
 # Rust
 
 
-> My journey in learning Rust
+> My personal journey learning Rust: from first experiments and basic syntax to Tokio async runtime and ESP32 embedded projects.
 
 
 - **URL раздела:** https://eagle2000.space/en/rust/

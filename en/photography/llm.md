@@ -1,7 +1,7 @@
 # Photography
 
 
-> My thoughts, articles, and notes about photography, migrated from the old social media  group.
+> Practical guides, articles, and interactive visual simulators on photography: visual composition, the rule of thirds, tone curves, and gear reviews.
 
 
 - **URL раздела:** https://eagle2000.space/en/photography/

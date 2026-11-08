@@ -3,8 +3,8 @@
 > Блог неунывающего программиста
 
 ## Sections
-- [Rust](https://eagle2000.space/rust/llm.md): Мой путь в изучении языка rust (45 articles)
-- [О фотографии](https://eagle2000.space/photography/llm.md): Мои мысли, статьи и заметки о фотографии, перенесённые из старой группы (4 articles)
+- [Rust](https://eagle2000.space/rust/llm.md): Мой путь в изучении языка Rust: от первых экспериментов и базового синтаксиса до асинхронности Tokio и разработки на микроконтроллерах ESP32. (45 articles)
+- [О фотографии](https://eagle2000.space/photography/llm.md): Статьи, практические руководства и интерактивные симуляторы по фотографии: композиция, правило третей, цветокоррекция кривыми и выбор фототехники. (4 articles)
 - [Dart](https://eagle2000.space/dart/llm.md): Все о dart (1 articles)
 - [Иностранные языки](https://eagle2000.space/languages/llm.md): Иностранные языки (2 articles)
 - [Посты обо всем](https://eagle2000.space/about-all/llm.md): Посты, заметки на разлиные темы которые меня волнуют (8 articles)

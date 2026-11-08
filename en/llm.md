@@ -10,13 +10,13 @@
 ## 📂 Разделы блога (База знаний):
 
 ### 🔹 [Rust](https://eagle2000.space/en/rust/llm.md)
-> My journey in learning Rust
+> My personal journey learning Rust: from first experiments and basic syntax to Tokio async runtime and ESP32 embedded projects.
 
 - **Статей:** 12
 - **Каталог раздела для LLM:** `https://eagle2000.space/en/rust/llm.md`
 
 ### 🔹 [Photography](https://eagle2000.space/en/photography/llm.md)
-> My thoughts, articles, and notes about photography, migrated from the old social media  group.
+> Practical guides, articles, and interactive visual simulators on photography: visual composition, the rule of thirds, tone curves, and gear reviews.
 
 - **Статей:** 4
 - **Каталог раздела для LLM:** `https://eagle2000.space/en/photography/llm.md`
