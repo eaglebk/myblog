@@ -1480,16 +1480,20 @@
     
     
     <item>
-      <title>Разбираемся с ошибками в Rust</title>
+      <title>Ошибки компилятора в Rust: чтение диагностики и команда rustc --explain</title>
       <link>https://eagle2000.space/rust/rust-err/</link>
       <pubDate>Mon, 12 May 2025 14:02:26 +0300</pubDate>
       <guid>https://eagle2000.space/rust/rust-err/</guid>
       
-      <description>Узнайте, как работать с ошибками в Rust, используя компилятор и онлайн-ресурсы. Советы для начинающих и подробная информация о кодах ошибок.</description>
+      <description>Как понимать сообщения и коды ошибок компилятора Rust (rustc). Руководство для начинающих: использование команды rustc --explain, справочник кодов ошибок и пошаговая отладка.</description>
       
       <category>rust</category>
       
       <category>dev</category>
+      
+      <category>compiler</category>
+      
+      <category>errors</category>
       
       
       
@@ -1521,6 +1525,10 @@
       <category>rust</category>
       
       <category>dev</category>
+      
+      <category>variables</category>
+      
+      <category>mutability</category>
       
       
       
@@ -2264,6 +2272,10 @@
       
       <category>dev</category>
       
+      <category>resources</category>
+      
+      <category>learning</category>
+      
       
       
       
@@ -2315,16 +2327,20 @@
     
     
     <item>
-      <title>Сопоставление с образцом (Pattern Matching) в Rust</title>
+      <title>Основы match в Rust: базовое сопоставление с образцом для начинающих</title>
       <link>https://eagle2000.space/rust/match/</link>
       <pubDate>Sat, 16 Mar 2024 00:00:00 +0000</pubDate>
       <guid>https://eagle2000.space/rust/match/</guid>
       
-      <description>Краткое и наглядное руководство по синтаксису match и pattern matching в языке Rust с примерами разбора значений, guard-условий и деструктуризации.</description>
+      <description>Краткое и наглядное руководство по основам match в Rust для начинающих: синтаксис сопоставления шаблонов, работа с Enum и простые Match Guards.</description>
       
       <category>rust</category>
       
       <category>dev</category>
+      
+      <category>match</category>
+      
+      <category>basics</category>
       
       
       

@@ -21,7 +21,7 @@
 > Сборник проверенных книг, документации, интерактивных курсов и сообществ для полного погружения в разработку на языке программирования Rust.
 
 - **Дата:** 2024-03-28
-- **Теги:** rust, dev
+- **Теги:** rust, dev, resources, learning
 - **Markdown URL для агентов:** `https://eagle2000.space/rust/links/llm.md`
 
 
@@ -84,7 +84,7 @@
 > Почему переменные в Rust неизменяемы по умолчанию и как работает ключевое слово mut. Разбираем гарантии безопасности памяти и приращение производительности.
 
 - **Дата:** 2025-05-06
-- **Теги:** rust, dev
+- **Теги:** rust, dev, variables, mutability
 - **Markdown URL для агентов:** `https://eagle2000.space/rust/rust-var-mut/llm.md`
 
 
@@ -187,12 +187,12 @@
 - **Markdown URL для агентов:** `https://eagle2000.space/rust/rust-directives/llm.md`
 
 
-### 20. [Сопоставление с образцом (Pattern Matching) в Rust](https://eagle2000.space/rust/match/llm.md)
+### 20. [Основы match в Rust: базовое сопоставление с образцом для начинающих](https://eagle2000.space/rust/match/llm.md)
 
-> Краткое и наглядное руководство по синтаксису match и pattern matching в языке Rust с примерами разбора значений, guard-условий и деструктуризации.
+> Краткое и наглядное руководство по основам match в Rust для начинающих: синтаксис сопоставления шаблонов, работа с Enum и простые Match Guards.
 
 - **Дата:** 2024-03-16
-- **Теги:** rust, dev
+- **Теги:** rust, dev, match, basics
 - **Markdown URL для агентов:** `https://eagle2000.space/rust/match/llm.md`
 
 
@@ -214,12 +214,12 @@
 - **Markdown URL для агентов:** `https://eagle2000.space/rust/rust-collect/llm.md`
 
 
-### 23. [Разбираемся с ошибками в Rust](https://eagle2000.space/rust/rust-err/llm.md)
+### 23. [Ошибки компилятора в Rust: чтение диагностики и команда rustc --explain](https://eagle2000.space/rust/rust-err/llm.md)
 
-> Узнайте, как работать с ошибками в Rust, используя компилятор и онлайн-ресурсы. Советы для начинающих и подробная информация о кодах ошибок.
+> Как понимать сообщения и коды ошибок компилятора Rust (rustc). Руководство для начинающих: использование команды rustc --explain, справочник кодов ошибок и пошаговая отладка.
 
 - **Дата:** 2025-05-12
-- **Теги:** rust, dev
+- **Теги:** rust, dev, compiler, errors
 - **Markdown URL для агентов:** `https://eagle2000.space/rust/rust-err/llm.md`
 
 
