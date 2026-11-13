@@ -327,32 +327,28 @@ pub fn sum_pos(s: &[i32]) -> i32 {
 ```
 ===
 ```asm
-LBB0_7:
-    ldp     q5, q6, [x8, #-32]
-    ldp     q7, q16, [x8], #64
-    smax.4s v5, v5, v0
-    smax.4s v6, v6, v0
-    smax.4s v7, v7, v0
-    smax.4s v16, v16, v0
-    add.4s  v5, v5, v5
-    add.4s  v6, v6, v6
-    add.4s  v7, v7, v7
-    add.4s  v16, v16, v16
-    add.4s  v1, v5, v1
-    add.4s  v2, v6, v2
-    add.4s  v3, v7, v3
-    add.4s  v4, v16, v4
-    subs    x11, x11, #16
-    b.ne    LBB0_7
+.LBB0_5:
+    ldp     q3, q4, [x8, #-16]
+    subs    x10, x10, #8
+    add     x8, x8, #32
+    smax    v3.4s, v3.4s, v0.4s
+    smax    v4.4s, v4.4s, v0.4s
+    add     v3.4s, v3.4s, v3.4s
+    add     v4.4s, v4.4s, v4.4s
+    add     v1.4s, v3.4s, v1.4s
+    add     v2.4s, v4.4s, v2.4s
+    b.ne    .LBB0_5
 ```
 ===
-.iter() ;; s.iter()||.copied() ;; ldp||q5, q6||q7, q16 ;; Loads 16 integers from memory in a single pass with zero per-element bounds checks.
-.filter() ;; .filter(|&x| x > 0) ;; smax.4s ;; Instead of a branchy if that stalls the CPU branch predictor, negative values are clamped to 0 with one vector instruction.
-.map() ;; .map(|x| x * 2) ;; add.4s v5,||add.4s v6,||add.4s v7,||add.4s v16, ;; Multiplying by 2 becomes a fast self-add across 4 elements in a single vector instruction.
-.sum() ;; .sum() ;; add.4s v1,||add.4s v2,||add.4s v3,||add.4s v4,||subs||b.ne ;; Accumulates the sum across four parallel register accumulators in a tight loop with no calls or allocations.
+.iter() ;; s.iter()||.copied() ;; ldp||q3, q4||add     x8, x8, #32 ;; Loads 8 integers from memory in a single pass with zero per-element bounds checks.
+.filter() ;; .filter(|&x| x > 0) ;; smax    v3.4s||smax    v4.4s ;; Instead of a branchy if that stalls the CPU branch predictor, negative values are clamped to 0 with one vector instruction.
+.map() ;; .map(|x| x * 2) ;; add     v3.4s, v3.4s, v3.4s||add     v4.4s, v4.4s, v4.4s ;; Multiplying by 2 becomes a fast self-add across 4 elements in a single vector instruction.
+.sum() ;; .sum() ;; add     v1.4s||add     v2.4s||subs||b.ne ;; Accumulates the sum across two parallel register accumulators in a tight loop with no calls or allocations.
 {{< /code-before-after >}}
 
-This listing shows the main loop processing 16 numbers per iteration (if the slice length is not a multiple of 16, the compiler finishes the remainder in a small scalar tail loop). Two practical caveats to keep in mind:
+You can inspect the full generated function (including the length check and the loop for any leftover items) on [Godbolt (`rustc 1.95.0`, `--edition 2021 -O --target aarch64-unknown-linux-gnu`)](https://godbolt.org/z/Kjh19eMv8).
+
+This listing shows the main loop processing 8 numbers per iteration (if the slice length is not a multiple of 8, the compiler finishes the remainder in a small scalar tail loop). Two practical caveats to keep in mind:
 
 - **Floats (`f32` / `f64`) do not auto-vectorize the same way.** Integers can be added in any order and always give the exact same sum. Floating-point addition can change rounding slightly when reordered, and the compiler will not silently alter precision, so `.sum::<f64>()` adds numbers sequentially unless you opt into fast-math semantics.
 - **Iterators are single-threaded.** All that SIMD speedup happens on a single CPU core. If you have a heavy workload and want all cores busy, pull in the `rayon` crate and swap `.iter()` for `.par_iter()`.
