@@ -3072,7 +3072,7 @@
 <p>Вот как выглядит этот хаотичный алгоритм в коде:</p>
 
 
-  <div id="6de0e0aebf969636edbf651f33ed5e17" class="rust-slides bg-gray-900 rounded-lg overflow-hidden my-8">
+  <div id="ef47ae726671f013ee50a89c6f81f506" class="rust-slides bg-gray-900 rounded-lg overflow-hidden my-8">
     
     <div class="flex justify-between items-center bg-gray-800 px-4 py-2">
       <span class="font-mono text-sm text-white">Хаотичная атака без координации</span>
@@ -3333,7 +3333,7 @@
 <p>— «В Tokio для этого используется <strong><code>Semaphore</code></strong> (Семафор). Представь, что на Шершне есть всего <code>N</code> свободных мест. Семафор выдает виртуальные разрешения — <code>permits</code>. Задача вызывает <code>acquire().await</code>. Если места есть, задача получает разрешение и крепится к цели. Если мест нет — задача асинхронно ждет своей очереди».</p>
 
 
-  <div id="e145b61541b51412df371ece481c8101" class="rust-slides bg-gray-900 rounded-lg overflow-hidden my-8">
+  <div id="bdb659305324bba1abf938e33d0f37b1" class="rust-slides bg-gray-900 rounded-lg overflow-hidden my-8">
     
     <div class="flex justify-between items-center bg-gray-800 px-4 py-2">
       <span class="font-mono text-sm text-white">Семафор: ограничение свободных мест</span>
@@ -3632,7 +3632,7 @@
 <p>— «Для этого служит <strong><code>Barrier</code></strong> (Барьер)», — ответил Нова. — «Мы инициализируем барьер на <code>M</code> участников. Каждая пчела, закрепившись на броне шершня, вызывает <code>barrier.wait().await</code> и приостанавливает выполнение. Как только последний, <code>M</code>-й участник вызывает этот метод — барьер открывается, и все задачи просыпаются одновременно, нанося разрушительный тепловой удар».</p>
 
 
-  <div id="af1f813442727528067898327a2770e9" class="rust-slides bg-gray-900 rounded-lg overflow-hidden my-8">
+  <div id="e62ff62e75af463b29a6a2367b9039a6" class="rust-slides bg-gray-900 rounded-lg overflow-hidden my-8">
     
     <div class="flex justify-between items-center bg-gray-800 px-4 py-2">
       <span class="font-mono text-sm text-white">Барьер: групповой залп задач</span>
@@ -3906,7 +3906,7 @@
 <p>Давайте посмотрим на эту ошибку и разберемся, почему стандартный <code>std::sync::Mutex</code> может сломать компиляцию в Tokio:</p>
 
 
-  <div id="49dbe42dcd89cdcc987ebbd506443495" class="rust-slides bg-gray-900 rounded-lg overflow-hidden my-8">
+  <div id="c7d71f8fedbf24ce7340b10587e84922" class="rust-slides bg-gray-900 rounded-lg overflow-hidden my-8">
     
     <div class="flex justify-between items-center bg-gray-800 px-4 py-2">
       <span class="font-mono text-sm text-white">Мьютекс: изменение общего состояния</span>
@@ -4351,7 +4351,7 @@ graph TD
 <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
 <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
 
-<div id="quiz-1794569372002374000" class="quiz-mount" data-lang="ru" data-name="Tokio: примитивы синхронизации" data-firebase='{
+<div id="quiz-1794572295920893000" class="quiz-mount" data-lang="ru" data-name="Tokio: примитивы синхронизации" data-firebase='{
   "apiKey": "AIzaSyDpJ8bNxx9MvSeu9PsXzk3H37AeYQjBv4M",
   "authDomain": "eagleblog-b0286.firebaseapp.com",
   "projectId": "eagleblog-b0286",
@@ -4360,14 +4360,14 @@ graph TD
   "appId": "1:942835714160:web:7ba3682059f8179a9d0cb5",
   "measurementId": "G-1K8G7FW77W"
 }'></div>
-<script type="application/json" id="quiz-1794569372002374000-srcs">"[\"/rust/tokio-sync-primitives/quizzes/quizzes-tokio-sync.json\"]"</script>
+<script type="application/json" id="quiz-1794572295920893000-srcs">"[\"/rust/tokio-sync-primitives/quizzes/quizzes-tokio-sync.json\"]"</script>
 
 <script type="module">
   import { mountQuizWidget } from "\/js\/quiz-widget.min.js";
 
   if (typeof window.firebase !== "undefined") {
     if (!window.firebase.apps.length) {
-      const cfg = JSON.parse(document.getElementById("quiz-1794569372002374000").dataset.firebase || "{}");
+      const cfg = JSON.parse(document.getElementById("quiz-1794572295920893000").dataset.firebase || "{}");
       if (cfg.apiKey) {
         window.firebase.initializeApp(cfg);
         window.db = window.firebase.firestore();
@@ -4376,8 +4376,8 @@ graph TD
       window.db = window.firebase.firestore();
     }
   }
-  const mount = document.getElementById("quiz-1794569372002374000");
-  const json  = document.getElementById("quiz-1794569372002374000-srcs").textContent;
+  const mount = document.getElementById("quiz-1794572295920893000");
+  const json  = document.getElementById("quiz-1794572295920893000-srcs").textContent;
   const srcs  = JSON.parse(json);
   const cfg   = JSON.parse(mount.dataset.firebase || "{}");
   const hljsThemeDark = "\u0022github-dark-dimmed\u0022";

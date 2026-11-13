@@ -14,6 +14,8 @@ In JavaScript, `arr.filter(...).map(...)` allocates a fresh intermediate array o
 
 Let's walk through how it works: what `for` actually compiles into, how lazy pipelines pull elements, when `std::iter::from_fn` is enough, how to return `impl Iterator` from functions, and when a plain `for` loop is still easier to read.
 
+> 📦 **Companion Code Repository:** All runnable examples from this episode are open-sourced on GitHub: [github.com/eaglebk/rust-iterators-examples](https://github.com/eaglebk/rust-iterators-examples).
+
 {{< alert "comment" >}}
 **What is a lazy pipeline?** In short, it is a plan of work without doing the work yet. In eager code (like `arr.filter().map()` in JS or list comprehensions `[... for x in arr]` in Python), each step processes the whole array and stores the result in a temporary list. In Rust, `.filter(...).map(...)` touches zero elements: it just records what to do with the data. Actual work starts only when you ask for a result (via `.collect()`, `.sum()`, or a `for` loop), and items flow through the entire chain one at a time with no intermediate arrays. We will look under the hood in Section 2.
 {{< /alert >}}

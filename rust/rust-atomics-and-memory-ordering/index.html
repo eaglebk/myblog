@@ -3072,7 +3072,7 @@
 <p>Ниже представлен пошаговый пример работы атомарного счетчика и флага останова:</p>
 
 
-  <div id="955cd17ea57db263269b530dc8009ea7" class="rust-slides bg-gray-900 rounded-lg overflow-hidden my-8">
+  <div id="a9b19309bcf9437dbe9617d6e948641d" class="rust-slides bg-gray-900 rounded-lg overflow-hidden my-8">
     
     <div class="flex justify-between items-center bg-gray-800 px-4 py-2">
       <span class="font-mono text-sm text-white">Атомарные типы и счетчик без мьютекса</span>
@@ -3438,7 +3438,7 @@
       </div><div class="admonition-content mt-3 text-base leading-relaxed text-inherit"><p>В 90% практических случаев применения lock-free флагов используется пара <strong><code>Ordering::Release</code></strong> при установке флага и <strong><code>Ordering::Acquire</code></strong> при его проверке.</p></div></div><p>Запустите примеры барьеров памяти <code>Acquire</code>/<code>Release</code> и операции <code>compare_exchange</code>:</p>
 
 
-  <div id="b350e37436c09ba7cef2d92eb48712d9" class="rust-slides bg-gray-900 rounded-lg overflow-hidden my-8">
+  <div id="08cacdac157c503f407ccafc59dbbffe" class="rust-slides bg-gray-900 rounded-lg overflow-hidden my-8">
     
     <div class="flex justify-between items-center bg-gray-800 px-4 py-2">
       <span class="font-mono text-sm text-white">Барьеры памяти Acquire/Release и CAS</span>
@@ -3763,7 +3763,7 @@
 <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
 <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
 
-<div id="quiz-1794569371484953000" class="quiz-mount" data-lang="ru" data-name="Атомики и Memory Ordering" data-firebase='{
+<div id="quiz-1794572295432836000" class="quiz-mount" data-lang="ru" data-name="Атомики и Memory Ordering" data-firebase='{
   "apiKey": "AIzaSyDpJ8bNxx9MvSeu9PsXzk3H37AeYQjBv4M",
   "authDomain": "eagleblog-b0286.firebaseapp.com",
   "projectId": "eagleblog-b0286",
@@ -3772,14 +3772,14 @@
   "appId": "1:942835714160:web:7ba3682059f8179a9d0cb5",
   "measurementId": "G-1K8G7FW77W"
 }'></div>
-<script type="application/json" id="quiz-1794569371484953000-srcs">"[\"/rust/rust-atomics-and-memory-ordering/quizzes/atomics_ordering.json\"]"</script>
+<script type="application/json" id="quiz-1794572295432836000-srcs">"[\"/rust/rust-atomics-and-memory-ordering/quizzes/atomics_ordering.json\"]"</script>
 
 <script type="module">
   import { mountQuizWidget } from "\/js\/quiz-widget.min.js";
 
   if (typeof window.firebase !== "undefined") {
     if (!window.firebase.apps.length) {
-      const cfg = JSON.parse(document.getElementById("quiz-1794569371484953000").dataset.firebase || "{}");
+      const cfg = JSON.parse(document.getElementById("quiz-1794572295432836000").dataset.firebase || "{}");
       if (cfg.apiKey) {
         window.firebase.initializeApp(cfg);
         window.db = window.firebase.firestore();
@@ -3788,8 +3788,8 @@
       window.db = window.firebase.firestore();
     }
   }
-  const mount = document.getElementById("quiz-1794569371484953000");
-  const json  = document.getElementById("quiz-1794569371484953000-srcs").textContent;
+  const mount = document.getElementById("quiz-1794572295432836000");
+  const json  = document.getElementById("quiz-1794572295432836000-srcs").textContent;
   const srcs  = JSON.parse(json);
   const cfg   = JSON.parse(mount.dataset.firebase || "{}");
   const hljsThemeDark = "\u0022github-dark-dimmed\u0022";
