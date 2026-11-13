@@ -9,9 +9,46 @@
     <description>Свежие статьи и публикации Eagle blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 05 Nov 2026 10:00:00 +0300</lastBuildDate>
+    <lastBuildDate>Fri, 13 Nov 2026 13:00:00 +0300</lastBuildDate>
     
     <atom:link href="https://eagle2000.space/en/series/about-rust/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+    
+    <item>
+      <title>Rust Iterators: Lazy Data Processing Without Extra Allocations</title>
+      <link>https://eagle2000.space/en/rust/rust-iterators-deep-dive/</link>
+      <pubDate>Fri, 13 Nov 2026 13:00:00 +0300</pubDate>
+      <guid>https://eagle2000.space/en/rust/rust-iterators-deep-dive/</guid>
+      
+      <description>A deep dive into Rust iterators: how for loops desugar with IntoIterator, .iter() vs .iter_mut() vs .into_iter(), lazy pipelines, custom pagination iterators, and LLVM SIMD optimizations.</description>
+      
+      <category>rust</category>
+      
+      <category>dev</category>
+      
+      <category>iterators</category>
+      
+      <category>zero-cost-abstractions</category>
+      
+      <category>functional</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="https://eagle2000.space/rust/rust-iterators-deep-dive/featured.png" medium="image"/>
+      
+    </item>
     
     
     

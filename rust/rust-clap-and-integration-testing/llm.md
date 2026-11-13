@@ -2,7 +2,7 @@
 
 > Подробное практическое руководство по оптимизации памяти и интеграционному тестированию в Rust: повторное использование буфера памяти с read_line(), трейт Default, внешние тесты в tests/ с assert_cmd и декларативный парсинг CLI с помощью clap.
 
-- **URL:** https://eagle2000.space/rust/rust-clap-and-integration-testing/
+- **URL:** http://192.168.0.13:1313/rust/rust-clap-and-integration-testing/
 - **Date:** 2026-08-13
 
 - **Tags:** rust, dev, memory-optimization, read-line, default-trait, integration-testing, assert-cmd, clap

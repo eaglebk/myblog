@@ -1,0 +1,110 @@
+{
+  "title": "Как цикл <code>for</code> работает внутри <code>loop</code>",
+  "interval": 2600,
+  "code": [
+    "let mut iter = IntoIterator::into_iter([\"Анна\", \"Борис\"]);",
+    "loop {",
+    "    match iter.next() {",
+    "        Some(item) => println!(\"{item}\"),",
+    "        None => break,",
+    "    }",
+    "}"
+  ],
+  "nodes": [
+    {
+      "id": "loop",
+      "name": "loop { match ... }",
+      "role": "тело цикла",
+      "kind": "state",
+      "defaultState": "старт"
+    },
+    {
+      "id": "iter",
+      "name": "iter.next()",
+      "role": "итератор",
+      "kind": "state",
+      "defaultState": "позиция 0"
+    },
+    {
+      "id": "vec",
+      "name": "names",
+      "role": "коллекция",
+      "kind": "chips",
+      "chips": ["Анна", "Борис"]
+    }
+  ],
+  "links": [
+    { "id": "li", "downLabel": "↓ iter.next()", "upLabel": "↑ Option" },
+    { "id": "iv", "downLabel": "↓ сдвиг", "upLabel": "↑ элемент" }
+  ],
+  "steps": [
+    {
+      "label": "into_iter()",
+      "explain": "Перед входом в <code>loop</code> вызывается <code>IntoIterator::into_iter</code>: коллекция превращается в итератор с курсором на первом элементе.",
+      "lines": { "0": "active" },
+      "nodes": {
+        "loop": { "state": "вход в loop" },
+        "iter": { "tone": "active", "state": "готов (индекс 0)" },
+        "vec": { "tone": "active", "chips": { "0": "current" } }
+      },
+      "arrows": {
+        "iv": { "dir": "down", "tone": "active", "label": "↓ инициализация" }
+      }
+    },
+    {
+      "label": "Виток 1: Анна",
+      "explain": "<code>loop</code> вызывает <code>iter.next()</code>, получает <code>Some(\"Анна\")</code> и выполняет ветку <code>println!</code>.",
+      "lines": { "1": "ok", "2": "ok", "3": "ok" },
+      "nodes": {
+        "loop": { "tone": "ok", "state": "печать \"Анна\"" },
+        "iter": { "tone": "ok", "state": "индекс 0 → 1" },
+        "vec": { "tone": "ok", "chips": { "0": "accepted", "1": "current" } }
+      },
+      "arrows": {
+        "li": { "dir": "up", "tone": "ok", "label": "↑ Some(\"Анна\")" },
+        "iv": { "dir": "up", "tone": "ok", "label": "↑ \"Анна\"" }
+      }
+    },
+    {
+      "label": "Виток 2: Борис",
+      "explain": "Следующий виток <code>loop</code>: <code>iter.next()</code> сдвигает курсор и отдаёт <code>Some(\"Борис\")</code>.",
+      "lines": { "1": "ok", "2": "ok", "3": "ok" },
+      "nodes": {
+        "loop": { "tone": "ok", "state": "печать \"Борис\"" },
+        "iter": { "tone": "ok", "state": "индекс 1 → конец" },
+        "vec": { "tone": "ok", "chips": { "0": "accepted", "1": "accepted" } }
+      },
+      "arrows": {
+        "li": { "dir": "up", "tone": "ok", "label": "↑ Some(\"Борис\")" },
+        "iv": { "dir": "up", "tone": "ok", "label": "↑ \"Борис\"" }
+      }
+    },
+    {
+      "label": "Конец: None",
+      "explain": "Третий виток <code>loop</code> снова вызывает <code>iter.next()</code>, но элементы закончились: итератор возвращает <code>None</code>.",
+      "lines": { "2": "drop", "4": "drop" },
+      "nodes": {
+        "loop": { "tone": "drop", "state": "получил None" },
+        "iter": { "tone": "drop", "state": "исчерпан" },
+        "vec": { "chips": { "0": "accepted", "1": "accepted" } }
+      },
+      "arrows": {
+        "li": [
+          { "dir": "down", "tone": "active" },
+          { "dir": "up", "tone": "drop", "label": "↑ None" }
+        ]
+      }
+    },
+    {
+      "label": "Выход: break",
+      "explain": "Срабатывает ветка <code>None =&gt; break</code>, и цикл <code>loop</code> завершается. Никаких проверок длины вручную писать не пришлось.",
+      "lines": { "4": "drop", "5": "drop", "6": "drop" },
+      "nodes": {
+        "loop": { "tone": "drop", "state": "break (выход)" },
+        "iter": { "state": "завершён" },
+        "vec": { "chips": { "0": "accepted", "1": "accepted" } }
+      }
+    }
+  ]
+}
+

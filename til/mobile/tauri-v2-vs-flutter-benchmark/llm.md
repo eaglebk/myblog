@@ -2,7 +2,7 @@
 
 > Разработал одну и ту же мобильную аркадную игру на Tauri 2.0 (Rust backend + React UI) и Flutter (Cubit). Подробный разбор архитектуры, переноса логики в Rust, замеры веса APK, памяти и задержек.
 
-- **URL:** https://eagle2000.space/til/mobile/tauri-v2-vs-flutter-benchmark/
+- **URL:** http://192.168.0.13:1313/til/mobile/tauri-v2-vs-flutter-benchmark/
 - **Date:** 2026-08-18
 
 - **Tags:** tauri, flutter, rust, mobile, react, dart

@@ -2,7 +2,7 @@
 
 > Сравнение Go и Rust для бэкенда: обработка ошибок, строгая типизация, Typestate и специфика генерации кода нейросетями.
 
-- **URL:** https://eagle2000.space/rust/go-to-rust-migration-in-ai-era/
+- **URL:** http://192.168.0.13:1313/rust/go-to-rust-migration-in-ai-era/
 - **Date:** 2026-08-31
 
 - **Tags:** rust, golang, architecture, ai, error-handling

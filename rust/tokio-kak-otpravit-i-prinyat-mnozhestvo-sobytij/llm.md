@@ -2,7 +2,7 @@
 
 > Продолжение приключений экипажа Vectoria — разбор способов отправки и обработки множества событий в Tokio: использование макроса tokio::select!, широковещательных каналов broadcast и динамического пула задач с помощью JoinSet.
 
-- **URL:** https://eagle2000.space/rust/tokio-kak-otpravit-i-prinyat-mnozhestvo-sobytij/
+- **URL:** http://192.168.0.13:1313/rust/tokio-kak-otpravit-i-prinyat-mnozhestvo-sobytij/
 - **Date:** 2026-08-14
 
 - **Tags:** rust, dev

@@ -2,7 +2,7 @@
 
 > Глубокое погружение в асинхронные каналы Tokio: mpsc, oneshot, broadcast и watch. Исследуем паттерны передачи данных на примере спасательного зонда экипажа Vectoria.
 
-- **URL:** https://eagle2000.space/rust/rust-tokio-channels/
+- **URL:** http://192.168.0.13:1313/rust/rust-tokio-channels/
 - **Date:** 2026-08-14
 
 - **Tags:** rust, dev, tokio

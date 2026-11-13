@@ -3,7 +3,7 @@
 > Blog of a cheerful programmer
 
 ## Sections
-- [Rust](https://eagle2000.space/en/rust/llm.md): My personal journey learning Rust: from first experiments and basic syntax to Tokio async runtime and ESP32 embedded projects. (13 articles)
+- [Rust](https://eagle2000.space/en/rust/llm.md): My personal journey learning Rust: from first experiments and basic syntax to Tokio async runtime and ESP32 embedded projects. (14 articles)
 - [Photography](https://eagle2000.space/en/photography/llm.md): Practical guides, articles, and interactive visual simulators on photography: visual composition, the rule of thirds, tone curves, and gear reviews. (4 articles)
 - [Foreign Languages](https://eagle2000.space/en/languages/llm.md): Foreign Languages (0 articles)
 - [Posts about everything](https://eagle2000.space/en/about-all/llm.md): Posts and notes on various topics that interest me (0 articles)
@@ -13,6 +13,7 @@
 
 
 ## Key Articles
+- [Rust Iterators: Lazy Data Processing Without Extra Allocations](https://eagle2000.space/en/rust/rust-iterators-deep-dive/llm.md): A deep dive into Rust iterators: how for loops desugar with IntoIterator, .iter() vs .iter_mut() vs .into_iter(), lazy pipelines, custom pagination iterators, and LLVM SIMD optimizations.
 - [Closures in Rust: Functions with Their Own Memory](https://eagle2000.space/en/rust/rust-closures/llm.md): A practical breakdown of function pointers and closures in Rust: environment capture, how Fn, FnMut, and FnOnce map to struct methods under the hood, and when you need for<'a>.
 - [Lifetimes in Rust: Deep Dive into References, Elision, HRTB, and Variance](https://eagle2000.space/en/rust/rust-lifetimes-deep-dive/llm.md): Master Rust lifetimes: how lifetime elision works, storing references in structs, &'static vs T: 'static, higher-rank trait bounds (for<'a>), and variance.
 - [Rust: Deep Dive into Pattern Matching - Destructuring, Bindings, and Guards](https://eagle2000.space/en/rust/rust-pattern-matching-deep-dive/llm.md): In-depth guide to pattern matching in Rust: exhaustiveness, destructuring, @-bindings in dupe-krill, slice patterns, match guards, and let chains.

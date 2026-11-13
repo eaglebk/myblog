@@ -2,7 +2,7 @@
 
 > Подробный разбор маркерных типажей Send и Sync в Rust: соотношение T: Sync <=> &T: Send, почему Rc не поток-безопасен, разница между Send и Sync для RefCell, и требования thread::spawn.
 
-- **URL:** https://eagle2000.space/rust/rust-send-sync-traits/
+- **URL:** http://192.168.0.13:1313/rust/rust-send-sync-traits/
 - **Date:** 2026-08-11
 
 - **Tags:** rust, dev, send, sync, multithreading, concurrency, rc, refcell

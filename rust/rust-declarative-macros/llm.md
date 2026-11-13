@@ -2,7 +2,7 @@
 
 > Изучаем декларативные макросы macro_rules! в Rust: синтаксическое дерево (AST), гигиена макросов, спецификаторы типов, повторения и создание удобных DSL.
 
-- **URL:** https://eagle2000.space/rust/rust-declarative-macros/
+- **URL:** http://192.168.0.13:1313/rust/rust-declarative-macros/
 - **Date:** 2026-08-08
 
 - **Tags:** rust, dev, macros, macro_rules, metaprogramming, dsl

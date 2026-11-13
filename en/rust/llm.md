@@ -5,7 +5,7 @@
 
 
 - **URL раздела:** https://eagle2000.space/en/rust/
-- **Количество статей:** 13
+- **Количество статей:** 14
 - **Язык:** en
 
 ---
@@ -88,7 +88,16 @@
 - **Markdown URL для агентов:** `https://eagle2000.space/en/rust/rust-collections-overview/llm.md`
 
 
-### 9. [Lifetimes in Rust: Deep Dive into References, Elision, HRTB, and Variance](https://eagle2000.space/en/rust/rust-lifetimes-deep-dive/llm.md)
+### 9. [Rust Iterators: Lazy Data Processing Without Extra Allocations](https://eagle2000.space/en/rust/rust-iterators-deep-dive/llm.md)
+
+> A deep dive into Rust iterators: how for loops desugar with IntoIterator, .iter() vs .iter_mut() vs .into_iter(), lazy pipelines, custom pagination iterators, and LLVM SIMD optimizations.
+
+- **Дата:** 2026-11-13
+- **Теги:** rust, dev, iterators, zero-cost-abstractions, functional
+- **Markdown URL для агентов:** `https://eagle2000.space/en/rust/rust-iterators-deep-dive/llm.md`
+
+
+### 10. [Lifetimes in Rust: Deep Dive into References, Elision, HRTB, and Variance](https://eagle2000.space/en/rust/rust-lifetimes-deep-dive/llm.md)
 
 > Master Rust lifetimes: how lifetime elision works, storing references in structs, &'static vs T: 'static, higher-rank trait bounds (for<'a>), and variance.
 
@@ -97,7 +106,7 @@
 - **Markdown URL для агентов:** `https://eagle2000.space/en/rust/rust-lifetimes-deep-dive/llm.md`
 
 
-### 10. [Rust: Deep Dive into Pattern Matching - Destructuring, Bindings, and Guards](https://eagle2000.space/en/rust/rust-pattern-matching-deep-dive/llm.md)
+### 11. [Rust: Deep Dive into Pattern Matching - Destructuring, Bindings, and Guards](https://eagle2000.space/en/rust/rust-pattern-matching-deep-dive/llm.md)
 
 > In-depth guide to pattern matching in Rust: exhaustiveness, destructuring, @-bindings in dupe-krill, slice patterns, match guards, and let chains.
 
@@ -106,7 +115,7 @@
 - **Markdown URL для агентов:** `https://eagle2000.space/en/rust/rust-pattern-matching-deep-dive/llm.md`
 
 
-### 11. [Advanced traits in Rust: associated types, supertraits, and blanket implementations](https://eagle2000.space/en/rust/rust-advanced-traits/llm.md)
+### 12. [Advanced traits in Rust: associated types, supertraits, and blanket implementations](https://eagle2000.space/en/rust/rust-advanced-traits/llm.md)
 
 > In-depth guide to advanced Rust traits: associated types, associated constants, fully qualified syntax <Type as Trait>::method, supertraits, and blanket implementations.
 
@@ -115,7 +124,7 @@
 - **Markdown URL для агентов:** `https://eagle2000.space/en/rust/rust-advanced-traits/llm.md`
 
 
-### 12. [BufReader in Rust: Accelerating I/O](https://eagle2000.space/en/rust/bufreader/llm.md)
+### 13. [BufReader in Rust: Accelerating I/O](https://eagle2000.space/en/rust/bufreader/llm.md)
 
 > In-depth guide to BufReader in Rust. Learn how to accelerate file reading, master BufRead vs Read, minimize OS system calls, and benchmark line-by-line streaming.
 
@@ -124,7 +133,7 @@
 - **Markdown URL для агентов:** `https://eagle2000.space/en/rust/bufreader/llm.md`
 
 
-### 13. [Crate of the Day: Strum - iterating and converting Rust Enum](https://eagle2000.space/en/rust/crate-of-the-day-strum/llm.md)
+### 14. [Crate of the Day: Strum - iterating and converting Rust Enum](https://eagle2000.space/en/rust/crate-of-the-day-strum/llm.md)
 
 > Exploring the popular Strum crate: how to iterate over enum variants, convert enums to strings and back, using a real-world example from esp-generate.
 

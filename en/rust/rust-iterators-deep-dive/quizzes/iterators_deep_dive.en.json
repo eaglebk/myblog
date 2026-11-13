@@ -1,0 +1,83 @@
+[
+  {
+    "question": "What is the difference between `.iter()` and `.into_iter()` on a `Vec<T>`?",
+    "options": [
+      "`.iter()` borrows items by reference `&T`, while `.into_iter()` consumes the vector and yields owned `T` values",
+      "`.into_iter()` yields `&T` references, but prevents mutating the vector until the end of the function",
+      "`.iter()` clones each element of the vector, while `.into_iter()` reads them without copying"
+    ],
+    "answer": 0,
+    "explanation": "`.iter()` creates an iterator over shared references `&T`, keeping the original vector usable after the loop. `.into_iter()` takes ownership of the vector and yields owned `T` values one by one."
+  },
+  {
+    "question": "What happens to a vector `items` after `for item in items { ... }`?",
+    "options": [
+      "The vector remains readable, but can no longer be mutated",
+      "A `for` loop by value calls `IntoIterator::into_iter(items)`, moving the vector so it is no longer usable afterward",
+      "The compiler automatically borrows the vector as `&items`"
+    ],
+    "answer": 1,
+    "explanation": "A `for x in collection` loop desugars to `IntoIterator::into_iter(collection)`. For an owned `Vec<T>`, that moves the vector. To only borrow items, write `for x in &items`."
+  },
+  {
+    "question": "What happens if you write `numbers.iter().map(|x| x * 2);` as a standalone statement without calling a consuming method (`collect`, `sum`, `for_each`)?",
+    "options": [
+      "No computation happens, and the compiler emits a `#[must_use]` warning about the unused iterator",
+      "The closure runs once for the first item to check types, then stops",
+      "The elements are computed immediately and stored in a temporary stack buffer"
+    ],
+    "answer": 0,
+    "explanation": "Iterator adapters are lazy: they only construct a `Map` wrapper over the inner iterator and do no work until consumed. The `#[must_use]` attribute on `Iterator` warns when an iterator is dropped unused."
+  },
+  {
+    "question": "Which single method must be implemented when manually writing `impl Iterator`?",
+    "options": [
+      "`fn next(&mut self) -> Option<Self::Item>`",
+      "`fn size_hint(&self) -> (usize, Option<usize>)`",
+      "`fn into_iter(self) -> Self`"
+    ],
+    "answer": 0,
+    "explanation": "Implementing `Iterator` only requires specifying `type Item` and `fn next(&mut self) -> Option<Self::Item>`. The other 70+ methods (including `size_hint`, `fold`, and `collect`) come with default implementations."
+  },
+  {
+    "question": "Why do double ampersands `&&x` appear in `vec.iter().filter(|&&x| x > 0)`?",
+    "options": [
+      "`.iter()` yields `&T`, and `.filter()` passes `&Self::Item` to the predicate so it does not take ownership before filtering",
+      "Double references only happen for `Copy` types; `String` receives a single `&String`",
+      "The first `&` borrows `vec` itself, and the second `&` borrows the current element"
+    ],
+    "answer": 0,
+    "explanation": "A slice iterator yields `&i32`. Because `filter` cannot consume items (it still needs to yield passing items downstream), its predicate receives `&Self::Item`, giving `&&i32`. `.copied()` removes the extra reference layer for `Copy` types."
+  },
+  {
+    "question": "What does `iter.collect::<Result<Vec<_>, _>>()` do if the third element is an `Err(...)`?",
+    "options": [
+      "Skips the error and keeps collecting the remaining `Ok` values",
+      "Stops iterating immediately and returns that first `Err` without processing the rest",
+      "Processes the whole iterator and returns a tuple of `Ok` values and the first error"
+    ],
+    "answer": 1,
+    "explanation": "`FromIterator` for `Result<C, E>` short-circuits: on the first `Err`, iteration stops and any partially built collection is dropped. Use `.filter_map(Result::ok)` when you want to skip errors instead."
+  },
+  {
+    "question": "Why can an iterator chain (for instance with filtering or `.windows(2)`) match or beat a manual index loop in speed?",
+    "options": [
+      "Standard adapters automatically split iterations across a thread pool",
+      "Slice iterators advance raw pointers without per-element bounds checks, and monomorphization + inlining collapse the chain into a flat loop",
+      "The compiler evaluates iterator chains at compile time via `const eval`"
+    ],
+    "answer": 1,
+    "explanation": "Monomorphization and inlining fold the adapter chain into a single flat loop with no virtual dispatch or intermediate allocations, while `slice::Iter` and `windows` avoid repeated bounds checks."
+  },
+  {
+    "question": "What does the `FusedIterator` marker trait guarantee?",
+    "options": [
+      "That the iterator can be safely sent across threads",
+      "That once `.next()` returns `None`, all subsequent `.next()` calls will continue returning `None`",
+      "That two adjacent `.map()` adapters were merged into a single closure"
+    ],
+    "answer": 1,
+    "explanation": "A plain `Iterator` is technically allowed to yield `Some(...)` again after returning `None`. `FusedIterator` promises that once exhausted, the iterator stays empty forever."
+  }
+]
+

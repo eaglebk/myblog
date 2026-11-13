@@ -9,9 +9,46 @@
     <description>Свежие статьи и публикации Eagle blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru</language>
-    <lastBuildDate>Thu, 05 Nov 2026 10:00:00 +0300</lastBuildDate>
+    <lastBuildDate>Fri, 13 Nov 2026 13:00:00 +0300</lastBuildDate>
     
     <atom:link href="https://eagle2000.space/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+    
+    <item>
+      <title>Итераторы в Rust: ленивая обработка данных без лишних аллокаций</title>
+      <link>https://eagle2000.space/rust/rust-iterators-deep-dive/</link>
+      <pubDate>Fri, 13 Nov 2026 13:00:00 +0300</pubDate>
+      <guid>https://eagle2000.space/rust/rust-iterators-deep-dive/</guid>
+      
+      <description>Подробный разбор итераторов в Rust: устройство цикла for и IntoIterator, разница между .iter(), .iter_mut() и .into_iter(), ленивые цепочки, собственный генератор пагинации и оптимизации LLVM.</description>
+      
+      <category>rust</category>
+      
+      <category>dev</category>
+      
+      <category>iterators</category>
+      
+      <category>zero-cost-abstractions</category>
+      
+      <category>functional</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="https://eagle2000.space/rust/rust-iterators-deep-dive/featured.png" medium="image"/>
+      
+    </item>
     
     
     

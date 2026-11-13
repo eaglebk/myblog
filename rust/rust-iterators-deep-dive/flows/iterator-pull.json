@@ -1,0 +1,131 @@
+{
+  "title": "Как один вызов <code>.next()</code> проходит по цепочке",
+  "interval": 2600,
+  "code": [
+    "let data = [-1, 3, -5, 2];",
+    "let out: Vec<i32> = data",
+    "    .iter()",
+    "    .filter(|&&x| x > 0)",
+    "    .map(|&x| x * 2)",
+    "    .collect();"
+  ],
+  "nodes": [
+    {
+      "id": "collect",
+      "name": "collect()",
+      "role": "потребитель",
+      "kind": "chips",
+      "chips": ["…"]
+    },
+    {
+      "id": "map",
+      "name": "map(x * 2)",
+      "role": "преобразует",
+      "kind": "state",
+      "defaultState": "ждёт"
+    },
+    {
+      "id": "filter",
+      "name": "filter(x > 0)",
+      "role": "отбирает",
+      "kind": "state",
+      "defaultState": "ждёт"
+    },
+    {
+      "id": "iter",
+      "name": "slice::Iter",
+      "role": "источник",
+      "kind": "chips",
+      "chips": ["-1", "3", "-5", "…"]
+    }
+  ],
+  "links": [
+    { "id": "cm", "downLabel": "↓ next()", "upLabel": "↑ Some(6)" },
+    { "id": "mf", "downLabel": "↓ next()", "upLabel": "↑ Some(&3)" },
+    { "id": "fi", "downLabel": "↓ next()", "upLabel": "↑ Some(&-1)" }
+  ],
+  "steps": [
+    {
+      "label": "collect → map",
+      "explain": "<code>collect()</code> просит первый элемент, вызывая <code>.next()</code> у <code>map</code>. Массив в памяти пока не тронут.",
+      "lines": { "4": "active", "5": "active" },
+      "nodes": {
+        "collect": { "tone": "active" },
+        "map": { "tone": "active", "state": "вызов next()" }
+      },
+      "arrows": {
+        "cm": { "dir": "down", "tone": "active" }
+      }
+    },
+    {
+      "label": "map → filter",
+      "explain": "У <code>map</code> нет своего буфера, поэтому он сразу пробрасывает <code>.next()</code> внутрь <code>filter</code>.",
+      "lines": { "3": "active", "4": "active" },
+      "nodes": {
+        "map": { "tone": "active", "state": "ждёт filter" },
+        "filter": { "tone": "active", "state": "вызов next()" }
+      },
+      "arrows": {
+        "mf": { "dir": "down", "tone": "active" }
+      }
+    },
+    {
+      "label": "filter → iter",
+      "explain": "<code>filter</code> обращается к <code>slice::Iter</code>. Итератор сдвигает указатель на первый элемент: <code>-1</code>.",
+      "lines": { "2": "active", "3": "active" },
+      "nodes": {
+        "map": { "state": "ждёт filter" },
+        "filter": { "tone": "active", "state": "ждёт iter" },
+        "iter": { "tone": "active", "chips": { "0": "current" } }
+      },
+      "arrows": {
+        "fi": { "dir": "down", "tone": "active" }
+      }
+    },
+    {
+      "label": "−1 отброшен",
+      "explain": "<code>-1 &gt; 0</code> ложно. <code>filter</code> отбрасывает <code>-1</code> и <strong>сам в цикле</strong> зовёт <code>iter.next()</code> за <code>3</code>. <code>map</code> и <code>collect()</code> не просыпаются.",
+      "lines": { "2": "drop", "3": "drop" },
+      "nodes": {
+        "map": { "state": "спит" },
+        "filter": { "tone": "drop", "state": "-1 > 0 → false" },
+        "iter": { "tone": "drop", "chips": { "0": "rejected", "1": "current" } }
+      },
+      "arrows": {
+        "fi": [
+          { "dir": "up", "tone": "drop", "label": "↑ Some(&-1)" },
+          { "dir": "down", "tone": "active" }
+        ]
+      }
+    },
+    {
+      "label": "3 прошёл",
+      "explain": "<code>slice::Iter</code> отдаёт <code>Some(&amp;3)</code>. Условие <code>3 &gt; 0</code> истинно, и <code>filter</code> передаёт значение в <code>map</code>.",
+      "lines": { "2": "ok", "3": "ok", "4": "ok" },
+      "nodes": {
+        "map": { "tone": "ok", "state": "получил &3" },
+        "filter": { "tone": "ok", "state": "3 > 0 → true" },
+        "iter": { "tone": "ok", "chips": { "0": "rejected", "1": "accepted" } }
+      },
+      "arrows": {
+        "fi": { "dir": "up", "tone": "ok", "label": "↑ Some(&3)" },
+        "mf": { "dir": "up", "tone": "ok" }
+      }
+    },
+    {
+      "label": "6 собран",
+      "explain": "<code>map</code> вычисляет <code>3 * 2 = 6</code> и отдаёт <code>Some(6)</code> в <code>collect()</code>. Остаток среза ждёт следующего <code>.next()</code>.",
+      "lines": { "4": "ok", "5": "ok" },
+      "nodes": {
+        "collect": { "tone": "ok", "chips": { "0": "accepted" }, "chipValues": { "0": "6" } },
+        "map": { "tone": "ok", "state": "3 * 2 = 6" },
+        "filter": { "state": "пауза" },
+        "iter": { "chips": { "0": "rejected", "1": "accepted" } }
+      },
+      "arrows": {
+        "cm": { "dir": "up", "tone": "ok" }
+      }
+    }
+  ]
+}
+

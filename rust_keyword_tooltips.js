@@ -249,16 +249,81 @@ if (typeof window.RustPlayground === "undefined") {
       }
     }
 
+    buildTooltipHtml(keywordObj, isEn, i18n) {
+      const summaryText = (isEn && keywordObj.summary_en) ? keywordObj.summary_en : keywordObj.summary;
+      const syntaxText = (isEn && keywordObj.syntax_en) ? keywordObj.syntax_en : keywordObj.syntax;
+      const exampleText = (isEn && keywordObj.example_en) ? keywordObj.example_en : keywordObj.example;
+      const docText = (isEn && keywordObj.doc_en) ? keywordObj.doc_en : (isEn && keywordObj.summary ? keywordObj.summary : keywordObj.doc);
+      const blogList = (keywordObj.docs && Array.isArray(keywordObj.docs.blog)) ? keywordObj.docs.blog : [];
+      const officialDoc = (keywordObj.docs && keywordObj.docs.official) ? keywordObj.docs.official : "";
+
+      return `
+<div class="rust-tooltip ${this.isDarkTheme() ? "dark" : "light"}">
+    <header>
+        <span class="keyword">${keywordObj.keyword.replace(/\\/g, "")}</span>
+        <span class="summary">${summaryText || ""}</span>
+    </header>
+    <div class="syntax"><strong>${i18n.syntaxLabel}</strong> ${syntaxText || ""}</code></div>
+    <div class="example"><strong>${i18n.exampleLabel} </strong><code>${exampleText || ""}</code></div>
+    <div class="doc">${docText || ""}</div>
+    <div class="doc-links">
+        ${officialDoc ? `<a href="${officialDoc}" target="_blank" class="official-link">${i18n.officialDoc}</a>` : ""}
+        ${
+          blogList.length > 0
+            ? blogList
+                .map((blog) => {
+                  const currentPath = window.location.pathname.replace(/\/$/, "");
+                  const currentSlug = currentPath.split("/").pop();
+                  const blogUrl = blog.url || "";
+                  const cleanBlogPath = blogUrl.replace(/#.*$/, "").replace(/\/$/, "");
+                  const blogSlug = cleanBlogPath.split("/").pop();
+                  const isCurrentArticle = Boolean(blogSlug && currentSlug && blogSlug === currentSlug);
+                  const blogTitle = (isEn && blog.title_en) ? blog.title_en : (isEn ? "Rust Blog Post" : blog.title);
+                  if (isCurrentArticle) {
+                    return `<a href="${blog.url}" class="blog-link current-article">${i18n.currentArticle}</a>`;
+                  } else {
+                    return `<a href="${blog.url}" target="_blank" class="blog-link">${i18n.blogArticle}${blogTitle}</a>`;
+                  }
+                })
+                .join("")
+            : ``
+        }
+    </div>
+</div>`;
+    }
+
     setupCodeHover() {
       if (localStorage.getItem("pref_rust_tooltips") === "false") return;
 
       const tooltipData = window.RUST_KEYWORD_TOOLTIPS;
-      if (!tooltipData) return;
+      const asmTooltipData = window.ASM_KEYWORD_TOOLTIPS;
+      if (!tooltipData && !asmTooltipData) return;
 
-      const keywordSet = new Set(tooltipData);
+      const keywordSet = new Set(tooltipData || []);
       const lang = this.getLang();
       const i18n = this.getI18n();
       const isEn = lang === "en";
+
+      if (asmTooltipData && Array.isArray(asmTooltipData)) {
+        const asmMap = new Map(asmTooltipData.map((item) => [item.keyword.toLowerCase(), item]));
+        document
+          .querySelectorAll("code.language-asm:not(.processed)")
+          .forEach((codeBlock) => {
+            codeBlock.classList.add("processed");
+            codeBlock.querySelectorAll(".line > .cl span:not(.ln):not(.rust-keyword)").forEach((token) => {
+              const rawText = token.textContent.trim();
+              const keywordObj = asmMap.get(rawText.toLowerCase());
+              if (!keywordObj) return;
+              const tooltipSpan = document.createElement("span");
+              tooltipSpan.className = "rust-keyword";
+              tooltipSpan.textContent = rawText;
+              tooltipSpan.setAttribute("data-tippy-content", this.buildTooltipHtml(keywordObj, isEn, i18n));
+              token.replaceWith(tooltipSpan);
+            });
+          });
+      }
+
+      if (!tooltipData) return;
 
       document
         .querySelectorAll("code.language-rust:not(.processed)")
@@ -370,59 +435,12 @@ if (typeof window.RustPlayground === "undefined") {
                   }
 
                   if (isMatch) {
-                    // Создаем новый элемент с подсказкой
                     const tooltipSpan = document.createElement("span");
                     tooltipSpan.className = "rust-keyword";
                     tooltipSpan.textContent = text;
-
-                    const summaryText = (isEn && keywordObj.summary_en) ? keywordObj.summary_en : keywordObj.summary;
-                    const syntaxText = (isEn && keywordObj.syntax_en) ? keywordObj.syntax_en : keywordObj.syntax;
-                    const exampleText = (isEn && keywordObj.example_en) ? keywordObj.example_en : keywordObj.example;
-                    const docText = (isEn && keywordObj.doc_en) ? keywordObj.doc_en : (isEn && keywordObj.summary ? keywordObj.summary : keywordObj.doc);
-
-
-                    // Обновленное тело попапа
                     tooltipSpan.setAttribute(
                       "data-tippy-content",
-                      `
-<div class="rust-tooltip ${this.isDarkTheme() ? "dark" : "light"}">
-    <header>
-        <span class="keyword">${keywordObj.keyword.replace(/\\/g, "")}</span>
-        <span class="summary">${summaryText}</span>
-    </header>
-    <div class="syntax"><strong>${i18n.syntaxLabel}</strong> ${syntaxText}</code></div>
-    <div class="example"><strong>${i18n.exampleLabel} </strong><code>${exampleText}</code></div>
-    <div class="doc">${docText}</div>
-    
-    <div class="doc-links">
-        <a href="${keywordObj.docs.official}" target="_blank" 
-           class="official-link">${i18n.officialDoc}</a>
-        
-        ${
-          keywordObj.docs.blog.length > 0
-            ? keywordObj.docs.blog
-                .map((blog) => {
-                  const currentPath = window.location.pathname.replace(/\/$/, "");
-                  const currentSlug = currentPath.split("/").pop();
-                  const blogUrl = blog.url || "";
-                  const cleanBlogPath = blogUrl.replace(/#.*$/, "").replace(/\/$/, "");
-                  const blogSlug = cleanBlogPath.split("/").pop();
-                  const isCurrentArticle = Boolean(blogSlug && currentSlug && blogSlug === currentSlug);
-                  const blogTitle = (isEn && blog.title_en) ? blog.title_en : (isEn ? "Rust Blog Post" : blog.title);
-
-
-                  if (isCurrentArticle) {
-                    return `<a href="${blog.url}" class="blog-link current-article">${i18n.currentArticle}</a>`;
-                  } else {
-                    return `<a href="${blog.url}" target="_blank" class="blog-link">${i18n.blogArticle}${blogTitle}</a>`;
-                  }
-                })
-                .join("")
-            : ``
-        }
-    </div>
-</div>
-`
+                      this.buildTooltipHtml(keywordObj, isEn, i18n)
                     );
 
                     // Заменяем оригинальный элемент

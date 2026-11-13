@@ -2,7 +2,7 @@
 
 > История мобильного разработчика, создававшего бэкенды на Java и Go, и почему в эпоху ИИ компилятор Rust стал идеальным ревьюером.
 
-- **URL:** https://eagle2000.space/rust/go-to-rust-migration-story/
+- **URL:** http://192.168.0.13:1313/rust/go-to-rust-migration-story/
 - **Date:** 2026-09-01
 
 - **Tags:** rust, golang, java, mobile, ai, architecture

@@ -12,7 +12,7 @@
 ### 🔹 [Rust](https://eagle2000.space/rust/llm.md)
 > Мой путь в изучении языка Rust: от первых экспериментов и базового синтаксиса до асинхронности Tokio и разработки на микроконтроллерах ESP32.
 
-- **Статей:** 45
+- **Статей:** 46
 - **Каталог раздела для LLM:** `https://eagle2000.space/rust/llm.md`
 
 ### 🔹 [О фотографии](https://eagle2000.space/photography/llm.md)
@@ -55,6 +55,7 @@
 
 ## 🚀 Последние публикации:
 
+- [Итераторы в Rust: ленивая обработка данных без лишних аллокаций](https://eagle2000.space/rust/rust-iterators-deep-dive/llm.md) (2026-11-13) — *rust*
 - [Замыкания в Rust: функции с собственной памятью](https://eagle2000.space/rust/rust-closures/llm.md) (2026-11-05) — *rust*
 - [Погружение в Lifetimes (времена жизни) в Rust: работа с ссылками без ошибок и паники](https://eagle2000.space/rust/rust-lifetimes-deep-dive/llm.md) (2026-10-21) — *rust*
 - [Опыт важнее мегапикселей: Почему стоит изучить мануал к камере](https://eagle2000.space/photography/practice-and-gear/llm.md) (2026-10-21) — *photography*
@@ -79,5 +80,4 @@
 - [Циклы и диапазоны в Rust: loop, while и for на практике](https://eagle2000.space/rust/rust-loops/llm.md) (2026-07-31) — *rust*
 - [Условные конструкции и ветвление в Rust](https://eagle2000.space/rust/rust-conditionals/llm.md) (2026-07-31) — *rust*
 - [Основы композиции: Правило третей](https://eagle2000.space/photography/composition-basics/llm.md) (2026-07-31) — *photography*
-- [Магия кривых: Как убрать паразитные оттенки и сделать красивый тон](https://eagle2000.space/photography/curves-color-toning/llm.md) (2026-07-31) — *photography*
 

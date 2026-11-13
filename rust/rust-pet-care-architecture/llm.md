@@ -2,7 +2,7 @@
 
 > Итоговый архитектурный проект серии: проектируем многопоточную систему PetCare Hub. Объединяем RAII, Box, Arc/Mutex, Trait Objects, BinaryHeap, custom iterators и макросы.
 
-- **URL:** https://eagle2000.space/rust/rust-pet-care-architecture/
+- **URL:** http://192.168.0.13:1313/rust/rust-pet-care-architecture/
 - **Date:** 2026-08-09
 
 - **Tags:** rust, dev, architecture, smart-feeder, traits, concurrency, collections

@@ -2,7 +2,7 @@
 
 > Подробное практическое руководство по I/O в Rust: архитектура системных вызовов, BufRead, блокировка stdin().lock(), изолированное тестирование с std::io::Cursor, траектории ошибок .lines() и стандарты UNIX CLI.
 
-- **URL:** https://eagle2000.space/rust/rust-io-bufread-and-errors/
+- **URL:** http://192.168.0.13:1313/rust/rust-io-bufread-and-errors/
 - **Date:** 2026-08-12
 
 - **Tags:** rust, dev, io, bufread, stdin-lock, cursor, error-handling, exit-codes

@@ -2,7 +2,7 @@
 
 > Подробное практическое руководство по парсингу аргументов CLI и управлению ошибками в Rust: std::env::args(), синтаксис let-else, возврат Result<()> из main(), обогащение ошибок через anyhow context/with_context и макросы bail!/ensure!.
 
-- **URL:** https://eagle2000.space/rust/rust-cli-args-and-anyhow/
+- **URL:** http://192.168.0.13:1313/rust/rust-cli-args-and-anyhow/
 - **Date:** 2026-08-12
 
 - **Tags:** rust, dev, cli, anyhow, error-handling, let-else, args, context

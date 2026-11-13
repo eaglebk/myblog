@@ -1,0 +1,131 @@
+{
+  "title": "How a single <code>.next()</code> call pulls data through the chain",
+  "interval": 2600,
+  "code": [
+    "let data = [-1, 3, -5, 2];",
+    "let out: Vec<i32> = data",
+    "    .iter()",
+    "    .filter(|&&x| x > 0)",
+    "    .map(|&x| x * 2)",
+    "    .collect();"
+  ],
+  "nodes": [
+    {
+      "id": "collect",
+      "name": "collect()",
+      "role": "consumer",
+      "kind": "chips",
+      "chips": ["…"]
+    },
+    {
+      "id": "map",
+      "name": "map(x * 2)",
+      "role": "transforms",
+      "kind": "state",
+      "defaultState": "waiting"
+    },
+    {
+      "id": "filter",
+      "name": "filter(x > 0)",
+      "role": "filters",
+      "kind": "state",
+      "defaultState": "waiting"
+    },
+    {
+      "id": "iter",
+      "name": "slice::Iter",
+      "role": "source",
+      "kind": "chips",
+      "chips": ["-1", "3", "-5", "…"]
+    }
+  ],
+  "links": [
+    { "id": "cm", "downLabel": "↓ next()", "upLabel": "↑ Some(6)" },
+    { "id": "mf", "downLabel": "↓ next()", "upLabel": "↑ Some(&3)" },
+    { "id": "fi", "downLabel": "↓ next()", "upLabel": "↑ Some(&-1)" }
+  ],
+  "steps": [
+    {
+      "label": "collect → map",
+      "explain": "<code>collect()</code> asks for the first item by calling <code>.next()</code> on <code>map</code>. Nothing in memory has been touched yet.",
+      "lines": { "4": "active", "5": "active" },
+      "nodes": {
+        "collect": { "tone": "active" },
+        "map": { "tone": "active", "state": "calls next()" }
+      },
+      "arrows": {
+        "cm": { "dir": "down", "tone": "active" }
+      }
+    },
+    {
+      "label": "map → filter",
+      "explain": "<code>map</code> has no buffer of its own, so it immediately forwards <code>.next()</code> down to <code>filter</code>.",
+      "lines": { "3": "active", "4": "active" },
+      "nodes": {
+        "map": { "tone": "active", "state": "waits for filter" },
+        "filter": { "tone": "active", "state": "calls next()" }
+      },
+      "arrows": {
+        "mf": { "dir": "down", "tone": "active" }
+      }
+    },
+    {
+      "label": "filter → iter",
+      "explain": "<code>filter</code> calls <code>.next()</code> on <code>slice::Iter</code>. The iterator advances its pointer to the first element: <code>-1</code>.",
+      "lines": { "2": "active", "3": "active" },
+      "nodes": {
+        "map": { "state": "waits for filter" },
+        "filter": { "tone": "active", "state": "waits for iter" },
+        "iter": { "tone": "active", "chips": { "0": "current" } }
+      },
+      "arrows": {
+        "fi": { "dir": "down", "tone": "active" }
+      }
+    },
+    {
+      "label": "−1 rejected",
+      "explain": "<code>-1 &gt; 0</code> is false. <code>filter</code> drops <code>-1</code> and <strong>loops internally</strong> to call <code>iter.next()</code> for <code>3</code>. <code>map</code> and <code>collect()</code> stay asleep.",
+      "lines": { "2": "drop", "3": "drop" },
+      "nodes": {
+        "map": { "state": "idle" },
+        "filter": { "tone": "drop", "state": "-1 > 0 → false" },
+        "iter": { "tone": "drop", "chips": { "0": "rejected", "1": "current" } }
+      },
+      "arrows": {
+        "fi": [
+          { "dir": "up", "tone": "drop", "label": "↑ Some(&-1)" },
+          { "dir": "down", "tone": "active" }
+        ]
+      }
+    },
+    {
+      "label": "3 accepted",
+      "explain": "<code>slice::Iter</code> yields <code>Some(&amp;3)</code>. Since <code>3 &gt; 0</code> is true, <code>filter</code> passes it up to <code>map</code>.",
+      "lines": { "2": "ok", "3": "ok", "4": "ok" },
+      "nodes": {
+        "map": { "tone": "ok", "state": "got &3" },
+        "filter": { "tone": "ok", "state": "3 > 0 → true" },
+        "iter": { "tone": "ok", "chips": { "0": "rejected", "1": "accepted" } }
+      },
+      "arrows": {
+        "fi": { "dir": "up", "tone": "ok", "label": "↑ Some(&3)" },
+        "mf": { "dir": "up", "tone": "ok" }
+      }
+    },
+    {
+      "label": "6 collected",
+      "explain": "<code>map</code> computes <code>3 * 2 = 6</code> and returns <code>Some(6)</code> to <code>collect()</code>. The rest of the slice waits for the next <code>.next()</code>.",
+      "lines": { "4": "ok", "5": "ok" },
+      "nodes": {
+        "collect": { "tone": "ok", "chips": { "0": "accepted" }, "chipValues": { "0": "6" } },
+        "map": { "tone": "ok", "state": "3 * 2 = 6" },
+        "filter": { "state": "paused" },
+        "iter": { "chips": { "0": "rejected", "1": "accepted" } }
+      },
+      "arrows": {
+        "cm": { "dir": "up", "tone": "ok" }
+      }
+    }
+  ]
+}
+

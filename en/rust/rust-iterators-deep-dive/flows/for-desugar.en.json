@@ -1,0 +1,110 @@
+{
+  "title": "How a <code>for</code> loop runs inside <code>loop</code>",
+  "interval": 2600,
+  "code": [
+    "let mut iter = IntoIterator::into_iter([\"Alice\", \"Bob\"]);",
+    "loop {",
+    "    match iter.next() {",
+    "        Some(item) => println!(\"{item}\"),",
+    "        None => break,",
+    "    }",
+    "}"
+  ],
+  "nodes": [
+    {
+      "id": "loop",
+      "name": "loop { match ... }",
+      "role": "loop body",
+      "kind": "state",
+      "defaultState": "start"
+    },
+    {
+      "id": "iter",
+      "name": "iter.next()",
+      "role": "iterator",
+      "kind": "state",
+      "defaultState": "index 0"
+    },
+    {
+      "id": "vec",
+      "name": "names",
+      "role": "collection",
+      "kind": "chips",
+      "chips": ["Alice", "Bob"]
+    }
+  ],
+  "links": [
+    { "id": "li", "downLabel": "↓ iter.next()", "upLabel": "↑ Option" },
+    { "id": "iv", "downLabel": "↓ advance", "upLabel": "↑ item" }
+  ],
+  "steps": [
+    {
+      "label": "into_iter()",
+      "explain": "Before entering <code>loop</code>, Rust calls <code>IntoIterator::into_iter</code>: the collection becomes an iterator with the cursor at the first item.",
+      "lines": { "0": "active" },
+      "nodes": {
+        "loop": { "state": "enter loop" },
+        "iter": { "tone": "active", "state": "ready (index 0)" },
+        "vec": { "tone": "active", "chips": { "0": "current" } }
+      },
+      "arrows": {
+        "iv": { "dir": "down", "tone": "active", "label": "↓ init" }
+      }
+    },
+    {
+      "label": "Turn 1: Alice",
+      "explain": "<code>loop</code> calls <code>iter.next()</code>, receives <code>Some(\"Alice\")</code>, and runs the <code>println!</code> branch.",
+      "lines": { "1": "ok", "2": "ok", "3": "ok" },
+      "nodes": {
+        "loop": { "tone": "ok", "state": "print \"Alice\"" },
+        "iter": { "tone": "ok", "state": "index 0 → 1" },
+        "vec": { "tone": "ok", "chips": { "0": "accepted", "1": "current" } }
+      },
+      "arrows": {
+        "li": { "dir": "up", "tone": "ok", "label": "↑ Some(\"Alice\")" },
+        "iv": { "dir": "up", "tone": "ok", "label": "↑ \"Alice\"" }
+      }
+    },
+    {
+      "label": "Turn 2: Bob",
+      "explain": "Next iteration of <code>loop</code>: <code>iter.next()</code> advances the cursor and returns <code>Some(\"Bob\")</code>.",
+      "lines": { "1": "ok", "2": "ok", "3": "ok" },
+      "nodes": {
+        "loop": { "tone": "ok", "state": "print \"Bob\"" },
+        "iter": { "tone": "ok", "state": "index 1 → end" },
+        "vec": { "tone": "ok", "chips": { "0": "accepted", "1": "accepted" } }
+      },
+      "arrows": {
+        "li": { "dir": "up", "tone": "ok", "label": "↑ Some(\"Bob\")" },
+        "iv": { "dir": "up", "tone": "ok", "label": "↑ \"Bob\"" }
+      }
+    },
+    {
+      "label": "End: None",
+      "explain": "On the third turn, <code>loop</code> calls <code>iter.next()</code> again, but no items remain: the iterator returns <code>None</code>.",
+      "lines": { "2": "drop", "4": "drop" },
+      "nodes": {
+        "loop": { "tone": "drop", "state": "got None" },
+        "iter": { "tone": "drop", "state": "exhausted" },
+        "vec": { "chips": { "0": "accepted", "1": "accepted" } }
+      },
+      "arrows": {
+        "li": [
+          { "dir": "down", "tone": "active" },
+          { "dir": "up", "tone": "drop", "label": "↑ None" }
+        ]
+      }
+    },
+    {
+      "label": "Exit: break",
+      "explain": "The <code>None =&gt; break</code> arm matches and exits <code>loop</code>. No manual bounds or length checks needed.",
+      "lines": { "4": "drop", "5": "drop", "6": "drop" },
+      "nodes": {
+        "loop": { "tone": "drop", "state": "break (exit)" },
+        "iter": { "state": "done" },
+        "vec": { "chips": { "0": "accepted", "1": "accepted" } }
+      }
+    }
+  ]
+}
+

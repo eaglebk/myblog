@@ -2,7 +2,7 @@
 
 > Изучаем Unsafe Rust и FFI: 5 суперспособностей unsafe, работа с сырыми указателями *const и *mut, Неопределенное поведение (UB), Miri и интеграция с C через extern C.
 
-- **URL:** https://eagle2000.space/rust/rust-unsafe-and-ffi/
+- **URL:** http://192.168.0.13:1313/rust/rust-unsafe-and-ffi/
 - **Date:** 2026-08-11
 
 - **Tags:** rust, dev, unsafe, ffi, raw-pointers, c-bindings, miri
