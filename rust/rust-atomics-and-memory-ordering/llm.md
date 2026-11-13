@@ -2,7 +2,7 @@
 
 > Глубокое погружение в атомарные типы std::sync::atomic (AtomicBool, AtomicUsize, AtomicPtr), операции fetch_add, compare_exchange и барьеры памяти Memory Ordering (Relaxed, Acquire, Release, SeqCst).
 
-- **URL:** http://192.168.0.13:1313/rust/rust-atomics-and-memory-ordering/
+- **URL:** http://localhost:1313/rust/rust-atomics-and-memory-ordering/
 - **Date:** 2026-08-11
 
 - **Tags:** rust, dev, atomics, memory-ordering, relaxed, acquire-release, concurrency, lock-free

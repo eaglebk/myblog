@@ -2,7 +2,7 @@
 
 > Подробный разбор атрибутов и условной компиляции в Rust: внешние и внутренние атрибуты, #[cfg], макрос cfg!, оптимизации #[inline], линтер #[allow] и C-ABI разметка #[repr(C)].
 
-- **URL:** http://192.168.0.13:1313/rust/rust-attributes-and-cfg/
+- **URL:** http://localhost:1313/rust/rust-attributes-and-cfg/
 - **Date:** 2026-08-10
 
 - **Tags:** rust, dev, attributes, cfg, inline, lints, repr-c, ffi

@@ -2,7 +2,7 @@
 
 > Первая статья серии по разработке утилит и библиотек в Rust: архитектура Crate, Data-Oriented API, разделение lib.rs/main.rs, техника Bebugging и самодокументируемые тесты.
 
-- **URL:** http://192.168.0.13:1313/rust/rust-crate-design-and-testing/
+- **URL:** http://localhost:1313/rust/rust-crate-design-and-testing/
 - **Date:** 2026-08-12
 
 - **Tags:** rust, dev, crate-architecture, data-oriented-api, unit-testing, bebugging, testdox

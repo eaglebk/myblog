@@ -2,7 +2,7 @@
 
 > Подробное практическое руководство по работе с файловой системой и подготовке пакетов к публикации в Rust: трансляция флагов File::options(), разница Path vs PathBuf, абстракция impl AsRef<Path>, изолированное тестирование с tempfile и стандарты документации crates.io.
 
-- **URL:** http://192.168.0.13:1313/rust/rust-files-tempfile-and-docs/
+- **URL:** http://localhost:1313/rust/rust-files-tempfile-and-docs/
 - **Date:** 2026-08-13
 
 - **Tags:** rust, dev, files, builder-pattern, path, pathbuf, tempfile, rustdoc, crates-io

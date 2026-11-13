@@ -2,7 +2,7 @@
 
 > История экспедиции экипажа Vectoria — наглядное объяснение примитивов синхронизации в Tokio: Semaphore для ограничения мест, Barrier для совместного теплового удара, и Mutex для безопасного изменения здоровья врага.
 
-- **URL:** http://192.168.0.13:1313/rust/tokio-sync-primitives/
+- **URL:** http://localhost:1313/rust/tokio-sync-primitives/
 - **Date:** 2026-08-14
 
 - **Tags:** rust, dev, tokio

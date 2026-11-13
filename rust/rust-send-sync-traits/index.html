@@ -39,7 +39,7 @@
   
   
   
-  <link rel="canonical" href="http://192.168.0.13:1313/rust/rust-send-sync-traits/">
+  <link rel="canonical" href="http://localhost:1313/rust/rust-send-sync-traits/">
   
   
 
@@ -48,7 +48,7 @@
   
 
   
-  <meta property="og:url" content="http://192.168.0.13:1313/rust/rust-send-sync-traits/">
+  <meta property="og:url" content="http://localhost:1313/rust/rust-send-sync-traits/">
 	<meta property="og:site_name" content="Eagle blog">
 	<meta property="og:title" content="Параллелизм на уровне типов: Всё о маркерных типажах Send и Sync в Rust">
 	<meta property="og:description" content="Подробный разбор маркерных типажей Send и Sync в Rust: соотношение T: Sync &lt;=&gt; &amp;T: Send, почему Rc не поток-безопасен, разница между Send и Sync для RefCell, и требования thread::spawn.">
@@ -63,18 +63,18 @@
 		<meta property="article:tag" content="Sync">
 		<meta property="article:tag" content="Multithreading">
 		<meta property="article:tag" content="Concurrency">
-		<meta property="og:image" content="http://192.168.0.13:1313/rust/rust-send-sync-traits/featured.png">
-			<meta property="og:see_also" content="http://192.168.0.13:1313/rust/rust-iterators-deep-dive/">
-			<meta property="og:see_also" content="http://192.168.0.13:1313/rust/rust-closures/">
-			<meta property="og:see_also" content="http://192.168.0.13:1313/rust/rust-lifetimes-deep-dive/">
-			<meta property="og:see_also" content="http://192.168.0.13:1313/rust/rust-pattern-matching-deep-dive/">
-			<meta property="og:see_also" content="http://192.168.0.13:1313/rust/rust-collections-overview/">
-			<meta property="og:see_also" content="http://192.168.0.13:1313/rust/rust-interior-mutability/">
-			<meta property="og:see_also" content="http://192.168.0.13:1313/rust/rust-advanced-traits/">
+		<meta property="og:image" content="http://localhost:1313/rust/rust-send-sync-traits/featured.png">
+			<meta property="og:see_also" content="http://localhost:1313/rust/rust-iterators-deep-dive/">
+			<meta property="og:see_also" content="http://localhost:1313/rust/rust-closures/">
+			<meta property="og:see_also" content="http://localhost:1313/rust/rust-lifetimes-deep-dive/">
+			<meta property="og:see_also" content="http://localhost:1313/rust/rust-pattern-matching-deep-dive/">
+			<meta property="og:see_also" content="http://localhost:1313/rust/rust-collections-overview/">
+			<meta property="og:see_also" content="http://localhost:1313/rust/rust-interior-mutability/">
+			<meta property="og:see_also" content="http://localhost:1313/rust/rust-advanced-traits/">
 
   
 	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:image" content="http://192.168.0.13:1313/rust/rust-send-sync-traits/featured.png">
+	<meta name="twitter:image" content="http://localhost:1313/rust/rust-send-sync-traits/featured.png">
 	<meta name="twitter:title" content="Параллелизм на уровне типов: Всё о маркерных типажах Send и Sync в Rust">
 	<meta name="twitter:description" content="Подробный разбор маркерных типажей Send и Sync в Rust: соотношение T: Sync &lt;=&gt; &amp;T: Send, почему Rc не поток-безопасен, разница между Send и Sync для RefCell, и требования thread::spawn.">
 
@@ -273,7 +273,7 @@
     "headline": "Параллелизм на уровне типов: Всё о маркерных типажах Send и Sync в Rust",
     "description": "Подробный разбор маркерных типажей Send и Sync в Rust: соотношение T: Sync \u003c=\u003e \u0026T: Send, почему Rc не поток-безопасен, разница между Send и Sync для RefCell, и требования thread::spawn.",
     "inLanguage": "ru",
-    "url" : "http://192.168.0.13:1313/rust/rust-send-sync-traits/",
+    "url" : "http://localhost:1313/rust/rust-send-sync-traits/",
     "author" : {
       "@type": "Person",
       "name": ""
@@ -286,7 +286,7 @@
     
     "keywords": ["rust","dev","send","sync","multithreading","concurrency","rc","refcell"],
     
-    "mainEntityOfPage": "http://192.168.0.13:1313/rust/rust-send-sync-traits/",
+    "mainEntityOfPage": "http://localhost:1313/rust/rust-send-sync-traits/",
     "wordCount": "1096"
   },
   {
@@ -296,12 +296,12 @@
             "@type": "ListItem",
             "position":  1 ,
             "name": "Rust",
-            "item": "http://192.168.0.13:1313/rust/"
+            "item": "http://localhost:1313/rust/"
           },{
         "@type": "ListItem",
         "position":  2 ,
         "name": "Параллелизм на уровне типов: Всё о маркерных типажах Send и Sync в Rust",
-        "item": "http://192.168.0.13:1313/rust/rust-send-sync-traits/"
+        "item": "http://localhost:1313/rust/rust-send-sync-traits/"
       }
     ]
   }]
@@ -320,7 +320,7 @@
     
 
 
-<link rel="alternate" type="text/markdown" href="http://192.168.0.13:1313/rust/rust-send-sync-traits/llm.md" title="LLM Markdown" />
+<link rel="alternate" type="text/markdown" href="http://localhost:1313/rust/rust-send-sync-traits/llm.md" title="LLM Markdown" />
 
 
   
@@ -3100,7 +3100,7 @@
 <p>Попробуйте запустить код и проверить поведение <code>Send</code> и <code>Sync</code> в интерактивном блоке ниже:</p>
 
 
-  <div id="a9b03f75f3ee4b29171c4e865b44c21a" class="rust-slides bg-gray-900 rounded-lg overflow-hidden my-8">
+  <div id="50ccbb16bf488ef5ecc89b8d915a005b" class="rust-slides bg-gray-900 rounded-lg overflow-hidden my-8">
     
     <div class="flex justify-between items-center bg-gray-800 px-4 py-2">
       <span class="font-mono text-sm text-white">Маркерные типажи Send и Sync</span>
@@ -3469,7 +3469,7 @@
 <p>Ниже представлен пошаговый пример работы <code>Arc</code> и <code>Mutex</code>:</p>
 
 
-  <div id="3d40bab12003d0e404f994c9127ad37e" class="rust-slides bg-gray-900 rounded-lg overflow-hidden my-8">
+  <div id="ad4e55e7eada232bdc59bf1dee7c7bf2" class="rust-slides bg-gray-900 rounded-lg overflow-hidden my-8">
     
     <div class="flex justify-between items-center bg-gray-800 px-4 py-2">
       <span class="font-mono text-sm text-white">Потокобезопасность Rc, RefCell, Arc и Mutex</span>
@@ -3782,7 +3782,7 @@
 <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
 <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
 
-<div id="quiz-1794519764757965000" class="quiz-mount" data-lang="ru" data-name="Маркерные типажи Send и Sync" data-firebase='{
+<div id="quiz-1794566320134674000" class="quiz-mount" data-lang="ru" data-name="Маркерные типажи Send и Sync" data-firebase='{
   "apiKey": "AIzaSyDpJ8bNxx9MvSeu9PsXzk3H37AeYQjBv4M",
   "authDomain": "eagleblog-b0286.firebaseapp.com",
   "projectId": "eagleblog-b0286",
@@ -3791,14 +3791,14 @@
   "appId": "1:942835714160:web:7ba3682059f8179a9d0cb5",
   "measurementId": "G-1K8G7FW77W"
 }'></div>
-<script type="application/json" id="quiz-1794519764757965000-srcs">"[\"/rust/rust-send-sync-traits/quizzes/send_sync.json\"]"</script>
+<script type="application/json" id="quiz-1794566320134674000-srcs">"[\"/rust/rust-send-sync-traits/quizzes/send_sync.json\"]"</script>
 
 <script type="module">
   import { mountQuizWidget } from "\/js\/quiz-widget.min.js";
 
   if (typeof window.firebase !== "undefined") {
     if (!window.firebase.apps.length) {
-      const cfg = JSON.parse(document.getElementById("quiz-1794519764757965000").dataset.firebase || "{}");
+      const cfg = JSON.parse(document.getElementById("quiz-1794566320134674000").dataset.firebase || "{}");
       if (cfg.apiKey) {
         window.firebase.initializeApp(cfg);
         window.db = window.firebase.firestore();
@@ -3807,8 +3807,8 @@
       window.db = window.firebase.firestore();
     }
   }
-  const mount = document.getElementById("quiz-1794519764757965000");
-  const json  = document.getElementById("quiz-1794519764757965000-srcs").textContent;
+  const mount = document.getElementById("quiz-1794566320134674000");
+  const json  = document.getElementById("quiz-1794566320134674000-srcs").textContent;
   const srcs  = JSON.parse(json);
   const cfg   = JSON.parse(mount.dataset.firebase || "{}");
   const hljsThemeDark = "\u0022github-dark-dimmed\u0022";
@@ -3902,7 +3902,7 @@
 <div class="share-bar print:hidden"
      aria-label="Поделиться статьёй"
      data-share-title="Параллелизм на уровне типов: Всё о маркерных типажах Send и Sync в Rust"
-     data-share-url="http://192.168.0.13:1313/rust/rust-send-sync-traits/"
+     data-share-url="http://localhost:1313/rust/rust-send-sync-traits/"
      data-share-email-body="Прочитал статью «{title}»:
 {url}">
 

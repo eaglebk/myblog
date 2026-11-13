@@ -2,7 +2,7 @@
 
 > Практический гайд по сборке IoT-термометра на ESP32 с Rust и HTTP-сервером. Разбираем enum, Option, Result, traits, no_std и Type Layout на настоящем железе.
 
-- **URL:** http://192.168.0.13:1313/rust/esp32-rust-thermometer/
+- **URL:** http://localhost:1313/rust/esp32-rust-thermometer/
 - **Date:** 2026-08-10
 
 - **Tags:** rust, esp32, embedded, iot, web

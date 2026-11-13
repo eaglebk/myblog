@@ -2,7 +2,7 @@
 
 > Exploring the legendary Rayon crate: how changing a single line from .iter() to .par_iter() parallelizes computation across all CPU cores using Work-Stealing.
 
-- **URL:** http://192.168.0.13:1313/en/rust/crate-of-the-day-rayon/
+- **URL:** http://localhost:1313/en/rust/crate-of-the-day-rayon/
 - **Date:** 2026-08-15
 
 - **Tags:** rust, crate-of-the-day, concurrency, performance

@@ -5,22 +5,22 @@
   xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>Attributes на Eagle blog</title>
-    <link>http://192.168.0.13:1313/tags/attributes/</link>
+    <link>http://localhost:1313/tags/attributes/</link>
     <description>Свежие статьи и публикации Eagle blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru</language>
     <lastBuildDate>Mon, 10 Aug 2026 10:00:00 +0300</lastBuildDate>
     
-    <atom:link href="http://192.168.0.13:1313/tags/attributes/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/attributes/index.xml" rel="self" type="application/rss+xml" />
     
     
     
     
     <item>
       <title>Итераторы в Rust: ленивая обработка данных без лишних аллокаций</title>
-      <link>http://192.168.0.13:1313/rust/rust-iterators-deep-dive/</link>
-      <pubDate>Thu, 12 Nov 2026 22:46:00 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/rust/rust-iterators-deep-dive/</guid>
+      <link>http://localhost:1313/rust/rust-iterators-deep-dive/</link>
+      <pubDate>Fri, 13 Nov 2026 13:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/rust/rust-iterators-deep-dive/</guid>
       
       <description>Подробный разбор итераторов в Rust: устройство цикла for и IntoIterator, разница между .iter(), .iter_mut() и .into_iter(), ленивые цепочки, собственный генератор пагинации и оптимизации LLVM.</description>
       
@@ -46,7 +46,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/rust-iterators-deep-dive/featured.png" medium="image"/>
+      <media:content url="http://localhost:1313/rust/rust-iterators-deep-dive/featured.png" medium="image"/>
       
     </item>
     
@@ -55,9 +55,9 @@
     
     <item>
       <title>Замыкания в Rust: функции с собственной памятью</title>
-      <link>http://192.168.0.13:1313/rust/rust-closures/</link>
+      <link>http://localhost:1313/rust/rust-closures/</link>
       <pubDate>Thu, 05 Nov 2026 10:00:00 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/rust/rust-closures/</guid>
+      <guid>http://localhost:1313/rust/rust-closures/</guid>
       
       <description>Разбираем указатели на функции и замыкания в Rust: захват переменных из окружения, разница между Fn, FnMut и FnOnce, во что компилятор разворачивает лямбды и зачем нужен синтаксис for&lt;&#39;a&gt;.</description>
       
@@ -81,7 +81,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/rust-closures/featured.png" medium="image"/>
+      <media:content url="http://localhost:1313/rust/rust-closures/featured.png" medium="image"/>
       
     </item>
     
@@ -90,9 +90,9 @@
     
     <item>
       <title>Погружение в Lifetimes (времена жизни) в Rust: работа с ссылками без ошибок и паники</title>
-      <link>http://192.168.0.13:1313/rust/rust-lifetimes-deep-dive/</link>
+      <link>http://localhost:1313/rust/rust-lifetimes-deep-dive/</link>
       <pubDate>Wed, 21 Oct 2026 13:05:10 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/rust/rust-lifetimes-deep-dive/</guid>
+      <guid>http://localhost:1313/rust/rust-lifetimes-deep-dive/</guid>
       
       <description>Разбираем времена жизни (Lifetimes) в Rust: как компилятор выводит их сам (Lifetime Elision), как хранить ссылки в структурах, где нужна память &#39;static, связывание for&lt;&#39;a&gt; и вариантность ссылок.</description>
       
@@ -122,7 +122,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/rust-lifetimes-deep-dive/featured.png" medium="image"/>
+      <media:content url="http://localhost:1313/rust/rust-lifetimes-deep-dive/featured.png" medium="image"/>
       
     </item>
     
@@ -131,9 +131,9 @@
     
     <item>
       <title>Опыт важнее мегапикселей: Почему стоит изучить мануал к камере</title>
-      <link>http://192.168.0.13:1313/photography/practice-and-gear/</link>
+      <link>http://localhost:1313/photography/practice-and-gear/</link>
       <pubDate>Wed, 21 Oct 2026 13:04:58 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/photography/practice-and-gear/</guid>
+      <guid>http://localhost:1313/photography/practice-and-gear/</guid>
       
       <description>Почему знание мануала своей камеры ценнее дорогой оптики? Практические советы фотографа по настройкам, композиции и съемке для создания сочных кадров.</description>
       
@@ -155,7 +155,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/photography/practice-and-gear/featured.png" medium="image"/>
+      <media:content url="http://localhost:1313/photography/practice-and-gear/featured.png" medium="image"/>
       
     </item>
     
@@ -164,9 +164,9 @@
     
     <item>
       <title>Rust: тонкости Pattern Matching - деструктуризация, bindings и guards</title>
-      <link>http://192.168.0.13:1313/rust/rust-pattern-matching-deep-dive/</link>
+      <link>http://localhost:1313/rust/rust-pattern-matching-deep-dive/</link>
       <pubDate>Mon, 05 Oct 2026 15:35:19 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/rust/rust-pattern-matching-deep-dive/</guid>
+      <guid>http://localhost:1313/rust/rust-pattern-matching-deep-dive/</guid>
       
       <description>Изучаем как работает сопоставление с образцом Pattern Matching в Rust: exhaustiveness, деструктуризация, @-binding, slice patterns и guards на примерах реальных проектов</description>
       
@@ -196,7 +196,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/rust-pattern-matching-deep-dive/featured.png" medium="image"/>
+      <media:content url="http://localhost:1313/rust/rust-pattern-matching-deep-dive/featured.png" medium="image"/>
       
     </item>
     
@@ -205,9 +205,9 @@
     
     <item>
       <title>Использование и применение std::collections в Rust: BTreeMap, HashSet, BinaryHeap и VecDeque</title>
-      <link>http://192.168.0.13:1313/rust/rust-collections-overview/</link>
+      <link>http://localhost:1313/rust/rust-collections-overview/</link>
       <pubDate>Fri, 18 Sep 2026 12:44:50 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/rust/rust-collections-overview/</guid>
+      <guid>http://localhost:1313/rust/rust-collections-overview/</guid>
       
       <description>Разбираем коллекции в Rust: когда применять VecDeque, чем BTreeMap отличается от HashMap и почему LinkedList почти никогда не нужен.</description>
       
@@ -235,7 +235,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/rust-collections-overview/featured.png" medium="image"/>
+      <media:content url="http://localhost:1313/rust/rust-collections-overview/featured.png" medium="image"/>
       
     </item>
     
@@ -244,9 +244,9 @@
     
     <item>
       <title>Интерактивная дорожная карта Rust</title>
-      <link>http://192.168.0.13:1313/rust/roadmap/</link>
+      <link>http://localhost:1313/rust/roadmap/</link>
       <pubDate>Wed, 16 Sep 2026 12:00:00 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/rust/roadmap/</guid>
+      <guid>http://localhost:1313/rust/roadmap/</guid>
       
       <description>Пошаговая интерактивная дорожная карта изучения языка Rust: от базового синтаксиса до асинхронных систем и микроконтроллеров с живым отслеживанием прогресса.</description>
       
@@ -281,9 +281,9 @@
     
     <item>
       <title>Внутренняя мутабельность в Rust: паттерн использования Cell, RefCell</title>
-      <link>http://192.168.0.13:1313/rust/rust-interior-mutability/</link>
+      <link>http://localhost:1313/rust/rust-interior-mutability/</link>
       <pubDate>Wed, 09 Sep 2026 08:45:32 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/rust/rust-interior-mutability/</guid>
+      <guid>http://localhost:1313/rust/rust-interior-mutability/</guid>
       
       <description>Разбираемся с паттерном внутренней мутабельности (Interior Mutability) в Rust: философия работы, контейнеры Cell и RefCell, отличие от унаследованной мутабельности.</description>
       
@@ -311,7 +311,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/rust-interior-mutability/featured.png" medium="image"/>
+      <media:content url="http://localhost:1313/rust/rust-interior-mutability/featured.png" medium="image"/>
       
     </item>
     
@@ -320,9 +320,9 @@
     
     <item>
       <title>Обновление главной страницы и дизайна карточек статей</title>
-      <link>http://192.168.0.13:1313/about-all/blog-design-update/</link>
+      <link>http://localhost:1313/about-all/blog-design-update/</link>
       <pubDate>Tue, 08 Sep 2026 21:37:02 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/about-all/blog-design-update/</guid>
+      <guid>http://localhost:1313/about-all/blog-design-update/</guid>
       
       <description>Небольшое обновление интерфейса EagleBlog: обновил дизайн карточек статей и главную страницу. Теперь последняя публикация сразу привлекает к себе внимание.</description>
       
@@ -342,7 +342,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/about-all/blog-design-update/featured.png" medium="image"/>
+      <media:content url="http://localhost:1313/about-all/blog-design-update/featured.png" medium="image"/>
       
     </item>
     
@@ -351,9 +351,9 @@
     
     <item>
       <title>Как использовать монопод правильно: Секреты стабильного кадра</title>
-      <link>http://192.168.0.13:1313/photography/monopod-guide/</link>
+      <link>http://localhost:1313/photography/monopod-guide/</link>
       <pubDate>Mon, 07 Sep 2026 08:59:36 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/photography/monopod-guide/</guid>
+      <guid>http://localhost:1313/photography/monopod-guide/</guid>
       
       <description>Разбор техники работы с моноподом (одноногим штативом) в фотографии и видео: стойки, работа в толпе, нестандартные ракурсы и сравнение со стедикамами.</description>
       
@@ -379,7 +379,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/photography/monopod-guide/featured.png" medium="image"/>
+      <media:content url="http://localhost:1313/photography/monopod-guide/featured.png" medium="image"/>
       
     </item>
     
@@ -388,9 +388,9 @@
     
     <item>
       <title>От мобильной разработки к бэкенду на Rust: как ИИ изменил мой выбор языка</title>
-      <link>http://192.168.0.13:1313/rust/go-to-rust-migration-story/</link>
+      <link>http://localhost:1313/rust/go-to-rust-migration-story/</link>
       <pubDate>Tue, 01 Sep 2026 13:45:00 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/rust/go-to-rust-migration-story/</guid>
+      <guid>http://localhost:1313/rust/go-to-rust-migration-story/</guid>
       
       <description>История мобильного разработчика, создававшего бэкенды на Java и Go, и почему в эпоху ИИ компилятор Rust стал идеальным ревьюером.</description>
       
@@ -418,7 +418,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/go-to-rust-migration-story/featured.png" medium="image"/>
+      <media:content url="http://localhost:1313/rust/go-to-rust-migration-story/featured.png" medium="image"/>
       
     </item>
     
@@ -427,9 +427,9 @@
     
     <item>
       <title>Миграция с Go на Rust: архитектура, ошибки и компилятор в связке с AI</title>
-      <link>http://192.168.0.13:1313/rust/go-to-rust-migration-in-ai-era/</link>
+      <link>http://localhost:1313/rust/go-to-rust-migration-in-ai-era/</link>
       <pubDate>Mon, 31 Aug 2026 13:10:00 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/rust/go-to-rust-migration-in-ai-era/</guid>
+      <guid>http://localhost:1313/rust/go-to-rust-migration-in-ai-era/</guid>
       
       <description>Сравнение Go и Rust для бэкенда: обработка ошибок, строгая типизация, Typestate и специфика генерации кода нейросетями.</description>
       
@@ -455,7 +455,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/go-to-rust-migration-in-ai-era/featured.png" medium="image"/>
+      <media:content url="http://localhost:1313/rust/go-to-rust-migration-in-ai-era/featured.png" medium="image"/>
       
     </item>
     
@@ -464,9 +464,9 @@
     
     <item>
       <title>Tauri v2 Mobile против Flutter: Сравниваем фреймворки на примере реальной игры</title>
-      <link>http://192.168.0.13:1313/til/mobile/tauri-v2-vs-flutter-benchmark/</link>
+      <link>http://localhost:1313/til/mobile/tauri-v2-vs-flutter-benchmark/</link>
       <pubDate>Tue, 18 Aug 2026 16:00:00 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/til/mobile/tauri-v2-vs-flutter-benchmark/</guid>
+      <guid>http://localhost:1313/til/mobile/tauri-v2-vs-flutter-benchmark/</guid>
       
       <description>Разработал одну и ту же мобильную аркадную игру на Tauri 2.0 (Rust backend + React UI) и Flutter (Cubit). Подробный разбор архитектуры, переноса логики в Rust, замеры веса APK, памяти и задержек.</description>
       
@@ -505,9 +505,9 @@
     
     <item>
       <title>Продвинутые типажи в Rust: ассоциированные типы, супертрейты и blanket-реализации</title>
-      <link>http://192.168.0.13:1313/rust/rust-advanced-traits/</link>
+      <link>http://localhost:1313/rust/rust-advanced-traits/</link>
       <pubDate>Tue, 18 Aug 2026 10:00:00 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/rust/rust-advanced-traits/</guid>
+      <guid>http://localhost:1313/rust/rust-advanced-traits/</guid>
       
       <description>Глубокое погружение в продвинутые возможности типажей Rust: ассоциированные типы type Item, ассоциированные константы, синтаксис ::method, супертрейты и blanket-реализации.</description>
       
@@ -537,7 +537,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/rust-advanced-traits/featured.png" medium="image"/>
+      <media:content url="http://localhost:1313/rust/rust-advanced-traits/featured.png" medium="image"/>
       
     </item>
     
@@ -546,9 +546,9 @@
     
     <item>
       <title>Дайджест мобильной разработки: Релиз Flutter 3.47 &amp; Dart 3.13, 5 лет Compose, безопасность и утилиты</title>
-      <link>http://192.168.0.13:1313/til/mobile/mobile-dev-digest-week-33/</link>
+      <link>http://localhost:1313/til/mobile/mobile-dev-digest-week-33/</link>
       <pubDate>Mon, 17 Aug 2026 10:00:00 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/til/mobile/mobile-dev-digest-week-33/</guid>
+      <guid>http://localhost:1313/til/mobile/mobile-dev-digest-week-33/</guid>
       
       <description>Подробный дайджест мобильной разработки: релизы Flutter 3.47 и Dart 3.13, 5 лет Jetpack Compose, правила безопасности Semgrep, гайды Apple по промо в App Store и open-source утилиты.</description>
       
@@ -580,7 +580,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/til/mobile/mobile-dev-digest-week-33/featured.png" medium="image"/>
+      <media:content url="http://localhost:1313/til/mobile/mobile-dev-digest-week-33/featured.png" medium="image"/>
       
     </item>
     
@@ -589,9 +589,9 @@
     
     <item>
       <title>Крейт дня: Strum - автоматический перебор и конвертация enum в Rust на примере esp-generate</title>
-      <link>http://192.168.0.13:1313/rust/crate-of-the-day-strum/</link>
+      <link>http://localhost:1313/rust/crate-of-the-day-strum/</link>
       <pubDate>Sun, 16 Aug 2026 17:00:00 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/rust/crate-of-the-day-strum/</guid>
+      <guid>http://localhost:1313/rust/crate-of-the-day-strum/</guid>
       
       <description>Разбираем популярный крейт strum: как итерироваться по вариантам enum, конвертировать enum в строки и обратно на реальном примере из инструмента esp-generate.</description>
       
@@ -617,7 +617,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/crate-of-the-day-strum/featured.png" medium="image"/>
+      <media:content url="http://localhost:1313/rust/crate-of-the-day-strum/featured.png" medium="image"/>
       
     </item>
     
@@ -626,9 +626,9 @@
     
     <item>
       <title>Крейт дня: Rayon - параллельные вычисления в одну строку</title>
-      <link>http://192.168.0.13:1313/rust/crate-of-the-day-rayon/</link>
+      <link>http://localhost:1313/rust/crate-of-the-day-rayon/</link>
       <pubDate>Sat, 15 Aug 2026 10:00:00 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/rust/crate-of-the-day-rayon/</guid>
+      <guid>http://localhost:1313/rust/crate-of-the-day-rayon/</guid>
       
       <description>Разбираем легендарный крейт Rayon: как замена всего одной строчки .iter() на .par_iter() распараллеливает вычисления по всем ядрам процессора с балансировкой Work-Stealing.</description>
       
@@ -652,7 +652,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/crate-of-the-day-rayon/featured.png" medium="image"/>
+      <media:content url="http://localhost:1313/rust/crate-of-the-day-rayon/featured.png" medium="image"/>
       
     </item>
     
@@ -661,9 +661,9 @@
     
     <item>
       <title>Трейт-объекты: как работает динамический полиморфизм в Rust</title>
-      <link>http://192.168.0.13:1313/rust/rust-dyn-traits/</link>
+      <link>http://localhost:1313/rust/rust-dyn-traits/</link>
       <pubDate>Fri, 14 Aug 2026 12:22:25 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/rust/rust-dyn-traits/</guid>
+      <guid>http://localhost:1313/rust/rust-dyn-traits/</guid>
       
       <description>Разбираемся простыми словами, как устроены трейт-объекты (dyn Trait) в Rust: зачем нужен двойной указатель, как работает таблица методов vtable и какие правила Object Safety нужно знать на практике.</description>
       
@@ -691,7 +691,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/rust-dyn-traits/featured.png" medium="image"/>
+      <media:content url="http://localhost:1313/rust/rust-dyn-traits/featured.png" medium="image"/>
       
     </item>
     
@@ -700,9 +700,9 @@
     
     <item>
       <title>Tokio: искусство синхронизации. Как победить великана с помощью Semaphore, Barrier и Mutex</title>
-      <link>http://192.168.0.13:1313/rust/tokio-sync-primitives/</link>
+      <link>http://localhost:1313/rust/tokio-sync-primitives/</link>
       <pubDate>Fri, 14 Aug 2026 10:00:00 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/rust/tokio-sync-primitives/</guid>
+      <guid>http://localhost:1313/rust/tokio-sync-primitives/</guid>
       
       <description>История экспедиции экипажа Vectoria — наглядное объяснение примитивов синхронизации в Tokio: Semaphore для ограничения мест, Barrier для совместного теплового удара, и Mutex для безопасного изменения здоровья врага.</description>
       
@@ -724,7 +724,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/tokio-sync-primitives/featured.png" medium="image"/>
+      <media:content url="http://localhost:1313/rust/tokio-sync-primitives/featured.png" medium="image"/>
       
     </item>
     
@@ -733,9 +733,9 @@
     
     <item>
       <title>Tokio: как отправить и принять множество событий</title>
-      <link>http://192.168.0.13:1313/rust/tokio-kak-otpravit-i-prinyat-mnozhestvo-sobytij/</link>
+      <link>http://localhost:1313/rust/tokio-kak-otpravit-i-prinyat-mnozhestvo-sobytij/</link>
       <pubDate>Fri, 14 Aug 2026 10:00:00 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/rust/tokio-kak-otpravit-i-prinyat-mnozhestvo-sobytij/</guid>
+      <guid>http://localhost:1313/rust/tokio-kak-otpravit-i-prinyat-mnozhestvo-sobytij/</guid>
       
       <description>Продолжение приключений экипажа Vectoria — разбор способов отправки и обработки множества событий в Tokio: использование макроса tokio::select!, широковещательных каналов broadcast и динамического пула задач с помощью JoinSet.</description>
       
@@ -755,7 +755,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/tokio-kak-otpravit-i-prinyat-mnozhestvo-sobytij/featured.png" medium="image"/>
+      <media:content url="http://localhost:1313/rust/tokio-kak-otpravit-i-prinyat-mnozhestvo-sobytij/featured.png" medium="image"/>
       
     </item>
     
@@ -764,9 +764,9 @@
     
     <item>
       <title>Каналы в Rust при поддержке Tokio</title>
-      <link>http://192.168.0.13:1313/rust/rust-tokio-channels/</link>
+      <link>http://localhost:1313/rust/rust-tokio-channels/</link>
       <pubDate>Fri, 14 Aug 2026 10:00:00 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/rust/rust-tokio-channels/</guid>
+      <guid>http://localhost:1313/rust/rust-tokio-channels/</guid>
       
       <description>Глубокое погружение в асинхронные каналы Tokio: mpsc, oneshot, broadcast и watch. Исследуем паттерны передачи данных на примере спасательного зонда экипажа Vectoria.</description>
       
@@ -788,7 +788,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/rust-tokio-channels/featured.png" medium="image"/>
+      <media:content url="http://localhost:1313/rust/rust-tokio-channels/featured.png" medium="image"/>
       
     </item>
     
@@ -797,9 +797,9 @@
     
     <item>
       <title>Оптимизация памяти, интеграционные тесты и декларативный CLI (clap)</title>
-      <link>http://192.168.0.13:1313/rust/rust-clap-and-integration-testing/</link>
+      <link>http://localhost:1313/rust/rust-clap-and-integration-testing/</link>
       <pubDate>Thu, 13 Aug 2026 10:00:00 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/rust/rust-clap-and-integration-testing/</guid>
+      <guid>http://localhost:1313/rust/rust-clap-and-integration-testing/</guid>
       
       <description>Подробное практическое руководство по оптимизации памяти и интеграционному тестированию в Rust: повторное использование буфера памяти с read_line(), трейт Default, внешние тесты в tests/ с assert_cmd и декларативный парсинг CLI с помощью clap.</description>
       
@@ -831,7 +831,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/rust-clap-and-integration-testing/featured.png" medium="image"/>
+      <media:content url="http://localhost:1313/rust/rust-clap-and-integration-testing/featured.png" medium="image"/>
       
     </item>
     
@@ -840,9 +840,9 @@
     
     <item>
       <title>Файловые режимы, паттерн Builder, Path/PathBuf и подготовка к публикации</title>
-      <link>http://192.168.0.13:1313/rust/rust-files-tempfile-and-docs/</link>
+      <link>http://localhost:1313/rust/rust-files-tempfile-and-docs/</link>
       <pubDate>Thu, 13 Aug 2026 10:00:00 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/rust/rust-files-tempfile-and-docs/</guid>
+      <guid>http://localhost:1313/rust/rust-files-tempfile-and-docs/</guid>
       
       <description>Подробное практическое руководство по работе с файловой системой и подготовке пакетов к публикации в Rust: трансляция флагов File::options(), разница Path vs PathBuf, абстракция impl AsRef, изолированное тестирование с tempfile и стандарты документации crates.io.</description>
       
@@ -876,7 +876,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/rust-files-tempfile-and-docs/featured.png" medium="image"/>
+      <media:content url="http://localhost:1313/rust/rust-files-tempfile-and-docs/featured.png" medium="image"/>
       
     </item>
     
@@ -885,9 +885,9 @@
     
     <item>
       <title>Управление памятью в Rust: идиома RAII, указатель Box и механизмы Deref Coercion</title>
-      <link>http://192.168.0.13:1313/rust/rust-raii-box-deref/</link>
+      <link>http://localhost:1313/rust/rust-raii-box-deref/</link>
       <pubDate>Wed, 12 Aug 2026 11:00:00 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/rust/rust-raii-box-deref/</guid>
+      <guid>http://localhost:1313/rust/rust-raii-box-deref/</guid>
       
       <description>Разбираем устройство памяти в Rust: идиома RAII, авто-очистка через Drop, управляющий указатель Box, &#39;static ссылки с помощью Box::leak, а также механизмы Deref и Deref Coercion.</description>
       
@@ -915,7 +915,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/rust-raii-box-deref/featured.jpeg" medium="image"/>
+      <media:content url="http://localhost:1313/rust/rust-raii-box-deref/featured.jpeg" medium="image"/>
       
     </item>
     
@@ -924,9 +924,9 @@
     
     <item>
       <title>Потоки ввода-вывода I/O в Rust: BufRead, блокировка stdin, подход Magic Function и безопасная обработка ошибок</title>
-      <link>http://192.168.0.13:1313/rust/rust-io-bufread-and-errors/</link>
+      <link>http://localhost:1313/rust/rust-io-bufread-and-errors/</link>
       <pubDate>Wed, 12 Aug 2026 10:00:00 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/rust/rust-io-bufread-and-errors/</guid>
+      <guid>http://localhost:1313/rust/rust-io-bufread-and-errors/</guid>
       
       <description>Подробное практическое руководство по I/O в Rust: архитектура системных вызовов, BufRead, блокировка stdin().lock(), изолированное тестирование с std::io::Cursor, траектории ошибок .lines() и стандарты UNIX CLI.</description>
       
@@ -958,7 +958,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/rust-io-bufread-and-errors/featured.png" medium="image"/>
+      <media:content url="http://localhost:1313/rust/rust-io-bufread-and-errors/featured.png" medium="image"/>
       
     </item>
     
@@ -967,9 +967,9 @@
     
     <item>
       <title>Проектирование библиотек в Rust: Data-Oriented API, разделение lib/main и бебаггинг (Bebugging)</title>
-      <link>http://192.168.0.13:1313/rust/rust-crate-design-and-testing/</link>
+      <link>http://localhost:1313/rust/rust-crate-design-and-testing/</link>
       <pubDate>Wed, 12 Aug 2026 10:00:00 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/rust/rust-crate-design-and-testing/</guid>
+      <guid>http://localhost:1313/rust/rust-crate-design-and-testing/</guid>
       
       <description>Первая статья серии по разработке утилит и библиотек в Rust: архитектура Crate, Data-Oriented API, разделение lib.rs/main.rs, техника Bebugging и самодокументируемые тесты.</description>
       
@@ -999,7 +999,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/rust-crate-design-and-testing/featured.png" medium="image"/>
+      <media:content url="http://localhost:1313/rust/rust-crate-design-and-testing/featured.png" medium="image"/>
       
     </item>
     
@@ -1008,9 +1008,9 @@
     
     <item>
       <title>Управление контекстом ошибок (anyhow), CLI-аргументы и владение в Rust</title>
-      <link>http://192.168.0.13:1313/rust/rust-cli-args-and-anyhow/</link>
+      <link>http://localhost:1313/rust/rust-cli-args-and-anyhow/</link>
       <pubDate>Wed, 12 Aug 2026 10:00:00 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/rust/rust-cli-args-and-anyhow/</guid>
+      <guid>http://localhost:1313/rust/rust-cli-args-and-anyhow/</guid>
       
       <description>Подробное практическое руководство по парсингу аргументов CLI и управлению ошибками в Rust: std::env::args(), синтаксис let-else, возврат Result&lt;()&gt; из main(), обогащение ошибок через anyhow context/with_context и макросы bail!/ensure!.</description>
       
@@ -1042,7 +1042,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/rust-cli-args-and-anyhow/featured.png" medium="image"/>
+      <media:content url="http://localhost:1313/rust/rust-cli-args-and-anyhow/featured.png" medium="image"/>
       
     </item>
     
@@ -1051,9 +1051,9 @@
     
     <item>
       <title>Unsafe Rust и FFI: работа с сырыми указателями, Undefined Behavior и интеграция с C</title>
-      <link>http://192.168.0.13:1313/rust/rust-unsafe-and-ffi/</link>
+      <link>http://localhost:1313/rust/rust-unsafe-and-ffi/</link>
       <pubDate>Tue, 11 Aug 2026 10:00:00 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/rust/rust-unsafe-and-ffi/</guid>
+      <guid>http://localhost:1313/rust/rust-unsafe-and-ffi/</guid>
       
       <description>Изучаем Unsafe Rust и FFI: 5 суперспособностей unsafe, работа с сырыми указателями *const и *mut, Неопределенное поведение (UB), Miri и интеграция с C через extern C.</description>
       
@@ -1083,7 +1083,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/rust-unsafe-and-ffi/featured.png" medium="image"/>
+      <media:content url="http://localhost:1313/rust/rust-unsafe-and-ffi/featured.png" medium="image"/>
       
     </item>
     
@@ -1092,9 +1092,9 @@
     
     <item>
       <title>Атомарные операции и Memory Ordering в Rust: от Ordering::Relaxed до Acquire/Release барьеров</title>
-      <link>http://192.168.0.13:1313/rust/rust-atomics-and-memory-ordering/</link>
+      <link>http://localhost:1313/rust/rust-atomics-and-memory-ordering/</link>
       <pubDate>Tue, 11 Aug 2026 10:00:00 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/rust/rust-atomics-and-memory-ordering/</guid>
+      <guid>http://localhost:1313/rust/rust-atomics-and-memory-ordering/</guid>
       
       <description>Глубокое погружение в атомарные типы std::sync::atomic (AtomicBool, AtomicUsize, AtomicPtr), операции fetch_add, compare_exchange и барьеры памяти Memory Ordering (Relaxed, Acquire, Release, SeqCst).</description>
       
@@ -1126,7 +1126,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/rust-atomics-and-memory-ordering/featured.png" medium="image"/>
+      <media:content url="http://localhost:1313/rust/rust-atomics-and-memory-ordering/featured.png" medium="image"/>
       
     </item>
     
@@ -1135,9 +1135,9 @@
     
     <item>
       <title>Параллелизм на уровне типов: Всё о маркерных типажах Send и Sync в Rust</title>
-      <link>http://192.168.0.13:1313/rust/rust-send-sync-traits/</link>
+      <link>http://localhost:1313/rust/rust-send-sync-traits/</link>
       <pubDate>Tue, 11 Aug 2026 10:00:00 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/rust/rust-send-sync-traits/</guid>
+      <guid>http://localhost:1313/rust/rust-send-sync-traits/</guid>
       
       <description>Подробный разбор маркерных типажей Send и Sync в Rust: соотношение T: Sync &lt;=&gt; &amp;T: Send, почему Rc не поток-безопасен, разница между Send и Sync для RefCell, и требования thread::spawn.</description>
       
@@ -1169,7 +1169,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/rust-send-sync-traits/featured.png" medium="image"/>
+      <media:content url="http://localhost:1313/rust/rust-send-sync-traits/featured.png" medium="image"/>
       
     </item>
     
@@ -1178,9 +1178,9 @@
     
     <item>
       <title>ESP32 &#43; Rust: Быстрый старт с нуля (помигаем светодиодом)</title>
-      <link>http://192.168.0.13:1313/rust/esp32-rust-blink/</link>
+      <link>http://localhost:1313/rust/esp32-rust-blink/</link>
       <pubDate>Mon, 10 Aug 2026 14:00:00 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/rust/esp32-rust-blink/</guid>
+      <guid>http://localhost:1313/rust/esp32-rust-blink/</guid>
       
       <description>Практическое руководство по первому запуску Rust на ESP32: настройка тулчейна (нативно и через Docker), генерация проекта и прошивка через espflash.</description>
       
@@ -1210,7 +1210,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/esp32-rust-blink/featured.png" medium="image"/>
+      <media:content url="http://localhost:1313/rust/esp32-rust-blink/featured.png" medium="image"/>
       
     </item>
     
@@ -1219,9 +1219,9 @@
     
     <item>
       <title>ESP32 &#43; Rust: собираем всё вместе. Веб-термометр на микроконтроллере</title>
-      <link>http://192.168.0.13:1313/rust/esp32-rust-thermometer/</link>
+      <link>http://localhost:1313/rust/esp32-rust-thermometer/</link>
       <pubDate>Mon, 10 Aug 2026 12:00:00 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/rust/esp32-rust-thermometer/</guid>
+      <guid>http://localhost:1313/rust/esp32-rust-thermometer/</guid>
       
       <description>Практический гайд по сборке IoT-термометра на ESP32 с Rust и HTTP-сервером. Разбираем enum, Option, Result, traits, no_std и Type Layout на настоящем железе.</description>
       
@@ -1247,7 +1247,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/esp32-rust-thermometer/featured.png" medium="image"/>
+      <media:content url="http://localhost:1313/rust/esp32-rust-thermometer/featured.png" medium="image"/>
       
     </item>
     
@@ -1256,9 +1256,9 @@
     
     <item>
       <title>Атрибуты и условная компиляция в Rust: #[cfg], #[inline], #[allow] и repr(C)</title>
-      <link>http://192.168.0.13:1313/rust/rust-attributes-and-cfg/</link>
+      <link>http://localhost:1313/rust/rust-attributes-and-cfg/</link>
       <pubDate>Mon, 10 Aug 2026 10:00:00 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/rust/rust-attributes-and-cfg/</guid>
+      <guid>http://localhost:1313/rust/rust-attributes-and-cfg/</guid>
       
       <description>Подробный разбор атрибутов и условной компиляции в Rust: внешние и внутренние атрибуты, #[cfg], макрос cfg!, оптимизации #[inline], линтер #[allow] и C-ABI разметка #[repr(C)].</description>
       
@@ -1290,7 +1290,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/rust-attributes-and-cfg/featured.png" medium="image"/>
+      <media:content url="http://localhost:1313/rust/rust-attributes-and-cfg/featured.png" medium="image"/>
       
     </item>
     
@@ -1299,9 +1299,9 @@
     
     <item>
       <title>Архитектурный проект на Rust: Проектирование автоматизированной системы заботы о питомцах (PetCare Hub)</title>
-      <link>http://192.168.0.13:1313/rust/rust-pet-care-architecture/</link>
+      <link>http://localhost:1313/rust/rust-pet-care-architecture/</link>
       <pubDate>Sun, 09 Aug 2026 10:00:00 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/rust/rust-pet-care-architecture/</guid>
+      <guid>http://localhost:1313/rust/rust-pet-care-architecture/</guid>
       
       <description>Итоговый архитектурный проект серии: проектируем многопоточную систему PetCare Hub. Объединяем RAII, Box, Arc/Mutex, Trait Objects, BinaryHeap, custom iterators и макросы.</description>
       
@@ -1331,7 +1331,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/rust-pet-care-architecture/featured.png" medium="image"/>
+      <media:content url="http://localhost:1313/rust/rust-pet-care-architecture/featured.png" medium="image"/>
       
     </item>
     
@@ -1340,9 +1340,9 @@
     
     <item>
       <title>Процедурные макросы в Rust: derive, attribute-like и function-like</title>
-      <link>http://192.168.0.13:1313/rust/rust-procedural-macros/</link>
+      <link>http://localhost:1313/rust/rust-procedural-macros/</link>
       <pubDate>Sun, 09 Aug 2026 10:00:00 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/rust/rust-procedural-macros/</guid>
+      <guid>http://localhost:1313/rust/rust-procedural-macros/</guid>
       
       <description>Глубокое руководство по процедурным макросам в Rust: три вида макросов (derive, attribute-like, function-like), устройство TokenStream, работа с syn и quote.</description>
       
@@ -1370,7 +1370,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/rust-procedural-macros/featured.png" medium="image"/>
+      <media:content url="http://localhost:1313/rust/rust-procedural-macros/featured.png" medium="image"/>
       
     </item>
     
@@ -1379,9 +1379,9 @@
     
     <item>
       <title>Декларативные макросы macro_rules! в Rust: от шаблонов vec! до собственных DSL</title>
-      <link>http://192.168.0.13:1313/rust/rust-declarative-macros/</link>
+      <link>http://localhost:1313/rust/rust-declarative-macros/</link>
       <pubDate>Sat, 08 Aug 2026 10:00:00 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/rust/rust-declarative-macros/</guid>
+      <guid>http://localhost:1313/rust/rust-declarative-macros/</guid>
       
       <description>Изучаем декларативные макросы macro_rules! в Rust: синтаксическое дерево (AST), гигиена макросов, спецификаторы типов, повторения и создание удобных DSL.</description>
       
@@ -1409,7 +1409,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/rust-declarative-macros/featured.png" medium="image"/>
+      <media:content url="http://localhost:1313/rust/rust-declarative-macros/featured.png" medium="image"/>
       
     </item>
     
@@ -1418,9 +1418,9 @@
     
     <item>
       <title>Трейты в Rust: от первых шагов до понятного мономорфного кода</title>
-      <link>http://192.168.0.13:1313/rust/rust-traits/</link>
+      <link>http://localhost:1313/rust/rust-traits/</link>
       <pubDate>Fri, 07 Aug 2026 14:07:57 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/rust/rust-traits/</guid>
+      <guid>http://localhost:1313/rust/rust-traits/</guid>
       
       <description>Понятный гайд по трейтам в Rust: от базоваго синтаксиса trait и impl до методов по умолчанию, дженериков, синтаксиса impl Trait и нулевой стоимости мономорфизации.</description>
       
@@ -1446,7 +1446,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/rust-traits/featured.png" medium="image"/>
+      <media:content url="http://localhost:1313/rust/rust-traits/featured.png" medium="image"/>
       
     </item>
     
@@ -1455,9 +1455,9 @@
     
     <item>
       <title>Обработка ошибок в Rust: паника, Option, Result и как с ними дружить</title>
-      <link>http://192.168.0.13:1313/rust/rust-errors-handling/</link>
+      <link>http://localhost:1313/rust/rust-errors-handling/</link>
       <pubDate>Sun, 02 Aug 2026 10:37:34 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/rust/rust-errors-handling/</guid>
+      <guid>http://localhost:1313/rust/rust-errors-handling/</guid>
       
       <description>Простой и понятный разбор обработки ошибок в Rust. Сравниваем подходы в разных языках, разбираемся с Option и Result, оператором `?` и учимся писать свои ошибки.</description>
       
@@ -1479,7 +1479,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/rust-errors-handling/featured.png" medium="image"/>
+      <media:content url="http://localhost:1313/rust/rust-errors-handling/featured.png" medium="image"/>
       
     </item>
     
@@ -1488,9 +1488,9 @@
     
     <item>
       <title>Операторы let-else и пропагации ошибок в Rust</title>
-      <link>http://192.168.0.13:1313/rust/rust-flow-control/</link>
+      <link>http://localhost:1313/rust/rust-flow-control/</link>
       <pubDate>Sun, 02 Aug 2026 10:37:34 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/rust/rust-flow-control/</guid>
+      <guid>http://localhost:1313/rust/rust-flow-control/</guid>
       
       <description>Продвинутый контроль выполнения в Rust: пропагация ошибок и отсутствие значений с помощью оператора ?, безопасное извлечение с let-else и требования к расходящимся блокам.</description>
       
@@ -1510,7 +1510,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/rust-flow-control/featured.png" medium="image"/>
+      <media:content url="http://localhost:1313/rust/rust-flow-control/featured.png" medium="image"/>
       
     </item>
     
@@ -1519,9 +1519,9 @@
     
     <item>
       <title>Низкоуровневое представление типов в памяти в Rust (Type Layout)</title>
-      <link>http://192.168.0.13:1313/rust/rust-type-layout/</link>
+      <link>http://localhost:1313/rust/rust-type-layout/</link>
       <pubDate>Sat, 01 Aug 2026 10:58:17 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/rust/rust-type-layout/</guid>
+      <guid>http://localhost:1313/rust/rust-type-layout/</guid>
       
       <description>Как компилятор Rust располагает типы в памяти: выравнивание, размер, паддинг, оптимизации переупорядочивания полей и атрибуты представления (repr).</description>
       
@@ -1541,7 +1541,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/rust-type-layout/featured.png" medium="image"/>
+      <media:content url="http://localhost:1313/rust/rust-type-layout/featured.png" medium="image"/>
       
     </item>
     
@@ -1550,9 +1550,9 @@
     
     <item>
       <title>Перечисления (Enums) в Rust: от синтаксиса до сопоставления</title>
-      <link>http://192.168.0.13:1313/rust/rust-enums/</link>
+      <link>http://localhost:1313/rust/rust-enums/</link>
       <pubDate>Sat, 01 Aug 2026 10:58:17 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/rust/rust-enums/</guid>
+      <guid>http://localhost:1313/rust/rust-enums/</guid>
       
       <description>Разбор перечислений (enums) в языке Rust: варианты с данными, незаселенные типы, паттерн Option и сопоставление с образцом match на реальных примерах.</description>
       
@@ -1572,7 +1572,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/rust-enums/featured.png" medium="image"/>
+      <media:content url="http://localhost:1313/rust/rust-enums/featured.png" medium="image"/>
       
     </item>
     
@@ -1581,9 +1581,9 @@
     
     <item>
       <title>Система типов в Rust: почему компилятор — ваш лучший друг</title>
-      <link>http://192.168.0.13:1313/rust/rust-type-system/</link>
+      <link>http://localhost:1313/rust/rust-type-system/</link>
       <pubDate>Sat, 01 Aug 2026 10:58:17 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/rust/rust-type-system/</guid>
+      <guid>http://localhost:1313/rust/rust-type-system/</guid>
       
       <description>Простыми словами о системе типов в Rust. Разбираем статическую и строгую типизацию, а также смотрим, как проектировать логику через типы (Type-Driven Development), чтобы избегать глупых багов.</description>
       
@@ -1605,7 +1605,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/rust-type-system/featured.png" medium="image"/>
+      <media:content url="http://localhost:1313/rust/rust-type-system/featured.png" medium="image"/>
       
     </item>
     
@@ -1614,9 +1614,9 @@
     
     <item>
       <title>Кортежи в Rust (Tuples): объявление, деструктуризация и unit-тип ()</title>
-      <link>http://192.168.0.13:1313/rust/rust-tuples/</link>
+      <link>http://localhost:1313/rust/rust-tuples/</link>
       <pubDate>Fri, 31 Jul 2026 00:00:00 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/rust/rust-tuples/</guid>
+      <guid>http://localhost:1313/rust/rust-tuples/</guid>
       
       <description>Подробное руководство по кортежам (tuples) в языке Rust. Инициализация, доступ по индексам, деструктуризация (pattern matching) и особенности пустой сигнатуры ().</description>
       
@@ -1636,7 +1636,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/rust-tuples/featured.png" medium="image"/>
+      <media:content url="http://localhost:1313/rust/rust-tuples/featured.png" medium="image"/>
       
     </item>
     
@@ -1645,9 +1645,9 @@
     
     <item>
       <title>Магия кривых: Как убрать паразитные оттенки и сделать красивый тон</title>
-      <link>http://192.168.0.13:1313/photography/curves-color-toning/</link>
+      <link>http://localhost:1313/photography/curves-color-toning/</link>
       <pubDate>Fri, 31 Jul 2026 00:00:00 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/photography/curves-color-toning/</guid>
+      <guid>http://localhost:1313/photography/curves-color-toning/</guid>
       
       <description>Разбор работы с кривыми (Curves) в графических редакторах: как исправить нежелательный красный отлив на фотографии и настроить правильный баланс цветов.</description>
       
@@ -1669,7 +1669,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/photography/curves-color-toning/featured.png" medium="image"/>
+      <media:content url="http://localhost:1313/photography/curves-color-toning/featured.png" medium="image"/>
       
     </item>
     
@@ -1678,9 +1678,9 @@
     
     <item>
       <title>Основы композиции: Правило третей</title>
-      <link>http://192.168.0.13:1313/photography/composition-basics/</link>
+      <link>http://localhost:1313/photography/composition-basics/</link>
       <pubDate>Fri, 31 Jul 2026 00:00:00 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/photography/composition-basics/</guid>
+      <guid>http://localhost:1313/photography/composition-basics/</guid>
       
       <description>Разбор базового правила композиции в фотографии: как сбалансировать кадр с помощью сетки третей.</description>
       
@@ -1700,7 +1700,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/photography/composition-basics/featured.png" medium="image"/>
+      <media:content url="http://localhost:1313/photography/composition-basics/featured.png" medium="image"/>
       
     </item>
     
@@ -1709,9 +1709,9 @@
     
     <item>
       <title>Условные конструкции и ветвление в Rust</title>
-      <link>http://192.168.0.13:1313/rust/rust-conditionals/</link>
+      <link>http://localhost:1313/rust/rust-conditionals/</link>
       <pubDate>Fri, 31 Jul 2026 00:00:00 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/rust/rust-conditionals/</guid>
+      <guid>http://localhost:1313/rust/rust-conditionals/</guid>
       
       <description>Изучите основы ветвления в Rust: блоки кода, выражения if-else, сопоставление шаблонов через if let и цепочки условий let-chains.</description>
       
@@ -1731,7 +1731,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/rust-conditionals/featured.png" medium="image"/>
+      <media:content url="http://localhost:1313/rust/rust-conditionals/featured.png" medium="image"/>
       
     </item>
     
@@ -1740,9 +1740,9 @@
     
     <item>
       <title>Циклы и диапазоны в Rust: loop, while и for на практике</title>
-      <link>http://192.168.0.13:1313/rust/rust-loops/</link>
+      <link>http://localhost:1313/rust/rust-loops/</link>
       <pubDate>Fri, 31 Jul 2026 00:00:00 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/rust/rust-loops/</guid>
+      <guid>http://localhost:1313/rust/rust-loops/</guid>
       
       <description>Пошаговый гайд по циклам в Rust: синтаксис loop, while, for, работа с диапазонами range, итераторами и досрочным выходом break/continue с примерами.</description>
       
@@ -1764,7 +1764,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/rust-loops/featured.png" medium="image"/>
+      <media:content url="http://localhost:1313/rust/rust-loops/featured.png" medium="image"/>
       
     </item>
     
@@ -1773,9 +1773,9 @@
     
     <item>
       <title>Личный кабинет читателя EagleBlog и синхронизация</title>
-      <link>http://192.168.0.13:1313/profile/</link>
+      <link>http://localhost:1313/profile/</link>
       <pubDate>Tue, 21 Jul 2026 00:00:00 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/profile/</guid>
+      <guid>http://localhost:1313/profile/</guid>
       
       <description>Личный кабинет пользователя EagleBlog: настройки профиля, привязка Telegram бота, синхронизация закладок и прогресса обучения между устройствами.</description>
       
@@ -1802,9 +1802,9 @@
     
     <item>
       <title>Галерея фотографий</title>
-      <link>http://192.168.0.13:1313/my-gallery/</link>
+      <link>http://localhost:1313/my-gallery/</link>
       <pubDate>Mon, 20 Apr 2026 20:28:39 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/my-gallery/</guid>
+      <guid>http://localhost:1313/my-gallery/</guid>
       
       <description>Интерактивная галерея художественной и стрит-фотографии с полными EXIF-данными снимков, выдержкой, ISO и географическими координатами.</description>
       
@@ -1833,9 +1833,9 @@
     
     <item>
       <title>Android 15 и 16 KB страница памяти: что изменится, как подготовить Android и Flutter-приложения</title>
-      <link>http://192.168.0.13:1313/about-all/android-16k/</link>
+      <link>http://localhost:1313/about-all/android-16k/</link>
       <pubDate>Thu, 25 Sep 2025 14:19:42 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/about-all/android-16k/</guid>
+      <guid>http://localhost:1313/about-all/android-16k/</guid>
       
       <description>Android 15 ввел поддержку 16KB memory pages. Разбираем, что это значит для нативных и Flutter-приложений, как избежать ошибок Play Console и что обновить.</description>
       
@@ -1868,9 +1868,9 @@
     
     <item>
       <title>Rust async и Tokio: В ожидании будущего</title>
-      <link>http://192.168.0.13:1313/rust/future-async/</link>
+      <link>http://localhost:1313/rust/future-async/</link>
       <pubDate>Thu, 18 Sep 2025 11:00:00 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/rust/future-async/</guid>
+      <guid>http://localhost:1313/rust/future-async/</guid>
       
       <description>История экипажа Vectoria — наглядное объяснение синхронного и асинхронного кода, разницы с параллельностью, и практики Tokio: spawn, spawn_blocking, join!, join_all, JoinHandle, Handle, cooperative multitasking.</description>
       
@@ -1890,7 +1890,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/future-async/featured.jpeg" medium="image"/>
+      <media:content url="http://localhost:1313/rust/future-async/featured.jpeg" medium="image"/>
       
     </item>
     
@@ -1899,9 +1899,9 @@
     
     <item>
       <title>Как работает Vec в Rust: устройство, методы, оптимизация</title>
-      <link>http://192.168.0.13:1313/rust/rust-vec/</link>
+      <link>http://localhost:1313/rust/rust-vec/</link>
       <pubDate>Mon, 01 Sep 2025 17:14:53 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/rust/rust-vec/</guid>
+      <guid>http://localhost:1313/rust/rust-vec/</guid>
       
       <description>Полное руководство по Vec в Rust: устройство, методы, частые ошибки и оптимизация. Всё это — в форме космического путешествия, где капитан учит робота RUST-Y обращаться с динамическими массивами без паники и перерасхода памяти.</description>
       
@@ -1921,7 +1921,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/rust-vec/featured.png" medium="image"/>
+      <media:content url="http://localhost:1313/rust/rust-vec/featured.png" medium="image"/>
       
     </item>
     
@@ -1930,9 +1930,9 @@
     
     <item>
       <title>BufReader в Rust: ускоряем ввод-вывод</title>
-      <link>http://192.168.0.13:1313/rust/bufreader/</link>
+      <link>http://localhost:1313/rust/bufreader/</link>
       <pubDate>Tue, 26 Aug 2025 18:42:24 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/rust/bufreader/</guid>
+      <guid>http://localhost:1313/rust/bufreader/</guid>
       
       <description>BufReader в Rust - подробный разбор. Как ускорить чтение файлов, работать с вводом-выводом, использовать BufRead и Read. Примеры построчного чтения и оптимизации IO.</description>
       
@@ -1952,7 +1952,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/bufreader/featured.png" medium="image"/>
+      <media:content url="http://localhost:1313/rust/bufreader/featured.png" medium="image"/>
       
     </item>
     
@@ -1961,9 +1961,9 @@
     
     <item>
       <title>Поиск данных в файле - Cli хелпер для мастера с помощью Rust</title>
-      <link>http://192.168.0.13:1313/rust/rust-cli-sh/</link>
+      <link>http://localhost:1313/rust/rust-cli-sh/</link>
       <pubDate>Tue, 17 Jun 2025 19:48:42 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/rust/rust-cli-sh/</guid>
+      <guid>http://localhost:1313/rust/rust-cli-sh/</guid>
       
       <description>Создаём утилиту командной строки на Rust для поиска устройств в конфигурационном файле по описанию. Пошаговое руководство: чтение аргументов, обработка строк, парсинг блоков, поиск и вывод.</description>
       
@@ -1983,7 +1983,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/rust-cli-sh/featured.jpg" medium="image"/>
+      <media:content url="http://localhost:1313/rust/rust-cli-sh/featured.jpg" medium="image"/>
       
     </item>
     
@@ -1992,9 +1992,9 @@
     
     <item>
       <title>Ввод данных от пользователя в Rust: как использовать stdin</title>
-      <link>http://192.168.0.13:1313/rust/rust-stdio/</link>
+      <link>http://localhost:1313/rust/rust-stdio/</link>
       <pubDate>Sun, 08 Jun 2025 20:50:38 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/rust/rust-stdio/</guid>
+      <guid>http://localhost:1313/rust/rust-stdio/</guid>
       
       <description>Узнай, как считывать пользовательский ввод в Rust с помощью std::io::stdin().read_line. Простые примеры, обработка ошибок, удаление символа новой строки, тип Result и рекомендации по CLI</description>
       
@@ -2014,7 +2014,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/rust-stdio/featured.jpg" medium="image"/>
+      <media:content url="http://localhost:1313/rust/rust-stdio/featured.jpg" medium="image"/>
       
     </item>
     
@@ -2023,9 +2023,9 @@
     
     <item>
       <title>Arc в Rust: потокобезопасное разделённое владение</title>
-      <link>http://192.168.0.13:1313/rust/rust-arc/</link>
+      <link>http://localhost:1313/rust/rust-arc/</link>
       <pubDate>Thu, 05 Jun 2025 13:42:48 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/rust/rust-arc/</guid>
+      <guid>http://localhost:1313/rust/rust-arc/</guid>
       
       <description>Узнайте, как использовать Arc в Rust для безопасного разделения данных между потоками. Примеры с Arc, Rc, Mutex и практические советы.</description>
       
@@ -2045,7 +2045,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/rust-arc/featured.png" medium="image"/>
+      <media:content url="http://localhost:1313/rust/rust-arc/featured.png" medium="image"/>
       
     </item>
     
@@ -2054,9 +2054,9 @@
     
     <item>
       <title>Rc в Rust: Разделённое владение, циклические ссылки и Weak&lt;T&gt;</title>
-      <link>http://192.168.0.13:1313/rust/rust-rc/</link>
+      <link>http://localhost:1313/rust/rust-rc/</link>
       <pubDate>Tue, 03 Jun 2025 09:58:40 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/rust/rust-rc/</guid>
+      <guid>http://localhost:1313/rust/rust-rc/</guid>
       
       <description>Узнайте, как работает Rc в Rust: счётчик ссылок, разделяемое владение между структурами, связка с RefCell, проблема циклических ссылок (Rc cycles) и её решение через Weak.</description>
       
@@ -2084,7 +2084,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/rust-rc/featured.jpg" medium="image"/>
+      <media:content url="http://localhost:1313/rust/rust-rc/featured.jpg" medium="image"/>
       
     </item>
     
@@ -2093,9 +2093,9 @@
     
     <item>
       <title>Заимствование (Borrowing) в Rust</title>
-      <link>http://192.168.0.13:1313/rust/rust-borrowing/</link>
+      <link>http://localhost:1313/rust/rust-borrowing/</link>
       <pubDate>Mon, 02 Jun 2025 21:29:23 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/rust/rust-borrowing/</guid>
+      <guid>http://localhost:1313/rust/rust-borrowing/</guid>
       
       <description>Руководство по заимствованию в Rust - механизму работы с данными без передачи владения. Узнайте, как использовать ссылки &amp;T и &amp;mut T, избегать типичных ошибок и писать безопасный код.</description>
       
@@ -2115,7 +2115,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/rust-borrowing/featured.jpg" medium="image"/>
+      <media:content url="http://localhost:1313/rust/rust-borrowing/featured.jpg" medium="image"/>
       
     </item>
     
@@ -2124,9 +2124,9 @@
     
     <item>
       <title>Владение (Ownership) в Rust</title>
-      <link>http://192.168.0.13:1313/rust/rust-ownership/</link>
+      <link>http://localhost:1313/rust/rust-ownership/</link>
       <pubDate>Sat, 31 May 2025 15:05:44 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/rust/rust-ownership/</guid>
+      <guid>http://localhost:1313/rust/rust-ownership/</guid>
       
       <description>Владение (Ownership) в Rust — это метод контроля использования памяти, который помогает избежать ошибок таких как недопустимый доступ к данным или гонки данных.</description>
       
@@ -2146,7 +2146,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/rust-ownership/featured.jpg" medium="image"/>
+      <media:content url="http://localhost:1313/rust/rust-ownership/featured.jpg" medium="image"/>
       
     </item>
     
@@ -2155,9 +2155,9 @@
     
     <item>
       <title>Директивы и атрибуты компилятора в Rust: Полное руководство</title>
-      <link>http://192.168.0.13:1313/rust/rust-directives/</link>
+      <link>http://localhost:1313/rust/rust-directives/</link>
       <pubDate>Mon, 26 May 2025 21:39:24 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/rust/rust-directives/</guid>
+      <guid>http://localhost:1313/rust/rust-directives/</guid>
       
       <description>Как работают директивы и атрибуты компилятора (#![allow], #[derive], #[inline]) в Rust? Гайд с синтаксисом, примерами и советами по чистке кода.</description>
       
@@ -2177,7 +2177,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/rust-directives/featured.jpg" medium="image"/>
+      <media:content url="http://localhost:1313/rust/rust-directives/featured.jpg" medium="image"/>
       
     </item>
     
@@ -2186,9 +2186,9 @@
     
     <item>
       <title>Псевдонимы типов в Rust (type alias): синтаксис и практические кейсы</title>
-      <link>http://192.168.0.13:1313/rust/rust-type-alias/</link>
+      <link>http://localhost:1313/rust/rust-type-alias/</link>
       <pubDate>Sun, 25 May 2025 11:33:49 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/rust/rust-type-alias/</guid>
+      <guid>http://localhost:1313/rust/rust-type-alias/</guid>
       
       <description>Зачем использовать type alias в Rust. Упрощаем сложные сигнатуры функций, дженерики и Result-типы с помощью псевдонимов типов на понятных примерах.</description>
       
@@ -2208,7 +2208,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/rust-type-alias/featured.jpg" medium="image"/>
+      <media:content url="http://localhost:1313/rust/rust-type-alias/featured.jpg" medium="image"/>
       
     </item>
     
@@ -2217,9 +2217,9 @@
     
     <item>
       <title>Создание и использование констант (const) и static в Rust</title>
-      <link>http://192.168.0.13:1313/rust/rust-const/</link>
+      <link>http://localhost:1313/rust/rust-const/</link>
       <pubDate>Sat, 24 May 2025 22:34:43 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/rust/rust-const/</guid>
+      <guid>http://localhost:1313/rust/rust-const/</guid>
       
       <description>Разница между const и static в языке Rust: как, зачем и когда использовать константы? Практический гайд с понятными примерами кода без лишней теории.</description>
       
@@ -2239,7 +2239,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/rust-const/featured.jpg" medium="image"/>
+      <media:content url="http://localhost:1313/rust/rust-const/featured.jpg" medium="image"/>
       
     </item>
     
@@ -2248,9 +2248,9 @@
     
     <item>
       <title>Области видимости и время жизни переменных в Rust</title>
-      <link>http://192.168.0.13:1313/rust/rust-scope/</link>
+      <link>http://localhost:1313/rust/rust-scope/</link>
       <pubDate>Fri, 16 May 2025 21:28:27 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/rust/rust-scope/</guid>
+      <guid>http://localhost:1313/rust/rust-scope/</guid>
       
       <description>Подробный разбор областей видимости (scopes) в Rust: блоки кода, передача владения, автоматическое освобождение ресурсов и предотвращение ошибок.</description>
       
@@ -2270,7 +2270,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/rust-scope/featured.jpg" medium="image"/>
+      <media:content url="http://localhost:1313/rust/rust-scope/featured.jpg" medium="image"/>
       
     </item>
     
@@ -2279,9 +2279,9 @@
     
     <item>
       <title>Затенение переменных (Shadowing) в Rust на реальных примерах</title>
-      <link>http://192.168.0.13:1313/rust/rust-shadowing/</link>
+      <link>http://localhost:1313/rust/rust-shadowing/</link>
       <pubDate>Wed, 14 May 2025 15:12:45 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/rust/rust-shadowing/</guid>
+      <guid>http://localhost:1313/rust/rust-shadowing/</guid>
       
       <description>Особенности и преимущества затенения переменных (Shadowing) в языке Rust: переиспользование имен, изменение типов данных и лучшие практики.</description>
       
@@ -2301,7 +2301,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/rust-shadowing/featured.jpg" medium="image"/>
+      <media:content url="http://localhost:1313/rust/rust-shadowing/featured.jpg" medium="image"/>
       
     </item>
     
@@ -2310,9 +2310,9 @@
     
     <item>
       <title>Ошибки компилятора в Rust: чтение диагностики и команда rustc --explain</title>
-      <link>http://192.168.0.13:1313/rust/rust-err/</link>
+      <link>http://localhost:1313/rust/rust-err/</link>
       <pubDate>Mon, 12 May 2025 14:02:26 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/rust/rust-err/</guid>
+      <guid>http://localhost:1313/rust/rust-err/</guid>
       
       <description>Как понимать сообщения и коды ошибок компилятора Rust (rustc). Руководство для начинающих: использование команды rustc --explain, справочник кодов ошибок и пошаговая отладка.</description>
       
@@ -2336,7 +2336,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/rust-err/featured.jpg" medium="image"/>
+      <media:content url="http://localhost:1313/rust/rust-err/featured.jpg" medium="image"/>
       
     </item>
     
@@ -2345,9 +2345,9 @@
     
     <item>
       <title>Изменяемые (mut) и неизменяемые переменные в Rust: иммутабельность по умолчанию</title>
-      <link>http://192.168.0.13:1313/rust/rust-var-mut/</link>
+      <link>http://localhost:1313/rust/rust-var-mut/</link>
       <pubDate>Tue, 06 May 2025 22:16:06 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/rust/rust-var-mut/</guid>
+      <guid>http://localhost:1313/rust/rust-var-mut/</guid>
       
       <description>Почему переменные в Rust неизменяемы по умолчанию и как работает ключевое слово mut. Разбираем гарантии безопасности памяти и приращение производительности.</description>
       
@@ -2371,7 +2371,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/rust-var-mut/featured.jpg" medium="image"/>
+      <media:content url="http://localhost:1313/rust/rust-var-mut/featured.jpg" medium="image"/>
       
     </item>
     
@@ -2380,9 +2380,9 @@
     
     <item>
       <title>Работа с println! и интерполяцией строк в Rust</title>
-      <link>http://192.168.0.13:1313/rust/rust-str-interpolation/</link>
+      <link>http://localhost:1313/rust/rust-str-interpolation/</link>
       <pubDate>Sat, 03 May 2025 15:10:24 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/rust/rust-str-interpolation/</guid>
+      <guid>http://localhost:1313/rust/rust-str-interpolation/</guid>
       
       <description>Узнайте о макросе println! и интерполяции строк в Rust. В этой статье мы рассмотрим, как использовать println! для вывода сообщений, добавлять динамические значения в строку и использовать именованные аргументы. Rust, println!, интерполяция строк, динамические значения, именованные аргументы</description>
       
@@ -2402,7 +2402,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/rust-str-interpolation/featured.jpg" medium="image"/>
+      <media:content url="http://localhost:1313/rust/rust-str-interpolation/featured.jpg" medium="image"/>
       
     </item>
     
@@ -2411,9 +2411,9 @@
     
     <item>
       <title>Переменные в Rust: объявление, связывание (binding) и область видимости</title>
-      <link>http://192.168.0.13:1313/rust/rust-var/</link>
+      <link>http://localhost:1313/rust/rust-var/</link>
       <pubDate>Sat, 03 May 2025 14:20:35 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/rust/rust-var/</guid>
+      <guid>http://localhost:1313/rust/rust-var/</guid>
       
       <description>Как объявлять переменные в Rust с помощью let, работать со скрытием (shadowing) и соблюдать соглашение snake_case. Понятные примеры для начинающих.</description>
       
@@ -2433,7 +2433,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/rust-var/featured.jpg" medium="image"/>
+      <media:content url="http://localhost:1313/rust/rust-var/featured.jpg" medium="image"/>
       
     </item>
     
@@ -2442,9 +2442,9 @@
     
     <item>
       <title>Обзор Kotlin 2.1.20: Главные обновления и фичи языка</title>
-      <link>http://192.168.0.13:1313/til/kotlin/kotlin2_1_20/</link>
+      <link>http://localhost:1313/til/kotlin/kotlin2_1_20/</link>
       <pubDate>Wed, 26 Mar 2025 12:24:25 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/til/kotlin/kotlin2_1_20/</guid>
+      <guid>http://localhost:1313/til/kotlin/kotlin2_1_20/</guid>
       
       <description>Подробный разбор ключевых улучшений компилятора K2, исправлений багов и новых возможностей языка Kotlin версии 2.1.20 для Android и Backend разработки.</description>
       
@@ -2473,9 +2473,9 @@
     
     <item>
       <title>Hash Map в Rust: полное руководство по HashMap и ключам</title>
-      <link>http://192.168.0.13:1313/rust/rust-hashmap/</link>
+      <link>http://localhost:1313/rust/rust-hashmap/</link>
       <pubDate>Wed, 05 Mar 2025 13:07:18 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/rust/rust-hashmap/</guid>
+      <guid>http://localhost:1313/rust/rust-hashmap/</guid>
       
       <description>Что такое Hash Map в языке Rust? Узнайте, как эффективно работать с коллекцией HashMap, хэшированием, ключами и значениями на практических примерах.</description>
       
@@ -2495,7 +2495,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/rust-hashmap/featured.jpeg" medium="image"/>
+      <media:content url="http://localhost:1313/rust/rust-hashmap/featured.jpeg" medium="image"/>
       
     </item>
     
@@ -2504,9 +2504,9 @@
     
     <item>
       <title>Как посчитать количество элементов в массиве в PostgreSQL: cardinality и array_length</title>
-      <link>http://192.168.0.13:1313/til/postgresql/array-len/</link>
+      <link>http://localhost:1313/til/postgresql/array-len/</link>
       <pubDate>Fri, 14 Feb 2025 10:32:37 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/til/postgresql/array-len/</guid>
+      <guid>http://localhost:1313/til/postgresql/array-len/</guid>
       
       <description>Разбираем способы подсчета элементов в массиве PostgreSQL. Сравнение функций cardinality() и array_length(), работа с многомерными массивами и обработка NULL.</description>
       
@@ -2535,9 +2535,9 @@
     
     <item>
       <title>Генерация диаграмм из текста на языке D2: синтаксис, анимации и экспортирование</title>
-      <link>http://192.168.0.13:1313/til/tools/d2/</link>
+      <link>http://localhost:1313/til/tools/d2/</link>
       <pubDate>Thu, 13 Feb 2025 13:01:52 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/til/tools/d2/</guid>
+      <guid>http://localhost:1313/til/tools/d2/</guid>
       
       <description>Быстрый обзор декларативного языка D2 для создания архитектурных диаграмм из кода. Синтаксис, анимации, поддержка LaTeX и интеграция с проектами.</description>
       
@@ -2570,9 +2570,9 @@
     
     <item>
       <title>Паттерн Строитель (Builder) в Rust: гибкое создание объектов</title>
-      <link>http://192.168.0.13:1313/rust/rust-builder/</link>
+      <link>http://localhost:1313/rust/rust-builder/</link>
       <pubDate>Sun, 09 Feb 2025 12:55:08 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/rust/rust-builder/</guid>
+      <guid>http://localhost:1313/rust/rust-builder/</guid>
       
       <description>Как применить паттерн проектирования Builder в языке Rust? Гайд по пошаговому конструированию сложных структур с валидацией полей и обработкой ошибок.</description>
       
@@ -2592,7 +2592,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/rust-builder/featured.png" medium="image"/>
+      <media:content url="http://localhost:1313/rust/rust-builder/featured.png" medium="image"/>
       
     </item>
     
@@ -2601,9 +2601,9 @@
     
     <item>
       <title>Как отправить несколько файлов одним сообщением через Telegram Bot API</title>
-      <link>http://192.168.0.13:1313/about-all/telegram-multiple-files/</link>
+      <link>http://localhost:1313/about-all/telegram-multiple-files/</link>
       <pubDate>Sat, 08 Feb 2025 16:34:33 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/about-all/telegram-multiple-files/</guid>
+      <guid>http://localhost:1313/about-all/telegram-multiple-files/</guid>
       
       <description>Пошаговый гайд по отправке медиагруппы из нескольких файлов, фотографий и документов одним альбомом или сообщением через Telegram Bot API с примерами кода.</description>
       
@@ -2630,9 +2630,9 @@
     
     <item>
       <title>Создание и использование структур в Rust: Полное руководство</title>
-      <link>http://192.168.0.13:1313/rust/rust-struct/</link>
+      <link>http://localhost:1313/rust/rust-struct/</link>
       <pubDate>Tue, 04 Feb 2025 17:47:06 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/rust/rust-struct/</guid>
+      <guid>http://localhost:1313/rust/rust-struct/</guid>
       
       <description>Практическое руководство по структурам в Rust: классические структуры, кортежные структуры, структуры-маркеры, управление видимостью полей и синтаксис инициализации.</description>
       
@@ -2652,7 +2652,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/rust-struct/featured.jpg" medium="image"/>
+      <media:content url="http://localhost:1313/rust/rust-struct/featured.jpg" medium="image"/>
       
     </item>
     
@@ -2661,9 +2661,9 @@
     
     <item>
       <title>Императивный и функциональный Rust: работа с методом collect</title>
-      <link>http://192.168.0.13:1313/rust/rust-collect/</link>
+      <link>http://localhost:1313/rust/rust-collect/</link>
       <pubDate>Tue, 16 Jul 2024 15:34:06 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/rust/rust-collect/</guid>
+      <guid>http://localhost:1313/rust/rust-collect/</guid>
       
       <description>Сравнение императивного и функционального стиля программирования в Rust на примере метода collect и обработки коллекций данных умного дома.</description>
       
@@ -2683,7 +2683,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/rust-collect/featured.png" medium="image"/>
+      <media:content url="http://localhost:1313/rust/rust-collect/featured.png" medium="image"/>
       
     </item>
     
@@ -2692,9 +2692,9 @@
     
     <item>
       <title>Музыкальный выпуск альбома Код Ночи: Нейронный синтез</title>
-      <link>http://192.168.0.13:1313/about-all/night-code/</link>
+      <link>http://localhost:1313/about-all/night-code/</link>
       <pubDate>Tue, 11 Jun 2024 01:28:39 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/about-all/night-code/</guid>
+      <guid>http://localhost:1313/about-all/night-code/</guid>
       
       <description>История создания музыкального альбома Код Ночи, сгенерированного нейронными сетями: концепция, треки и атмосфера ночного программирования.</description>
       
@@ -2723,9 +2723,9 @@
     
     <item>
       <title>Эффективная обработка данных из нескольких источников на Dart</title>
-      <link>http://192.168.0.13:1313/dart/streams-groups/</link>
+      <link>http://localhost:1313/dart/streams-groups/</link>
       <pubDate>Sat, 11 May 2024 20:28:39 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/dart/streams-groups/</guid>
+      <guid>http://localhost:1313/dart/streams-groups/</guid>
       
       <description>Как объединять асинхронные потоки данных (StreamGroup) в Dart и Flutter с сохранением контекста источников? Разбор практических паттернов и примеров кода.</description>
       
@@ -2745,7 +2745,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/dart/streams-groups/featured.png" medium="image"/>
+      <media:content url="http://localhost:1313/dart/streams-groups/featured.png" medium="image"/>
       
     </item>
     
@@ -2754,9 +2754,9 @@
     
     <item>
       <title>Изучение французского языка 🇫🇷: Матрица ресурсов и материалов</title>
-      <link>http://192.168.0.13:1313/languages/french-lang/</link>
+      <link>http://localhost:1313/languages/french-lang/</link>
       <pubDate>Tue, 23 Apr 2024 23:09:09 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/languages/french-lang/</guid>
+      <guid>http://localhost:1313/languages/french-lang/</guid>
       
       <description>Подборка лучших ресурсов, учебных материалов, грамматических правил и аудиокниг для эффективного самостоятельного изучения французского языка.</description>
       
@@ -2785,9 +2785,9 @@
     
     <item>
       <title>Изучение китайского языка 🇨🇳: Иероглифы и материалы</title>
-      <link>http://192.168.0.13:1313/languages/chinese-lang/</link>
+      <link>http://localhost:1313/languages/chinese-lang/</link>
       <pubDate>Tue, 23 Apr 2024 22:28:39 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/languages/chinese-lang/</guid>
+      <guid>http://localhost:1313/languages/chinese-lang/</guid>
       
       <description>Сборник карточек, полезных сервисов, учебников и методик запоминания иероглифов HSK для самостоятельного изучения китайского языка.</description>
       
@@ -2816,9 +2816,9 @@
     
     <item>
       <title>Запуск галереи авторских фотографий и EXIF-трекеров</title>
-      <link>http://192.168.0.13:1313/about-all/new-photos/</link>
+      <link>http://localhost:1313/about-all/new-photos/</link>
       <pubDate>Sat, 20 Apr 2024 20:28:39 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/about-all/new-photos/</guid>
+      <guid>http://localhost:1313/about-all/new-photos/</guid>
       
       <description>Анонс интерактивной фотогалереи блога: снимки на пленку и цифру, настройки выдержки, диафрагмы и разбор композиции каждого кадра.</description>
       
@@ -2847,9 +2847,9 @@
     
     <item>
       <title>Запуск раздела Иностранные языки: Заметки и методики</title>
-      <link>http://192.168.0.13:1313/about-all/new-languages/</link>
+      <link>http://localhost:1313/about-all/new-languages/</link>
       <pubDate>Sat, 20 Apr 2024 20:28:39 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/about-all/new-languages/</guid>
+      <guid>http://localhost:1313/about-all/new-languages/</guid>
       
       <description>Анонс нового раздела блога, посвященного эффективному самостоятельному изучению иностранных языков, запоминанию слов и анализу грамматики.</description>
       
@@ -2878,9 +2878,9 @@
     
     <item>
       <title>Обзор Gramps: ПО для генеалогических исследований и древа</title>
-      <link>http://192.168.0.13:1313/til/tools/gramps/</link>
+      <link>http://localhost:1313/til/tools/gramps/</link>
       <pubDate>Sat, 20 Apr 2024 12:38:27 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/til/tools/gramps/</guid>
+      <guid>http://localhost:1313/til/tools/gramps/</guid>
       
       <description>Как исследовать родословную и построить семейное древо с помощью open-source приложения Gramps? Полный разбор возможностей и экспорта данных.</description>
       
@@ -2911,9 +2911,9 @@
     
     <item>
       <title>Основы OpenSCAD: программирование параметрических 3D-моделей</title>
-      <link>http://192.168.0.13:1313/til/cad/openscad/</link>
+      <link>http://localhost:1313/til/cad/openscad/</link>
       <pubDate>Sat, 30 Mar 2024 12:49:11 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/til/cad/openscad/</guid>
+      <guid>http://localhost:1313/til/cad/openscad/</guid>
       
       <description>Введение в OpenSCAD — скриптовый язык для создания 3D-моделей для печати. Разбираем код базовых фигур, трансформаций и вычитания объемов.</description>
       
@@ -2942,9 +2942,9 @@
     
     <item>
       <title>Вот умный дом, который построил Джек: Обзор</title>
-      <link>http://192.168.0.13:1313/about-all/smart-home/1711651438323-smart-home-ru/</link>
+      <link>http://localhost:1313/about-all/smart-home/1711651438323-smart-home-ru/</link>
       <pubDate>Fri, 29 Mar 2024 14:28:39 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/about-all/smart-home/1711651438323-smart-home-ru/</guid>
+      <guid>http://localhost:1313/about-all/smart-home/1711651438323-smart-home-ru/</guid>
       
       <description>Простая обзорная заметка о технологии умного дома в Россиии</description>
       
@@ -2962,7 +2962,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/about-all/smart-home/1711651438323-smart-home-ru/featured.png" medium="image"/>
+      <media:content url="http://localhost:1313/about-all/smart-home/1711651438323-smart-home-ru/featured.png" medium="image"/>
       
     </item>
     
@@ -2971,9 +2971,9 @@
     
     <item>
       <title>Запуск раздела TIL (Today I Learned): Ежедневные заметки</title>
-      <link>http://192.168.0.13:1313/about-all/new-til/</link>
+      <link>http://localhost:1313/about-all/new-til/</link>
       <pubDate>Fri, 29 Mar 2024 14:28:39 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/about-all/new-til/</guid>
+      <guid>http://localhost:1313/about-all/new-til/</guid>
       
       <description>Запуск формата коротких ежедневных заметок TIL (Today I Learned): выжимка полезных трюков в коде, инструментарии и мобильной разработке.</description>
       
@@ -2991,7 +2991,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/about-all/new-til/featured.svg" medium="image"/>
+      <media:content url="http://localhost:1313/about-all/new-til/featured.svg" medium="image"/>
       
     </item>
     
@@ -3000,9 +3000,9 @@
     
     <item>
       <title>Умный дом, который построил Джек: Кадры</title>
-      <link>http://192.168.0.13:1313/about-all/smart-home/1711659284793-smart-home-ru-2/</link>
+      <link>http://localhost:1313/about-all/smart-home/1711659284793-smart-home-ru-2/</link>
       <pubDate>Fri, 29 Mar 2024 14:28:39 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/about-all/smart-home/1711659284793-smart-home-ru-2/</guid>
+      <guid>http://localhost:1313/about-all/smart-home/1711659284793-smart-home-ru-2/</guid>
       
       <description>Мысли о кадрах в сфере умного дома. Немного моего опыта</description>
       
@@ -3020,7 +3020,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/about-all/smart-home/1711659284793-smart-home-ru-2/featured.png" medium="image"/>
+      <media:content url="http://localhost:1313/about-all/smart-home/1711659284793-smart-home-ru-2/featured.png" medium="image"/>
       
     </item>
     
@@ -3029,9 +3029,9 @@
     
     <item>
       <title>Официальные туториалы Develop in Swift: обзор курса от Apple</title>
-      <link>http://192.168.0.13:1313/til/swift/develop_in_swift_tutorials/</link>
+      <link>http://localhost:1313/til/swift/develop_in_swift_tutorials/</link>
       <pubDate>Fri, 29 Mar 2024 12:45:52 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/til/swift/develop_in_swift_tutorials/</guid>
+      <guid>http://localhost:1313/til/swift/develop_in_swift_tutorials/</guid>
       
       <description>Обзор официальных учебных материалов Develop in Swift от Apple для изучения разработки мобильных приложений под iOS на языке Swift и SwiftUI.</description>
       
@@ -3060,9 +3060,9 @@
     
     <item>
       <title>Генерация статического контента и API документации в Flutter</title>
-      <link>http://192.168.0.13:1313/til/flutter/1711660895366-flutter/</link>
+      <link>http://localhost:1313/til/flutter/1711660895366-flutter/</link>
       <pubDate>Thu, 28 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>http://192.168.0.13:1313/til/flutter/1711660895366-flutter/</guid>
+      <guid>http://localhost:1313/til/flutter/1711660895366-flutter/</guid>
       
       <description>Гайд по утилите assets-for-api-docs и генерации статических графических ресурсов и примеров для документации Flutter API и пакетов Dart.</description>
       
@@ -3091,9 +3091,9 @@
     
     <item>
       <title>Полезные ресурсы и материалы для изучения языка Rust</title>
-      <link>http://192.168.0.13:1313/rust/links/</link>
+      <link>http://localhost:1313/rust/links/</link>
       <pubDate>Thu, 28 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>http://192.168.0.13:1313/rust/links/</guid>
+      <guid>http://localhost:1313/rust/links/</guid>
       
       <description>Сборник проверенных книг, документации, интерактивных курсов и сообществ для полного погружения в разработку на языке программирования Rust.</description>
       
@@ -3117,7 +3117,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/links/featured.jpg" medium="image"/>
+      <media:content url="http://localhost:1313/rust/links/featured.jpg" medium="image"/>
       
     </item>
     
@@ -3126,9 +3126,9 @@
     
     <item>
       <title>Введение в язык программирования Rust: Базовый синтаксис</title>
-      <link>http://192.168.0.13:1313/rust/start-rust/</link>
+      <link>http://localhost:1313/rust/start-rust/</link>
       <pubDate>Sat, 16 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>http://192.168.0.13:1313/rust/start-rust/</guid>
+      <guid>http://localhost:1313/rust/start-rust/</guid>
       
       <description>Простое и понятное введение в язык программирования Rust для начинающих: переменные, типы данных, функции и первые шаги в написании надежного кода.</description>
       
@@ -3148,7 +3148,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/start-rust/featured.png" medium="image"/>
+      <media:content url="http://localhost:1313/rust/start-rust/featured.png" medium="image"/>
       
     </item>
     
@@ -3157,9 +3157,9 @@
     
     <item>
       <title>Основы match в Rust: базовое сопоставление с образцом для начинающих</title>
-      <link>http://192.168.0.13:1313/rust/match/</link>
+      <link>http://localhost:1313/rust/match/</link>
       <pubDate>Sat, 16 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>http://192.168.0.13:1313/rust/match/</guid>
+      <guid>http://localhost:1313/rust/match/</guid>
       
       <description>Краткое и наглядное руководство по основам match в Rust для начинающих: синтаксис сопоставления шаблонов, работа с Enum и простые Match Guards.</description>
       
@@ -3183,7 +3183,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/rust/match/featured.png" medium="image"/>
+      <media:content url="http://localhost:1313/rust/match/featured.png" medium="image"/>
       
     </item>
     
@@ -3192,9 +3192,9 @@
     
     <item>
       <title>Мой первый пост после перезапуска :rocket:</title>
-      <link>http://192.168.0.13:1313/about-all/start/</link>
+      <link>http://localhost:1313/about-all/start/</link>
       <pubDate>Wed, 13 Mar 2024 00:00:00 +0000</pubDate>
-      <guid>http://192.168.0.13:1313/about-all/start/</guid>
+      <guid>http://localhost:1313/about-all/start/</guid>
       
       <description>Немного о том про что блог</description>
       
@@ -3212,7 +3212,7 @@
         
       
       
-      <media:content url="http://192.168.0.13:1313/about-all/start/featured.svg" medium="image"/>
+      <media:content url="http://localhost:1313/about-all/start/featured.svg" medium="image"/>
       
     </item>
     
@@ -3221,9 +3221,9 @@
     
     <item>
       <title>Все статьи, публикации, посты</title>
-      <link>http://192.168.0.13:1313/posts/</link>
+      <link>http://localhost:1313/posts/</link>
       <pubDate>Tue, 20 Feb 2024 14:28:39 +0300</pubDate>
-      <guid>http://192.168.0.13:1313/posts/</guid>
+      <guid>http://localhost:1313/posts/</guid>
       
       <description>Полный каталог всех опубликованных статей, уроков по Rust, мобильной разработке, фотографии и путешествиям с фильтрацией по тегам и сериям.</description>
       
@@ -3250,9 +3250,9 @@
     
     <item>
       <title>Статистика читателя и прогресс прохождения квизов</title>
-      <link>http://192.168.0.13:1313/stats/</link>
+      <link>http://localhost:1313/stats/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://192.168.0.13:1313/stats/</guid>
+      <guid>http://localhost:1313/stats/</guid>
       
       <description>Персональная статистика читателя EagleBlog: количество пройденных интерактивных тестов, очков опыта XP, сохраненных закладок и прочитанных уроков.</description>
       

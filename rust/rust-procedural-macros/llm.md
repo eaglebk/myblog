@@ -2,7 +2,7 @@
 
 > Глубокое руководство по процедурным макросам в Rust: три вида макросов (derive, attribute-like, function-like), устройство TokenStream, работа с syn и quote.
 
-- **URL:** http://192.168.0.13:1313/rust/rust-procedural-macros/
+- **URL:** http://localhost:1313/rust/rust-procedural-macros/
 - **Date:** 2026-08-09
 
 - **Tags:** rust, dev, procedural-macros, proc-macro, syn, quote
