@@ -5,7 +5,7 @@
 - **URL:** https://eagle2000.space/en/photography/curves-color-toning/
 - **Date:** 2026-04-26
 - **Categories:** photography
-- **Tags:** processing, color-correction, tips
+- **Tags:** photography, tips, technique
 
 ---
 Have you ever noticed a distracting, unwanted color tint creep into your photos during editing? Most often, it's an **unwanted red color cast** that ruins skin tones or makes landscapes look unnatural.

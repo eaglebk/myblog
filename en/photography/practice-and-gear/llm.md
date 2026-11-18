@@ -5,7 +5,7 @@
 - **URL:** https://eagle2000.space/en/photography/practice-and-gear/
 - **Date:** 2026-04-27
 - **Categories:** photography
-- **Tags:** experience, equipment, tips
+- **Tags:** photography, tips, technique
 
 ---
 There is a very popular myth among beginner photographers: *“Once I buy an expensive DSLR or mirrorless camera, my photos will instantly become masterpieces!”*

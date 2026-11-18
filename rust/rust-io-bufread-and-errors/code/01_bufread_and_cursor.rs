@@ -7,7 +7,7 @@ pub struct LogMetrics {
     pub error_lines: usize,
 }
 
-// Принимаем обобщенный `impl BufRead` вместо жестко привязанного `StdinLock` или `BufReader<File>`:
+// Принимаем `impl BufRead` вместо жёстко привязанного `StdinLock` или `BufReader<File>`:
 pub fn analyze_log_stream(input: impl BufRead) -> Result<LogMetrics> {
     let mut total_lines = 0;
     let mut error_lines = 0;
@@ -27,11 +27,13 @@ pub fn analyze_log_stream(input: impl BufRead) -> Result<LogMetrics> {
 }
 
 fn main() {
-    // В тестах мы создаем фейковый поток ввода с помощью std::io::Cursor без обращения к файловой системе:
+    // В тестах поток ввода подменяется через std::io::Cursor без обращения к диску:
     let fake_log_data = "[INFO] System start\n[ERROR] Connection timeout\n[INFO] Retrying\n";
     let cursor = Cursor::new(fake_log_data);
 
     let metrics = analyze_log_stream(cursor).expect("Ошибка анализа лог-потока");
+    assert_eq!(metrics.total_lines, 3);
+    assert_eq!(metrics.error_lines, 1);
     println!(
         "Проанализировано строк: {}, ошибок найдено: {}",
         metrics.total_lines, metrics.error_lines
@@ -39,28 +41,34 @@ fn main() {
 }
 
 // ! **1. Подход Magic Function и BufRead**
-// ! - Сначала проектируем функцию от удобного вызова, подбирая минимально достаточный типаж `impl BufRead`.
-// ! - Использование `std::io::Cursor` позволяет тестировать потоки чтения прямо в оперативной памяти без диск-И/О.
+// ! - Сначала проектируем функцию, подбирая минимально требуемый и подходящий типаж `impl BufRead`.
+// ! - Использование `std::io::Cursor` позволяет тестировать потоки чтения прямо в оперативной памяти без обращения к файловой системе.
 
 // ---
 
 // Шаг 2: Эффективная блокировка stdin().lock() для высокопроизводительного ввода
 // ?ignore
 
-use std::io::{stdin, BufRead};
+use std::io::{self, stdin, BufRead};
 
-fn process_user_stream(input: impl BufRead) -> usize {
-    input.lines().map_while(Result::ok).count()
+fn process_user_stream(input: impl BufRead) -> io::Result<usize> {
+    let mut count = 0;
+    for line in input.lines() {
+        let _ = line?; // Явно пробрасываем ошибки чтения и UTF-8, не теряя их молча
+        count += 1;
+    }
+    Ok(count)
 }
 
-fn main() {
-    // Вызов stdin().lock() блокирует глобальный поток ввода на время работы,
+fn main() -> io::Result<()> {
+    // Вызов stdin().lock() блокирует стандартный ввод один раз на всё время работы,
     // избавляя от повторных захватов Mutex при чтении каждой строки:
     let locked_stdin = stdin().lock();
 
-    // Передаем заблокированный stdin в ту же универсальную функцию:
-    let count = process_user_stream(locked_stdin);
+    // Передаём заблокированный stdin в ту же универсальную функцию:
+    let count = process_user_stream(locked_stdin)?;
     println!("Получено строк из стандартного ввода: {count}");
+    Ok(())
 }
 
 // ! **2. Захват блокировки через `stdin().lock()`**

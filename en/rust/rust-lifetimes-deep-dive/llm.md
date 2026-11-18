@@ -1,14 +1,13 @@
-# Lifetimes in Rust: Deep Dive into References, Elision, HRTB, and Variance
+# Rust Lifetimes Deep Dive: Elision, HRTB, and Variance
 
 > Master Rust lifetimes: how lifetime elision works, storing references in structs, &'static vs T: 'static, higher-rank trait bounds (for<'a>), and variance.
 
 - **URL:** https://eagle2000.space/en/rust/rust-lifetimes-deep-dive/
 - **Date:** 2026-10-21
 
-- **Tags:** rust, dev, lifetimes, borrow-checker, elision, hrtb, variance
+- **Tags:** rust, dev, lifetimes, memory, advanced
 
----
-## Introduction
+---## Introduction
 
 Memory management in Rust relies on ownership and borrowing rules. A frequent question in interviews and code reviews is: how does the compiler verify at build time that a reference remains valid, ensuring the program never accesses freed memory?
 

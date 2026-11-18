@@ -1,14 +1,13 @@
-# Продвинутые типажи в Rust: ассоциированные типы, супертрейты и blanket-реализации
+# Продвинутые трейты в Rust: ассоциированные типы и супертрейты
 
-> Глубокое погружение в продвинутые возможности типажей Rust: ассоциированные типы type Item, ассоциированные константы, синтаксис <Type as Trait>::method, супертрейты и blanket-реализации.
+> Разбираю ассоциированные константы, синтаксис <Type as Trait>::method, ограничения типов и blanket-реализации для гибкой архитектуры кода.
 
 - **URL:** https://eagle2000.space/rust/rust-advanced-traits/
 - **Date:** 2026-08-18
 
-- **Tags:** rust, dev, traits, associated-types, supertraits, blanket-impls, fully-qualified-syntax
+- **Tags:** rust, dev, traits, generics, advanced
 
----
-## Введение
+---## Введение
 
 В прошлых статьях [rust-traits](../rust-traits/) и [rust-dyn-traits](../rust-dyn-traits/) мы подробно разобрали типажи как основной механизм создания интерфейсов и полиморфизма в Rust.
 

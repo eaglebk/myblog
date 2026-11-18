@@ -1,14 +1,13 @@
-# Advanced traits in Rust: associated types, supertraits, and blanket implementations
+# Advanced Traits in Rust: Associated Types and Supertraits
 
-> In-depth guide to advanced Rust traits: associated types, associated constants, fully qualified syntax <Type as Trait>::method, supertraits, and blanket implementations.
+> Learn how to use associated constants, fully qualified syntax <Type as Trait>::method, and blanket implementations in complex Rust codebases.
 
 - **URL:** https://eagle2000.space/en/rust/rust-advanced-traits/
 - **Date:** 2026-08-18
 
-- **Tags:** rust, dev, traits, associated-types, supertraits, blanket-impls, fully-qualified-syntax
+- **Tags:** rust, dev, traits, generics, advanced
 
----
-## Introduction
+---## Introduction
 
 In previous articles [rust-traits](../rust-traits/) and [rust-dyn-traits](../rust-dyn-traits/), I covered traits as Rust's foundational mechanism for defining shared interfaces and polymorphism.
 

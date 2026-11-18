@@ -1,11 +1,11 @@
-# Как посчитать количество элементов в массиве в PostgreSQL: cardinality и array_length
+# Размер массива в PostgreSQL: cardinality и array_length
 
 > Разбираем способы подсчета элементов в массиве PostgreSQL. Сравнение функций cardinality() и array_length(), работа с многомерными массивами и обработка NULL.
 
 - **URL:** https://eagle2000.space/til/postgresql/array-len/
 - **Date:** 2025-02-14
 
-- **Tags:** PostgreSQL
+- **Tags:** dev, technology
 
 ---
 ### Вступление

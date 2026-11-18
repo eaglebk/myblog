@@ -17,6 +17,41 @@
     
     
     <item>
+      <title>BufRead and stdin().lock() in Rust: Fast I/O, Testing, and Errors</title>
+      <link>https://eagle2000.space/en/rust/rust-io-bufread-and-errors/</link>
+      <pubDate>Tue, 17 Nov 2026 19:21:00 +0300</pubDate>
+      <guid>https://eagle2000.space/en/rust/rust-io-bufread-and-errors/</guid>
+      
+      <description>How to cut syscall overhead with BufRead, unit-test streams via std::io::Cursor, handle .lines() failures, and return clean UNIX exit codes in CLI tools.</description>
+      
+      <category>rust</category>
+      
+      <category>dev</category>
+      
+      <category>io</category>
+      
+      <category>errors</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="https://eagle2000.space/rust/rust-io-bufread-and-errors/featured.png" medium="image"/>
+      
+    </item>
+    
+    
+    
+    
+    <item>
       <title>Rust Iterators: Lazy Data Processing Without Extra Allocations</title>
       <link>https://eagle2000.space/en/rust/rust-iterators-deep-dive/</link>
       <pubDate>Fri, 13 Nov 2026 13:00:00 +0300</pubDate>

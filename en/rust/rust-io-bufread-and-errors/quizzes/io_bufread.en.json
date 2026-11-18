@@ -1,0 +1,62 @@
+[
+  {
+    "question": "Why should streaming functions accept `impl BufRead` instead of `&mut File` or `StdinLock`?",
+    "options": [
+      "So the compiler automatically compresses the input buffer in memory",
+      "To decouple the logic from the data source and unit-test easily via in-memory `std::io::Cursor`",
+      "To skip error handling when reading from disk"
+    ],
+    "answer": 1,
+    "explanation": "`impl BufRead` accepts any buffered reader: `BufReader<File>` or `StdinLock` in production, and an in-memory `std::io::Cursor` in unit tests."
+  },
+  {
+    "question": "What is the benefit of calling `std::io::stdin().lock()` before a read loop?",
+    "options": [
+      "It automatically converts input bytes into `Vec<u8>` without UTF-8 validation",
+      "It disables OS buffering so lines are read directly from disk",
+      "It acquires the global stdin mutex once, removing per-line lock/unlock overhead"
+    ],
+    "answer": 2,
+    "explanation": "`.lock()` returns `StdinLock` and holds the mutex across the entire loop, eliminating repeated synchronization on every line."
+  },
+  {
+    "question": "Why does `.lines()` yield `Result<String>` instead of `String` on each step?",
+    "options": [
+      "Reading from an external stream can fail mid-way due to I/O errors or invalid UTF-8 bytes",
+      "Because `BufRead` always reads files backwards",
+      "So the compiler can parallelize the loop across threads"
+    ],
+    "answer": 0,
+    "explanation": "Any `.next()` call on `.lines()` can encounter a device error or malformed UTF-8, so each line is wrapped in `Result`."
+  },
+  {
+    "question": "Why should CLI tools print errors via `eprintln!` and return `std::process::ExitCode` from `main()` instead of calling `process::exit(1)`?",
+    "options": [
+      "Because `process::exit(1)` cannot be called inside a `match` arm",
+      "Errors go to `stderr` without polluting `stdout` pipes, and returning `ExitCode` runs `Drop` destructors and flushes buffers cleanly",
+      "Because `eprintln!` automatically exits the process with code `1`"
+    ],
+    "answer": 1,
+    "explanation": "`eprintln!` keeps `stdout` clean for downstream pipes, while `ExitCode` avoids bypassing `Drop` destructors like `process::exit` does."
+  },
+  {
+    "question": "What gotcha should you watch out for when replacing `.lines()` with `read_line(&mut buf)` and `buf.clear()`?",
+    "options": [
+      "`read_line()` automatically trims all leading and trailing whitespace",
+      "`read_line()` ignores invalid UTF-8 sequences",
+      "`read_line()` keeps the trailing `\\n` / `\\r\\n` in `buf`, so you must strip it before parsing"
+    ],
+    "answer": 2,
+    "explanation": "Unlike `.lines()`, `read_line()` reuses the buffer without extra allocations, but leaves line endings in `buf` - typically stripped via `trim_end_matches(&['\\r', '\\n'])`."
+  },
+  {
+    "question": "Why call `out.flush()?` explicitly on `BufWriter<StdoutLock>`, and how should `ErrorKind::BrokenPipe` be handled?",
+    "options": [
+      "To reset the `StdinLock` counter, and panic immediately on `BrokenPipe`",
+      "`Drop` ignores flush errors so explicit `flush()?` catches them; on `BrokenPipe` (e.g., `| head -n 5`) return `ExitCode::SUCCESS` quietly",
+      "`flush()` clears the terminal screen, and `BrokenPipe` only occurs when disk is full"
+    ],
+    "answer": 1,
+    "explanation": "`BufWriter::drop` silently discards flush errors, making explicit `flush()?` essential. An early closed pipe is normal in UNIX and should exit with code `0` without a panic trace."
+  }
+]

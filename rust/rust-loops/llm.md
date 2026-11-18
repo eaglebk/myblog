@@ -5,7 +5,7 @@
 - **URL:** https://eagle2000.space/rust/rust-loops/
 - **Date:** 2026-07-31
 
-- **Tags:** rust, dev, Rust-basic
+- **Tags:** rust, dev, basics
 
 ---## Введение
 

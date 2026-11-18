@@ -5,7 +5,7 @@
 - **URL:** https://eagle2000.space/languages/chinese-lang/
 - **Date:** 2024-04-23
 
-- **Tags:** chinese
+- **Tags:** languages, советы
 
 ---{{< lead >}}
 Мне очень нравится изучать китайский язык, древнейшая цивилизация с богатой

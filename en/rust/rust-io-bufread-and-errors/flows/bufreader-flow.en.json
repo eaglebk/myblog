@@ -1,0 +1,110 @@
+{
+  "title": "How <code>BufReader</code> Saves System Calls",
+  "interval": 2600,
+  "code": [
+    "let mut reader = BufReader::new(file);",
+    "let mut buf = String::new();",
+    "while reader.read_line(&mut buf)? > 0 {",
+    "    process(&buf);",
+    "    buf.clear();",
+    "}"
+  ],
+  "nodes": [
+    {
+      "id": "app",
+      "name": "read_line(&mut buf)",
+      "role": "User Mode code",
+      "kind": "state",
+      "defaultState": "waiting for line"
+    },
+    {
+      "id": "ram",
+      "name": "8 KB Buffer",
+      "role": "RAM (zero syscalls)",
+      "kind": "chips",
+      "chips": ["L1", "L2", "L3", "…"]
+    },
+    {
+      "id": "os",
+      "name": "OS: sys_read()",
+      "role": "Kernel Mode + Disk",
+      "kind": "state",
+      "defaultState": "idle"
+    }
+  ],
+  "links": [
+    { "id": "ar", "downLabel": "↓ request line", "upLabel": "↑ slice from RAM" },
+    { "id": "ro", "downLabel": "↓ sys_read(8192)", "upLabel": "↑ 8 KB chunk" }
+  ],
+  "steps": [
+    {
+      "label": "Buffer empty",
+      "explain": "On the first <code>read_line</code> call, the internal 8 KB buffer is empty, so no line can be served from RAM yet.",
+      "lines": { "2": "active" },
+      "nodes": {
+        "app": { "tone": "active", "state": "requests line 1" },
+        "ram": { "tone": "drop", "chips": {} },
+        "os": { "state": "idle" }
+      },
+      "arrows": {
+        "ar": { "dir": "down", "tone": "active", "label": "↓ needs line 1" }
+      }
+    },
+    {
+      "label": "1 syscall (8 KB)",
+      "explain": "<code>BufReader</code> issues a <strong>single</strong> <code>sys_read(8192)</code> syscall and pulls an entire 8 KB block (hundreds of lines) into RAM.",
+      "lines": { "2": "active" },
+      "nodes": {
+        "app": { "state": "waiting for chunk" },
+        "ram": { "tone": "active", "chips": { "0": "current", "1": "current", "2": "current" } },
+        "os": { "tone": "active", "state": "sys_read(8192) → RAM" }
+      },
+      "arrows": {
+        "ro": [
+          { "dir": "down", "tone": "active", "label": "↓ sys_read(8192)" },
+          { "dir": "up", "tone": "ok", "label": "↑ 8 KB loaded" }
+        ]
+      }
+    },
+    {
+      "label": "Line 1 from RAM",
+      "explain": "The first line is copied straight from the RAM buffer with zero context switches into the OS kernel.",
+      "lines": { "2": "ok", "3": "ok", "4": "ok" },
+      "nodes": {
+        "app": { "tone": "ok", "state": "processing line 1" },
+        "ram": { "tone": "ok", "chips": { "0": "accepted", "1": "current" } },
+        "os": { "state": "not touched!" }
+      },
+      "arrows": {
+        "ar": { "dir": "up", "tone": "ok", "label": "↑ line 1 (from RAM)" }
+      }
+    },
+    {
+      "label": "Line 2 from RAM",
+      "explain": "The next iteration reads <code>line 2</code> from RAM, while <code>buf.clear()</code> resets the string capacity without reallocating.",
+      "lines": { "2": "ok", "3": "ok", "4": "ok" },
+      "nodes": {
+        "app": { "tone": "ok", "state": "processing line 2" },
+        "ram": { "tone": "ok", "chips": { "0": "accepted", "1": "accepted", "2": "current" } },
+        "os": { "state": "not touched!" }
+      },
+      "arrows": {
+        "ar": { "dir": "up", "tone": "ok", "label": "↑ line 2 (0 syscalls)" }
+      }
+    },
+    {
+      "label": "Line 3 from RAM",
+      "explain": "<code>BufReader</code> keeps serving lines out of RAM, cutting 1 MB down to ~128 syscalls instead of a million.",
+      "lines": { "2": "ok", "3": "ok" },
+      "nodes": {
+        "app": { "tone": "ok", "state": "processing line 3" },
+        "ram": { "tone": "ok", "chips": { "0": "accepted", "1": "accepted", "2": "accepted" } },
+        "os": { "state": "idle (1 syscall / 8 KB)" }
+      },
+      "arrows": {
+        "ar": { "dir": "up", "tone": "ok", "label": "↑ line 3 (0 syscalls)" }
+      }
+    }
+  ]
+}
+

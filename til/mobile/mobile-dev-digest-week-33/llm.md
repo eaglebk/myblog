@@ -1,11 +1,11 @@
-# Дайджест мобильной разработки: Релиз Flutter 3.47 & Dart 3.13, 5 лет Compose, безопасность и утилиты
+# Мобильный дайджест: Flutter 3.47, Dart 3.13 и 5 лет Compose
 
-> Подробный дайджест мобильной разработки: релизы Flutter 3.47 и Dart 3.13, 5 лет Jetpack Compose, правила безопасности Semgrep, гайды Apple по промо в App Store и open-source утилиты.
+> Мобильный дайджест: релизы Flutter 3.47 и Dart 3.13, 5 лет Jetpack Compose, правила безопасности Semgrep и гайды Apple для App Store.
 
 - **URL:** https://eagle2000.space/til/mobile/mobile-dev-digest-week-33/
 - **Date:** 2026-08-17
 
-- **Tags:** ios, android, swift, kotlin, flutter, dart, security, mobile
+- **Tags:** mobile, flutter, kotlin, ios
 
 ---
 В этом выпуске собрал разбор ключевых новостей мобильной разработки: крупный релиз Flutter 3.47 и Dart 3.13, пятилетие Jetpack Compose, единый набор правил безопасности Semgrep, гайдлайны Apple по промо в App Store и простой opensource видеоредактор.

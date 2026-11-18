@@ -21,11 +21,11 @@
 > Небольшое обновление интерфейса EagleBlog: обновил дизайн карточек статей и главную страницу. Теперь последняя публикация сразу привлекает к себе внимание.
 
 - **Дата:** 2026-09-08
-- **Теги:** design, blog
+- **Теги:** start, dev
 - **Markdown URL для агентов:** `https://eagle2000.space/about-all/blog-design-update/llm.md`
 
 
-### 2. [Android 15 и 16 KB страница памяти: что изменится, как подготовить Android и Flutter-приложения](https://eagle2000.space/about-all/android-16k/llm.md)
+### 2. [Android 15 и 16 KB страницы памяти: гайд для Android и Flutter](https://eagle2000.space/about-all/android-16k/llm.md)
 
 > Android 15 ввел поддержку 16KB memory pages. Разбираем, что это значит для нативных и Flutter-приложений, как избежать ошибок Play Console и что обновить.
 
@@ -34,7 +34,7 @@
 - **Markdown URL для агентов:** `https://eagle2000.space/about-all/android-16k/llm.md`
 
 
-### 3. [Как отправить несколько файлов одним сообщением через Telegram Bot API](https://eagle2000.space/about-all/telegram-multiple-files/llm.md)
+### 3. [Отправка нескольких файлов одним сообщением в Telegram Bot API](https://eagle2000.space/about-all/telegram-multiple-files/llm.md)
 
 > Пошаговый гайд по отправке медиагруппы из нескольких файлов, фотографий и документов одним альбомом или сообщением через Telegram Bot API с примерами кода.
 
@@ -48,7 +48,7 @@
 > История создания музыкального альбома Код Ночи, сгенерированного нейронными сетями: концепция, треки и атмосфера ночного программирования.
 
 - **Дата:** 2024-06-11
-- **Теги:** music
+- **Теги:** technology, start
 - **Markdown URL для агентов:** `https://eagle2000.space/about-all/night-code/llm.md`
 
 
@@ -81,7 +81,7 @@
 
 ### 8. [Мой первый пост после перезапуска :rocket:](https://eagle2000.space/about-all/start/llm.md)
 
-> Немного о том про что блог
+> Перезапуск моего блога на Hugo: рассказываю о переезде с Ghost, планах на публикации по Flutter, Rust, Go, Linux, Docker и заметки о хобби.
 
 - **Дата:** 2024-03-13
 - **Теги:** start

@@ -1,6 +1,6 @@
 # Rust async и Tokio: В ожидании будущего
 
-> История экипажа Vectoria — наглядное объяснение синхронного и асинхронного кода, разницы с параллельностью, и практики Tokio: spawn, spawn_blocking, join!, join_all, JoinHandle, Handle, cooperative multitasking.
+> Наглядное объяснение асинхронности, отличий от параллелизма и практики Tokio: spawn, spawn_blocking, join! и кооперативная многозадачность.
 
 - **URL:** https://eagle2000.space/rust/future-async/
 - **Date:** 2025-09-18

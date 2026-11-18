@@ -5,7 +5,7 @@
 - **URL:** https://eagle2000.space/rust/match/
 - **Date:** 2024-03-16
 
-- **Tags:** rust, dev, match, basics
+- **Tags:** rust, dev, pattern-matching, basics
 
 ---## Введение
 

@@ -12,7 +12,7 @@
 ### 🔹 [Rust](https://eagle2000.space/en/rust/llm.md)
 > My personal journey learning Rust: from first experiments and basic syntax to Tokio async runtime and ESP32 embedded projects.
 
-- **Статей:** 14
+- **Статей:** 15
 - **Каталог раздела для LLM:** `https://eagle2000.space/en/rust/llm.md`
 
 ### 🔹 [Photography](https://eagle2000.space/en/photography/llm.md)
@@ -55,17 +55,18 @@
 
 ## 🚀 Последние публикации:
 
+- [Fast I/O in Rust: Buffering, In-Memory Tests, and CLI Errors](https://eagle2000.space/en/rust/rust-io-bufread-and-errors/llm.md) (2026-11-18) — *rust*
 - [Rust Iterators: Lazy Data Processing Without Extra Allocations](https://eagle2000.space/en/rust/rust-iterators-deep-dive/llm.md) (2026-11-13) — *rust*
 - [Closures in Rust: Functions with Their Own Memory](https://eagle2000.space/en/rust/rust-closures/llm.md) (2026-11-05) — *rust*
-- [Lifetimes in Rust: Deep Dive into References, Elision, HRTB, and Variance](https://eagle2000.space/en/rust/rust-lifetimes-deep-dive/llm.md) (2026-10-21) — *rust*
-- [Rust: Deep Dive into Pattern Matching - Destructuring, Bindings, and Guards](https://eagle2000.space/en/rust/rust-pattern-matching-deep-dive/llm.md) (2026-10-05) — *rust*
-- [Using and Choosing std::collections in Rust: BTreeMap, HashSet, BinaryHeap, and VecDeque](https://eagle2000.space/en/rust/rust-collections-overview/llm.md) (2026-09-18) — *rust*
+- [Rust Lifetimes Deep Dive: Elision, HRTB, and Variance](https://eagle2000.space/en/rust/rust-lifetimes-deep-dive/llm.md) (2026-10-21) — *rust*
+- [Pattern Matching in Rust: Destructuring, Bindings, and Guards](https://eagle2000.space/en/rust/rust-pattern-matching-deep-dive/llm.md) (2026-10-05) — *rust*
+- [Choosing std::collections in Rust: Maps, Sets, and Queues](https://eagle2000.space/en/rust/rust-collections-overview/llm.md) (2026-09-18) — *rust*
 - [Interior Mutability in Rust: Pattern Philosophy, Cell, and RefCell](https://eagle2000.space/en/rust/rust-interior-mutability/llm.md) (2026-09-09) — *rust*
-- [Advanced traits in Rust: associated types, supertraits, and blanket implementations](https://eagle2000.space/en/rust/rust-advanced-traits/llm.md) (2026-08-18) — *rust*
-- [Mobile development digest: Flutter 3.47 & Dart 3.13, 5 years of Compose & tools](https://eagle2000.space/en/til/mobile/mobile-dev-digest-week-33/llm.md) (2026-08-17) — *til*
+- [Advanced Traits in Rust: Associated Types and Supertraits](https://eagle2000.space/en/rust/rust-advanced-traits/llm.md) (2026-08-18) — *rust*
+- [Mobile Digest: Flutter 3.47, Dart 3.13 & 5 Years of Compose](https://eagle2000.space/en/til/mobile/mobile-dev-digest-week-33/llm.md) (2026-08-17) — *til*
 - [Crate of the Day: Strum - iterating and converting Rust Enum](https://eagle2000.space/en/rust/crate-of-the-day-strum/llm.md) (2026-08-16) — *rust*
 - [Trait Objects: How Dynamic Polymorphism Works in Rust](https://eagle2000.space/en/rust/rust-dyn-traits/llm.md) (2026-08-14) — *rust*
-- [Memory Management in Rust: RAII Pattern, Box Pointers, and Deref Coercion](https://eagle2000.space/en/rust/rust-raii-box-deref/llm.md) (2026-08-12) — *rust*
+- [Memory Management in Rust: RAII, Box<T>, and Deref Coercion](https://eagle2000.space/en/rust/rust-raii-box-deref/llm.md) (2026-08-12) — *rust*
 - [Traits in Rust: From Fundamentals to Monomorphic Zero-Cost Code](https://eagle2000.space/en/rust/rust-traits/llm.md) (2026-08-07) — *rust*
 - [Enums in Rust: From Syntax to Pattern Matching](https://eagle2000.space/en/rust/rust-enums/llm.md) (2026-08-01) — *rust*
 - [Conditionals and Control Flow in Rust](https://eagle2000.space/en/rust/rust-conditionals/llm.md) (2026-07-31) — *rust*

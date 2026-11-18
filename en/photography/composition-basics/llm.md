@@ -5,7 +5,7 @@
 - **URL:** https://eagle2000.space/en/photography/composition-basics/
 - **Date:** 2026-04-25
 - **Categories:** photography
-- **Tags:** composition, tips
+- **Tags:** photography, tips
 
 ---
 Composition is how the elements of a frame are arranged relative to each other. One of the simplest and most effective ways to improve your shots is to use the **rule of thirds**.

@@ -1,14 +1,13 @@
 # Traits in Rust: From Fundamentals to Monomorphic Zero-Cost Code
 
-> A comprehensive guide to traits in Rust: from basic syntax and impl blocks to default methods, generic constraints, impl Trait syntax, and zero-cost monomorphization.
+> Learn trait syntax and impl blocks, default method implementations, generic bounds, impl Trait parameters, and zero-cost monomorphization.
 
 - **URL:** https://eagle2000.space/en/rust/rust-traits/
 - **Date:** 2026-08-07
 
 - **Tags:** rust, dev, traits, generics, middle
 
----
-## Introduction: Why Do We Need Traits?
+---## Introduction: Why Do We Need Traits?
 
 Imagine we are building a fitness application with different exercise types: `Pushups` and `Plank`. Both need to calculate calories burned, but do so using different logic:
 

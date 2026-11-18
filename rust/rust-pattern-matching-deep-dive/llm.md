@@ -1,14 +1,13 @@
-# Rust: тонкости Pattern Matching - деструктуризация, bindings и guards
+# Тонкости Pattern Matching в Rust: деструктуризация и guards
 
-> Изучаем как работает сопоставление с образцом Pattern Matching в Rust: exhaustiveness, деструктуризация, @-binding, slice patterns и guards на примерах реальных проектов
+> Разбираю проверку исчерпываемости exhaustiveness, @-binding, паттерны срезов и match guards на примерах из реальных open-source проектов.
 
 - **URL:** https://eagle2000.space/rust/rust-pattern-matching-deep-dive/
 - **Date:** 2026-10-05
 
-- **Tags:** rust, dev, pattern-matching, destructuring, match-guards, if-let, while-let
+- **Tags:** rust, dev, pattern-matching, middle
 
----
-## Введение
+---## Введение
 
 Паттерн-матчинг в Rust часто воспринимают как аналог оператора `switch/case` из других языков. На деле это один из самых полезных инструментов в языке. Для нас авторы языка позаботились добавить выражения `match`, `if let` и `let` которые умеют разбирать структуры прямо на лету, проверять условия без вложенных `if` и отсекать невалидные состояния ещё на этапе компиляции. 
 

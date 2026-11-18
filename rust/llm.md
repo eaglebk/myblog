@@ -5,7 +5,7 @@
 
 
 - **URL раздела:** https://eagle2000.space/rust/
-- **Количество статей:** 46
+- **Количество статей:** 47
 - **Язык:** ru
 
 ---
@@ -21,7 +21,7 @@
 > Сборник проверенных книг, документации, интерактивных курсов и сообществ для полного погружения в разработку на языке программирования Rust.
 
 - **Дата:** 2024-03-28
-- **Теги:** rust, dev, resources, learning
+- **Теги:** rust, dev, basics
 - **Markdown URL для агентов:** `https://eagle2000.space/rust/links/llm.md`
 
 
@@ -34,7 +34,7 @@
 - **Markdown URL для агентов:** `https://eagle2000.space/rust/start-rust/llm.md`
 
 
-### 3. [Переменные в Rust: объявление, связывание (binding) и область видимости](https://eagle2000.space/rust/rust-var/llm.md)
+### 3. [Переменные в Rust: объявление, связывание и видимость](https://eagle2000.space/rust/rust-var/llm.md)
 
 > Как объявлять переменные в Rust с помощью let, работать со скрытием (shadowing) и соблюдать соглашение snake_case. Понятные примеры для начинающих.
 
@@ -45,7 +45,7 @@
 
 ### 4. [Работа с println! и интерполяцией строк в Rust](https://eagle2000.space/rust/rust-str-interpolation/llm.md)
 
-> Узнайте о макросе println! и интерполяции строк в Rust. В этой статье мы рассмотрим, как использовать println! для вывода сообщений, добавлять динамические значения в строку и использовать именованные аргументы. Rust, println!, интерполяция строк, динамические значения, именованные аргументы
+> Показываю на примерах, как форматировать вывод в консоль, подставлять переменные в текст и использовать именованные аргументы в макросах.
 
 - **Дата:** 2025-05-03
 - **Теги:** rust, dev
@@ -66,25 +66,25 @@
 > Пошаговый гайд по циклам в Rust: синтаксис loop, while, for, работа с диапазонами range, итераторами и досрочным выходом break/continue с примерами.
 
 - **Дата:** 2026-07-31
-- **Теги:** rust, dev, Rust-basic
+- **Теги:** rust, dev, basics
 - **Markdown URL для агентов:** `https://eagle2000.space/rust/rust-loops/llm.md`
 
 
 ### 7. [Кортежи в Rust (Tuples): объявление, деструктуризация и unit-тип ()](https://eagle2000.space/rust/rust-tuples/llm.md)
 
-> Подробное руководство по кортежам (tuples) в языке Rust. Инициализация, доступ по индексам, деструктуризация (pattern matching) и особенности пустой сигнатуры ().
+> Подробный разбор работы с кортежами: создание, обращение к элементам по индексу, распаковка значений и роль пустой сигнатуры в функциях.
 
 - **Дата:** 2026-07-31
 - **Теги:** rust, dev
 - **Markdown URL для агентов:** `https://eagle2000.space/rust/rust-tuples/llm.md`
 
 
-### 8. [Изменяемые (mut) и неизменяемые переменные в Rust: иммутабельность по умолчанию](https://eagle2000.space/rust/rust-var-mut/llm.md)
+### 8. [Переменные в Rust: mut и иммутабельность по умолчанию](https://eagle2000.space/rust/rust-var-mut/llm.md)
 
 > Почему переменные в Rust неизменяемы по умолчанию и как работает ключевое слово mut. Разбираем гарантии безопасности памяти и приращение производительности.
 
 - **Дата:** 2025-05-06
-- **Теги:** rust, dev, variables, mutability
+- **Теги:** rust, dev, basics, memory
 - **Markdown URL для агентов:** `https://eagle2000.space/rust/rust-var-mut/llm.md`
 
 
@@ -108,7 +108,7 @@
 
 ### 11. [Создание и использование структур в Rust: Полное руководство](https://eagle2000.space/rust/rust-struct/llm.md)
 
-> Практическое руководство по структурам в Rust: классические структуры, кортежные структуры, структуры-маркеры, управление видимостью полей и синтаксис инициализации.
+> Разбор классических, кортежных и маркерных структур (unit-like), управление видимостью полей через pub и сокращённый синтаксис инициализации.
 
 - **Дата:** 2025-02-04
 - **Теги:** rust, dev
@@ -135,7 +135,7 @@
 
 ### 14. [Операторы let-else и пропагации ошибок в Rust](https://eagle2000.space/rust/rust-flow-control/llm.md)
 
-> Продвинутый контроль выполнения в Rust: пропагация ошибок и отсутствие значений с помощью оператора ?, безопасное извлечение с let-else и требования к расходящимся блокам.
+> Продвинутый контроль потока: проброс значений через оператор ?, безопасное извлечение паттернов и требования к расходящимся блокам else.
 
 - **Дата:** 2026-08-02
 - **Теги:** rust, dev
@@ -144,10 +144,10 @@
 
 ### 15. [Система типов в Rust: почему компилятор — ваш лучший друг](https://eagle2000.space/rust/rust-type-system/llm.md)
 
-> Простыми словами о системе типов в Rust. Разбираем статическую и строгую типизацию, а также смотрим, как проектировать логику через типы (Type-Driven Development), чтобы избегать глупых багов.
+> Объясняю статическую и строгую типизацию, а также показываю, как проектировать бизнес-логику через Type-Driven Development для защиты от багов.
 
 - **Дата:** 2026-08-01
-- **Теги:** rust, dev, theory
+- **Теги:** rust, dev, basics
 - **Markdown URL для агентов:** `https://eagle2000.space/rust/rust-type-system/llm.md`
 
 
@@ -192,7 +192,7 @@
 > Краткое и наглядное руководство по основам match в Rust для начинающих: синтаксис сопоставления шаблонов, работа с Enum и простые Match Guards.
 
 - **Дата:** 2024-03-16
-- **Теги:** rust, dev, match, basics
+- **Теги:** rust, dev, pattern-matching, basics
 - **Markdown URL для агентов:** `https://eagle2000.space/rust/match/llm.md`
 
 
@@ -214,18 +214,18 @@
 - **Markdown URL для агентов:** `https://eagle2000.space/rust/rust-collect/llm.md`
 
 
-### 23. [Ошибки компилятора в Rust: чтение диагностики и команда rustc --explain](https://eagle2000.space/rust/rust-err/llm.md)
+### 23. [Ошибки компилятора Rust: диагностика и rustc --explain](https://eagle2000.space/rust/rust-err/llm.md)
 
-> Как понимать сообщения и коды ошибок компилятора Rust (rustc). Руководство для начинающих: использование команды rustc --explain, справочник кодов ошибок и пошаговая отладка.
+> Учимся читать сообщения об ошибках rustc: разбор структуры подсказок, работа со справочником кодов и пошаговая отладка для начинающих.
 
 - **Дата:** 2025-05-12
-- **Теги:** rust, dev, compiler, errors
+- **Теги:** rust, dev, errors, basics
 - **Markdown URL для агентов:** `https://eagle2000.space/rust/rust-err/llm.md`
 
 
 ### 24. [Обработка ошибок в Rust: паника, Option, Result и как с ними дружить](https://eagle2000.space/rust/rust-errors-handling/llm.md)
 
-> Простой и понятный разбор обработки ошибок в Rust. Сравниваем подходы в разных языках, разбираемся с Option и Result, оператором `?` и учимся писать свои ошибки.
+> Сравниваю подходы к ошибкам в разных языках, разбираю работу с оператором `?` и показываю, как проектировать собственные типы сбоев.
 
 - **Дата:** 2026-08-02
 - **Теги:** rust, dev, errors
@@ -243,7 +243,7 @@
 
 ### 26. [Заимствование (Borrowing) в Rust](https://eagle2000.space/rust/rust-borrowing/llm.md)
 
-> Руководство по заимствованию в Rust - механизму работы с данными без передачи владения. Узнайте, как использовать ссылки &T и &mut T, избегать типичных ошибок и писать безопасный код.
+> Как работать с данными без передачи владения: правила ссылок &T и &mut T, защита от гонок данных и частые ошибки borrow checker на примерах.
 
 - **Дата:** 2025-06-02
 - **Теги:** rust, dev
@@ -252,34 +252,34 @@
 
 ### 27. [Трейты в Rust: от первых шагов до понятного мономорфного кода](https://eagle2000.space/rust/rust-traits/llm.md)
 
-> Понятный гайд по трейтам в Rust: от базоваго синтаксиса trait и impl до методов по умолчанию, дженериков, синтаксиса impl Trait и нулевой стоимости мономорфизации.
+> Гайд по типажам: от базового синтаксиса trait и impl до методов по умолчанию, ограничений дженериков, impl Trait и оптимизаций компилятора.
 
 - **Дата:** 2026-08-07
 - **Теги:** rust, dev, traits, generics, middle
 - **Markdown URL для агентов:** `https://eagle2000.space/rust/rust-traits/llm.md`
 
 
-### 28. [Управление памятью в Rust: идиома RAII, указатель Box и механизмы Deref Coercion](https://eagle2000.space/rust/rust-raii-box-deref/llm.md)
+### 28. [Управление памятью в Rust: RAII, Box<T> и Deref Coercion](https://eagle2000.space/rust/rust-raii-box-deref/llm.md)
 
-> Разбираем устройство памяти в Rust: идиома RAII, авто-очистка через Drop, управляющий указатель Box<T>, 'static ссылки с помощью Box::leak, а также механизмы Deref и Deref Coercion.
+> Разбираю авто-очистку ресурсов через типаж Drop, выделение данных в куче, получение 'static ссылок через Box::leak и неявное разыменование.
 
 - **Дата:** 2026-08-12
-- **Теги:** rust, dev, raii, memory, box, deref
+- **Теги:** rust, dev, memory, raii, middle
 - **Markdown URL для агентов:** `https://eagle2000.space/rust/rust-raii-box-deref/llm.md`
 
 
 ### 29. [Трейт-объекты: как работает динамический полиморфизм в Rust](https://eagle2000.space/rust/rust-dyn-traits/llm.md)
 
-> Разбираемся простыми словами, как устроены трейт-объекты (dyn Trait) в Rust: зачем нужен двойной указатель, как работает таблица методов vtable и какие правила Object Safety нужно знать на практике.
+> Объясняю устройство dyn Trait на практике: зачем нужен двойной указатель, как работает таблица методов vtable и правила Object Safety.
 
 - **Дата:** 2026-08-14
-- **Теги:** rust, dev, traits, dyn, vtable, middle
+- **Теги:** rust, dev, traits, memory, middle
 - **Markdown URL для агентов:** `https://eagle2000.space/rust/rust-dyn-traits/llm.md`
 
 
 ### 30. [Замыкания в Rust: функции с собственной памятью](https://eagle2000.space/rust/rust-closures/llm.md)
 
-> Разбираем указатели на функции и замыкания в Rust: захват переменных из окружения, разница между Fn, FnMut и FnOnce, во что компилятор разворачивает лямбды и зачем нужен синтаксис for<'a>.
+> Разбираю указатели на функции, захват окружения, разницу между Fn, FnMut и FnOnce, десахаризацию лямбд компилятором и синтаксис for<'a>.
 
 - **Дата:** 2026-11-05
 - **Теги:** rust, dev, closures, advanced
@@ -288,68 +288,77 @@
 
 ### 31. [Rc в Rust: Разделённое владение, циклические ссылки и Weak<T>](https://eagle2000.space/rust/rust-rc/llm.md)
 
-> Узнайте, как работает Rc в Rust: счётчик ссылок, разделяемое владение между структурами, связка с RefCell, проблема циклических ссылок (Rc cycles) и её решение через Weak<T>.
+> Как устроен счётчик ссылок для совместного доступа к данным, зачем нужна связка с RefCell и как избежать утечек памяти при циклах.
 
 - **Дата:** 2025-06-03
-- **Теги:** rust, dev, rc, weak, refcell, middle
+- **Теги:** rust, dev, memory, refcell, middle
 - **Markdown URL для агентов:** `https://eagle2000.space/rust/rust-rc/llm.md`
 
 
 ### 32. [Внутренняя мутабельность в Rust: паттерн использования Cell, RefCell](https://eagle2000.space/rust/rust-interior-mutability/llm.md)
 
-> Разбираемся с паттерном внутренней мутабельности (Interior Mutability) в Rust: философия работы, контейнеры Cell и RefCell, отличие от унаследованной мутабельности.
+> Разбираю философию Interior Mutability, обход правил borrow checker в рантайме и отличия от классической унаследованной мутабельности.
 
 - **Дата:** 2026-09-09
-- **Теги:** rust, dev, interior-mutability, cell, refcell, mutex
+- **Теги:** rust, dev, memory, interior-mutability, refcell
 - **Markdown URL для агентов:** `https://eagle2000.space/rust/rust-interior-mutability/llm.md`
 
 
-### 33. [Использование и применение std::collections в Rust: BTreeMap, HashSet, BinaryHeap и VecDeque](https://eagle2000.space/rust/rust-collections-overview/llm.md)
+### 33. [Выбор std::collections в Rust: BTreeMap, VecDeque, BinaryHeap](https://eagle2000.space/rust/rust-collections-overview/llm.md)
 
 > Разбираем коллекции в Rust: когда применять VecDeque, чем BTreeMap отличается от HashMap и почему LinkedList почти никогда не нужен.
 
 - **Дата:** 2026-09-18
-- **Теги:** rust, dev, collections, btreemap, vecdeque, binaryheap
+- **Теги:** rust, dev, collections, memory
 - **Markdown URL для агентов:** `https://eagle2000.space/rust/rust-collections-overview/llm.md`
 
 
 ### 34. [Итераторы в Rust: ленивая обработка данных без лишних аллокаций](https://eagle2000.space/rust/rust-iterators-deep-dive/llm.md)
 
-> Подробный разбор итераторов в Rust: устройство цикла for и IntoIterator, разница между .iter(), .iter_mut() и .into_iter(), ленивые цепочки, собственный генератор пагинации и оптимизации LLVM.
+> Устройство цикла for и IntoIterator, разница между .iter() и .into_iter(), собственный генератор пагинации и оптимизации компилятора LLVM.
 
 - **Дата:** 2026-11-13
 - **Теги:** rust, dev, iterators, zero-cost-abstractions, functional
 - **Markdown URL для агентов:** `https://eagle2000.space/rust/rust-iterators-deep-dive/llm.md`
 
 
-### 35. [Погружение в Lifetimes (времена жизни) в Rust: работа с ссылками без ошибок и паники](https://eagle2000.space/rust/rust-lifetimes-deep-dive/llm.md)
+### 35. [Времена жизни (Lifetimes) в Rust: Elision, HRTB и вариантность](https://eagle2000.space/rust/rust-lifetimes-deep-dive/llm.md)
 
-> Разбираем времена жизни (Lifetimes) в Rust: как компилятор выводит их сам (Lifetime Elision), как хранить ссылки в структурах, где нужна память 'static, связывание for<'a> и вариантность ссылок.
+> Разбираю вывод времён жизни компилятором, хранение ссылок в структурах, границы 'static, синтаксис for<'a> и работу с ковариантностью.
 
 - **Дата:** 2026-10-21
-- **Теги:** rust, dev, lifetimes, borrow-checker, elision, hrtb, variance
+- **Теги:** rust, dev, lifetimes, memory, advanced
 - **Markdown URL для агентов:** `https://eagle2000.space/rust/rust-lifetimes-deep-dive/llm.md`
 
 
-### 36. [Rust: тонкости Pattern Matching - деструктуризация, bindings и guards](https://eagle2000.space/rust/rust-pattern-matching-deep-dive/llm.md)
+### 36. [Тонкости Pattern Matching в Rust: деструктуризация и guards](https://eagle2000.space/rust/rust-pattern-matching-deep-dive/llm.md)
 
-> Изучаем как работает сопоставление с образцом Pattern Matching в Rust: exhaustiveness, деструктуризация, @-binding, slice patterns и guards на примерах реальных проектов
+> Разбираю проверку исчерпываемости exhaustiveness, @-binding, паттерны срезов и match guards на примерах из реальных open-source проектов.
 
 - **Дата:** 2026-10-05
-- **Теги:** rust, dev, pattern-matching, destructuring, match-guards, if-let, while-let
+- **Теги:** rust, dev, pattern-matching, middle
 - **Markdown URL для агентов:** `https://eagle2000.space/rust/rust-pattern-matching-deep-dive/llm.md`
 
 
-### 37. [Продвинутые типажи в Rust: ассоциированные типы, супертрейты и blanket-реализации](https://eagle2000.space/rust/rust-advanced-traits/llm.md)
+### 37. [Продвинутые трейты в Rust: ассоциированные типы и супертрейты](https://eagle2000.space/rust/rust-advanced-traits/llm.md)
 
-> Глубокое погружение в продвинутые возможности типажей Rust: ассоциированные типы type Item, ассоциированные константы, синтаксис <Type as Trait>::method, супертрейты и blanket-реализации.
+> Разбираю ассоциированные константы, синтаксис <Type as Trait>::method, ограничения типов и blanket-реализации для гибкой архитектуры кода.
 
 - **Дата:** 2026-08-18
-- **Теги:** rust, dev, traits, associated-types, supertraits, blanket-impls, fully-qualified-syntax
+- **Теги:** rust, dev, traits, generics, advanced
 - **Markdown URL для агентов:** `https://eagle2000.space/rust/rust-advanced-traits/llm.md`
 
 
-### 38. [Arc в Rust: потокобезопасное разделённое владение](https://eagle2000.space/rust/rust-arc/llm.md)
+### 38. [Быстрый ввод-вывод в Rust: буферизация, тесты и ошибки](https://eagle2000.space/rust/rust-io-bufread-and-errors/llm.md)
+
+> Как сократить число системных вызовов с BufRead, тестировать потоки через std::io::Cursor, обрабатывать сбои .lines() и возвращать коды выхода в CLI.
+
+- **Дата:** 2026-11-18
+- **Теги:** rust, dev, io, errors
+- **Markdown URL для агентов:** `https://eagle2000.space/rust/rust-io-bufread-and-errors/llm.md`
+
+
+### 39. [Arc в Rust: потокобезопасное разделённое владение](https://eagle2000.space/rust/rust-arc/llm.md)
 
 > Узнайте, как использовать Arc в Rust для безопасного разделения данных между потоками. Примеры с Arc, Rc, Mutex и практические советы.
 
@@ -358,61 +367,61 @@
 - **Markdown URL для агентов:** `https://eagle2000.space/rust/rust-arc/llm.md`
 
 
-### 39. [Ввод данных от пользователя в Rust: как использовать stdin](https://eagle2000.space/rust/rust-stdio/llm.md)
+### 40. [Ввод данных от пользователя в Rust: как использовать stdin](https://eagle2000.space/rust/rust-stdio/llm.md)
 
-> Узнай, как считывать пользовательский ввод в Rust с помощью std::io::stdin().read_line. Простые примеры, обработка ошибок, удаление символа новой строки, тип Result<usize> и рекомендации по CLI
+> Как считывать строки через std::io::stdin().read_line, обрабатывать Result<usize>, удалять перенос строки и делать надёжные CLI-утилиты.
 
 - **Дата:** 2025-06-08
 - **Теги:** rust, dev
 - **Markdown URL для агентов:** `https://eagle2000.space/rust/rust-stdio/llm.md`
 
 
-### 40. [Поиск данных в файле - Cli хелпер для мастера с помощью Rust](https://eagle2000.space/rust/rust-cli-sh/llm.md)
+### 41. [Поиск данных в файле - Cli хелпер для мастера с помощью Rust](https://eagle2000.space/rust/rust-cli-sh/llm.md)
 
-> Создаём утилиту командной строки на Rust для поиска устройств в конфигурационном файле по описанию. Пошаговое руководство: чтение аргументов, обработка строк, парсинг блоков, поиск и вывод.
+> Пишу утилиту командной строки для поиска устройств в конфигах: чтение аргументов, построчный парсинг блоков текста и фильтрация вывода.
 
 - **Дата:** 2025-06-17
 - **Теги:** rust, dev
 - **Markdown URL для агентов:** `https://eagle2000.space/rust/rust-cli-sh/llm.md`
 
 
-### 41. [BufReader в Rust: ускоряем ввод-вывод](https://eagle2000.space/rust/bufreader/llm.md)
+### 42. [BufReader в Rust: ускоряем ввод-вывод](https://eagle2000.space/rust/bufreader/llm.md)
 
-> BufReader в Rust - подробный разбор. Как ускорить чтение файлов, работать с вводом-выводом, использовать BufRead и Read. Примеры построчного чтения и оптимизации IO.
+> Показываю, как снизить число системных вызовов при чтении файлов, использовать BufRead и Read, а также ускорить построчный парсинг.
 
 - **Дата:** 2025-08-26
 - **Теги:** rust, dev
 - **Markdown URL для агентов:** `https://eagle2000.space/rust/bufreader/llm.md`
 
 
-### 42. [Как работает Vec в Rust: устройство, методы, оптимизация](https://eagle2000.space/rust/rust-vec/llm.md)
+### 43. [Как работает Vec в Rust: устройство, методы, оптимизация](https://eagle2000.space/rust/rust-vec/llm.md)
 
-> Полное руководство по Vec в Rust: устройство, методы, частые ошибки и оптимизация. Всё это — в форме космического путешествия, где капитан учит робота RUST-Y обращаться с динамическими массивами без паники и перерасхода памяти.
+> Космическая история капитана и робота RUST-Y о динамических массивах: разбор работы с памятью, защита от паники и избежание лишних аллокаций.
 
 - **Дата:** 2025-09-01
 - **Теги:** rust, dev
 - **Markdown URL для агентов:** `https://eagle2000.space/rust/rust-vec/llm.md`
 
 
-### 43. [Rust async и Tokio: В ожидании будущего](https://eagle2000.space/rust/future-async/llm.md)
+### 44. [Rust async и Tokio: В ожидании будущего](https://eagle2000.space/rust/future-async/llm.md)
 
-> История экипажа Vectoria — наглядное объяснение синхронного и асинхронного кода, разницы с параллельностью, и практики Tokio: spawn, spawn_blocking, join!, join_all, JoinHandle, Handle, cooperative multitasking.
+> Наглядное объяснение асинхронности, отличий от параллелизма и практики Tokio: spawn, spawn_blocking, join! и кооперативная многозадачность.
 
 - **Дата:** 2025-09-18
 - **Теги:** rust, dev
 - **Markdown URL для агентов:** `https://eagle2000.space/rust/future-async/llm.md`
 
 
-### 44. [ESP32 + Rust: Быстрый старт с нуля (помигаем светодиодом)](https://eagle2000.space/rust/esp32-rust-blink/llm.md)
+### 45. [ESP32 + Rust: Быстрый старт с нуля (помигаем светодиодом)](https://eagle2000.space/rust/esp32-rust-blink/llm.md)
 
 > Практическое руководство по первому запуску Rust на ESP32: настройка тулчейна (нативно и через Docker), генерация проекта и прошивка через espflash.
 
 - **Дата:** 2026-08-10
-- **Теги:** rust, esp32, embedded, docker, espflash, gpio, hardware
+- **Теги:** rust, dev, esp32, embedded
 - **Markdown URL для агентов:** `https://eagle2000.space/rust/esp32-rust-blink/llm.md`
 
 
-### 45. [Крейт дня: Strum - автоматический перебор и конвертация enum в Rust на примере esp-generate](https://eagle2000.space/rust/crate-of-the-day-strum/llm.md)
+### 46. [Крейт дня: Strum — перебор и конвертация enum в Rust](https://eagle2000.space/rust/crate-of-the-day-strum/llm.md)
 
 > Разбираем популярный крейт strum: как итерироваться по вариантам enum, конвертировать enum в строки и обратно на реальном примере из инструмента esp-generate.
 
@@ -421,12 +430,12 @@
 - **Markdown URL для агентов:** `https://eagle2000.space/rust/crate-of-the-day-strum/llm.md`
 
 
-### 46. [Крейт дня: Rayon - параллельные вычисления в одну строку](https://eagle2000.space/rust/crate-of-the-day-rayon/llm.md)
+### 47. [Крейт дня: Rayon - параллельные вычисления в одну строку](https://eagle2000.space/rust/crate-of-the-day-rayon/llm.md)
 
-> Разбираем легендарный крейт Rayon: как замена всего одной строчки .iter() на .par_iter() распараллеливает вычисления по всем ядрам процессора с балансировкой Work-Stealing.
+> Показываю, как замена .iter() на .par_iter() ускоряет обработку данных на всех ядрах CPU благодаря балансировке нагрузки Work-Stealing.
 
 - **Дата:** 2026-08-15
-- **Теги:** rust, crate-of-the-day, concurrency, performance
+- **Теги:** rust, dev, crate-of-the-day, concurrency
 - **Markdown URL для агентов:** `https://eagle2000.space/rust/crate-of-the-day-rayon/llm.md`
 
 

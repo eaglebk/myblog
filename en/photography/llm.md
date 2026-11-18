@@ -21,7 +21,7 @@
 > Understanding monopod techniques in photography and filmmaking: stances, crowd shooting, unique angles, and comparison with gimbals and tripods.
 
 - **Дата:** 2026-04-28
-- **Теги:** tripod, monopod, tips, technique, video
+- **Теги:** photography, tips, technique
 - **Markdown URL для агентов:** `https://eagle2000.space/en/photography/monopod-guide/llm.md`
 
 
@@ -30,7 +30,7 @@
 > Debunking the myth of expensive gear versus actual experience. Practical advice for beginners and an encouraging call to read instruction manuals.
 
 - **Дата:** 2026-04-27
-- **Теги:** experience, equipment, tips
+- **Теги:** photography, tips, technique
 - **Markdown URL для агентов:** `https://eagle2000.space/en/photography/practice-and-gear/llm.md`
 
 
@@ -39,7 +39,7 @@
 > Understanding color correction using Curves in image editors: how to fix an unwanted red tint and achieve a balanced, cinematic color tone.
 
 - **Дата:** 2026-04-26
-- **Теги:** processing, color-correction, tips
+- **Теги:** photography, tips, technique
 - **Markdown URL для агентов:** `https://eagle2000.space/en/photography/curves-color-toning/llm.md`
 
 
@@ -48,7 +48,7 @@
 > An overview of the fundamental rule of photography composition: how to balance your frame using a grid of thirds.
 
 - **Дата:** 2026-04-25
-- **Теги:** composition, tips
+- **Теги:** photography, tips
 - **Markdown URL для агентов:** `https://eagle2000.space/en/photography/composition-basics/llm.md`
 
 

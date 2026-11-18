@@ -1,19 +1,20 @@
-// Шаг 1: Ранний возврат ошибок через оператор `?` и траектория `.lines()`
+// Шаг 1: Ранний возврат ошибок через оператор `?` в `.lines()`
 
-use std::io::{BufRead, Cursor, Result};
+use std::io::{self, BufRead, Cursor, ErrorKind, Result};
 
 pub fn parse_config_values(reader: impl BufRead) -> Result<Vec<u32>> {
     let mut values = Vec::new();
 
     for line_result in reader.lines() {
-        // Оператор `?` моментально прекращает выполнение при дисковой ошибке или сбое декодирования UTF-8:
+        // Оператор `?` моментально прекращает выполнение при сбое чтения или битом UTF-8:
         let line = line_result?;
         let trimmed = line.trim();
 
         if !trimmed.is_empty() && !trimmed.starts_with('#') {
-            if let Ok(num) = trimmed.parse::<u32>() {
-                values.push(num);
-            }
+            let num = trimmed
+                .parse::<u32>()
+                .map_err(|e| io::Error::new(ErrorKind::InvalidData, e))?;
+            values.push(num);
         }
     }
 
@@ -25,21 +26,21 @@ fn main() {
     let cursor = Cursor::new(raw_config);
 
     match parse_config_values(cursor) {
-        Ok(parsed) => println!("Успешно распаршено чисел: {:?}", parsed),
-        Err(err) => println!("Ошибка при чтении: {err}"),
+        Ok(parsed) => println!("Разобраны числа: {:?}", parsed),
+        Err(err) => eprintln!("Ошибка при чтении: {err}"),
     }
 }
 
-// ! **1. Безопасность итеррирования по .lines()**
-// ! - Метод `.lines()` возвращает `Result<String>`, а не сырую строку `String`, так как чтение из I/O потока может сорваться в любой момент.
-// ! - Оператор `?` обеспечивает безопасную проброску ошибки наверх без паники приложения.
+// ! **1. Безопасный обход `.lines()`**
+// ! - Метод `.lines()` возвращает `Result<String>`, а не сырую строку `String`, так как чтение потока может сорваться в любой момент.
+// ! - Оператор `?` обеспечивает безопасный проброс ошибки наверх без паники приложения.
 
 // ---
 
-// Шаг 2: Системный поток ошибок (stderr) и интеграция с Shell через exit codes
+// Шаг 2: Системный поток ошибок (`stderr`) и `ExitCode` вместо `process::exit`
 
 // ?hidden:start
-use std::io::{BufRead, Cursor, Result};
+use std::io::{self, BufRead, Cursor, ErrorKind, Result};
 
 pub fn parse_config_values(reader: impl BufRead) -> Result<Vec<u32>> {
     let mut values = Vec::new();
@@ -47,16 +48,17 @@ pub fn parse_config_values(reader: impl BufRead) -> Result<Vec<u32>> {
         let line = line_result?;
         let trimmed = line.trim();
         if !trimmed.is_empty() && !trimmed.starts_with('#') {
-            if let Ok(num) = trimmed.parse::<u32>() {
-                values.push(num);
-            }
+            let num = trimmed
+                .parse::<u32>()
+                .map_err(|e| io::Error::new(ErrorKind::InvalidData, e))?;
+            values.push(num);
         }
     }
     Ok(values)
 }
 // ?hidden:end
 
-use std::process;
+use std::process::ExitCode;
 
 fn run_cli_pipeline() -> Result<()> {
     let sample = Cursor::new("42\n84\n");
@@ -65,15 +67,18 @@ fn run_cli_pipeline() -> Result<()> {
     Ok(())
 }
 
-fn main() {
-    // В консольных утилитах ошибки всегда пишутся в `stderr` через `eprintln!`,
-    // а сбои завершаются с ненулевым кодом выхода для взаимодействия с Bash/CI:
-    if let Err(err) = run_cli_pipeline() {
-        eprintln!("Критическая ошибка выполнения утилиты: {err}");
-        process::exit(1);
+fn main() -> ExitCode {
+    // Ошибки всегда пишутся в `stderr` через `eprintln!`,
+    // а из `main()` возвращается `ExitCode`, чтобы отработали все деструкторы `Drop`:
+    match run_cli_pipeline() {
+        Ok(()) => ExitCode::SUCCESS,
+        Err(err) => {
+            eprintln!("Критическая ошибка выполнения утилиты: {err}");
+            ExitCode::FAILURE
+        }
     }
 }
 
-// ! **2. Разделение stdout/stderr и коды завершения**
-// ! - Вывод ошибок в `eprintln!` защищает пайплайны Shell (`cat data | my_tool > output.txt`): сообщения об ошибках не попадут в результирующий файл.
-// ! - Вызов `process::exit(1)` позволяет скриптам сборки и CI/CD отслеживать успешность работы программы.
+// ! **2. Разделение `stdout`/`stderr` и возврат `ExitCode`**
+// ! - Вывод ошибок в `eprintln!` защищает пайплайны Shell (`cat data | my_tool > output.txt`): ошибки не попадут в результирующий файл.
+// ! - Возврат `ExitCode::FAILURE` из `main()` сигнализирует о сбое скриптам и CI/CD, но при этом корректно сбрасывает буферы и вызывает `Drop`.

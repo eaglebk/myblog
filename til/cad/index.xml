@@ -17,12 +17,47 @@
     
     
     <item>
+      <title>Быстрый ввод-вывод в Rust: буферизация, тесты и ошибки</title>
+      <link>https://eagle2000.space/rust/rust-io-bufread-and-errors/</link>
+      <pubDate>Wed, 18 Nov 2026 13:27:00 +0300</pubDate>
+      <guid>https://eagle2000.space/rust/rust-io-bufread-and-errors/</guid>
+      
+      <description>Как сократить число системных вызовов с BufRead, тестировать потоки через std::io::Cursor, обрабатывать сбои .lines() и возвращать коды выхода в CLI.</description>
+      
+      <category>rust</category>
+      
+      <category>dev</category>
+      
+      <category>io</category>
+      
+      <category>errors</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="https://eagle2000.space/rust/rust-io-bufread-and-errors/featured.png" medium="image"/>
+      
+    </item>
+    
+    
+    
+    
+    <item>
       <title>Итераторы в Rust: ленивая обработка данных без лишних аллокаций</title>
       <link>https://eagle2000.space/rust/rust-iterators-deep-dive/</link>
       <pubDate>Fri, 13 Nov 2026 13:00:00 +0300</pubDate>
       <guid>https://eagle2000.space/rust/rust-iterators-deep-dive/</guid>
       
-      <description>Подробный разбор итераторов в Rust: устройство цикла for и IntoIterator, разница между .iter(), .iter_mut() и .into_iter(), ленивые цепочки, собственный генератор пагинации и оптимизации LLVM.</description>
+      <description>Устройство цикла for и IntoIterator, разница между .iter() и .into_iter(), собственный генератор пагинации и оптимизации компилятора LLVM.</description>
       
       <category>rust</category>
       
@@ -59,7 +94,7 @@
       <pubDate>Thu, 05 Nov 2026 10:00:00 +0300</pubDate>
       <guid>https://eagle2000.space/rust/rust-closures/</guid>
       
-      <description>Разбираем указатели на функции и замыкания в Rust: захват переменных из окружения, разница между Fn, FnMut и FnOnce, во что компилятор разворачивает лямбды и зачем нужен синтаксис for&lt;&#39;a&gt;.</description>
+      <description>Разбираю указатели на функции, захват окружения, разницу между Fn, FnMut и FnOnce, десахаризацию лямбд компилятором и синтаксис for&lt;&#39;a&gt;.</description>
       
       <category>rust</category>
       
@@ -89,12 +124,12 @@
     
     
     <item>
-      <title>Погружение в Lifetimes (времена жизни) в Rust: работа с ссылками без ошибок и паники</title>
+      <title>Времена жизни (Lifetimes) в Rust: Elision, HRTB и вариантность</title>
       <link>https://eagle2000.space/rust/rust-lifetimes-deep-dive/</link>
       <pubDate>Wed, 21 Oct 2026 13:05:10 +0300</pubDate>
       <guid>https://eagle2000.space/rust/rust-lifetimes-deep-dive/</guid>
       
-      <description>Разбираем времена жизни (Lifetimes) в Rust: как компилятор выводит их сам (Lifetime Elision), как хранить ссылки в структурах, где нужна память &#39;static, связывание for&lt;&#39;a&gt; и вариантность ссылок.</description>
+      <description>Разбираю вывод времён жизни компилятором, хранение ссылок в структурах, границы &#39;static, синтаксис for&lt;&#39;a&gt; и работу с ковариантностью.</description>
       
       <category>rust</category>
       
@@ -102,13 +137,9 @@
       
       <category>lifetimes</category>
       
-      <category>borrow-checker</category>
+      <category>memory</category>
       
-      <category>elision</category>
-      
-      <category>hrtb</category>
-      
-      <category>variance</category>
+      <category>advanced</category>
       
       
       
@@ -137,7 +168,7 @@
       
       <description>Почему знание мануала своей камеры ценнее дорогой оптики? Практические советы фотографа по настройкам, композиции и съемке для создания сочных кадров.</description>
       
-      <category>опыт</category>
+      <category>фото</category>
       
       <category>техника</category>
       
@@ -163,12 +194,12 @@
     
     
     <item>
-      <title>Rust: тонкости Pattern Matching - деструктуризация, bindings и guards</title>
+      <title>Тонкости Pattern Matching в Rust: деструктуризация и guards</title>
       <link>https://eagle2000.space/rust/rust-pattern-matching-deep-dive/</link>
       <pubDate>Mon, 05 Oct 2026 15:35:19 +0300</pubDate>
       <guid>https://eagle2000.space/rust/rust-pattern-matching-deep-dive/</guid>
       
-      <description>Изучаем как работает сопоставление с образцом Pattern Matching в Rust: exhaustiveness, деструктуризация, @-binding, slice patterns и guards на примерах реальных проектов</description>
+      <description>Разбираю проверку исчерпываемости exhaustiveness, @-binding, паттерны срезов и match guards на примерах из реальных open-source проектов.</description>
       
       <category>rust</category>
       
@@ -176,13 +207,7 @@
       
       <category>pattern-matching</category>
       
-      <category>destructuring</category>
-      
-      <category>match-guards</category>
-      
-      <category>if-let</category>
-      
-      <category>while-let</category>
+      <category>middle</category>
       
       
       
@@ -204,7 +229,7 @@
     
     
     <item>
-      <title>Использование и применение std::collections в Rust: BTreeMap, HashSet, BinaryHeap и VecDeque</title>
+      <title>Выбор std::collections в Rust: BTreeMap, VecDeque, BinaryHeap</title>
       <link>https://eagle2000.space/rust/rust-collections-overview/</link>
       <pubDate>Fri, 18 Sep 2026 12:44:50 +0300</pubDate>
       <guid>https://eagle2000.space/rust/rust-collections-overview/</guid>
@@ -217,11 +242,7 @@
       
       <category>collections</category>
       
-      <category>btreemap</category>
-      
-      <category>vecdeque</category>
-      
-      <category>binaryheap</category>
+      <category>memory</category>
       
       
       
@@ -248,19 +269,17 @@
       <pubDate>Wed, 09 Sep 2026 08:45:32 +0300</pubDate>
       <guid>https://eagle2000.space/rust/rust-interior-mutability/</guid>
       
-      <description>Разбираемся с паттерном внутренней мутабельности (Interior Mutability) в Rust: философия работы, контейнеры Cell и RefCell, отличие от унаследованной мутабельности.</description>
+      <description>Разбираю философию Interior Mutability, обход правил borrow checker в рантайме и отличия от классической унаследованной мутабельности.</description>
       
       <category>rust</category>
       
       <category>dev</category>
       
+      <category>memory</category>
+      
       <category>interior-mutability</category>
       
-      <category>cell</category>
-      
       <category>refcell</category>
-      
-      <category>mutex</category>
       
       
       
@@ -289,9 +308,9 @@
       
       <description>Небольшое обновление интерфейса EagleBlog: обновил дизайн карточек статей и главную страницу. Теперь последняя публикация сразу привлекает к себе внимание.</description>
       
-      <category>design</category>
+      <category>start</category>
       
-      <category>blog</category>
+      <category>dev</category>
       
       
       
@@ -320,15 +339,11 @@
       
       <description>Разбор техники работы с моноподом (одноногим штативом) в фотографии и видео: стойки, работа в толпе, нестандартные ракурсы и сравнение со стедикамами.</description>
       
-      <category>штатив</category>
-      
-      <category>монопод</category>
-      
-      <category>советы</category>
+      <category>фото</category>
       
       <category>техника</category>
       
-      <category>видео</category>
+      <category>советы</category>
       
       
       
@@ -350,12 +365,12 @@
     
     
     <item>
-      <title>Продвинутые типажи в Rust: ассоциированные типы, супертрейты и blanket-реализации</title>
+      <title>Продвинутые трейты в Rust: ассоциированные типы и супертрейты</title>
       <link>https://eagle2000.space/rust/rust-advanced-traits/</link>
       <pubDate>Tue, 18 Aug 2026 10:00:00 +0300</pubDate>
       <guid>https://eagle2000.space/rust/rust-advanced-traits/</guid>
       
-      <description>Глубокое погружение в продвинутые возможности типажей Rust: ассоциированные типы type Item, ассоциированные константы, синтаксис ::method, супертрейты и blanket-реализации.</description>
+      <description>Разбираю ассоциированные константы, синтаксис ::method, ограничения типов и blanket-реализации для гибкой архитектуры кода.</description>
       
       <category>rust</category>
       
@@ -363,13 +378,9 @@
       
       <category>traits</category>
       
-      <category>associated-types</category>
+      <category>generics</category>
       
-      <category>supertraits</category>
-      
-      <category>blanket-impls</category>
-      
-      <category>fully-qualified-syntax</category>
+      <category>advanced</category>
       
       
       
@@ -391,28 +402,20 @@
     
     
     <item>
-      <title>Дайджест мобильной разработки: Релиз Flutter 3.47 &amp; Dart 3.13, 5 лет Compose, безопасность и утилиты</title>
+      <title>Мобильный дайджест: Flutter 3.47, Dart 3.13 и 5 лет Compose</title>
       <link>https://eagle2000.space/til/mobile/mobile-dev-digest-week-33/</link>
       <pubDate>Mon, 17 Aug 2026 10:00:00 +0300</pubDate>
       <guid>https://eagle2000.space/til/mobile/mobile-dev-digest-week-33/</guid>
       
-      <description>Подробный дайджест мобильной разработки: релизы Flutter 3.47 и Dart 3.13, 5 лет Jetpack Compose, правила безопасности Semgrep, гайды Apple по промо в App Store и open-source утилиты.</description>
+      <description>Мобильный дайджест: релизы Flutter 3.47 и Dart 3.13, 5 лет Jetpack Compose, правила безопасности Semgrep и гайды Apple для App Store.</description>
       
-      <category>ios</category>
-      
-      <category>android</category>
-      
-      <category>swift</category>
-      
-      <category>kotlin</category>
+      <category>mobile</category>
       
       <category>flutter</category>
       
-      <category>dart</category>
+      <category>kotlin</category>
       
-      <category>security</category>
-      
-      <category>mobile</category>
+      <category>ios</category>
       
       
       
@@ -434,7 +437,7 @@
     
     
     <item>
-      <title>Крейт дня: Strum - автоматический перебор и конвертация enum в Rust на примере esp-generate</title>
+      <title>Крейт дня: Strum — перебор и конвертация enum в Rust</title>
       <link>https://eagle2000.space/rust/crate-of-the-day-strum/</link>
       <pubDate>Sun, 16 Aug 2026 17:00:00 +0300</pubDate>
       <guid>https://eagle2000.space/rust/crate-of-the-day-strum/</guid>
@@ -476,15 +479,15 @@
       <pubDate>Sat, 15 Aug 2026 10:00:00 +0300</pubDate>
       <guid>https://eagle2000.space/rust/crate-of-the-day-rayon/</guid>
       
-      <description>Разбираем легендарный крейт Rayon: как замена всего одной строчки .iter() на .par_iter() распараллеливает вычисления по всем ядрам процессора с балансировкой Work-Stealing.</description>
+      <description>Показываю, как замена .iter() на .par_iter() ускоряет обработку данных на всех ядрах CPU благодаря балансировке нагрузки Work-Stealing.</description>
       
       <category>rust</category>
+      
+      <category>dev</category>
       
       <category>crate-of-the-day</category>
       
       <category>concurrency</category>
-      
-      <category>performance</category>
       
       
       
@@ -511,7 +514,7 @@
       <pubDate>Fri, 14 Aug 2026 12:22:25 +0300</pubDate>
       <guid>https://eagle2000.space/rust/rust-dyn-traits/</guid>
       
-      <description>Разбираемся простыми словами, как устроены трейт-объекты (dyn Trait) в Rust: зачем нужен двойной указатель, как работает таблица методов vtable и какие правила Object Safety нужно знать на практике.</description>
+      <description>Объясняю устройство dyn Trait на практике: зачем нужен двойной указатель, как работает таблица методов vtable и правила Object Safety.</description>
       
       <category>rust</category>
       
@@ -519,9 +522,7 @@
       
       <category>traits</category>
       
-      <category>dyn</category>
-      
-      <category>vtable</category>
+      <category>memory</category>
       
       <category>middle</category>
       
@@ -545,24 +546,22 @@
     
     
     <item>
-      <title>Управление памятью в Rust: идиома RAII, указатель Box и механизмы Deref Coercion</title>
+      <title>Управление памятью в Rust: RAII, Box&lt;T&gt; и Deref Coercion</title>
       <link>https://eagle2000.space/rust/rust-raii-box-deref/</link>
       <pubDate>Wed, 12 Aug 2026 11:00:00 +0300</pubDate>
       <guid>https://eagle2000.space/rust/rust-raii-box-deref/</guid>
       
-      <description>Разбираем устройство памяти в Rust: идиома RAII, авто-очистка через Drop, управляющий указатель Box, &#39;static ссылки с помощью Box::leak, а также механизмы Deref и Deref Coercion.</description>
+      <description>Разбираю авто-очистку ресурсов через типаж Drop, выделение данных в куче, получение &#39;static ссылок через Box::leak и неявное разыменование.</description>
       
       <category>rust</category>
       
       <category>dev</category>
       
-      <category>raii</category>
-      
       <category>memory</category>
       
-      <category>box</category>
+      <category>raii</category>
       
-      <category>deref</category>
+      <category>middle</category>
       
       
       
@@ -593,17 +592,11 @@
       
       <category>rust</category>
       
+      <category>dev</category>
+      
       <category>esp32</category>
       
       <category>embedded</category>
-      
-      <category>docker</category>
-      
-      <category>espflash</category>
-      
-      <category>gpio</category>
-      
-      <category>hardware</category>
       
       
       
@@ -630,7 +623,7 @@
       <pubDate>Fri, 07 Aug 2026 14:07:57 +0300</pubDate>
       <guid>https://eagle2000.space/rust/rust-traits/</guid>
       
-      <description>Понятный гайд по трейтам в Rust: от базоваго синтаксиса trait и impl до методов по умолчанию, дженериков, синтаксиса impl Trait и нулевой стоимости мономорфизации.</description>
+      <description>Гайд по типажам: от базового синтаксиса trait и impl до методов по умолчанию, ограничений дженериков, impl Trait и оптимизаций компилятора.</description>
       
       <category>rust</category>
       
@@ -667,7 +660,7 @@
       <pubDate>Sun, 02 Aug 2026 10:37:34 +0300</pubDate>
       <guid>https://eagle2000.space/rust/rust-errors-handling/</guid>
       
-      <description>Простой и понятный разбор обработки ошибок в Rust. Сравниваем подходы в разных языках, разбираемся с Option и Result, оператором `?` и учимся писать свои ошибки.</description>
+      <description>Сравниваю подходы к ошибкам в разных языках, разбираю работу с оператором `?` и показываю, как проектировать собственные типы сбоев.</description>
       
       <category>rust</category>
       
@@ -700,7 +693,7 @@
       <pubDate>Sun, 02 Aug 2026 10:37:34 +0300</pubDate>
       <guid>https://eagle2000.space/rust/rust-flow-control/</guid>
       
-      <description>Продвинутый контроль выполнения в Rust: пропагация ошибок и отсутствие значений с помощью оператора ?, безопасное извлечение с let-else и требования к расходящимся блокам.</description>
+      <description>Продвинутый контроль потока: проброс значений через оператор ?, безопасное извлечение паттернов и требования к расходящимся блокам else.</description>
       
       <category>rust</category>
       
@@ -793,13 +786,13 @@
       <pubDate>Sat, 01 Aug 2026 10:58:17 +0300</pubDate>
       <guid>https://eagle2000.space/rust/rust-type-system/</guid>
       
-      <description>Простыми словами о системе типов в Rust. Разбираем статическую и строгую типизацию, а также смотрим, как проектировать логику через типы (Type-Driven Development), чтобы избегать глупых багов.</description>
+      <description>Объясняю статическую и строгую типизацию, а также показываю, как проектировать бизнес-логику через Type-Driven Development для защиты от багов.</description>
       
       <category>rust</category>
       
       <category>dev</category>
       
-      <category>theory</category>
+      <category>basics</category>
       
       
       
@@ -826,7 +819,7 @@
       <pubDate>Fri, 31 Jul 2026 00:00:00 +0300</pubDate>
       <guid>https://eagle2000.space/rust/rust-tuples/</guid>
       
-      <description>Подробное руководство по кортежам (tuples) в языке Rust. Инициализация, доступ по индексам, деструктуризация (pattern matching) и особенности пустой сигнатуры ().</description>
+      <description>Подробный разбор работы с кортежами: создание, обращение к элементам по индексу, распаковка значений и роль пустой сигнатуры в функциях.</description>
       
       <category>rust</category>
       
@@ -859,11 +852,11 @@
       
       <description>Разбор работы с кривыми (Curves) в графических редакторах: как исправить нежелательный красный отлив на фотографии и настроить правильный баланс цветов.</description>
       
-      <category>обработка</category>
-      
-      <category>коррекция</category>
+      <category>фото</category>
       
       <category>советы</category>
+      
+      <category>техника</category>
       
       
       
@@ -892,7 +885,7 @@
       
       <description>Разбор базового правила композиции в фотографии: как сбалансировать кадр с помощью сетки третей.</description>
       
-      <category>композиция</category>
+      <category>фото</category>
       
       <category>советы</category>
       
@@ -958,7 +951,7 @@
       
       <category>dev</category>
       
-      <category>Rust-basic</category>
+      <category>basics</category>
       
       
       
@@ -1040,7 +1033,7 @@
     
     
     <item>
-      <title>Android 15 и 16 KB страница памяти: что изменится, как подготовить Android и Flutter-приложения</title>
+      <title>Android 15 и 16 KB страницы памяти: гайд для Android и Flutter</title>
       <link>https://eagle2000.space/about-all/android-16k/</link>
       <pubDate>Thu, 25 Sep 2025 14:19:42 +0300</pubDate>
       <guid>https://eagle2000.space/about-all/android-16k/</guid>
@@ -1061,13 +1054,11 @@
         
       
         
-          
-        
       
         
-          
-        
       
+      
+      <media:content url="https://eagle2000.space/about-all/android-16k/featured.png" medium="image"/>
       
     </item>
     
@@ -1080,7 +1071,7 @@
       <pubDate>Thu, 18 Sep 2025 11:00:00 +0300</pubDate>
       <guid>https://eagle2000.space/rust/future-async/</guid>
       
-      <description>История экипажа Vectoria — наглядное объяснение синхронного и асинхронного кода, разницы с параллельностью, и практики Tokio: spawn, spawn_blocking, join!, join_all, JoinHandle, Handle, cooperative multitasking.</description>
+      <description>Наглядное объяснение асинхронности, отличий от параллелизма и практики Tokio: spawn, spawn_blocking, join! и кооперативная многозадачность.</description>
       
       <category>rust</category>
       
@@ -1111,7 +1102,7 @@
       <pubDate>Mon, 01 Sep 2025 17:14:53 +0300</pubDate>
       <guid>https://eagle2000.space/rust/rust-vec/</guid>
       
-      <description>Полное руководство по Vec в Rust: устройство, методы, частые ошибки и оптимизация. Всё это — в форме космического путешествия, где капитан учит робота RUST-Y обращаться с динамическими массивами без паники и перерасхода памяти.</description>
+      <description>Космическая история капитана и робота RUST-Y о динамических массивах: разбор работы с памятью, защита от паники и избежание лишних аллокаций.</description>
       
       <category>rust</category>
       
@@ -1142,7 +1133,7 @@
       <pubDate>Tue, 26 Aug 2025 18:42:24 +0300</pubDate>
       <guid>https://eagle2000.space/rust/bufreader/</guid>
       
-      <description>BufReader в Rust - подробный разбор. Как ускорить чтение файлов, работать с вводом-выводом, использовать BufRead и Read. Примеры построчного чтения и оптимизации IO.</description>
+      <description>Показываю, как снизить число системных вызовов при чтении файлов, использовать BufRead и Read, а также ускорить построчный парсинг.</description>
       
       <category>rust</category>
       
@@ -1173,7 +1164,7 @@
       <pubDate>Tue, 17 Jun 2025 19:48:42 +0300</pubDate>
       <guid>https://eagle2000.space/rust/rust-cli-sh/</guid>
       
-      <description>Создаём утилиту командной строки на Rust для поиска устройств в конфигурационном файле по описанию. Пошаговое руководство: чтение аргументов, обработка строк, парсинг блоков, поиск и вывод.</description>
+      <description>Пишу утилиту командной строки для поиска устройств в конфигах: чтение аргументов, построчный парсинг блоков текста и фильтрация вывода.</description>
       
       <category>rust</category>
       
@@ -1204,7 +1195,7 @@
       <pubDate>Sun, 08 Jun 2025 20:50:38 +0300</pubDate>
       <guid>https://eagle2000.space/rust/rust-stdio/</guid>
       
-      <description>Узнай, как считывать пользовательский ввод в Rust с помощью std::io::stdin().read_line. Простые примеры, обработка ошибок, удаление символа новой строки, тип Result и рекомендации по CLI</description>
+      <description>Как считывать строки через std::io::stdin().read_line, обрабатывать Result, удалять перенос строки и делать надёжные CLI-утилиты.</description>
       
       <category>rust</category>
       
@@ -1266,15 +1257,13 @@
       <pubDate>Tue, 03 Jun 2025 09:58:40 +0300</pubDate>
       <guid>https://eagle2000.space/rust/rust-rc/</guid>
       
-      <description>Узнайте, как работает Rc в Rust: счётчик ссылок, разделяемое владение между структурами, связка с RefCell, проблема циклических ссылок (Rc cycles) и её решение через Weak.</description>
+      <description>Как устроен счётчик ссылок для совместного доступа к данным, зачем нужна связка с RefCell и как избежать утечек памяти при циклах.</description>
       
       <category>rust</category>
       
       <category>dev</category>
       
-      <category>rc</category>
-      
-      <category>weak</category>
+      <category>memory</category>
       
       <category>refcell</category>
       
@@ -1305,7 +1294,7 @@
       <pubDate>Mon, 02 Jun 2025 21:29:23 +0300</pubDate>
       <guid>https://eagle2000.space/rust/rust-borrowing/</guid>
       
-      <description>Руководство по заимствованию в Rust - механизму работы с данными без передачи владения. Узнайте, как использовать ссылки &amp;T и &amp;mut T, избегать типичных ошибок и писать безопасный код.</description>
+      <description>Как работать с данными без передачи владения: правила ссылок &amp;T и &amp;mut T, защита от гонок данных и частые ошибки borrow checker на примерах.</description>
       
       <category>rust</category>
       
@@ -1517,20 +1506,20 @@
     
     
     <item>
-      <title>Ошибки компилятора в Rust: чтение диагностики и команда rustc --explain</title>
+      <title>Ошибки компилятора Rust: диагностика и rustc --explain</title>
       <link>https://eagle2000.space/rust/rust-err/</link>
       <pubDate>Mon, 12 May 2025 14:02:26 +0300</pubDate>
       <guid>https://eagle2000.space/rust/rust-err/</guid>
       
-      <description>Как понимать сообщения и коды ошибок компилятора Rust (rustc). Руководство для начинающих: использование команды rustc --explain, справочник кодов ошибок и пошаговая отладка.</description>
+      <description>Учимся читать сообщения об ошибках rustc: разбор структуры подсказок, работа со справочником кодов и пошаговая отладка для начинающих.</description>
       
       <category>rust</category>
       
       <category>dev</category>
       
-      <category>compiler</category>
-      
       <category>errors</category>
+      
+      <category>basics</category>
       
       
       
@@ -1552,7 +1541,7 @@
     
     
     <item>
-      <title>Изменяемые (mut) и неизменяемые переменные в Rust: иммутабельность по умолчанию</title>
+      <title>Переменные в Rust: mut и иммутабельность по умолчанию</title>
       <link>https://eagle2000.space/rust/rust-var-mut/</link>
       <pubDate>Tue, 06 May 2025 22:16:06 +0300</pubDate>
       <guid>https://eagle2000.space/rust/rust-var-mut/</guid>
@@ -1563,9 +1552,9 @@
       
       <category>dev</category>
       
-      <category>variables</category>
+      <category>basics</category>
       
-      <category>mutability</category>
+      <category>memory</category>
       
       
       
@@ -1592,7 +1581,7 @@
       <pubDate>Sat, 03 May 2025 15:10:24 +0300</pubDate>
       <guid>https://eagle2000.space/rust/rust-str-interpolation/</guid>
       
-      <description>Узнайте о макросе println! и интерполяции строк в Rust. В этой статье мы рассмотрим, как использовать println! для вывода сообщений, добавлять динамические значения в строку и использовать именованные аргументы. Rust, println!, интерполяция строк, динамические значения, именованные аргументы</description>
+      <description>Показываю на примерах, как форматировать вывод в консоль, подставлять переменные в текст и использовать именованные аргументы в макросах.</description>
       
       <category>rust</category>
       
@@ -1618,7 +1607,7 @@
     
     
     <item>
-      <title>Переменные в Rust: объявление, связывание (binding) и область видимости</title>
+      <title>Переменные в Rust: объявление, связывание и видимость</title>
       <link>https://eagle2000.space/rust/rust-var/</link>
       <pubDate>Sat, 03 May 2025 14:20:35 +0300</pubDate>
       <guid>https://eagle2000.space/rust/rust-var/</guid>
@@ -1656,7 +1645,11 @@
       
       <description>Подробный разбор ключевых улучшений компилятора K2, исправлений багов и новых возможностей языка Kotlin версии 2.1.20 для Android и Backend разработки.</description>
       
-      <category>Kotlin</category>
+      <category>kotlin</category>
+      
+      <category>android</category>
+      
+      <category>dev</category>
       
       
       
@@ -1711,14 +1704,16 @@
     
     
     <item>
-      <title>Как посчитать количество элементов в массиве в PostgreSQL: cardinality и array_length</title>
+      <title>Размер массива в PostgreSQL: cardinality и array_length</title>
       <link>https://eagle2000.space/til/postgresql/array-len/</link>
       <pubDate>Fri, 14 Feb 2025 10:32:37 +0300</pubDate>
       <guid>https://eagle2000.space/til/postgresql/array-len/</guid>
       
       <description>Разбираем способы подсчета элементов в массиве PostgreSQL. Сравнение функций cardinality() и array_length(), работа с многомерными массивами и обработка NULL.</description>
       
-      <category>PostgreSQL</category>
+      <category>dev</category>
+      
+      <category>technology</category>
       
       
       
@@ -1742,18 +1737,16 @@
     
     
     <item>
-      <title>Генерация диаграмм из текста на языке D2: синтаксис, анимации и экспортирование</title>
+      <title>Язык диаграмм D2: синтаксис, анимации и экспорт из текста</title>
       <link>https://eagle2000.space/til/tools/d2/</link>
       <pubDate>Thu, 13 Feb 2025 13:01:52 +0300</pubDate>
       <guid>https://eagle2000.space/til/tools/d2/</guid>
       
       <description>Быстрый обзор декларативного языка D2 для создания архитектурных диаграмм из кода. Синтаксис, анимации, поддержка LaTeX и интеграция с проектами.</description>
       
-      <category>диаграммы</category>
+      <category>tools</category>
       
-      <category>визуализация</category>
-      
-      <category>UML</category>
+      <category>dev</category>
       
       
       
@@ -1808,7 +1801,7 @@
     
     
     <item>
-      <title>Как отправить несколько файлов одним сообщением через Telegram Bot API</title>
+      <title>Отправка нескольких файлов одним сообщением в Telegram Bot API</title>
       <link>https://eagle2000.space/about-all/telegram-multiple-files/</link>
       <pubDate>Sat, 08 Feb 2025 16:34:33 +0300</pubDate>
       <guid>https://eagle2000.space/about-all/telegram-multiple-files/</guid>
@@ -1842,7 +1835,7 @@
       <pubDate>Tue, 04 Feb 2025 17:47:06 +0300</pubDate>
       <guid>https://eagle2000.space/rust/rust-struct/</guid>
       
-      <description>Практическое руководство по структурам в Rust: классические структуры, кортежные структуры, структуры-маркеры, управление видимостью полей и синтаксис инициализации.</description>
+      <description>Разбор классических, кортежных и маркерных структур (unit-like), управление видимостью полей через pub и сокращённый синтаксис инициализации.</description>
       
       <category>rust</category>
       
@@ -1906,7 +1899,9 @@
       
       <description>История создания музыкального альбома Код Ночи, сгенерированного нейронными сетями: концепция, треки и атмосфера ночного программирования.</description>
       
-      <category>music</category>
+      <category>technology</category>
+      
+      <category>start</category>
       
       
       
@@ -1968,7 +1963,9 @@
       
       <description>Подборка лучших ресурсов, учебных материалов, грамматических правил и аудиокниг для эффективного самостоятельного изучения французского языка.</description>
       
-      <category>french</category>
+      <category>languages</category>
+      
+      <category>советы</category>
       
       
       
@@ -1999,7 +1996,9 @@
       
       <description>Сборник карточек, полезных сервисов, учебников и методик запоминания иероглифов HSK для самостоятельного изучения китайского языка.</description>
       
-      <category>chinese</category>
+      <category>languages</category>
+      
+      <category>советы</category>
       
       
       
@@ -2040,13 +2039,11 @@
         
       
         
-          
-        
       
         
-          
-        
       
+      
+      <media:content url="https://eagle2000.space/about-all/new-photos/featured.png" medium="image"/>
       
     </item>
     
@@ -2071,13 +2068,11 @@
         
       
         
-          
-        
       
         
-          
-        
       
+      
+      <media:content url="https://eagle2000.space/about-all/new-languages/featured.png" medium="image"/>
       
     </item>
     
@@ -2092,9 +2087,9 @@
       
       <description>Как исследовать родословную и построить семейное древо с помощью open-source приложения Gramps? Полный разбор возможностей и экспорта данных.</description>
       
-      <category>Семейное древо</category>
+      <category>tools</category>
       
-      <category>OpenSource</category>
+      <category>technology</category>
       
       
       
@@ -2125,7 +2120,9 @@
       
       <description>Введение в OpenSCAD — скриптовый язык для создания 3D-моделей для печати. Разбираем код базовых фигур, трансформаций и вычитания объемов.</description>
       
-      <category>cad</category>
+      <category>tools</category>
+      
+      <category>dev</category>
       
       
       
@@ -2154,7 +2151,7 @@
       <pubDate>Fri, 29 Mar 2024 14:28:39 +0300</pubDate>
       <guid>https://eagle2000.space/about-all/smart-home/1711651438323-smart-home-ru/</guid>
       
-      <description>Простая обзорная заметка о технологии умного дома в Россиии</description>
+      <description>Обзор развития технологий умного дома в России: ключевые сложности отрасли, нехватка квалифицированных кадров и разрозненность стандартов устройств.</description>
       
       <category>technology</category>
       
@@ -2212,7 +2209,7 @@
       <pubDate>Fri, 29 Mar 2024 14:28:39 +0300</pubDate>
       <guid>https://eagle2000.space/about-all/smart-home/1711659284793-smart-home-ru-2/</guid>
       
-      <description>Мысли о кадрах в сфере умного дома. Немного моего опыта</description>
+      <description>Личный опыт и размышления о дефиците кадров в сфере умного дома в России: роли специалистов, промышленные контроллеры ПЛК и проблемы образования.</description>
       
       <category>technology</category>
       
@@ -2309,9 +2306,7 @@
       
       <category>dev</category>
       
-      <category>resources</category>
-      
-      <category>learning</category>
+      <category>basics</category>
       
       
       
@@ -2375,7 +2370,7 @@
       
       <category>dev</category>
       
-      <category>match</category>
+      <category>pattern-matching</category>
       
       <category>basics</category>
       
@@ -2404,7 +2399,7 @@
       <pubDate>Wed, 13 Mar 2024 00:00:00 +0000</pubDate>
       <guid>https://eagle2000.space/about-all/start/</guid>
       
-      <description>Немного о том про что блог</description>
+      <description>Перезапуск моего блога на Hugo: рассказываю о переезде с Ghost, планах на публикации по Flutter, Rust, Go, Linux, Docker и заметки о хобби.</description>
       
       <category>start</category>
       

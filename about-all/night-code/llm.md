@@ -5,7 +5,7 @@
 - **URL:** https://eagle2000.space/about-all/night-code/
 - **Date:** 2024-06-11
 
-- **Tags:** music
+- **Tags:** technology, start
 
 ---
 Недавно баловался с сервисом генерации песен [suno](https://suno.com/) и создал стебный альбом "Код ночи". Приятного прослушивания 😄 

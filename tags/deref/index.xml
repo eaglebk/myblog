@@ -17,6 +17,41 @@
     
     
     <item>
+      <title>BufRead и stdin().lock() в Rust: быстрый I/O, тесты и ошибки</title>
+      <link>https://eagle2000.space/rust/rust-io-bufread-and-errors/</link>
+      <pubDate>Tue, 17 Nov 2026 19:21:00 +0300</pubDate>
+      <guid>https://eagle2000.space/rust/rust-io-bufread-and-errors/</guid>
+      
+      <description>Как сократить число системных вызовов с BufRead, тестировать потоки через std::io::Cursor, обрабатывать сбои .lines() и возвращать коды выхода в CLI.</description>
+      
+      <category>rust</category>
+      
+      <category>dev</category>
+      
+      <category>io</category>
+      
+      <category>errors</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="https://eagle2000.space/rust/rust-io-bufread-and-errors/featured.png" medium="image"/>
+      
+    </item>
+    
+    
+    
+    
+    <item>
       <title>Итераторы в Rust: ленивая обработка данных без лишних аллокаций</title>
       <link>https://eagle2000.space/rust/rust-iterators-deep-dive/</link>
       <pubDate>Fri, 13 Nov 2026 13:00:00 +0300</pubDate>

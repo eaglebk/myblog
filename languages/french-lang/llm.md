@@ -5,7 +5,7 @@
 - **URL:** https://eagle2000.space/languages/french-lang/
 - **Date:** 2024-04-23
 
-- **Tags:** french
+- **Tags:** languages, советы
 
 ---{{< lead >}}
 Знакомство с француским языком началось с музыки: Zaz, Stromae и других исполнителей.

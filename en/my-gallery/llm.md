@@ -5,7 +5,7 @@
 - **URL:** https://eagle2000.space/en/my-gallery/
 - **Date:** 2026-04-20
 - **Categories:** my-gallery
-- **Tags:** photos
+- **Tags:** photography
 
 ---
 {{< lead >}}

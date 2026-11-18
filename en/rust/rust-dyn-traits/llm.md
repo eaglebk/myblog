@@ -5,10 +5,9 @@
 - **URL:** https://eagle2000.space/en/rust/rust-dyn-traits/
 - **Date:** 2026-08-14
 
-- **Tags:** rust, dev, traits, dyn, vtable, middle
+- **Tags:** rust, dev, traits, memory, middle
 
----
-## Introduction
+---## Introduction
 
 In our previous articles: [RAII, Box, and Deref](../rust-raii-box-deref) and [Introduction to Traits](../rust-traits), we explored basic traits and heap allocations via `Box<T>`. By default, Rust strives to make your code as fast as possible: when using generic types, the compiler performs **monomorphization**. It takes a function and generates a concrete copy for every single type used, producing direct, zero-cost function calls.
 

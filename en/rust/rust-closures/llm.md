@@ -1,14 +1,13 @@
 # Closures in Rust: Functions with Their Own Memory
 
-> A practical breakdown of function pointers and closures in Rust: environment capture, how Fn, FnMut, and FnOnce map to struct methods under the hood, and when you need for<'a>.
+> A practical breakdown of environment capture, function pointers, how Fn, FnMut, and FnOnce map to struct methods, and when you need for<'a>.
 
 - **URL:** https://eagle2000.space/en/rust/rust-closures/
 - **Date:** 2026-11-05
 
 - **Tags:** rust, dev, closures, advanced
 
----
-In everyday Rust code, closures show up everywhere, from simple iterator chains like `.map(|x| x * 2)` and `.filter(|item| item.id == target_id)` to spawning background work in `tokio::spawn(async move { ... })`. At first glance, they look just like lambdas in a dozen other languages: write arguments between vertical bars `|...|`, reference whatever outer variables you need, and move on.
+---In everyday Rust code, closures show up everywhere, from simple iterator chains like `.map(|x| x * 2)` and `.filter(|item| item.id == target_id)` to spawning background work in `tokio::spawn(async move { ... })`. At first glance, they look just like lambdas in a dozen other languages: write arguments between vertical bars `|...|`, reference whatever outer variables you need, and move on.
 
 Things get interesting the moment you try to store a closure in a struct, return it from a function, or send it across threads.
 

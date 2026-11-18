@@ -12,7 +12,7 @@
 ### 🔹 [Rust](https://eagle2000.space/rust/llm.md)
 > Мой путь в изучении языка Rust: от первых экспериментов и базового синтаксиса до асинхронности Tokio и разработки на микроконтроллерах ESP32.
 
-- **Статей:** 46
+- **Статей:** 47
 - **Каталог раздела для LLM:** `https://eagle2000.space/rust/llm.md`
 
 ### 🔹 [О фотографии](https://eagle2000.space/photography/llm.md)
@@ -55,21 +55,22 @@
 
 ## 🚀 Последние публикации:
 
+- [Быстрый ввод-вывод в Rust: буферизация, тесты и ошибки](https://eagle2000.space/rust/rust-io-bufread-and-errors/llm.md) (2026-11-18) — *rust*
 - [Итераторы в Rust: ленивая обработка данных без лишних аллокаций](https://eagle2000.space/rust/rust-iterators-deep-dive/llm.md) (2026-11-13) — *rust*
 - [Замыкания в Rust: функции с собственной памятью](https://eagle2000.space/rust/rust-closures/llm.md) (2026-11-05) — *rust*
-- [Погружение в Lifetimes (времена жизни) в Rust: работа с ссылками без ошибок и паники](https://eagle2000.space/rust/rust-lifetimes-deep-dive/llm.md) (2026-10-21) — *rust*
+- [Времена жизни (Lifetimes) в Rust: Elision, HRTB и вариантность](https://eagle2000.space/rust/rust-lifetimes-deep-dive/llm.md) (2026-10-21) — *rust*
 - [Опыт важнее мегапикселей: Почему стоит изучить мануал к камере](https://eagle2000.space/photography/practice-and-gear/llm.md) (2026-10-21) — *photography*
-- [Rust: тонкости Pattern Matching - деструктуризация, bindings и guards](https://eagle2000.space/rust/rust-pattern-matching-deep-dive/llm.md) (2026-10-05) — *rust*
-- [Использование и применение std::collections в Rust: BTreeMap, HashSet, BinaryHeap и VecDeque](https://eagle2000.space/rust/rust-collections-overview/llm.md) (2026-09-18) — *rust*
+- [Тонкости Pattern Matching в Rust: деструктуризация и guards](https://eagle2000.space/rust/rust-pattern-matching-deep-dive/llm.md) (2026-10-05) — *rust*
+- [Выбор std::collections в Rust: BTreeMap, VecDeque, BinaryHeap](https://eagle2000.space/rust/rust-collections-overview/llm.md) (2026-09-18) — *rust*
 - [Внутренняя мутабельность в Rust: паттерн использования Cell, RefCell](https://eagle2000.space/rust/rust-interior-mutability/llm.md) (2026-09-09) — *rust*
 - [Обновление главной страницы и дизайна карточек статей](https://eagle2000.space/about-all/blog-design-update/llm.md) (2026-09-08) — *about-all*
 - [Как использовать монопод правильно: Секреты стабильного кадра](https://eagle2000.space/photography/monopod-guide/llm.md) (2026-09-07) — *photography*
-- [Продвинутые типажи в Rust: ассоциированные типы, супертрейты и blanket-реализации](https://eagle2000.space/rust/rust-advanced-traits/llm.md) (2026-08-18) — *rust*
-- [Дайджест мобильной разработки: Релиз Flutter 3.47 & Dart 3.13, 5 лет Compose, безопасность и утилиты](https://eagle2000.space/til/mobile/mobile-dev-digest-week-33/llm.md) (2026-08-17) — *til*
-- [Крейт дня: Strum - автоматический перебор и конвертация enum в Rust на примере esp-generate](https://eagle2000.space/rust/crate-of-the-day-strum/llm.md) (2026-08-16) — *rust*
+- [Продвинутые трейты в Rust: ассоциированные типы и супертрейты](https://eagle2000.space/rust/rust-advanced-traits/llm.md) (2026-08-18) — *rust*
+- [Мобильный дайджест: Flutter 3.47, Dart 3.13 и 5 лет Compose](https://eagle2000.space/til/mobile/mobile-dev-digest-week-33/llm.md) (2026-08-17) — *til*
+- [Крейт дня: Strum — перебор и конвертация enum в Rust](https://eagle2000.space/rust/crate-of-the-day-strum/llm.md) (2026-08-16) — *rust*
 - [Крейт дня: Rayon - параллельные вычисления в одну строку](https://eagle2000.space/rust/crate-of-the-day-rayon/llm.md) (2026-08-15) — *rust*
 - [Трейт-объекты: как работает динамический полиморфизм в Rust](https://eagle2000.space/rust/rust-dyn-traits/llm.md) (2026-08-14) — *rust*
-- [Управление памятью в Rust: идиома RAII, указатель Box и механизмы Deref Coercion](https://eagle2000.space/rust/rust-raii-box-deref/llm.md) (2026-08-12) — *rust*
+- [Управление памятью в Rust: RAII, Box<T> и Deref Coercion](https://eagle2000.space/rust/rust-raii-box-deref/llm.md) (2026-08-12) — *rust*
 - [ESP32 + Rust: Быстрый старт с нуля (помигаем светодиодом)](https://eagle2000.space/rust/esp32-rust-blink/llm.md) (2026-08-10) — *rust*
 - [Трейты в Rust: от первых шагов до понятного мономорфного кода](https://eagle2000.space/rust/rust-traits/llm.md) (2026-08-07) — *rust*
 - [Операторы let-else и пропагации ошибок в Rust](https://eagle2000.space/rust/rust-flow-control/llm.md) (2026-08-02) — *rust*
@@ -79,5 +80,4 @@
 - [Низкоуровневое представление типов в памяти в Rust (Type Layout)](https://eagle2000.space/rust/rust-type-layout/llm.md) (2026-08-01) — *rust*
 - [Циклы и диапазоны в Rust: loop, while и for на практике](https://eagle2000.space/rust/rust-loops/llm.md) (2026-07-31) — *rust*
 - [Условные конструкции и ветвление в Rust](https://eagle2000.space/rust/rust-conditionals/llm.md) (2026-07-31) — *rust*
-- [Основы композиции: Правило третей](https://eagle2000.space/photography/composition-basics/llm.md) (2026-07-31) — *photography*
 

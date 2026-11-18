@@ -1,14 +1,13 @@
-# Rust: Deep Dive into Pattern Matching - Destructuring, Bindings, and Guards
+# Pattern Matching in Rust: Destructuring, Bindings, and Guards
 
 > In-depth guide to pattern matching in Rust: exhaustiveness, destructuring, @-bindings in dupe-krill, slice patterns, match guards, and let chains.
 
 - **URL:** https://eagle2000.space/en/rust/rust-pattern-matching-deep-dive/
 - **Date:** 2026-10-05
 
-- **Tags:** rust, dev, pattern-matching, destructuring, match-guards, if-let, while-let
+- **Tags:** rust, dev, pattern-matching, middle
 
----
-## Introduction
+---## Introduction
 
 Pattern matching in Rust is often mistaken for a mere analog of `switch/case` statements found in other languages. In practice, it is one of the most expressive and powerful tools in the language. Rust provides `match`, `if let`, and `let` expressions that destructure structs on the fly, evaluate complex conditions without nested `if` blocks, and eliminate invalid states right at compile time.
 

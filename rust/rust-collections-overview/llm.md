@@ -1,14 +1,13 @@
-# Использование и применение std::collections в Rust: BTreeMap, HashSet, BinaryHeap и VecDeque
+# Выбор std::collections в Rust: BTreeMap, VecDeque, BinaryHeap
 
 > Разбираем коллекции в Rust: когда применять VecDeque, чем BTreeMap отличается от HashMap и почему LinkedList почти никогда не нужен.
 
 - **URL:** https://eagle2000.space/rust/rust-collections-overview/
 - **Date:** 2026-09-18
 
-- **Tags:** rust, dev, collections, btreemap, vecdeque, binaryheap
+- **Tags:** rust, dev, collections, memory
 
----
-## Введение
+---## Введение
 
 В языке Rust обычно используеются стандартные `Vec<T>` и `HashMap<K, V>`. Но когда дело доходит до очередей сообщений, каких-то выборок или планировщиков задач - дефолтных контейнеров уже становится маловато.
 

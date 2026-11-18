@@ -5,10 +5,9 @@
 - **URL:** https://eagle2000.space/en/rust/rust-interior-mutability/
 - **Date:** 2026-09-09
 
-- **Tags:** rust, dev, interior-mutability, cell, refcell
+- **Tags:** rust, dev, memory, interior-mutability, refcell
 
----
-## Introduction
+---## Introduction
 
 Usually, the borrow checker acts strictly: if a variable is declared without `mut`, the compiler will never allow modifying its fields through an immutable reference `&T`. This is standard **Inherited Mutability**.
 

@@ -1,14 +1,13 @@
 # Rust Iterators: Lazy Data Processing Without Extra Allocations
 
-> A deep dive into Rust iterators: how for loops desugar with IntoIterator, .iter() vs .iter_mut() vs .into_iter(), lazy pipelines, custom pagination iterators, and LLVM SIMD optimizations.
+> Explore how for loops desugar via IntoIterator, compare .iter() vs .into_iter(), build custom pagination, and leverage LLVM SIMD optimizations.
 
 - **URL:** https://eagle2000.space/en/rust/rust-iterators-deep-dive/
 - **Date:** 2026-11-13
 
 - **Tags:** rust, dev, iterators, zero-cost-abstractions, functional
 
----
-Last time I covered [closures in Rust](../rust-closures/) and how the compiler moves captured variables into anonymous structs. Today let's look at iterators. Together with closures, they give you short chains like `.filter().map().collect()` that compile down to a plain loop with no extra heap allocations.
+---Last time I covered [closures in Rust](../rust-closures/) and how the compiler moves captured variables into anonymous structs. Today let's look at iterators. Together with closures, they give you short chains like `.filter().map().collect()` that compile down to a plain loop with no extra heap allocations.
 
 In JavaScript, `arr.filter(...).map(...)` allocates a fresh intermediate array on every step and feeds the garbage collector; in Python, even lazy `map()` and `filter()` wrap every step in interpreter calls and heap objects. When I first moved to Rust from Go, I kept writing manual loops with `let mut out = Vec::new()` out of habit, worried about overhead. In reality, Rust does the opposite: an iterator chain allocates nothing on the fly and compiles into a tight machine loop.
 

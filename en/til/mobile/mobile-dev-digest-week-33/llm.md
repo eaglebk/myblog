@@ -1,11 +1,11 @@
-# Mobile development digest: Flutter 3.47 & Dart 3.13, 5 years of Compose & tools
+# Mobile Digest: Flutter 3.47, Dart 3.13 & 5 Years of Compose
 
 > In-depth mobile development digest: Flutter 3.47 and Dart 3.13 releases, 5 years of Jetpack Compose, Apple promo guidelines
 
 - **URL:** https://eagle2000.space/en/til/mobile/mobile-dev-digest-week-33/
 - **Date:** 2026-08-17
 
-- **Tags:** ios, android, swift, kotlin, flutter, dart, security, mobile
+- **Tags:** mobile, flutter, kotlin, ios
 
 ---
 In this edition of our mobile development digest, I cover major updates across the mobile engineering landscape: the releases of Flutter 3.47 and Dart 3.13, celebrating 5 years of Jetpack Compose, Apple App Store header guidelines, and useful open-source tools.

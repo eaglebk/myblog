@@ -1,6 +1,6 @@
 # BufReader in Rust: Accelerating I/O
 
-> In-depth guide to BufReader in Rust. Learn how to accelerate file reading, master BufRead vs Read, minimize OS system calls, and benchmark line-by-line streaming.
+> Learn how to speed up file reading by minimizing OS system calls, mastering BufRead vs Read, and benchmarking line-by-line streaming.
 
 - **URL:** https://eagle2000.space/en/rust/bufreader/
 - **Date:** 2025-08-26

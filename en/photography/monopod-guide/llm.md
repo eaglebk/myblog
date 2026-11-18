@@ -5,7 +5,7 @@
 - **URL:** https://eagle2000.space/en/photography/monopod-guide/
 - **Date:** 2026-04-28
 - **Categories:** photography
-- **Tags:** tripod, monopod, tips, technique, video
+- **Tags:** photography, tips, technique
 
 ---
 There is a joke among photographers and videographers that a monopod is just a tripod on a strict diet. Indeed, it is a lightweight, compact, and highly mobile single-legged camera support. It is indispensable when shooting sports or wildlife with heavy telephoto lenses, relieving your arms during long events, or capturing dynamic video footage on the fly.

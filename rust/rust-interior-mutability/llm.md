@@ -1,14 +1,13 @@
 # Внутренняя мутабельность в Rust: паттерн использования Cell, RefCell
 
-> Разбираемся с паттерном внутренней мутабельности (Interior Mutability) в Rust: философия работы, контейнеры Cell и RefCell, отличие от унаследованной мутабельности.
+> Разбираю философию Interior Mutability, обход правил borrow checker в рантайме и отличия от классической унаследованной мутабельности.
 
 - **URL:** https://eagle2000.space/rust/rust-interior-mutability/
 - **Date:** 2026-09-09
 
-- **Tags:** rust, dev, interior-mutability, cell, refcell, mutex
+- **Tags:** rust, dev, memory, interior-mutability, refcell
 
----
-## Введение
+---## Введение
 
 Обычно borrow checker действует жестко: объявляем переменную без `mut` — и компилятор ни за что не даст изменять её поля по иммутабельной ссылке `&T`. Это стандартная **унаследованная мутабельность (Inherited Mutability)**.
 
