@@ -134,12 +134,6 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eagle2000.space/rust/rust-advanced-traits/" />
   </url>
   <url>
-    <loc>https://eagle2000.space/til/mobile/</loc>
-    <lastmod>2026-08-17T10:00:00+03:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://eagle2000.space/til/mobile/mobile-dev-digest-week-33/</loc>
     <lastmod>2026-08-17T10:00:00+03:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -404,12 +398,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eagle2000.space/til/kotlin/</loc>
-    <lastmod>2025-03-26T12:24:25+03:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://eagle2000.space/til/kotlin/kotlin2_1_20/</loc>
     <lastmod>2025-03-26T12:24:25+03:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -422,20 +410,8 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eagle2000.space/til/postgresql/</loc>
-    <lastmod>2025-02-14T10:32:37+03:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://eagle2000.space/til/postgresql/array-len/</loc>
     <lastmod>2025-02-14T10:32:37+03:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://eagle2000.space/til/tools/</loc>
-    <lastmod>2025-02-13T13:01:52+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -485,18 +461,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eagle2000.space/about-all/new-photos/</loc>
-    <lastmod>2024-04-20T20:28:39+03:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://eagle2000.space/about-all/new-languages/</loc>
-    <lastmod>2024-04-20T20:28:39+03:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://eagle2000.space/languages/</loc>
     <lastmod>2024-04-20T20:28:39+03:00</lastmod>
     <changefreq>daily</changefreq>
@@ -512,19 +476,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://eagle2000.space/til/cad/</loc>
-    <lastmod>2024-03-30T12:49:11+03:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://eagle2000.space/about-all/smart-home/</loc>
-    <lastmod>2024-03-29T14:28:39+03:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://eagle2000.space/about-all/new-til/</loc>
     <lastmod>2024-03-29T14:28:39+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -548,20 +500,8 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://eagle2000.space/til/" />
   </url>
   <url>
-    <loc>https://eagle2000.space/til/swift/</loc>
-    <lastmod>2024-03-29T12:45:52+03:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://eagle2000.space/til/swift/develop_in_swift_tutorials/</loc>
     <lastmod>2024-03-29T12:45:52+03:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://eagle2000.space/til/flutter/</loc>
-    <lastmod>2024-03-28T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
