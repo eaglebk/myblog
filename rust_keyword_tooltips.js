@@ -212,13 +212,17 @@ if (typeof window.RustPlayground === "undefined") {
       outputContainer.classList.remove("hidden");
 
       try {
+        const version =
+          code.includes("#![feature(") || code.includes("// ?nightly")
+            ? "nightly"
+            : "stable";
         const response = await fetch(
           "https://play.rust-lang.org/evaluate.json",
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
-              version: "stable",
+              version,
               optimize: "0",
               edition: "2024",
               code: code,

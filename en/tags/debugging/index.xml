@@ -1,0 +1,1011 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" 
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:yandex="http://news.yandex.ru"
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>Debugging на Eagle blog</title>
+    <link>http://localhost:1313/en/tags/debugging/</link>
+    <description>Свежие статьи и публикации Eagle blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 19 Nov 2026 21:00:00 +0300</lastBuildDate>
+    
+    <atom:link href="http://localhost:1313/en/tags/debugging/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+    
+    <item>
+      <title>Speeding Up the Speedable: SIMD and What GTA Has to Do With It</title>
+      <link>http://localhost:1313/en/rust/rust-simd-and-gta/</link>
+      <pubDate>Mon, 23 Nov 2026 00:05:00 +0300</pubDate>
+      <guid>http://localhost:1313/en/rust/rust-simd-and-gta/</guid>
+      
+      <description>How SIMD works under the hood, why a JSON parsing bug stalled GTA Online for 5-10 minutes, how simdjson hits gigabytes per second, and four ways to use SIMD in Rust.</description>
+      
+      <category>rust</category>
+      
+      <category>simd</category>
+      
+      <category>performance</category>
+      
+      <category>optimization</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="http://localhost:1313/rust/rust-simd-and-gta/featured.png" medium="image"/>
+      
+    </item>
+    
+    
+    
+    
+    <item>
+      <title>Rake of the Day: the server returned 202 Accepted... after 9 seconds, and the client timed out</title>
+      <link>http://localhost:1313/en/rust/http-202-async-email-timeout/</link>
+      <pubDate>Thu, 19 Nov 2026 21:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/en/rust/http-202-async-email-timeout/</guid>
+      
+      <description>Why an async email endpoint makes a mobile app crash with TimeoutException, and how to offload SMTP properly with tokio::spawn.</description>
+      
+      <category>rust</category>
+      
+      <category>tokio</category>
+      
+      <category>axum</category>
+      
+      <category>flutter</category>
+      
+      <category>debugging</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="http://localhost:1313/rust/http-202-async-email-timeout/featured.png" medium="image"/>
+      
+    </item>
+    
+    
+    
+    
+    <item>
+      <title>Rake of the Day: two CryptoProviders in rustls and a panic out of nowhere</title>
+      <link>http://localhost:1313/en/rust/rustls-crypto-provider-conflict/</link>
+      <pubDate>Thu, 19 Nov 2026 20:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/en/rust/rustls-crypto-provider-conflict/</guid>
+      
+      <description>Why a Rust server can start up fine and then crash on its very first TLS connection, and how one line in main() picks the crypto backend for rustls.</description>
+      
+      <category>rust</category>
+      
+      <category>dev</category>
+      
+      <category>tls</category>
+      
+      <category>cargo</category>
+      
+      <category>debugging</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="http://localhost:1313/rust/rustls-crypto-provider-conflict/featured.png" medium="image"/>
+      
+    </item>
+    
+    
+    
+    
+    <item>
+      <title>Fast I/O in Rust: Buffering, In-Memory Tests, and CLI Errors</title>
+      <link>http://localhost:1313/en/rust/rust-io-bufread-and-errors/</link>
+      <pubDate>Wed, 18 Nov 2026 13:27:00 +0300</pubDate>
+      <guid>http://localhost:1313/en/rust/rust-io-bufread-and-errors/</guid>
+      
+      <description>How to cut syscall overhead with BufRead, unit-test streams via std::io::Cursor, handle .lines() failures, and return clean UNIX exit codes in CLI tools.</description>
+      
+      <category>rust</category>
+      
+      <category>dev</category>
+      
+      <category>io</category>
+      
+      <category>errors</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="http://localhost:1313/rust/rust-io-bufread-and-errors/featured.png" medium="image"/>
+      
+    </item>
+    
+    
+    
+    
+    <item>
+      <title>Rust Iterators: Lazy Data Processing Without Extra Allocations</title>
+      <link>http://localhost:1313/en/rust/rust-iterators-deep-dive/</link>
+      <pubDate>Fri, 13 Nov 2026 13:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/en/rust/rust-iterators-deep-dive/</guid>
+      
+      <description>Explore how for loops desugar via IntoIterator, compare .iter() vs .into_iter(), build custom pagination, and leverage LLVM SIMD optimizations.</description>
+      
+      <category>rust</category>
+      
+      <category>dev</category>
+      
+      <category>iterators</category>
+      
+      <category>zero-cost-abstractions</category>
+      
+      <category>functional</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="http://localhost:1313/rust/rust-iterators-deep-dive/featured.png" medium="image"/>
+      
+    </item>
+    
+    
+    
+    
+    <item>
+      <title>Closures in Rust: Functions with Their Own Memory</title>
+      <link>http://localhost:1313/en/rust/rust-closures/</link>
+      <pubDate>Thu, 05 Nov 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/en/rust/rust-closures/</guid>
+      
+      <description>A practical breakdown of environment capture, function pointers, how Fn, FnMut, and FnOnce map to struct methods, and when you need for&lt;&#39;a&gt;.</description>
+      
+      <category>rust</category>
+      
+      <category>dev</category>
+      
+      <category>closures</category>
+      
+      <category>advanced</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="http://localhost:1313/rust/rust-closures/featured.png" medium="image"/>
+      
+    </item>
+    
+    
+    
+    
+    <item>
+      <title>Rust Lifetimes Deep Dive: Elision, HRTB, and Variance</title>
+      <link>http://localhost:1313/en/rust/rust-lifetimes-deep-dive/</link>
+      <pubDate>Wed, 21 Oct 2026 13:05:10 +0300</pubDate>
+      <guid>http://localhost:1313/en/rust/rust-lifetimes-deep-dive/</guid>
+      
+      <description>Master Rust lifetimes: how lifetime elision works, storing references in structs, &amp;&#39;static vs T: &#39;static, higher-rank trait bounds (for&lt;&#39;a&gt;), and variance.</description>
+      
+      <category>rust</category>
+      
+      <category>dev</category>
+      
+      <category>lifetimes</category>
+      
+      <category>memory</category>
+      
+      <category>advanced</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="http://localhost:1313/rust/rust-lifetimes-deep-dive/featured.png" medium="image"/>
+      
+    </item>
+    
+    
+    
+    
+    <item>
+      <title>Pattern Matching in Rust: Destructuring, Bindings, and Guards</title>
+      <link>http://localhost:1313/en/rust/rust-pattern-matching-deep-dive/</link>
+      <pubDate>Mon, 05 Oct 2026 15:35:19 +0300</pubDate>
+      <guid>http://localhost:1313/en/rust/rust-pattern-matching-deep-dive/</guid>
+      
+      <description>In-depth guide to pattern matching in Rust: exhaustiveness, destructuring, @-bindings in dupe-krill, slice patterns, match guards, and let chains.</description>
+      
+      <category>rust</category>
+      
+      <category>dev</category>
+      
+      <category>pattern-matching</category>
+      
+      <category>middle</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="http://localhost:1313/rust/rust-pattern-matching-deep-dive/featured.png" medium="image"/>
+      
+    </item>
+    
+    
+    
+    
+    <item>
+      <title>Choosing std::collections in Rust: Maps, Sets, and Queues</title>
+      <link>http://localhost:1313/en/rust/rust-collections-overview/</link>
+      <pubDate>Fri, 18 Sep 2026 12:44:50 +0300</pubDate>
+      <guid>http://localhost:1313/en/rust/rust-collections-overview/</guid>
+      
+      <description>A practical guide to collections in Rust: when to use VecDeque, how BTreeMap compares to HashMap, and why you almost never need LinkedList.</description>
+      
+      <category>rust</category>
+      
+      <category>dev</category>
+      
+      <category>collections</category>
+      
+      <category>memory</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="http://localhost:1313/rust/rust-collections-overview/featured.png" medium="image"/>
+      
+    </item>
+    
+    
+    
+    
+    <item>
+      <title>Interactive Rust Roadmap</title>
+      <link>http://localhost:1313/en/rust/roadmap/</link>
+      <pubDate>Wed, 16 Sep 2026 12:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/en/rust/roadmap/</guid>
+      
+      <description>Interactive step-by-step roadmap to mastering Rust: from basic syntax to async systems and embedded microcontrollers with real-time progress tracking.</description>
+      
+      <category>Rust</category>
+      
+      <category>Roadmap</category>
+      
+      <category>Learning</category>
+      
+      <category>Guide</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+      
+    </item>
+    
+    
+    
+    
+    <item>
+      <title>Interior Mutability in Rust: Pattern Philosophy, Cell, and RefCell</title>
+      <link>http://localhost:1313/en/rust/rust-interior-mutability/</link>
+      <pubDate>Wed, 09 Sep 2026 08:45:32 +0300</pubDate>
+      <guid>http://localhost:1313/en/rust/rust-interior-mutability/</guid>
+      
+      <description>Exploring the Interior Mutability pattern in Rust: core mechanics, Cell and RefCell containers, inherited vs interior mutability, and practical code examples.</description>
+      
+      <category>rust</category>
+      
+      <category>dev</category>
+      
+      <category>memory</category>
+      
+      <category>interior-mutability</category>
+      
+      <category>refcell</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="http://localhost:1313/rust/rust-interior-mutability/featured.png" medium="image"/>
+      
+    </item>
+    
+    
+    
+    
+    <item>
+      <title>Advanced Traits in Rust: Associated Types and Supertraits</title>
+      <link>http://localhost:1313/en/rust/rust-advanced-traits/</link>
+      <pubDate>Tue, 18 Aug 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/en/rust/rust-advanced-traits/</guid>
+      
+      <description>Learn how to use associated constants, fully qualified syntax ::method, and blanket implementations in complex Rust codebases.</description>
+      
+      <category>rust</category>
+      
+      <category>dev</category>
+      
+      <category>traits</category>
+      
+      <category>generics</category>
+      
+      <category>advanced</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="http://localhost:1313/rust/rust-advanced-traits/featured.png" medium="image"/>
+      
+    </item>
+    
+    
+    
+    
+    <item>
+      <title>Mobile Digest: Flutter 3.47, Dart 3.13 &amp; 5 Years of Compose</title>
+      <link>http://localhost:1313/en/til/mobile/mobile-dev-digest-week-33/</link>
+      <pubDate>Mon, 17 Aug 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/en/til/mobile/mobile-dev-digest-week-33/</guid>
+      
+      <description>In-depth mobile development digest: Flutter 3.47 and Dart 3.13 releases, 5 years of Jetpack Compose, Apple promo guidelines</description>
+      
+      <category>mobile</category>
+      
+      <category>flutter</category>
+      
+      <category>kotlin</category>
+      
+      <category>ios</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="http://localhost:1313/til/mobile/mobile-dev-digest-week-33/featured.png" medium="image"/>
+      
+    </item>
+    
+    
+    
+    
+    <item>
+      <title>Crate of the Day: Strum - iterating and converting Rust Enum</title>
+      <link>http://localhost:1313/en/rust/crate-of-the-day-strum/</link>
+      <pubDate>Sun, 16 Aug 2026 17:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/en/rust/crate-of-the-day-strum/</guid>
+      
+      <description>Exploring the popular Strum crate: how to iterate over enum variants, convert enums to strings and back, using a real-world example from esp-generate.</description>
+      
+      <category>rust</category>
+      
+      <category>crate-of-the-day</category>
+      
+      <category>enums</category>
+      
+      <category>macros</category>
+      
+      <category>esp32</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="http://localhost:1313/rust/crate-of-the-day-strum/featured.png" medium="image"/>
+      
+    </item>
+    
+    
+    
+    
+    <item>
+      <title>Crate of the Day: Rayon - Data Parallelism in a Single Line of Code</title>
+      <link>http://localhost:1313/en/rust/crate-of-the-day-rayon/</link>
+      <pubDate>Sat, 15 Aug 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/en/rust/crate-of-the-day-rayon/</guid>
+      
+      <description>Exploring the legendary Rayon crate: how changing a single line from .iter() to .par_iter() parallelizes computation across all CPU cores using Work-Stealing.</description>
+      
+      <category>rust</category>
+      
+      <category>crate-of-the-day</category>
+      
+      <category>concurrency</category>
+      
+      <category>performance</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="http://localhost:1313/rust/crate-of-the-day-rayon/featured.png" medium="image"/>
+      
+    </item>
+    
+    
+    
+    
+    <item>
+      <title>Trait Objects: How Dynamic Polymorphism Works in Rust</title>
+      <link>http://localhost:1313/en/rust/rust-dyn-traits/</link>
+      <pubDate>Fri, 14 Aug 2026 12:22:25 +0300</pubDate>
+      <guid>http://localhost:1313/en/rust/rust-dyn-traits/</guid>
+      
+      <description>Learn how trait objects (dyn Trait) work in Rust in simple terms: fat pointers, vtables, memory alignment, and object safety rules in practice.</description>
+      
+      <category>rust</category>
+      
+      <category>dev</category>
+      
+      <category>traits</category>
+      
+      <category>memory</category>
+      
+      <category>middle</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="http://localhost:1313/rust/rust-dyn-traits/featured.png" medium="image"/>
+      
+    </item>
+    
+    
+    
+    
+    <item>
+      <title>Memory Management in Rust: RAII, Box&lt;T&gt;, and Deref Coercion</title>
+      <link>http://localhost:1313/en/rust/rust-raii-box-deref/</link>
+      <pubDate>Wed, 12 Aug 2026 11:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/en/rust/rust-raii-box-deref/</guid>
+      
+      <description>Learn how automatic resource cleanup works via Drop, allocate heap data with smart pointers, and create &#39;static references using Box::leak.</description>
+      
+      <category>rust</category>
+      
+      <category>dev</category>
+      
+      <category>memory</category>
+      
+      <category>raii</category>
+      
+      <category>middle</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="http://localhost:1313/rust/rust-raii-box-deref/featured.jpeg" medium="image"/>
+      
+    </item>
+    
+    
+    
+    
+    <item>
+      <title>Traits in Rust: From Fundamentals to Monomorphic Zero-Cost Code</title>
+      <link>http://localhost:1313/en/rust/rust-traits/</link>
+      <pubDate>Fri, 07 Aug 2026 14:07:57 +0300</pubDate>
+      <guid>http://localhost:1313/en/rust/rust-traits/</guid>
+      
+      <description>Learn trait syntax and impl blocks, default method implementations, generic bounds, impl Trait parameters, and zero-cost monomorphization.</description>
+      
+      <category>rust</category>
+      
+      <category>dev</category>
+      
+      <category>traits</category>
+      
+      <category>generics</category>
+      
+      <category>middle</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="http://localhost:1313/rust/rust-traits/featured.png" medium="image"/>
+      
+    </item>
+    
+    
+    
+    
+    <item>
+      <title>Enums in Rust: From Syntax to Pattern Matching</title>
+      <link>http://localhost:1313/en/rust/rust-enums/</link>
+      <pubDate>Sat, 01 Aug 2026 10:58:17 +0300</pubDate>
+      <guid>http://localhost:1313/en/rust/rust-enums/</guid>
+      
+      <description>In-depth overview of Rust enums: data-carrying variants, uninhabited types, the Option pattern, and match pattern matching with hands-on examples.</description>
+      
+      <category>rust</category>
+      
+      <category>dev</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="http://localhost:1313/rust/rust-enums/featured.png" medium="image"/>
+      
+    </item>
+    
+    
+    
+    
+    <item>
+      <title>Conditionals and Control Flow in Rust</title>
+      <link>http://localhost:1313/en/rust/rust-conditionals/</link>
+      <pubDate>Fri, 31 Jul 2026 00:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/en/rust/rust-conditionals/</guid>
+      
+      <description>Master branching and control flow in Rust: code blocks, if-else expressions, single-pattern matching with if let, and let-chains.</description>
+      
+      <category>rust</category>
+      
+      <category>dev</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="http://localhost:1313/rust/rust-conditionals/featured.png" medium="image"/>
+      
+    </item>
+    
+    
+    
+    
+    <item>
+      <title>Personal Profile</title>
+      <link>http://localhost:1313/en/profile/</link>
+      <pubDate>Tue, 21 Jul 2026 00:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/en/profile/</guid>
+      
+      <description>EagleBlog user personal profile, cross-device bookmarks, read articles, and brain power stats sync.</description>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+      
+    </item>
+    
+    
+    
+    
+    <item>
+      <title>How to Use a Monopod Correctly: Secrets to a Sharp Shot</title>
+      <link>http://localhost:1313/en/photography/monopod-guide/</link>
+      <pubDate>Tue, 28 Apr 2026 11:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/en/photography/monopod-guide/</guid>
+      
+      <description>Understanding monopod techniques in photography and filmmaking: stances, crowd shooting, unique angles, and comparison with gimbals and tripods.</description>
+      
+      <category>photography</category>
+      
+      <category>tips</category>
+      
+      <category>technique</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="http://localhost:1313/photography/monopod-guide/featured.png" medium="image"/>
+      
+    </item>
+    
+    
+    
+    
+    <item>
+      <title>Practice Over Pixels: Why You Should Read Your Camera Manual</title>
+      <link>http://localhost:1313/en/photography/practice-and-gear/</link>
+      <pubDate>Mon, 27 Apr 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/en/photography/practice-and-gear/</guid>
+      
+      <description>Debunking the myth of expensive gear versus actual experience. Practical advice for beginners and an encouraging call to read instruction manuals.</description>
+      
+      <category>photography</category>
+      
+      <category>tips</category>
+      
+      <category>technique</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="http://localhost:1313/photography/practice-and-gear/featured.png" medium="image"/>
+      
+    </item>
+    
+    
+    
+    
+    <item>
+      <title>The Magic of Curves: How to Fix Color Casts and Tone Your Photos</title>
+      <link>http://localhost:1313/en/photography/curves-color-toning/</link>
+      <pubDate>Sun, 26 Apr 2026 14:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/en/photography/curves-color-toning/</guid>
+      
+      <description>Understanding color correction using Curves in image editors: how to fix an unwanted red tint and achieve a balanced, cinematic color tone.</description>
+      
+      <category>photography</category>
+      
+      <category>tips</category>
+      
+      <category>technique</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="http://localhost:1313/photography/curves-color-toning/featured.png" medium="image"/>
+      
+    </item>
+    
+    
+    
+    
+    <item>
+      <title>Composition Basics: Rule of Thirds</title>
+      <link>http://localhost:1313/en/photography/composition-basics/</link>
+      <pubDate>Sat, 25 Apr 2026 12:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/en/photography/composition-basics/</guid>
+      
+      <description>An overview of the fundamental rule of photography composition: how to balance your frame using a grid of thirds.</description>
+      
+      <category>photography</category>
+      
+      <category>tips</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="http://localhost:1313/photography/composition-basics/featured.png" medium="image"/>
+      
+    </item>
+    
+    
+    
+    
+    <item>
+      <title>Photos</title>
+      <link>http://localhost:1313/en/my-gallery/</link>
+      <pubDate>Mon, 20 Apr 2026 20:28:39 +0300</pubDate>
+      <guid>http://localhost:1313/en/my-gallery/</guid>
+      
+      <description>A gallery of author&#39;s photos with detailed EXIF parameters and the atmosphere of favorite tracks under which they were shot.</description>
+      
+      <category>photography</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+      
+    </item>
+    
+    
+    
+    
+    <item>
+      <title>BufReader in Rust: Accelerating I/O</title>
+      <link>http://localhost:1313/en/rust/bufreader/</link>
+      <pubDate>Tue, 26 Aug 2025 18:42:24 +0300</pubDate>
+      <guid>http://localhost:1313/en/rust/bufreader/</guid>
+      
+      <description>Learn how to speed up file reading by minimizing OS system calls, mastering BufRead vs Read, and benchmarking line-by-line streaming.</description>
+      
+      <category>rust</category>
+      
+      <category>dev</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="http://localhost:1313/rust/bufreader/featured.png" medium="image"/>
+      
+    </item>
+    
+    
+    
+    
+    <item>
+      <title>All Blog Posts &amp; Articles</title>
+      <link>http://localhost:1313/en/posts/</link>
+      <pubDate>Tue, 20 Feb 2024 14:28:39 +0300</pubDate>
+      <guid>http://localhost:1313/en/posts/</guid>
+      
+      <description>Complete index of all articles, tutorials on Rust, mobile development, photography, and system design.</description>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+      
+    </item>
+    
+    
+    
+    
+    <item>
+      <title>My Statistics</title>
+      <link>http://localhost:1313/en/stats/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/en/stats/</guid>
+      
+      <description>Personal EagleBlog reader statistics: completed interactive quizzes, earned XP points, saved bookmarks, and reading progress across all lessons.</description>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+      
+    </item>
+    
+    
+  </channel>
+</rss>

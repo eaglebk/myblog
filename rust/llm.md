@@ -5,7 +5,7 @@
 
 
 - **URL раздела:** https://eagle2000.space/rust/
-- **Количество статей:** 47
+- **Количество статей:** 48
 - **Язык:** ru
 
 ---
@@ -421,7 +421,16 @@
 - **Markdown URL для агентов:** `https://eagle2000.space/rust/esp32-rust-blink/llm.md`
 
 
-### 46. [Крейт дня: Strum — перебор и конвертация enum в Rust](https://eagle2000.space/rust/crate-of-the-day-strum/llm.md)
+### 46. [Ускоряем ускоряемое: SIMD и при чём тут GTA](https://eagle2000.space/rust/rust-simd-and-gta/llm.md)
+
+> Разбираюсь, как работает SIMD, почему одна ошибка в парсере JSON замедлила GTA Online на 5–10 минут, как устроен simdjson и какие способы векторизации есть в Rust.
+
+- **Дата:** 2026-11-23
+- **Теги:** rust, simd, performance, optimization
+- **Markdown URL для агентов:** `https://eagle2000.space/rust/rust-simd-and-gta/llm.md`
+
+
+### 47. [Крейт дня: Strum — перебор и конвертация enum в Rust](https://eagle2000.space/rust/crate-of-the-day-strum/llm.md)
 
 > Разбираем популярный крейт strum: как итерироваться по вариантам enum, конвертировать enum в строки и обратно на реальном примере из инструмента esp-generate.
 
@@ -430,7 +439,7 @@
 - **Markdown URL для агентов:** `https://eagle2000.space/rust/crate-of-the-day-strum/llm.md`
 
 
-### 47. [Крейт дня: Rayon - параллельные вычисления в одну строку](https://eagle2000.space/rust/crate-of-the-day-rayon/llm.md)
+### 48. [Крейт дня: Rayon - параллельные вычисления в одну строку](https://eagle2000.space/rust/crate-of-the-day-rayon/llm.md)
 
 > Показываю, как замена .iter() на .par_iter() ускоряет обработку данных на всех ядрах CPU благодаря балансировке нагрузки Work-Stealing.
 

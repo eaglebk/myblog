@@ -5,7 +5,7 @@
 
 
 - **URL раздела:** https://eagle2000.space/en/rust/
-- **Количество статей:** 15
+- **Количество статей:** 16
 - **Язык:** en
 
 ---
@@ -142,7 +142,16 @@
 - **Markdown URL для агентов:** `https://eagle2000.space/en/rust/bufreader/llm.md`
 
 
-### 15. [Crate of the Day: Strum - iterating and converting Rust Enum](https://eagle2000.space/en/rust/crate-of-the-day-strum/llm.md)
+### 15. [Speeding Up the Speedable: SIMD and What GTA Has to Do With It](https://eagle2000.space/en/rust/rust-simd-and-gta/llm.md)
+
+> How SIMD works under the hood, why a JSON parsing bug stalled GTA Online for 5-10 minutes, how simdjson hits gigabytes per second, and four ways to use SIMD in Rust.
+
+- **Дата:** 2026-11-23
+- **Теги:** rust, simd, performance, optimization
+- **Markdown URL для агентов:** `https://eagle2000.space/en/rust/rust-simd-and-gta/llm.md`
+
+
+### 16. [Crate of the Day: Strum - iterating and converting Rust Enum](https://eagle2000.space/en/rust/crate-of-the-day-strum/llm.md)
 
 > Exploring the popular Strum crate: how to iterate over enum variants, convert enums to strings and back, using a real-world example from esp-generate.
 

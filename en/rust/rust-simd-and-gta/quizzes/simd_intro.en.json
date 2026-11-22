@@ -1,0 +1,57 @@
+[
+  {
+    "question": "How do SIMD and multithreading work together?",
+    "options": [
+      "They are mutually exclusive: you cannot spawn multiple threads when using SIMD",
+      "Multithreading spreads work across CPU cores, while SIMD speeds up uniform operations inside a single core",
+      "SIMD automatically spawns background OS threads for each loop iteration",
+      "Multithreading only works for f32, while SIMD is strictly for strings"
+    ],
+    "answer": 1,
+    "explanation": "SIMD and multithreading complement each other: threads keep multiple CPU cores busy, while SIMD lets each core process multiple data elements in one instruction."
+  },
+  {
+    "question": "What does the acronym SIMD stand for?",
+    "options": [
+      "Single Input, Multiple Devices",
+      "Single Instruction, Multiple Data",
+      "Simple Integer, Memory Direct",
+      "Sequential Instruction, Multi-threaded Dispatch"
+    ],
+    "answer": 1,
+    "explanation": "SIMD stands for Single Instruction, Multiple Data: one machine instruction operates on a whole vector of data elements at once."
+  },
+  {
+    "question": "How many 32-bit f32 values fit into a single 256-bit vector register (such as AVX2)?",
+    "options": [
+      "4 values",
+      "8 values",
+      "16 values",
+      "32 values"
+    ],
+    "answer": 1,
+    "explanation": "256 bits / 32 bits = 8 f32 values. A 128-bit register holds 4 f32 values, and a 512-bit register holds 16."
+  },
+  {
+    "question": "When is compiler auto-vectorization most likely to fail or bring no speedup?",
+    "options": [
+      "When adding two large independent arrays of numbers",
+      "When applying the same check to every byte in a slice",
+      "When the next loop iteration depends on the previous one or the dataset is tiny",
+      "When compiling with release optimizations enabled"
+    ],
+    "answer": 2,
+    "explanation": "Loop-carried dependencies prevent the compiler from safely merging iterations into a single vector instruction. On tiny arrays, setup overhead can outweigh the gains."
+  },
+  {
+    "question": "Which Rust standard library module gives direct access to platform-specific SIMD intrinsics (SSE, AVX2, NEON)?",
+    "options": [
+      "std::simd",
+      "std::arch",
+      "std::thread",
+      "std::mem"
+    ],
+    "answer": 1,
+    "explanation": "Direct hardware intrinsics on stable Rust live in std::arch, whereas portable std::simd is currently an experimental nightly-only API."
+  }
+]

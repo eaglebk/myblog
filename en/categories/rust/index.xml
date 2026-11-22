@@ -9,9 +9,44 @@
     <description>Свежие статьи и публикации Eagle blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 18 Nov 2026 13:27:00 +0300</lastBuildDate>
+    <lastBuildDate>Mon, 23 Nov 2026 00:05:00 +0300</lastBuildDate>
     
     <atom:link href="https://eagle2000.space/en/categories/rust/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+    
+    <item>
+      <title>Speeding Up the Speedable: SIMD and What GTA Has to Do With It</title>
+      <link>https://eagle2000.space/en/rust/rust-simd-and-gta/</link>
+      <pubDate>Mon, 23 Nov 2026 00:05:00 +0300</pubDate>
+      <guid>https://eagle2000.space/en/rust/rust-simd-and-gta/</guid>
+      
+      <description>How SIMD works under the hood, why a JSON parsing bug stalled GTA Online for 5-10 minutes, how simdjson hits gigabytes per second, and four ways to use SIMD in Rust.</description>
+      
+      <category>rust</category>
+      
+      <category>simd</category>
+      
+      <category>performance</category>
+      
+      <category>optimization</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="https://eagle2000.space/rust/rust-simd-and-gta/featured.png" medium="image"/>
+      
+    </item>
     
     
     

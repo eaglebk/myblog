@@ -1,0 +1,68 @@
+[
+  {
+    "question": "What does Cargo do when two dependencies pull in rustls with different features (ring and aws-lc-rs)?",
+    "options": [
+      "Builds two separate copies of rustls, each with its own feature",
+      "Builds one copy of rustls with both features enabled",
+      "Fails compilation with a feature conflict error",
+      "Uses the feature of whichever dependency is listed first in Cargo.toml"
+    ],
+    "answer": 1,
+    "explanation": "This is feature unification: for a single crate version Cargo builds one copy with every feature requested by the dependencies."
+  },
+  {
+    "question": "When does rustls 0.23 panic if both providers are enabled and none is installed explicitly?",
+    "options": [
+      "At compile time",
+      "Immediately at program startup",
+      "When the first TLS config is created, e.g. ClientConfig::builder()",
+      "Only when the process exits"
+    ],
+    "answer": 2,
+    "explanation": "The default provider is resolved lazily. Until the code creates a TLS config there is no panic, so the service can start and pass its healthcheck."
+  },
+  {
+    "question": "Why is the result of install_default() ignored with let _ = ?",
+    "options": [
+      "It returns Err if a provider is already installed, which isn't treated as an error",
+      "It always returns (), let _ is just cosmetic",
+      "Otherwise the compiler won't allow calling it in an async context",
+      "This installs the provider for the current thread only"
+    ],
+    "answer": 0,
+    "explanation": "install_default() returns Err if a process-level provider has already been chosen. Calling it again is safe and doesn't need handling."
+  },
+  {
+    "question": "Why doesn't rustls just pick one of the providers when both are enabled?",
+    "options": [
+      "Because ring and aws-lc-rs are incompatible and can't live in one binary",
+      "So that a service relying on, say, the FIPS mode of aws-lc-rs doesn't silently switch to another backend",
+      "Because it's a bug that will be fixed in the next release",
+      "Because the provider can only be chosen via an environment variable"
+    ],
+    "answer": 1,
+    "explanation": "The crypto backend affects security and certification. rustls intentionally requires an explicit decision instead of guessing."
+  },
+  {
+    "question": "Which command shows which dependencies enable features in rustls?",
+    "options": [
+      "cargo check --features rustls",
+      "cargo tree -e features -i rustls",
+      "cargo metadata --rustls",
+      "cargo clippy -- -W features"
+    ],
+    "answer": 1,
+    "explanation": "cargo tree with -i builds the tree from rustls up to the crates that pulled it in, and -e features shows which features each dependency enabled."
+  },
+  {
+    "question": "Do you need install_default() in #[tokio::test] tests if main() already calls it?",
+    "options": [
+      "No, main() runs before every test",
+      "Yes, tests have their own entry point and main() is not called",
+      "No, rustls always uses ring in tests",
+      "Yes, but only for non-async tests"
+    ],
+    "answer": 1,
+    "explanation": "The test binary doesn't call your main(). If a test creates TLS connections, install the provider in a test helper."
+  }
+]

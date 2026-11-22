@@ -1,0 +1,83 @@
+{
+  "title": "Как SIMD обрабатывает 4 числа <code>f32</code> за одну инструкцию",
+  "interval": 2600,
+  "code": [
+    "unsafe {",
+    "    let va = _mm_loadu_ps(a.as_ptr());",
+    "    let vb = _mm_loadu_ps(b.as_ptr());",
+    "    let sum = _mm_add_ps(va, vb);",
+    "    _mm_storeu_ps(out.as_mut_ptr(), sum);",
+    "}"
+  ],
+  "nodes": [
+    {
+      "id": "mem",
+      "name": "Память (RAM)",
+      "role": "4 элемента f32 (128 бит)",
+      "kind": "chips",
+      "chips": ["[0]", "[1]", "[2]", "[3]"]
+    },
+    {
+      "id": "reg",
+      "name": "Векторные регистры",
+      "role": "XMM0 / XMM1 (128 бит)",
+      "kind": "state",
+      "defaultState": "пусто"
+    },
+    {
+      "id": "alu",
+      "name": "SIMD АЛУ ядра",
+      "role": "1 векторная инструкция",
+      "kind": "state",
+      "defaultState": "ожидание"
+    }
+  ],
+  "links": [
+    { "id": "mr", "downLabel": "↓ _mm_loadu_ps", "upLabel": "↑ _mm_storeu_ps" },
+    { "id": "ra", "downLabel": "↓ va, vb", "upLabel": "↑ sum (4 × f32)" }
+  ],
+  "steps": [
+    {
+      "label": "Загрузка векторов",
+      "explain": "<code>_mm_loadu_ps</code> загружает сразу 4 числа <code>f32</code> (16 байт) из памяти в 128-битные векторные регистры <code>XMM0</code> и <code>XMM1</code> без требования строгого выравнивания.",
+      "lines": { "1": "active", "2": "active" },
+      "nodes": {
+        "mem": { "tone": "active", "chips": { "0": "current", "1": "current", "2": "current", "3": "current" } },
+        "reg": { "tone": "active", "state": "va, vb загружены (по 4 f32)" },
+        "alu": { "state": "ожидание" }
+      },
+      "arrows": {
+        "mr": { "dir": "down", "tone": "active", "label": "↓ 2 × 128 бит из RAM" }
+      }
+    },
+    {
+      "label": "1 инструкция _mm_add_ps",
+      "explain": "<code>_mm_add_ps</code> выполняет сложение всех четырёх пар <code>f32</code> одновременно внутри одного ядра за одну машинную инструкцию.",
+      "lines": { "3": "active" },
+      "nodes": {
+        "mem": { "chips": { "0": "current", "1": "current", "2": "current", "3": "current" } },
+        "reg": { "tone": "active", "state": "передача va и vb" },
+        "alu": { "tone": "ok", "state": "4 сложения параллельно!" }
+      },
+      "arrows": {
+        "ra": [
+          { "dir": "down", "tone": "active", "label": "↓ va, vb" },
+          { "dir": "up", "tone": "ok", "label": "↑ sum (4 суммы)" }
+        ]
+      }
+    },
+    {
+      "label": "Запись результата",
+      "explain": "<code>_mm_storeu_ps</code> выгружает готовый 128-битный вектор <code>sum</code> обратно в срез <code>out</code> за одну операцию.",
+      "lines": { "4": "ok" },
+      "nodes": {
+        "mem": { "tone": "ok", "chips": { "0": "accepted", "1": "accepted", "2": "accepted", "3": "accepted" } },
+        "reg": { "tone": "ok", "state": "sum → out[0..4]" },
+        "alu": { "state": "готово" }
+      },
+      "arrows": {
+        "mr": { "dir": "up", "tone": "ok", "label": "↑ 16 байт в RAM" }
+      }
+    }
+  ]
+}

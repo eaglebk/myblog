@@ -17,9 +17,118 @@
     
     
     <item>
+      <title>Speeding Up the Speedable: SIMD and What GTA Has to Do With It</title>
+      <link>http://localhost:1313/en/rust/rust-simd-and-gta/</link>
+      <pubDate>Mon, 23 Nov 2026 00:05:00 +0300</pubDate>
+      <guid>http://localhost:1313/en/rust/rust-simd-and-gta/</guid>
+      
+      <description>How SIMD works under the hood, why a JSON parsing bug stalled GTA Online for 5-10 minutes, how simdjson hits gigabytes per second, and four ways to use SIMD in Rust.</description>
+      
+      <category>rust</category>
+      
+      <category>simd</category>
+      
+      <category>performance</category>
+      
+      <category>optimization</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="http://localhost:1313/rust/rust-simd-and-gta/featured.png" medium="image"/>
+      
+    </item>
+    
+    
+    
+    
+    <item>
+      <title>Rake of the Day: the server returned 202 Accepted... after 9 seconds, and the client timed out</title>
+      <link>http://localhost:1313/en/rust/http-202-async-email-timeout/</link>
+      <pubDate>Thu, 19 Nov 2026 21:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/en/rust/http-202-async-email-timeout/</guid>
+      
+      <description>Why an async email endpoint makes a mobile app crash with TimeoutException, and how to offload SMTP properly with tokio::spawn.</description>
+      
+      <category>rust</category>
+      
+      <category>tokio</category>
+      
+      <category>axum</category>
+      
+      <category>flutter</category>
+      
+      <category>debugging</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="http://localhost:1313/rust/http-202-async-email-timeout/featured.png" medium="image"/>
+      
+    </item>
+    
+    
+    
+    
+    <item>
+      <title>Rake of the Day: two CryptoProviders in rustls and a panic out of nowhere</title>
+      <link>http://localhost:1313/en/rust/rustls-crypto-provider-conflict/</link>
+      <pubDate>Thu, 19 Nov 2026 20:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/en/rust/rustls-crypto-provider-conflict/</guid>
+      
+      <description>Why a Rust server can start up fine and then crash on its very first TLS connection, and how one line in main() picks the crypto backend for rustls.</description>
+      
+      <category>rust</category>
+      
+      <category>dev</category>
+      
+      <category>tls</category>
+      
+      <category>cargo</category>
+      
+      <category>debugging</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="http://localhost:1313/rust/rustls-crypto-provider-conflict/featured.png" medium="image"/>
+      
+    </item>
+    
+    
+    
+    
+    <item>
       <title>Fast I/O in Rust: Buffering, In-Memory Tests, and CLI Errors</title>
       <link>http://localhost:1313/en/rust/rust-io-bufread-and-errors/</link>
-      <pubDate>Tue, 17 Nov 2026 19:21:00 +0300</pubDate>
+      <pubDate>Wed, 18 Nov 2026 13:27:00 +0300</pubDate>
       <guid>http://localhost:1313/en/rust/rust-io-bufread-and-errors/</guid>
       
       <description>How to cut syscall overhead with BufRead, unit-test streams via std::io::Cursor, handle .lines() failures, and return clean UNIX exit codes in CLI tools.</description>
