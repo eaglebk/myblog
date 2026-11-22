@@ -7,6 +7,7 @@ Disallow: /categories/
 Disallow: /authors/
 Disallow: /series/
 Disallow: /page/
+Disallow: /*/page/
 Disallow: /ru/tags/
 Disallow: /ru/categories/
 Disallow: /ru/authors/
@@ -15,5 +16,25 @@ Disallow: /en/tags/
 Disallow: /en/categories/
 Disallow: /en/authors/
 Disallow: /en/series/
+
+# Keep llm.md available for AI crawlers, but prevent Googlebot from indexing raw Markdown duplicates
+User-agent: Googlebot
+Allow: /
+Disallow: /tags/
+Disallow: /categories/
+Disallow: /authors/
+Disallow: /series/
+Disallow: /page/
+Disallow: /*/page/
+Disallow: /ru/tags/
+Disallow: /ru/categories/
+Disallow: /ru/authors/
+Disallow: /ru/series/
+Disallow: /en/tags/
+Disallow: /en/categories/
+Disallow: /en/authors/
+Disallow: /en/series/
+Disallow: /llm.md
+Disallow: /*/llm.md
 
 Sitemap: https://eagle2000.space/sitemap.xml
