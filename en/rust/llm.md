@@ -5,7 +5,7 @@
 
 
 - **URL раздела:** https://eagle2000.space/en/rust/
-- **Количество статей:** 16
+- **Количество статей:** 17
 - **Язык:** en
 
 ---
@@ -142,7 +142,16 @@
 - **Markdown URL для агентов:** `https://eagle2000.space/en/rust/bufreader/llm.md`
 
 
-### 15. [Speeding Up the Speedable: SIMD and What GTA Has to Do With It](https://eagle2000.space/en/rust/rust-simd-and-gta/llm.md)
+### 15. [Rake of the Day: the server returned 202 Accepted... after 9 seconds, and the client timed out](https://eagle2000.space/en/rust/http-202-async-email-timeout/llm.md)
+
+> Why an async email endpoint makes a mobile app crash with TimeoutException, and how to offload SMTP properly with tokio::spawn.
+
+- **Дата:** 2026-11-25
+- **Теги:** rust, tokio, axum, flutter, debugging
+- **Markdown URL для агентов:** `https://eagle2000.space/en/rust/http-202-async-email-timeout/llm.md`
+
+
+### 16. [Speeding Up the Speedable: SIMD and What GTA Has to Do With It](https://eagle2000.space/en/rust/rust-simd-and-gta/llm.md)
 
 > How SIMD works under the hood, why a JSON parsing bug stalled GTA Online for 5-10 minutes, how simdjson hits gigabytes per second, and four ways to use SIMD in Rust.
 
@@ -151,7 +160,7 @@
 - **Markdown URL для агентов:** `https://eagle2000.space/en/rust/rust-simd-and-gta/llm.md`
 
 
-### 16. [Crate of the Day: Strum - iterating and converting Rust Enum](https://eagle2000.space/en/rust/crate-of-the-day-strum/llm.md)
+### 17. [Crate of the Day: Strum - iterating and converting Rust Enum](https://eagle2000.space/en/rust/crate-of-the-day-strum/llm.md)
 
 > Exploring the popular Strum crate: how to iterate over enum variants, convert enums to strings and back, using a real-world example from esp-generate.
 

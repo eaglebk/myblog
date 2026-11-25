@@ -3,7 +3,7 @@
 > Blog of a cheerful programmer
 
 ## Sections
-- [Rust](https://eagle2000.space/en/rust/llm.md): My personal journey learning Rust: from first experiments and basic syntax to Tokio async runtime and ESP32 embedded projects. (16 articles)
+- [Rust](https://eagle2000.space/en/rust/llm.md): My personal journey learning Rust: from first experiments and basic syntax to Tokio async runtime and ESP32 embedded projects. (17 articles)
 - [Photography](https://eagle2000.space/en/photography/llm.md): Practical guides, articles, and interactive visual simulators on photography: visual composition, the rule of thirds, tone curves, and gear reviews. (4 articles)
 - [Foreign Languages](https://eagle2000.space/en/languages/llm.md): Foreign Languages (0 articles)
 - [Posts about everything](https://eagle2000.space/en/about-all/llm.md): Posts and notes on various topics that interest me (0 articles)
@@ -13,6 +13,7 @@
 
 
 ## Key Articles
+- [Rake of the Day: the server returned 202 Accepted... after 9 seconds, and the client timed out](https://eagle2000.space/en/rust/http-202-async-email-timeout/llm.md): Why an async email endpoint makes a mobile app crash with TimeoutException, and how to offload SMTP properly with tokio::spawn.
 - [Speeding Up the Speedable: SIMD and What GTA Has to Do With It](https://eagle2000.space/en/rust/rust-simd-and-gta/llm.md): How SIMD works under the hood, why a JSON parsing bug stalled GTA Online for 5-10 minutes, how simdjson hits gigabytes per second, and four ways to use SIMD in Rust.
 - [Fast I/O in Rust: Buffering, In-Memory Tests, and CLI Errors](https://eagle2000.space/en/rust/rust-io-bufread-and-errors/llm.md): How to cut syscall overhead with BufRead, unit-test streams via std::io::Cursor, handle .lines() failures, and return clean UNIX exit codes in CLI tools.
 - [Rust Iterators: Lazy Data Processing Without Extra Allocations](https://eagle2000.space/en/rust/rust-iterators-deep-dive/llm.md): Explore how for loops desugar via IntoIterator, compare .iter() vs .into_iter(), build custom pagination, and leverage LLVM SIMD optimizations.

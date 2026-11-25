@@ -12,7 +12,7 @@
 ### 🔹 [Rust](https://eagle2000.space/rust/llm.md)
 > Мой путь в изучении языка Rust: от первых экспериментов и базового синтаксиса до асинхронности Tokio и разработки на микроконтроллерах ESP32.
 
-- **Статей:** 48
+- **Статей:** 49
 - **Каталог раздела для LLM:** `https://eagle2000.space/rust/llm.md`
 
 ### 🔹 [О фотографии](https://eagle2000.space/photography/llm.md)
@@ -55,6 +55,7 @@
 
 ## 🚀 Последние публикации:
 
+- [Грабли дня: сервер ответил 202 Accepted... через 9 секунд, и клиент упал по таймауту](https://eagle2000.space/rust/http-202-async-email-timeout/llm.md) (2026-11-25) — *rust*
 - [Ускоряем ускоряемое: SIMD и при чём тут GTA](https://eagle2000.space/rust/rust-simd-and-gta/llm.md) (2026-11-23) — *rust*
 - [Быстрый ввод-вывод в Rust: буферизация, тесты и ошибки](https://eagle2000.space/rust/rust-io-bufread-and-errors/llm.md) (2026-11-18) — *rust*
 - [Итераторы в Rust: ленивая обработка данных без лишних аллокаций](https://eagle2000.space/rust/rust-iterators-deep-dive/llm.md) (2026-11-13) — *rust*
@@ -79,5 +80,4 @@
 - [Система типов в Rust: почему компилятор — ваш лучший друг](https://eagle2000.space/rust/rust-type-system/llm.md) (2026-08-01) — *rust*
 - [Перечисления (Enums) в Rust: от синтаксиса до сопоставления](https://eagle2000.space/rust/rust-enums/llm.md) (2026-08-01) — *rust*
 - [Низкоуровневое представление типов в памяти в Rust (Type Layout)](https://eagle2000.space/rust/rust-type-layout/llm.md) (2026-08-01) — *rust*
-- [Циклы и диапазоны в Rust: loop, while и for на практике](https://eagle2000.space/rust/rust-loops/llm.md) (2026-07-31) — *rust*
 

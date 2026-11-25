@@ -5,7 +5,7 @@
 
 
 - **URL раздела:** https://eagle2000.space/rust/
-- **Количество статей:** 48
+- **Количество статей:** 49
 - **Язык:** ru
 
 ---
@@ -421,7 +421,16 @@
 - **Markdown URL для агентов:** `https://eagle2000.space/rust/esp32-rust-blink/llm.md`
 
 
-### 46. [Ускоряем ускоряемое: SIMD и при чём тут GTA](https://eagle2000.space/rust/rust-simd-and-gta/llm.md)
+### 46. [Грабли дня: сервер ответил 202 Accepted... через 9 секунд, и клиент упал по таймауту](https://eagle2000.space/rust/http-202-async-email-timeout/llm.md)
+
+> Почему асинхронный эндпоинт отправки письма заставляет мобильное приложение падать с TimeoutException, и как правильно выносить отправку по SMTP в фоновую задачу через tokio::spawn.
+
+- **Дата:** 2026-11-25
+- **Теги:** rust, tokio, axum, flutter, debugging
+- **Markdown URL для агентов:** `https://eagle2000.space/rust/http-202-async-email-timeout/llm.md`
+
+
+### 47. [Ускоряем ускоряемое: SIMD и при чём тут GTA](https://eagle2000.space/rust/rust-simd-and-gta/llm.md)
 
 > Разбираюсь, как работает SIMD, почему одна ошибка в парсере JSON замедлила GTA Online на 5–10 минут, как устроен simdjson и какие способы векторизации есть в Rust.
 
@@ -430,7 +439,7 @@
 - **Markdown URL для агентов:** `https://eagle2000.space/rust/rust-simd-and-gta/llm.md`
 
 
-### 47. [Крейт дня: Strum — перебор и конвертация enum в Rust](https://eagle2000.space/rust/crate-of-the-day-strum/llm.md)
+### 48. [Крейт дня: Strum — перебор и конвертация enum в Rust](https://eagle2000.space/rust/crate-of-the-day-strum/llm.md)
 
 > Разбираем популярный крейт strum: как итерироваться по вариантам enum, конвертировать enum в строки и обратно на реальном примере из инструмента esp-generate.
 
@@ -439,7 +448,7 @@
 - **Markdown URL для агентов:** `https://eagle2000.space/rust/crate-of-the-day-strum/llm.md`
 
 
-### 48. [Крейт дня: Rayon - параллельные вычисления в одну строку](https://eagle2000.space/rust/crate-of-the-day-rayon/llm.md)
+### 49. [Крейт дня: Rayon - параллельные вычисления в одну строку](https://eagle2000.space/rust/crate-of-the-day-rayon/llm.md)
 
 > Показываю, как замена .iter() на .par_iter() ускоряет обработку данных на всех ядрах CPU благодаря балансировке нагрузки Work-Stealing.
 

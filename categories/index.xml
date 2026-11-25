@@ -9,9 +9,46 @@
     <description>Свежие статьи и публикации Eagle blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ru</language>
-    <lastBuildDate>Mon, 23 Nov 2026 00:05:00 +0300</lastBuildDate>
+    <lastBuildDate>Wed, 25 Nov 2026 21:13:00 +0300</lastBuildDate>
     
     <atom:link href="https://eagle2000.space/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+    
+    <item>
+      <title>Грабли дня: сервер ответил 202 Accepted... через 9 секунд, и клиент упал по таймауту</title>
+      <link>https://eagle2000.space/rust/http-202-async-email-timeout/</link>
+      <pubDate>Wed, 25 Nov 2026 21:13:00 +0300</pubDate>
+      <guid>https://eagle2000.space/rust/http-202-async-email-timeout/</guid>
+      
+      <description>Почему асинхронный эндпоинт отправки письма заставляет мобильное приложение падать с TimeoutException, и как правильно выносить отправку по SMTP в фоновую задачу через tokio::spawn.</description>
+      
+      <category>rust</category>
+      
+      <category>tokio</category>
+      
+      <category>axum</category>
+      
+      <category>flutter</category>
+      
+      <category>debugging</category>
+      
+      
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+      
+      <media:content url="https://eagle2000.space/rust/http-202-async-email-timeout/featured.png" medium="image"/>
+      
+    </item>
     
     
     

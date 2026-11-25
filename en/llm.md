@@ -12,7 +12,7 @@
 ### 🔹 [Rust](https://eagle2000.space/en/rust/llm.md)
 > My personal journey learning Rust: from first experiments and basic syntax to Tokio async runtime and ESP32 embedded projects.
 
-- **Статей:** 16
+- **Статей:** 17
 - **Каталог раздела для LLM:** `https://eagle2000.space/en/rust/llm.md`
 
 ### 🔹 [Photography](https://eagle2000.space/en/photography/llm.md)
@@ -55,6 +55,7 @@
 
 ## 🚀 Последние публикации:
 
+- [Rake of the Day: the server returned 202 Accepted... after 9 seconds, and the client timed out](https://eagle2000.space/en/rust/http-202-async-email-timeout/llm.md) (2026-11-25) — *rust*
 - [Speeding Up the Speedable: SIMD and What GTA Has to Do With It](https://eagle2000.space/en/rust/rust-simd-and-gta/llm.md) (2026-11-23) — *rust*
 - [Fast I/O in Rust: Buffering, In-Memory Tests, and CLI Errors](https://eagle2000.space/en/rust/rust-io-bufread-and-errors/llm.md) (2026-11-18) — *rust*
 - [Rust Iterators: Lazy Data Processing Without Extra Allocations](https://eagle2000.space/en/rust/rust-iterators-deep-dive/llm.md) (2026-11-13) — *rust*
